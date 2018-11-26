@@ -1,0 +1,40 @@
+\chapter{INTRODUÇÃO}
+\label{intro}
+
+Os eventos de difração trazem informações sobre as pequenas heterogeneidades em subsuperfície. Como falhas, fraturas
+canais e flancos de domo de sal \cite{sep_dif}.
+Portanto, apesar do processamento sísmico concentrar seus esforços no imageamento de ondas refletidas, o valor das
+difrações não deve ser subestimado \cite{khaidukov}.
+
+Em teoria, podemos separar difrações e reflexões no domínio dos dados: Ondas sísmicas refletidas e difratadas são
+dois fenômenos físicos fundamentalmente distintos \cite{klen}. Partimos da hipótese de que, no volume dos dados
+empilhados, correspondem a eventos fortemente coerentes com inclinações contínuas. Remover as reflexões, revelamos
+as difrações.
+
+
+Partindo da seção empilhada, nós propomos a identificação e remoção dos eventos de reflexão 
+através do filtro de destruição de ondas planas 
+\cite{claerbout}: O método de destruição de ondas planas estima a continuidade das inclinações 
+locais dos eventos sísmicos dominantes
+formando uma predição de cada dado no traço em relação aos traços na vizinhança com a otimização a partir de
+filtros não estacionários compactos que seguem que seguem a energia sísmica ao longo das inclinações estimadas
+\cite{sep_dif}.
+
+Após a remoção das reflexões da seção empilhada, migramos a seção,
+contendo apenas eventos de difração, múltiplas vezes. Para isto utilizamos
+diferentes velocidades de migração em um processo chamado de \textit{velocity continuation}, a partir de um algoritmo baseado
+na FFT \cite{sep_dif}.
+
+Montamos os \textit{focusing image gathers} (FIG) calculando para cada ponto no domínio 
+da imagem a sua \textit{variação máxima local},
+para cada uma das imagens migradas produzidas no passo anterior a partir de uma velocidade de migração distinta. 
+Para pontos no domínio da imagem que sejam pontos de foco (difrações), o valor da \textit{variação máxima local} é máximo. 
+Assim o FIG é um painel que mostra os maiores valores de \textit{variação máxima local} 
+para as velocidade de migração otimizadas (análise de velocidade de migração).
+
+Obtemos a curva de tempo de trânsito do método do elemento de reflexão comum (ERC) para os pontos no domínio da imagem,
+a partir de $R_N$ e $\beta_0$ obtidos do modelo de velocidades do passo anterior, otimizados a partir do algoritmo
+very fast simulated aneeling (VFSA).
+As coordenadas $m$ e $h$ e o tempo de trânsito da ERC são interpoladas a partir das aproximações
+de tempo de trânsito SRC Padé \cite{neves} que tangencia a superfície de tempo de trânsito ERC.
+A partir daí empilhamos sobre a curva de tempo de trânsito ERC no domínio dos dados e ressaltamos as difrações.

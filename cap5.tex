@@ -1,0 +1,48 @@
+%\chapter{RESULTADOS PRELIMINARES (Pt. 2)}
+\chapter{EXPERIMENTO NUMÉRICO SRC}
+\label{cap5}
+
+Realizamos um experimento numérico para testar a  acurácia das aproximações do SRC e a robustez da otimização
+global utilizando o algoritmo VFSA: Os parâmetros do SRC que produzem o melhor
+ajuste da aproximação do SRC escolhida aos dados modelados a partir das equações do modelo do refletor circular
+serão obtidos a partir da inversão utilizando o VFSA.
+
+O VFSA simula o resfriamento lento de cristais a partir de uma dada temperatura inicial arbitrária 
+$T_0$, esta temperatura
+decai a cada passo, enquanto os valores dos parâmetros $R_N$, $R_NIP$ e $\beta_0$ convergem para o melhor ajuste possível. 
+Há ainda um fator de amortecimento $C_0$ para ajustar o intervalos dos passos ao problema, a
+escolha de $C_0$ e $T_0$ é arbitrária.
+Realizamos vários
+testes e descobrimos por tentativa e erro que os valores de $C_0$ e $T_0$ que melhor se ajustam ao experimento
+proposto são $C_0=0.5$ e $T_0=10$.
+Contamos cada convergência dos parâmetros $R_N$, $R_NIP$ e $\beta_0$ como uma iteração,
+realizando ao todo  10 iterações cada uma com 25000 passos de atualização de temperatura.
+O parâmetro otimizado é a média do valor do parâmetro obtidos em cada iteração, para evitar
+ruído aleatório na obtenção dos parâmetros.
+O experimento numérico é descrito a seguir:
+
+\begin{enumerate}
+ \item Obtivemos a superfície de tempo de trânsito SRC modelada com as Equações \ref{eq:7.1}-\ref{eq:7.3}
+ para o modelo do refletor circular da Figura \ref{fig:7.1}, com os parâmetros definidos: $D=1000m$, $R=1000m$, 
+ $v_0=1500m$. Para o PMC central $m_0$ escolhido arbitrariamente...
+ 
+ \item Utilizamos o algoritmo VFSA para encontrar os parâmetros o algoritmo gera um valor dos parâmetros $R_N$, $R_NIP$ e $\beta_0$
+ e produz a superfície SRC aproximada utilizando uma aproximação do SRC escolhida, compara a aproximação do SRC com
+ a superfície SRC modelada a partir da coerência (Semblance). O melhor ajuste será produzido ao atingir o valor máximo da
+ coerência entre a superfície aproximada do SRC e a superfície modelada.
+ 
+ \item Calculamos o erro relativo entre os parâmetros obtidos através da otimização com o VFSA
+ e os parâmetros do modelo, obtidos a partir
+ das Equações \ref{eq:7.4}-\ref{eq:7.7}. 
+ 
+ \item Apresentamos o erro relativo absoluto entre a superfície otimizada e
+ a superfície modelada. As regiões de melhor ajuste estão em azul, e as regiões de pior ajuste estão em vermelho.
+
+\end{enumerate}
+
+
+
+
+500<rn<3000
+500<rnip<3000
+-pi<beta0<pi

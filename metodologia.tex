@@ -1,0 +1,16 @@
+\chapter{METODOLOGIA}
+\label{met}
+
+\begin{enumerate}
+ \item Partindo da seção empilhada Separar os eventos de reflexão e difração utilizando o filtro de destruição de ondas planas.
+ 
+ \item Partindo da seção empilhada contendo apenas eventos de difração migramos a seção múltiplas vezes utilizando
+diferentes velocidades de migração em um processo chamado de velocity continuation, a partir de um algoritmo baseado
+na FFT.
+
+\item Montar os FIG (focusing image gathers) calculando para cada ponto i no domínio da imagem o seu Local varimax,
+para cada uma das imagens migradas produzidas no passo anterior a partir de uma velocidade de migração distinta. 
+Para pontos no domínio da imagem que sejam pontos de foco, o valor do local varimax é máximo, assim o FIG é um painel que mostra os maiores valores de local varimax para determinada velocidade de migração (análise de velocidade de migração).
+
+
+\end{enumerate}
