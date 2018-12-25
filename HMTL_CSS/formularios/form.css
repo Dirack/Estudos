@@ -1,0 +1,59 @@
+/*
+ * Folha de estilo CSS para form.html
+ * 
+ * Estudo sobre os tipos de formulários HTML
+ * 
+ * Programador: Rodolfo A. C. Neves 02/11/2018 
+ * 
+ */
+
+body{
+	margin: 100px 200px 200px 200px;
+}
+
+body h2 {
+	text-align: center;
+}
+
+/* Formulário centro da página */
+#caixa_externa{
+	border: 1px solid black;
+	width: 950px;
+	height: 900px;
+	background-color:#A7C0AA;
+	padding: 20px 20px 20px 20px;
+	border-radius: 15px;
+}
+
+#caixa_interna{
+	border: 2px solid black;
+	width: 850px;
+	height: 800px;
+	background-color:#A7C0DC;
+	margin: 20px;
+	padding: 10px 20px 10px 50px;
+	border-radius: 15px;
+}
+
+/* Exiba o formulário como uma tabela */
+form{
+	display: table;
+	padding: 20px 10px 20px 50px;
+}
+
+form textarea{
+	width: 700px;
+	height: 200px;	
+}
+
+form #idade {
+	height: 10px;	
+}
+
+div.linha input#n, div.linha input#c{
+	width: 500px;
+}
+
+div.linha{
+	display: table-row;
+}

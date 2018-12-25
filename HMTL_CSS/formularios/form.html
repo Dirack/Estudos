@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--
+	Estudo sobre os tipos de formulários HTML:
+		-Text
+		-Select
+		-Radio
+		-Number
+		-Textarea
+
+	Tarefas:
+		-O Formulário deve ser apresentado em uma área
+		de formulário estilizado com folha CSS externa.
+		-Utilizar Javascript para a validação dos dados
+		dos formulários.
+		-Utilizar PHP para guardar as informações 
+		em um banco de dados SQL.
+	
+	Programador: Rodolfo A. C. Neves 02/11/2018
+
+-->
+<meta charset="utf-8">
+<head>
+	<title>Estudo tipos de formulaŕios html</title>
+	<!-- Folha de estilo CSS -->
+	<link rel="stylesheet" type="text/css"  href="form.css" />
+	<!--Script validação dos formulários-->
+	<script type="text/javascript" src="form.js"></script>
+</head>
+
+<body>
+	
+	<!-- Duas Caixas para ressaltar a área de formulários 
+	centralizada -->
+
+<p>Hoje é <script>data_hoje()</script><br></p>
+	
+	<div id="caixa_externa">
+			
+		<h2>Preencha o seguinte Formulário:</h2>
+		
+		<div id="caixa_interna">
+			
+			<form action="http://localhost/form.php" method="GET" onsubmit="return checar()">
+			
+			<!--TEXT-->
+			<div class="linha">
+			<p>
+				
+				Nome: <input type="text" name="nome" id="n"><br><br>
+				Cidade: <input type="text" name="cidade" id="c">
+				
+			</p>
+			</div>
+			
+			<!--SELECT-->
+			<div class="linha">
+			<p>
+				
+				Nacionalidade:
+				<select name="nacionalidade" id="nacionalidade">
+					<option value="brasileiro">Brasileiro</option>
+					<option value="americano">Americano (USA)</option>
+					<option value="espanhol">Espanhol</option>
+				</select>
+			</p>
+			</div>
+			
+			<!-- RADIO -->
+			<div class="linha">
+			<p> 
+				
+				Sexo:<br>
+				
+				<input type="radio" name="sexo" value="M" checked> Masculino<br>
+				<input type="radio" name="sexo" value="F"> Feminino
+			
+			</p>
+			</div>
+			
+			<!-- NUMBER 
+			<div class="linha">
+			<p>
+				Idade:
+				<input type="number" name="idade" min="18" max="150" id="idade">
+				
+			</p>
+			</div>-->
+			
+			<!-- DATE -->
+			<div class="linha">
+			<p>
+				Data de nascimento:
+				<input type="date" name="data">
+				
+			</p>
+			</div>
+			
+			<!-- TEXTAREA -->
+			<div class="linha">
+			<p>
+				Deixe um comentário:<br><br>
+				<textarea name="coments"></textarea>
+			</p>
+			</div>
+			
+			<!--Botão de envio -->
+			<div class="linha" id="botao">
+			<p>
+				<input type="submit" value="Enviar"/>
+			</p>
+			</div>
+		
+		
+			</form>
+		</div>
+	
+	</div>
+
+
+</body>
+</html>
