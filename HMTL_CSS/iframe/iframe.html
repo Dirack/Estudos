@@ -1,0 +1,115 @@
+<!doctype html>
+<!--
+	Estudo sobre IFRAME - iframe.html
+
+	Objetivo: Exemplificar a utilização do <iframe> em HTML5. E a utilização
+	de Cookies em Javascript.
+
+		-Na primeira parte do estudo construiremos um 'iframe':
+		É um quadro onde é carregado o conteúdo de um outro documento,
+		outra página html. Para exemplificar, carregaremos a página imagens.html 
+		como um 'iframe' nesta página aqui. Manipularemos a exibição da página no
+		'iframe' com botões: Exibiremos imagens do Irock, um bichinho virtual que
+		pode estar em dois estados, sério e feliz.
+
+		-A segunda parte do estudo é a utilização dos Cookies. Irock deve se lembrar 
+		do nome do usuário se este está acessando a página pela segunda vez.
+
+	Programador: Rodolfo A. C. Neves (Dirack) 09/01/2019
+
+-->
+<head>
+<meta charset="utf-8">
+<title>IFRAME - Estudo</title>
+
+<!-- Folha de estilo CSS -->
+<style>
+	#irock{
+		background-color: #eeeeee;
+		text-align: center;
+		margin: 20px 100px 20px 100px;
+		padding: 20px;
+		border: 1px solid black;
+	}
+
+	#botoes {
+		list-style-type: none;
+	}
+
+	#botoes li {
+		display: inline;
+		padding: 40px 0px 0px 0px;
+		border: 1px solid black;
+	}
+
+	#botoes li:hover {
+		background-color: #cccccc;
+	}
+
+	#frame {
+		width:240px;
+		height: 190px;
+		border: none;
+		overflow: hidden;
+	}
+
+	#frame::-webkit-scrollbar {
+		display: none;
+	}
+</style>
+<script>
+
+	// Ao iniciar a página, pede o nome do usuário e armazena em um cookie
+	// para que o Irock possa se lembrar dele.
+	function nome(){
+		if(document.cookie===""){
+			nome = prompt("Olá, sou o Irock.\n Qual o seu nome?");
+			
+			if(nome){
+				alert("Prazer em conhecer vc, "+nome+"!");
+				expiracao="";
+				document.cookie="nome="+nome+expiracao;
+			}
+		} else {
+			nome=document.cookie.substring(document.cookie.indexOf("=")+1);
+			alert("Bem vindo de volta, "+nome+"!");
+		}
+	}
+
+	// Se o usuário passou o nome, o Irock se lembrará dele consultando o Cookie
+	// Se não, informará que não se lembra
+	function lembra(){
+
+		if(document.cookie===""){
+			alert("Não me lembro de vc!");
+		}
+		else{
+			nome=document.cookie.substring(document.cookie.indexOf("=")+1);
+			alert("Fala, "+nome+"!");
+		}
+
+	}
+</script>
+</head>
+
+<body onload="nome();">
+
+	<!-- IROCK a pedra muda de humor quando aperta o botão -->
+	<div id="irock">
+		<h1>Bem vindo ao estudo sobre IFRAME no HTML5!</h1>
+
+		<p>Basta apertar o botão para mudar o humor do nosso amigo abaixo, o IROCK</p><br>
+
+		<!-- Iframe da página imagens.html a ser carregado aqui! -->
+		<iframe src="imagens.html#img2" name="janela" id="frame"></iframe><br>
+
+		<!-- Botões para ativar funcionalidades do IROCK -->
+		<ul id="botoes">
+			<li><a href="imagens.html#img2" target="janela"><img src="feliz.png"></a></li>
+			<li><a href="imagens.html#img1" target="janela"><img src="serio.png"></a></li>
+			<li onclick="lembra();"><img src="lembra.png"></li>
+		</ul>
+
+	</div>
+</body>
+</html>
