@@ -1,0 +1,116 @@
+<!doctype html>
+<!--
+	Estudo sobre Cookies em JS - cookie.html
+
+	Objetivo: Estudo sobre a utilização  de Cookies em Javascript.
+	Criar 4 funções de manipulação de Cookies em JS:
+
+		-showCookie, mostra todos os cookies cadastrados
+		-writeCookie, escrever um cookie
+		-getCookie, obter um cookie específico
+		-eraseCookie, apagar um cookie
+	
+	Estas funções serão manipuladas por botões nesta mesma página html.
+
+	Programador: Rodolfo A. C. Neves (Dirack) 09/01/2019
+
+-->
+<head>
+<meta charset="utf-8">
+<title>Cookies em JS - Estudo</title>
+
+<!-- Folha de estilo CSS -->
+<style>
+	#botoes {
+		list-style-type: none;
+	}
+
+	#botoes li {
+		display: inline;
+		padding: 10px 0px 0px 0px;
+		border: 1px solid black;
+		background-color: #000000;
+		color: #ffffff;
+		border-radius: 5px;
+	}
+
+	#botoes li:hover {
+		background-color: #bbbbbb;
+		color: #000000;
+	}
+</style>
+<script>
+
+	//Show mostrar todos os cookies cadastrados
+	function showCookie(){
+		
+		if(document.cookie===""){
+			
+			alert("Nenhum cookie cadastrado!");
+
+		} else {
+			alert(document.cookie);
+		}
+
+	}
+
+	// Escrever um cookie
+	function writeCookie(){
+		nome=prompt("Qual o nome do cookie?");
+		valor=prompt("Qual o valor do cookie?");
+		expiracao=""; //Todos os cookies desta página são temporários
+		document.cookie=nome+"="+valor+";";
+	}
+
+	// Obter o valor de um cookie específico, pesquisar
+	function getCookie(){
+
+		nome=prompt("Nome do cookie a ser pesquisado: ");
+		cookies=document.cookie.split(';');
+	
+		for(i=0; i<cookies.length; i++){
+			c = cookies[i].split('=');
+			
+			if(c[0]===nome){
+				alert(c[0]+"="+c[1]);
+				return 0;
+			}
+		}
+		
+		alert("Cookie não encontrado!");
+	}
+
+	// Apagar cookie: Basta gravar sem nenhum valor 
+	//e com data de validade expirada (-1 dia)
+	function eraseCookie(){
+		nome=prompt("Qual o nome do cookie a ser apagado?");
+		date = new Date();
+		date.setTime(date.getTime()+(-1*24*60*1000));
+		document.cookie = nome+"=;"+"expires="+date.toGMTString()+";";
+	}
+
+
+</script>
+</head>
+
+<body>
+
+	<!-- Manipule os cookies nesta página com os botões que ativam funções
+	     de manipulação de cookies em JavaScript
+	 -->
+	<div id="prompt">
+		<h1>Estudo sobre Cookie em JS</h1>
+
+		<p>Utilize os botões abaixo para manipular os cookies nessa página:</p><br>
+
+		<!-- Botões para manipular Cookies -->
+		<ul id="botoes">
+			<li onclick="showCookie();">SHOW</li>
+			<li onclick="getCookie();">GET</li>
+			<li onclick="writeCookie();">WRITE</li>
+			<li onclick="eraseCookie();">ERASE</li>
+		</ul>
+
+	</div>
+</body>
+</html>
