@@ -1,4 +1,4 @@
-# Descritores e formato do comando FORMAT
+# Descritores de formato do comando FORMAT
 
 FORMAT: File descriptors
 
