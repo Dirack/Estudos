@@ -1,12 +1,12 @@
 #!/bin/bash
 #
-# msgbox (Shell Script)
+# menubox (Shell Script)
 #
 # Necessita do programa Dialog (caixas de textos do Shell) instalado:
 #	- Instalação do Dialog:
 #		bash$ sudo apt-get install dialog
 #
-# Objetivo: Estudo sobre a utilização da caixa msgbox do programa Dialog
+# Objetivo: Estudo sobre a utilização da caixa menu do programa Dialog
 # em Shell Script.
 # 
 # Site: http://www.dirackslouge.online
@@ -30,9 +30,9 @@ MENSAGEM_USO="
 $(basename $0) [-h | -v | -m ]
 -h --help Exibe esta mensagem de ajuda e sai
 -v --version Exibe a Versão do programa e sai
--m exibe uma mensagem na tela com caixa msgbox do dialog
+-m exibe um menu na tela com caixa menu do dialog
 Exemplo de uso: 
-	bash$ $0 -m 'mensagem'
+	bash$ $0 -m 
 "
 # Verificar se o usuário forneceu algum parâmetro
 [ -z "$1" ] && {
@@ -54,15 +54,26 @@ case "$1" in
 
 -m) ## Exibir uma mensagem na tela
 
-	# O usuário forneceu uma mensagem?
-	[ -z "$2" ] && {
+	# Opção escolhida pelo usuário é armazenada em OPCAO
+	OPCAO=$(dialog --stdout \
+		--title "Interface amigável" \
+		--menu "Opções" 0 0 0 \
+		"Opção 1" "Primeira escolha" \
+		"Opção 2" "segunda escolha")
 
-		echo "Usuário não forneceu a mensagem!"
-		echo "Digite $0 -h para obter ajuda"
-		exit 2
+	# Se o usuário não escolheu nenhuma opção
+	# $? será diferente de 0, saia
+	[ $? -ne 0 ] && {
+	
+		# Informe ao usuário que NENHUMA opção foi escolhida
+		dialog --msgbox "Você não escolheu nenhuma opção, programa encerrado." 0 0
+		
+		exit 1
+	
 	}
 
-	dialog --msgbox "Mensagem: $2" 5 40
+	# Informe ao usuário qual opção foi escolhida
+	dialog --msgbox "Você escolheu: $OPCAO" 0 0
 
 	exit 0
 
