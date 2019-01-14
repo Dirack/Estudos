@@ -1,0 +1,76 @@
+#!/bin/bash
+#
+# msgbox.sh (Shell Script)
+#
+# Necessita do programa Dialog (caixas de textos do Shell) instalado:
+#	- Instalação do Dialog:
+#		bash$ sudo apt-get install dialog
+#
+# Objetivo: Estudo sobre a utilização da caixa msgbox do programa Dialog
+# em Shell Script.
+# 
+# Site: http://www.dirackslouge.online
+#
+# Versão 1.0
+#
+# Programador: Rodolfo A. C. Neves 14/01/2019
+# 
+# email: rodolfo_profissional@hotmail.com
+# 
+# Licença: Software de uso livre e código aberto.
+
+#----------------{ Configuração de variáveis }-----------------------------#
+
+# Versão deste programa
+VERSAO="Versão 1.0"
+
+#--------------------------------------------------------------------------#
+
+MENSAGEM_USO="
+$(basename $0) [-h | -v | -m ]
+-h --help Exibe esta mensagem de ajuda e sai
+-v --version Exibe a Versão do programa e sai
+-m exibe uma mensagem na tela com caixa msgbox do dialog
+Exemplo de uso: 
+	bash$ $0 -m 'mensagem'
+"
+# Verificar se o usuário forneceu algum parâmetro
+[ -z "$1" ] && {
+	echo "O usuário não forneceu nenhum parâmetro!" 
+	echo "Digite $0 -h para obter ajuda!" 
+	exit 1 
+}
+
+case "$1" in
+-h | --help) ## Exibir ajuda
+	echo -e "$MENSAGEM_USO"
+	exit 0
+;;
+
+-v | --version) ## Exibir versão
+	echo "$VERSAO"
+	exit 0
+;;
+
+-m) ## Exibir uma mensagem na tela
+
+	# O usuário forneceu uma mensagem?
+	[ -z "$2" ] && {
+
+		echo "Usuário não forneceu a mensagem!"
+		echo "Digite $0 -h para obter ajuda"
+		exit 2
+	}
+
+	dialog --msgbox "Mensagem: $2" 5 40
+
+	exit 0
+
+;;
+
+*) ## Usuário forneceu parâmetro desconhecido
+	echo -e "\033[31mERRO: Opção $1 desconhecida!\033[m"
+	echo "\033[31mDigite $0 -h para obter ajuda\033[m"
+	exit 3
+;;
+esac
