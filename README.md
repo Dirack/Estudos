@@ -3,6 +3,7 @@ Backup da tese de doutorado em LATEX: Projeto de tese a ser entregue até 15/02/
 
 
 - [x] Título
+- [ ] Introdução
 - [ ] Objetivos
 - [ ] Justificativa do problema
 - [ ] Estado do problema: Quem desenvolveu o método, quais foram as melhorias desenolvidas, quais os desafios atuais.
