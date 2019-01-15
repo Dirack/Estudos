@@ -171,7 +171,7 @@
   Instituto de Geociências
   \par
   Programa de Pós-Graduação em Geofísica}
-\titulo{INTERPOLAÇÃO DE DADOS SÍSMICOS UTILIZANDO AS APROXIMAÇÕES DE TEMPO DE TRÂNSITO CRS PADÉ}
+\titulo{APROXIMAÇÕES DE PADÉ PARA O CRS ZERO OFFSET}
 
 \autor{Rodolfo André Cardoso Neves}
 \local{Belém-Pará}
@@ -276,7 +276,7 @@ do Pará, em cumprimento às exigências para obtenção do grau de Doutor em Ge
 \begin{capa}%
 	\begin{figure}[!t]
 		\begin{center}
-			\includegraphics[scale=0.3]{images/Logo_UFPA2.pdf}
+			\includegraphics[scale=0.3]{Logo_UFPA2.pdf}
 		\end{center} 
 	\end{figure}
 			\begin{center}
