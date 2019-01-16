@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!--
+	php2xml.html (HTML)	
+
+	Objetivo: Estudo sobre como gerar arquivo XML a partir de um script PHP.
+	Esta é uma página com um formulário que fornece dados para o script em PHP.
+
+	Tarefas:
+
+		-O formulário desta página recebe o comentário informado pelo usuário.
+
+		-O script php2xml.js valida os dados e verifica se todas as informações
+		foram preenchidas.
+
+		-O script php2xml.php registra as informações em um arquivo XML (comentarios.xml).
+
+	Email: rodolfo_profissional@hotmail.com
+	
+	Programador: Rodolfo A. C. Neves 16/01/2019
+
+-->
+<meta charset="utf-8">
+<head>
+	<title>Estudo tipos de formulaŕios html</title>
+	<!-- Folha de estilo CSS -->
+	<link rel="stylesheet" type="text/css"  href="php2xml.css" />
+	<!--Script validação dos formulários-->
+	<script type="text/javascript" src="php2xml.js"></script>
+</head>
+
+<body>
+	
+	<!-- Duas Caixas para ressaltar a área de formulários 
+	centralizada -->
+
+<p>Hoje é <script>data_hoje()</script><br></p>
+	
+	<div id="caixa_externa">
+			
+		<h2>Preencha o seguinte Formulário:</h2>
+		
+		<div id="caixa_interna">
+			
+			<form action="http://localhost/php2xml.php" method="GET" onsubmit="return checar()">
+			
+			<!--TEXT-->
+			<div class="linha">
+			<p>
+				
+				Nome: <input type="text" name="nome" id="n"><br><br>
+				Cidade: <input type="text" name="cidade" id="c">
+				
+			</p>
+			</div>
+			
+			<!--SELECT-->
+			<div class="linha">
+			<p>
+				
+				Nacionalidade:
+				<select name="nacionalidade" id="nacionalidade">
+					<option value="brasileiro">Brasileiro</option>
+					<option value="americano">Americano (USA)</option>
+					<option value="espanhol">Espanhol</option>
+				</select>
+			</p>
+			</div>
+			
+			<!-- RADIO -->
+			<div class="linha">
+			<p> 
+				
+				Sexo:<br>
+				
+				<input type="radio" name="sexo" value="M" checked> Masculino<br>
+				<input type="radio" name="sexo" value="F"> Feminino
+			
+			</p>
+			</div>
+			
+			<!-- NUMBER 
+			<div class="linha">
+			<p>
+				Idade:
+				<input type="number" name="idade" min="18" max="150" id="idade">
+				
+			</p>
+			</div>-->
+			
+			<!-- DATE -->
+			<div class="linha">
+			<p>
+				Data de nascimento:
+				<input type="date" name="data">
+				
+			</p>
+			</div>
+			
+			<!-- TEXTAREA -->
+			<div class="linha">
+			<p>
+				Deixe um comentário:<br><br>
+				<textarea name="coments"></textarea>
+			</p>
+			</div>
+			
+			<!--Botão de envio -->
+			<div class="linha" id="botao">
+			<p>
+				<input type="submit" value="Enviar"/>
+			</p>
+			</div>
+		
+		
+			</form>
+		</div>
+	
+	</div>
+
+
+</body>
+</html>
