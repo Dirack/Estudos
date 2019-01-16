@@ -1,0 +1,1 @@
+Novo texto, obtido a partir da solicitação AJAX!!!

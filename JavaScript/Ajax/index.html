@@ -1,0 +1,42 @@
+<!doctype html>
+<!--
+	index.html (Estudo sobre AJAX)
+
+	Objetivo: Estudo sobre solicitação AJAX em JavaScript.
+	Ao clicar no botão nesta página, a solicitação Ajax é
+	enviada e o texto do parágrafo é modificado para o texto
+	do arquivo ajax.txt
+
+	Email: rodolfo_profissional@hotmail.com
+
+	Programador: Rodolfo A. C. Neves 16/01/2019
+-->
+<head>
+	<meta charset="utf-8">
+	<title>Estudo sobre AJAX</title>
+	
+	<link rel="stylesheet" href="ajax.css" type="text/css">
+
+	<script type="text/javascript" src="ajax.js"></script>
+</head>
+
+<body>
+
+	<div id="area">
+
+		<h3>Estudo sobre solicitação AJAX em JavaScript</h3><br>
+
+		<p>Clique no Botão para modificar o texto abaixo:</p><br>
+
+		<!-- Botão para fazer a solicitação AJAX e mudar texto do parágrafo -->
+		<ul>
+			<li id="botao" onclick="ajax();">Botão</li>
+		</ul>
+
+		<!-- Resultado da solicitação AJAX é exibido aqui -->
+		<p id="retorno">O texto será modificado aqui!</p>
+
+	</div>
+
+</body>
+</html>

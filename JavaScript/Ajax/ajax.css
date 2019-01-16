@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+
+
+#area {
+	margin: 100px 200px 0px 200px;
+	padding: 20px;
+	border: 1px dotted black;
+	text-align: center;
+}
+
+#botao {
+
+	list-style-type: none;
+	display: inline;
+	background-color: #000000;
+	color: #ffffff;
+	padding: 10px 0px 0px 0px;
+	margin: 0px;
+	border-radius: 5px;
+	border: 1px solid black;
+
+}
+
+#botao:hover{
+	color: #000000;
+	background-color: #ffffff;
+}
