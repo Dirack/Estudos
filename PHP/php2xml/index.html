@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+	index.html (HTML)	
+
+	Objetivo: Segunda parte do estudo sobre como gerar arquivo XML a partir de um script PHP.
+	Esta é uma página exibe os comentários já cadastrados e encaminha para a página php2xml.html
+	onde um novo comentário pode ser cadastrado.
+
+	Tarefas Novas:
+
+		-Exibir os comentarios cadastrados nesta página, utilizando Ajax no JavaScript.
+
+		-Encaminhar (com um link) para a página php2xml.html para registrar novo comentário.
+
+	Tarefas (Anteriores):
+
+		-O formulário desta página recebe o comentário informado pelo usuário.
+
+		-O script php2xml.js valida os dados e verifica se todas as informações
+		foram preenchidas.
+
+		-O script php2xml.php registra as informações em um arquivo XML (comentarios.xml).
+
+	Email: rodolfo_profissional@hotmail.com
+	
+	Programador: Rodolfo A. C. Neves 16/01/2019
+
+-->
+<meta charset="utf-8">
+<head>
+	<title>Estudo gerar XML com PHP</title>
+	<!-- Folha de estilo CSS -->
+	<link rel="stylesheet" type="text/css"  href="php2xml.css" />
+
+	<!--Script validação dos formulários-->
+	<script type="text/javascript" src="php2xml.js"></script>
+
+	
+	<!--Script exibição comentários (solicitação AJAX)-->
+	<script type="text/javascript" src="ajax.js"></script>
+</head>
+
+<body onload="ajax();">
+	
+	<!-- Duas Caixas para ressaltar a área de formulários 
+	centralizada -->
+	<div id="caixa_externa">
+			
+		<h2>Comentários:</h2>
+		
+		<div id="caixa_interna">
+
+			<div id="coments"></div>
+			
+			
+		</div>
+	
+	</div>
+
+
+</body>
+</html>

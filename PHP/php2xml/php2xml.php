@@ -11,7 +11,7 @@
 -->
 <meta charset="utf-8">
 <head>
-	<title>Estudo tipos de formulaŕios html</title>
+	<title>Estudo gerar XML com PHP</title>
 	<!-- Folha de estilo CSS -->
 	<style type="text/css">
 		body{
