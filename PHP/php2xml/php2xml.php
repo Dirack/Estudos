@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <!--
 	php2xml.php (PHP)	
-
 	Objetivo: Estudo sobre como gerar arquivo XML a partir de um script PHP.
 	Salva um novo comentário em comentarios.xml
-
 	Email: rodolfo_profissional@hotmail.com
 	
 	Programador: Rodolfo A. C. Neves 16/01/2019
 -->
 <meta charset="utf-8">
 <head>
-	<title>Estudo gerar XML com PHP</title>
+	<title>Estudo tipos de formulaŕios html</title>
 	<!-- Folha de estilo CSS -->
 	<style type="text/css">
 		body{
@@ -31,10 +29,9 @@
 		<div id="caixa_interna">
 
 			<?php
-
 			header('Content-Type: text/html; charset=utf-8');
 
-			# Acesse as informações do usuário pelo método GET
+			// Acesse as informações do usuário pelo método GET
 			$nome = $_GET["nome"];
 			$cidade = $_GET["cidade"];
 			$nacionalidade = $_GET["nacionalidade"];
@@ -51,29 +48,37 @@
 				Comentário = $coments<br>
 				";
 
-			// Receberá todos os dados do XML
-			$xml = '<?xml version="1.0" encoding="ISO-8859-1"?>';
+			// Separe o conteúdo dos comentários antigos na variável c
+			$conteudo = file_get_contents("comentarios.xml");
+			$b = explode('<entradas>',$conteudo);
+			$c = explode('</entradas>',$b[1]);
+	
+			// xml receberá o comentário novo
+			$xml = '<?xml version="1.0" encoding="UTF-8"?>';
 
-			// A raiz do meu documento XML
+			// A tag <entradas> marca o começo e o fim do arquivo XML
 			$xml .= '<entradas>';
 
 			// Os valores fornecidos pelo usuário através do formulário
-			$xml .= "<nome> $nome </nome>";
-
+			// para o comentário novo
+			$xml .= "<entrada><nome> $nome </nome>";
 			$xml .= "<cidade> $cidade </cidade>";
-
 			$xml .= "<data>$data<data>";
+			$xml .= "<coment>$coments</coment></entrada>";
 
-			$xml .= "<coment>$coments</coment>";
+			// Adicione os comentários antigos aos novos
+			$xml .= $c[0];
 
-			// Fechamento da raiz
+			// Fechamento da tag <entradas> marca o fim do arquivo
 			$xml .= '</entradas>';
 
-			// Escreve no final do arquivo
+			//Apaga a versão antiga do arquivo e cria uma nova
+			unlink("comentarios.xml");
+
+			// Escreve nova versão do arquivo xml
 			$fp = fopen('comentarios.xml', 'a+');
 			fwrite($fp, $xml);
 			fclose($fp);
-
 			?>
 
 		</div>
