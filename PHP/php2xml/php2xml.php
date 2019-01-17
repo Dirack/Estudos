@@ -63,8 +63,10 @@
 			// para o comentário novo
 			$xml .= "<entrada><nome> $nome </nome>";
 			$xml .= "<cidade> $cidade </cidade>";
-			$xml .= "<data>$data<data>";
-			$xml .= "<coment>$coments</coment></entrada>";
+			$xml .= "<nacionalidade> $nacionalidade </nacionalidade>";
+			$xml .= "<sexo> $sexo </sexo>";
+			$xml .= "<data>$data</data>";
+			$xml .= "<comentario>$coments</comentario></entrada>";
 
 			// Adicione os comentários antigos aos novos
 			$xml .= $c[0];
