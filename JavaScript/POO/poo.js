@@ -16,18 +16,50 @@ window.onload = showBlog;
 
 // Construtor do Objeto Blog
 function Blog(data,texto){
-	this.data=data;
-	this.texto=texto;
+
+	/* Propriedades
+		Acrescentar propriedades a um objeto
+		se faz através do operador this, como
+		no exemplo:
+		this.propriedade=valor;
+	*/
+	this.data=data; // Data da entrada no Blog
+	this.texto=texto; // Texto da entrada
+
+	/* Métodos	
+		Acrescentar métodos ao objeto Blog 
+		Quando se acrescenta métodos a um objeto
+		se faz através de literais de função: 
+		this.nomeDaFuncao = function(){código};
+	*/
+	//Converter a data para string no formato DD/MM/AAAA
+	this.formata = function(){
+		
+		// Utilizo o operador ternário para obter o dia e o mês
+		// pois getDate e getMonth fornecem o número do dia e do 
+		// mês com apenas 1 algarismo quando o dia ou mês é menor 
+		// que 10.
+		// Sintaxe: (condition) ? expr1 : expr2 
+		dia = this.data.getDate().toString();
+		dia = (dia.length==1)?"0"+dia:dia;
+		mes = this.data.getMonth().toString();
+		mes = (mes.length==1)?"0"+mes:mes;
+
+		return dia+"/"+mes+"/"+this.data.getFullYear();
+	};
+
 }
 
 // Entradas do blog armazenas no array blog[] que é um array de objetos do tipo Blog(data,texto)
+// Agora a data é um objeto do tipo Date, não uma string! A conversão de Date para string será feita
+// pelo método toString() do objeto blog. O objeto Date lê as datas no formato AAAA/MM/DD
 var blog = [ 
-	new Blog("01/04/2019","Hoje é o dia da mentira, eu contei vc caiu! Na verdade hoje é primeiro de abril..."),
-	new Blog("25/12/2018","Então é Natal, a festa cristã..."),
-	new Blog("10/11/2018","Texto aleatório só p exemplo"),	
-	new Blog("15/10/2018","Oi, tudo blz?"),	
-	new Blog("02/07/2018","Esse é um estudo sobre POO em Javascript"),	
-	new Blog("05/12/2017","Programação em JavaScript é muito legal!")			
+new Blog(new Date("2019/04/01"),"Hoje é o dia da mentira, eu contei vc caiu! Na verdade hoje é primeiro de abril..."),
+new Blog(new Date("2018/12/25"),"Então é Natal, a festa cristã..."),
+new Blog(new Date("2018/11/10"),"Texto aleatório só p exemplo"),	
+new Blog(new Date("2018/10/15"),"Oi, tudo blz?"),	
+new Blog(new Date("2018/07/02"),"Esse é um estudo sobre POO em Javascript"),	
+new Blog(new Date("2017/12/05"),"Programação em JavaScript é muito legal!")			
 ];
 
 // Função para mostrar as entradas do blog
@@ -50,8 +82,8 @@ function showBlog(){
 		}
 
 		// Código HTML formatado: 
-		// Formata a entrada para ser exibida na página
-		txt += '<strong>'+blog[i].data+'</strong><br>';
+		// Com o método toString() formate a data para ser exibida na página
+		txt += '<strong>'+blog[i].formata()+'</strong><br>';
 		txt += blog[i].texto+'</p>';
 	}
 
