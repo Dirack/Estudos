@@ -25,7 +25,10 @@ function Blog(data,texto){
 	*/
 	this.data=data; // Data da entrada no Blog
 	this.texto=texto; // Texto da entrada
+}
 
+
+/* Os métodos agora métodos de classe, compartilhados pelas instâncias do tipo Blog */
 	/* Métodos	
 		Acrescentar métodos ao objeto Blog 
 		Quando se acrescenta métodos a um objeto
@@ -33,7 +36,7 @@ function Blog(data,texto){
 		this.nomeDaFuncao = function(){código};
 	*/
 	//Converter a data para string no formato DD/MM/AAAA
-	this.formataData = function(){
+Blog.prototype.formataData = function(){
 		
 		// Utilizo o operador ternário para obter o dia e o mês
 		// pois getDate e getMonth fornecem o número do dia e do 
@@ -48,9 +51,9 @@ function Blog(data,texto){
 		mes = (mes.length==1)?"0"+mes:mes;
 
 		return dia+"/"+mes+"/"+this.data.getFullYear();
-	};
+};
 
-	this.formataTexto = function(cor){
+Blog.prototype.formataTexto = function(cor){
 
 		// Gerar layout cor sim cor não
 		// Uma entrada terá fundo preto com letras brancas
@@ -71,13 +74,13 @@ function Blog(data,texto){
 
 	// Pesquisar uma entrada específica no Blog
 	// e retorná-la em uma caixa de alerta
-	this.pesquisa = function(txt){
+Blog.prototype.pesquisa = function(txt){
 
 		// retorne true se txt contém a string pesquisada
 		return (this.texto.toLowerCase().indexOf(txt.toLowerCase()) != -1);
 
-	};
-}
+};
+
 
 // Entradas do blog armazenas no array blog[] que é um array de objetos do tipo Blog(data,texto)
 // Agora a data é um objeto do tipo Date, não uma string! A conversão de Date para string será feita
