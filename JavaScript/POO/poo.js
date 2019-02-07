@@ -68,6 +68,15 @@ function Blog(data,texto){
 		txt += '<strong>'+this.formataData()+'</strong><br>';
 		txt += this.texto+'</p>';
 	};
+
+	// Pesquisar uma entrada específica no Blog
+	// e retorná-la em uma caixa de alerta
+	this.pesquisa = function(txt){
+
+		// retorne true se txt contém a string pesquisada
+		return (this.texto.toLowerCase().indexOf(txt.toLowerCase()) != -1);
+
+	};
 }
 
 // Entradas do blog armazenas no array blog[] que é um array de objetos do tipo Blog(data,texto)
@@ -99,4 +108,23 @@ function showBlog(){
 
 	//substitua o conteúdo da div id=blog pelo texto formatado na variável 'txt'
 	document.getElementById("blog").innerHTML = txt;	
+}
+
+/* Pesquisar uma entrada no blog*/
+function botaoPesquisa(){
+	
+	for (i=0; i<blog.length;i++){
+
+		txt = document.getElementById("pesquisa").value;
+
+		if(blog[i].pesquisa(txt)){
+			alert(blog[i].formataData()+"\n"+blog[i].texto);
+			break;
+		}
+	}
+
+	if (i == blog.length){
+		alert("Pesquisa não retornou nenhum resultado");
+	}
+
 }
