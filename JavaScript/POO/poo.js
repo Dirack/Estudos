@@ -33,7 +33,7 @@ function Blog(data,texto){
 		this.nomeDaFuncao = function(){código};
 	*/
 	//Converter a data para string no formato DD/MM/AAAA
-	this.formata = function(){
+	this.formataData = function(){
 		
 		// Utilizo o operador ternário para obter o dia e o mês
 		// pois getDate e getMonth fornecem o número do dia e do 
@@ -42,12 +42,32 @@ function Blog(data,texto){
 		// Sintaxe: (condition) ? expr1 : expr2 
 		dia = this.data.getDate().toString();
 		dia = (dia.length==1)?"0"+dia:dia;
-		mes = this.data.getMonth().toString();
+
+		// o mês vai de 0 a 11 por isso soma 1
+		mes = (this.data.getMonth()+1).toString();
 		mes = (mes.length==1)?"0"+mes:mes;
 
 		return dia+"/"+mes+"/"+this.data.getFullYear();
 	};
 
+	this.formataTexto = function(cor){
+
+		// Gerar layout cor sim cor não
+		// Uma entrada terá fundo preto com letras brancas
+		// a outra entrada terá fundo branco com letras pretas
+		// a depender da variável 'cor' do tipo booleano
+		if (cor == 0){
+
+			txt += 	'<p style="background-color:#000000; color:#ffffff">';
+		}else{
+			txt += 	'<p>';
+		}
+
+		// Código HTML formatado: 
+		// Com o método toString() formate a data para ser exibida na página
+		txt += '<strong>'+this.formataData()+'</strong><br>';
+		txt += this.texto+'</p>';
+	};
 }
 
 // Entradas do blog armazenas no array blog[] que é um array de objetos do tipo Blog(data,texto)
@@ -70,21 +90,11 @@ function showBlog(){
 
 	// Varre todas as entradas do blog
 	for (i=0; i<blog.length;i++){
+	
+		// Chama formataTexto() que já deixa a
+		// entrada do blog no formato correto
+		blog[i].formataTexto(i%2==0);
 
-		// Gerar layout cor sim cor não
-		// Uma entrada terá fundo preto com letras brancas
-		// a outra entrada terá fundo branco com letras pretas
-		if (i%2 == 0){
-
-			txt += 	'<p style="background-color:#000000; color:#ffffff">';
-		}else{
-			txt += 	'<p>';
-		}
-
-		// Código HTML formatado: 
-		// Com o método toString() formate a data para ser exibida na página
-		txt += '<strong>'+blog[i].formata()+'</strong><br>';
-		txt += blog[i].texto+'</p>';
 	}
 
 	//substitua o conteúdo da div id=blog pelo texto formatado na variável 'txt'
