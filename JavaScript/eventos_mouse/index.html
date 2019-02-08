@@ -1,0 +1,32 @@
+<!doctype html>
+<!--
+	index.html (HTML) - Estudo sobre eventos do mouse em JS
+	
+	Objetivo: Ilustrar a utilização dos eventos do mouse em JavaScript.
+	Esta página exibe ua série de botões com múltiplos eventos do mouse
+	para serem manipulados. A saída destes botões é exibida no console do
+	navegador.
+
+	Email: rodolfo_profissional@hotmail.com
+
+	Programador: Rodolfo A. C. Neves (Dirack) 08/02/2019
+-->
+<head>
+	<meta charset="utf-8">
+	<title>Estudo eventos JS</title>
+	<script type="text/javascript" src="eventos_mouse.js"></script>
+
+</head>
+
+<body>
+
+	<!-- Botões para acionar eventos do mouse -->
+
+	<button onmousedown="apertouMouse();" onmouseup="soltouMouse();">onMouseDownUp</button><br>
+	<button onmouseover="mouseEmCima();" onmouseout="mouseSaiuCima();">onMouseOverOut</button><br>
+	<button onmousemove="mouseMoveCima();">onMouseMove</button><br>
+	<button oncontextmenu="return mouseBotaoDireito();">onContextMenu</button><br>
+	<button ondblclick="duploClique();">onDblClick</button>
+
+</body>
+</html>
