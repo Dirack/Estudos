@@ -1,0 +1,43 @@
+<!doctype html>
+<!--
+	eventos_teclado.html (HTML) - Estudo sobre eventos do teclado em JS
+
+	Objetivo: Exemplificar os eventos do teclado em JavaScript. Aula do
+	curso PHP do zero ao profissional.
+
+	Programador: Rodolfo A. C. Neves (Dirack) 08/02/2019
+
+	Email: rodolfo_profissional@hotmail.com
+-->
+
+<head>
+
+	<meta charset="utf-8">
+	<title>Estudo: Eventos do teclado em JS</title>
+	<script type="text/javascript" src="eventos_teclado.js"></script>
+
+</head>
+
+<body>
+
+	<!-- Caixas de texto para testar os eventos do teclado -->
+	<!-- A saída será dada no console do navegador -->
+
+	<h4>onkeydown</h4>
+	<!-- onkeydown: Tecla é apertada, a tecla é passada pela variável 'event' -->
+	<input type="text" onkeydown="apertouTecla(event);"><br>
+
+	<h4>onkeyup</h4>
+	<!-- onkeyup: Tecla é apertada e soltada em seguida -->
+	<input type="text" onkeyup="soltouTecla(event);"><br>
+
+	<h4>onkeypress</h4>
+	<!-- onkeypress: Tecla é pressionada, é o meio termo entre os dois anteriores -->
+	<input type="text" onkeypress="pressTecla(event);"><br>
+
+	<h4>verificar shift + E</h4>
+	<!-- Verificar se o usuário apertou shift + E -->
+	<input type="text" onkeydown="apertoushiftE(event);"><br>
+
+</body>
+</html>
