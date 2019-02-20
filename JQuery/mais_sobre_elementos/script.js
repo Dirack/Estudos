@@ -33,6 +33,15 @@ $('document').ready(function(){
 	// Insere conteúdo HTML como primeiro nó filho
 	$('ul').prepend('<li>Item adicionado no começo com JQuery</li>');
 
+	// Selecionar o primeiro elemento da lista
+	$('li').eq(0)
+
+	// Adicionar à variavel
+	elementoLista = $('li').eq(1);
+
+	// Mudar elemento
+	elementoLista.html("Segundo elemento");
+
 	// Remover elemento do HTML TODO: Descomentar!!!
 	//$('input').remove();
 
