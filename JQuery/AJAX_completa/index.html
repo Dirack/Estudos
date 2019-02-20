@@ -1,0 +1,67 @@
+<!doctype html>
+<!--
+	index.html (HTML)
+	
+	Objetivo: Estudo sobre solicitação AJAX completa.
+	Dois números serão enviados por uma solicitação AJAX para
+	serem somados em um script PHP.
+	A resposta será retornada à página HTML.
+
+	*A solicitação AJAX pelo JQuery utiliza um arquivo no formato JSON.
+	
+	Versão 1.0
+	
+	Site: http://www.dirackslounge.online
+	
+	Programador: Rodolfo A. C. Neves (Dirack) 20/02/2019
+	
+	Email: rodolfo_profissional@hotmail.com
+	
+	Licença: Software de uso livre e código aberto.
+-->
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css" rel="stylesheet">
+	#carregadaAjax{
+		background-color:#eeeeee;
+		border: 1px solid black;
+		min-width: 500px;
+		min-height: 500px;
+	}
+
+	</style>
+
+	<!-- JQuery -->
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	
+	<!-- script com solicitação AJAX JQuery -->
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+
+	<!-- Os elementos a serem manipulados pelo JQuery -->
+	<div id="teste">
+
+		<!-- Formulário números a serem somados -->
+		<form method="POST" id="form">
+			Número 1:<br>
+			<input type="text" name="n1"><br>
+
+			Número 2:<br>
+			<input type="text" name="n2"><br>
+
+			<input type="submit" value="Somar"><br>
+
+		</form>
+
+		<!-- Resposta a ser carregada com uma solicitação AJAX -->
+		<div id="respostaAjax">
+
+		</div>
+
+	</div>
+
+
+</body>
+</html>
