@@ -1,0 +1,63 @@
+<!doctype html>
+<!--
+	index.html (HTML)
+	
+	Objetivo: Estudo sobre login a partir de solicitações AJAX com JQuery. 
+	Ao clicar no botão um formulário com logine senha será submetido.
+	
+	Versão 1.0
+	
+	Site: http://www.dirackslounge.online
+	
+	Programador: Rodolfo A. C. Neves (Dirack) 20/02/2019
+	
+	Email: rodolfo_profissional@hotmail.com
+	
+	Licença: Software de uso livre e código aberto.
+-->
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css" rel="stylesheet">
+	#carregadaAjax{
+		background-color:#eeeeee;
+		border: 1px solid black;
+		min-width: 500px;
+		min-height: 500px;
+	}
+
+	</style>
+
+	<!-- JQuery -->
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	
+	<!-- script com solicitação AJAX JQuery -->
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+
+	<!-- Os elementos a serem manipulados pelo JQuery -->
+	<div id="teste">
+
+		<!-- Formulário login e senha submetidos com AJAX e JQuery -->
+		<form method="POST" id="form">
+			Login:<br>
+			<input type="text" name="login"><br>
+
+			Senha<br>
+			<input type="password" name="senha"><br>
+
+			<input type="submit" value="Entrar"><br>
+
+		</form>
+
+		<!-- Div a ser carregada com uma solicitação AJAX -->
+		<div id="carregadaAjax">
+
+		</div>
+
+	</div>
+
+
+</body>
+</html>
