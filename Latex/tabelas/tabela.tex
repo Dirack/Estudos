@@ -1,0 +1,103 @@
+% 
+% 	tabela.tex (LATEX)
+% 
+% 	Objetivo: Estudo sobre tabelas em Latex.
+%
+%	Versão 1.0
+% 
+% 	Programador: Rodolfo A. C. Neves (Dirack) 22/02/2019
+% 
+%	Licensa: Software de uso livre e gratuito.
+
+\documentclass[a4paper, 12pt]{article}
+
+% Pacotes fundamentais
+  \usepackage{multirow}
+  \usepackage[top=2cm, bottom=2cm, left=2.5cm, right=2.5cm]{geometry}
+  \usepackage[utf8]{inputenc}
+  \usepackage{amsmath, amsfonts, amssymb}
+  \usepackage{float}
+  \usepackage{graphicx}
+  \usepackage[portuguese]{babel}
+
+\begin{document}
+
+Estudo sobre Tabelas em LATEX
+
+% Tabela do Latex
+%   A estrutura de uma tabela em Latex é cada célula de uma linha é separada por &
+%   E as linhas entre si são separadas por \\ 
+%   Exemplo:
+%   
+%     1 & 2 & 3 \\
+%     4 & 5 & 6 \\
+%     7 & 8 & 9
+
+  \begin{table}[H]
+      \caption{Esta é a legenda de uma tabela simples em Latex.}
+      \centering % centralizar
+      
+      \begin{tabular}{ccc} % 3 colunas centralizadas 
+
+      1 & 2 & 3 \\  								
+      4 & 5 & 6 \\
+      7 & 8 & 9  
+      
+      \end{tabular}
+  \end{table}
+  
+  
+%   Inserir linhas verticais com |c| e horizontais com \hline
+    \begin{table}[H]
+      \caption{Esta é a legenda de uma tabela simples em Latex com linhas verticais e horizontais.}
+      \centering % centralizar
+      
+      \begin{tabular}{|c|c|c|} % 3 colunas centralizadas separadas por linhas verticais
+
+      \hline
+      1 & 2 & 3 \\ \hline  								
+      4 & 5 & 6 \\ \hline
+      7 & 8 & 9  \\ 
+      \hline
+      
+      \end{tabular}
+  \end{table}
+
+% Dá para expandir uma célula com o pacote multirow
+
+  \begin{table}[H]
+      \caption{Esta é a legenda da tabela em que a célula um se expande por duas linhas 
+      utilizando o pacote multirow.}
+      \centering % centralizar
+      
+      \begin{tabular}{|c|c|c|} % 3 colunas centralizadas separadas por linhas verticais
+
+      \hline % Linha horizontal
+      
+      % \cline{i-j} insere uma linha horizontal
+      % entre as colunas i e j
+      % multirow{2}{*}{item 1} expande a célula 1 em duas linhas
+      \multirow{2}{*}{Multirow} & Item 2 & Item 3 \\ \cline{2-3} 								
+      & 1 & 2\\ \hline
+      
+      \end{tabular}
+  \end{table}
+  
+    \begin{table}[H]
+      \caption{Esta é a legenda da tabela em que a célula um se expande por duas colunas 
+      utilizando o pacote multicolumn.}
+      \centering % centralizar
+      
+      \begin{tabular}{|c|c|c|} % 3 colunas centralizadas separadas por linhas verticais
+
+      \hline % Linha horizontal
+      
+      % multicolumn{2}{|c|}{item 1} expande a célula 1 em duas colunas
+      \multicolumn{2}{|c|}{Multicolumn} & 2\\ \hline
+      1 & 2 & 3\\
+      \hline
+      
+      \end{tabular}
+  \end{table}
+
+\end{document}
