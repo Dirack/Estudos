@@ -1,0 +1,51 @@
+<!doctype html>
+<!--
+	index.html (HTML)
+	
+	Objetivo: Estudo sobre armazenar variável em elemento HTML.
+	E verificação de existência de tag.
+	Inserir diretamente na tag HTML com 'data-*', exemplo:
+		data-idade=12
+
+	Ou utilizar o JQuery para inserir na memória. Exemplo:
+	$('#algo').data('idade','12');
+
+	Verificar se a tag existe, utilize sempre teste condicional:
+	if($('#algo').length > 0 ){faz algo};
+	
+	Versão 1.0
+	
+	Site: http://www.dirackslounge.online
+	
+	Programador: Rodolfo A. C. Neves (Dirack) 23/02/2019
+	
+	Email: rodolfo_profissional@hotmail.com
+	
+	Licença: Software de uso livre e código aberto.
+-->
+<head>
+	<meta charset="utf-8">
+	<title>Estudo sobre armazenar variável em elemento HTML</title>
+
+	<!-- JQuery -->
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	
+	<!-- script com JQuery -->
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+
+	<!-- Os elementos a serem manipulados pelo JQuery -->
+	<div id="teste">
+
+		<ul>
+			<li data-idade="12">Usuário 1</li>
+			<li>Usuário 2</li>
+			<li>Usuário 3</li>
+		</ul>
+
+	</div>
+
+
+</body>
+</html>
