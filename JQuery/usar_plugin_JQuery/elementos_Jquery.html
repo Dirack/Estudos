@@ -2,13 +2,13 @@
 <!--
 	elementos_Jquery.html (HTML)
 	
-	Objetivo: Estudo sobre mudar texto e estilo de elementos HTML com JQuery.
+	Objetivo: Estudo sobre como utilizar plugins do JQuery.
 	
 	Versão 1.0
 	
 	Site: http://www.dirackslounge.online
 	
-	Programador: Rodolfo A. C. Neves (Dirack) 17/02/2019
+	Programador: Rodolfo A. C. Neves (Dirack) 25/02/2019
 	
 	Email: rodolfo_profissional@hotmail.com
 	
@@ -16,18 +16,13 @@
 -->
 <head>
 	<meta charset="utf-8">
-	<title>Estudo: Mudar texto de elementos com JQuery.</title>
-
-	<!-- Folha de estilo CSS -->
-	<style type="text/css">
-		.estilo{
-			background-color: #000000;
-		}
-
-	</style>
+	<title>Estudo usar plugins do JQuery</title>
 
 	<!-- JQuery -->
 	<script type="text/javascript" src="../jquery-3.3.1.min.js"></script>
+
+	<!-- Plugin do JQuery -->
+	<script type="text/javascript" src="jquery.mask.js"></script>
 
 	<!-- Script estudo sobre JQuery -->
 	<script type="text/javascript" src="script.js"></script>
@@ -37,11 +32,16 @@
 	<!-- Elementos a serem manipulados pelo JQuery -->
 	<div id="teste">
 
-		<h1>Clique para mudar texto:</h1>
-		<button onclick="mudaTexto();">Botão</button>
+		<h1>Formulário com Plugin do JQuery</h1>
 
-		<p>Texto original</p>
+		Inserir CPF:
+		<input type="text" id="cpf"><br>
 
+		Inserir HORA:
+		<input type="text" id="hora"><br>
+
+		Inserir data:
+		<input type="text" id="data">
 	</div>
 
 </body>
