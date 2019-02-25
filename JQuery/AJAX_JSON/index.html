@@ -1,0 +1,68 @@
+<!doctype html>
+<!--
+	index.html (HTML)
+	
+	Objetivo: Estudo sobre solicitação AJAX com JSON.
+	O estudo original foi modificado para que possa receber
+	um arquivo json como resposta da solicitação AJAX.
+	Dois números serão enviados por uma solicitação AJAX para
+	serem somados em um script PHP.
+	
+	*A solicitação AJAX pelo JQuery utiliza um arquivo no formato JSON.
+	
+	Versão 1.0
+	
+	Site: http://www.dirackslounge.online
+	
+	Programador: Rodolfo A. C. Neves (Dirack) 24/02/2019
+	
+	Email: rodolfo_profissional@hotmail.com
+	
+	Licença: Software de uso livre e código aberto.
+-->
+<head>
+	<meta charset="utf-8">
+	<title>AJAX com JSON</title>
+	<style type="text/css" rel="stylesheet">
+	#carregadaAjax{
+		background-color:#eeeeee;
+		border: 1px solid black;
+		min-width: 500px;
+		min-height: 500px;
+	}
+
+	</style>
+
+	<!-- JQuery -->
+	<script type="text/javascript" src="../jquery-3.3.1.min.js"></script>
+	
+	<!-- script com solicitação AJAX JQuery -->
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+
+	<!-- Os elementos a serem manipulados pelo JQuery -->
+	<div id="teste">
+
+		<!-- Formulário login -->
+		<form method="POST" id="form">
+			Usuário:<br>
+			<input type="text" name="usuário"><br>
+
+			Senha:<br>
+			<input type="password" name="senha"><br>
+
+			<input type="submit" value="Entrar"><br>
+
+		</form>
+
+		<!-- Resposta a ser carregada com uma solicitação AJAX -->
+		<div id="respostaAjax">
+
+		</div>
+
+	</div>
+
+
+</body>
+</html>
