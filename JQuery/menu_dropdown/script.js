@@ -20,12 +20,17 @@ $('document').ready(function(){
 	$('li').hover(function(){
 
 		$(this).find('.submenu').slideDown();
+		$('.submenu').show();
 
 	},
 
 	function(){
 
-		$(this).find('.submenu').slideUp();
+		$(this).find('.submenu').mouseout(function(){
+
+			$('.submenu').slideUp();
+
+		});
 
 	});
 
