@@ -1,0 +1,55 @@
+/*
+	 menu_dropdown.css (CSS)
+	 
+	 Objetivo: Projeto criar menus Dropdown com JQuery.
+	 
+	 VersÃ£o 1.0
+	 
+	 Site: http://www.dirackslounge.online
+	 
+	 Programador: Rodolfo A. C. Neves (Dirack) 28/02/2019
+	 
+	 Email: rodolfo_profissional@hotmail.com
+	 
+	 LicenÃ§a: Software de uso livre e cÃ³digo aberto.
+*/
+
+body{
+	margin: 0px;
+	padding: 0px;
+}
+
+#menu_dropdown{
+	margin: 0px;
+	padding:0px;
+	height: 40px;
+	background-color: #000000;
+	color: #ffffff;
+}
+
+#menu_dropdown ul{
+	list-style-type: none;
+	margin:0px;
+}
+
+#menu_dropdown ul li{
+  display: inline; 
+	margin: 0px 10px 0px 10px;
+	line-height: 40px;
+	cursor: pointer;
+	height: 40px;
+}
+
+#menu{
+	height:40px;
+	display: inline;
+}
+
+.submenu{
+	position:absolute;
+	width:150px;
+	height:120px;
+	border: 1px solid black;
+  background-color: #000000;
+	display: none;s
+}
