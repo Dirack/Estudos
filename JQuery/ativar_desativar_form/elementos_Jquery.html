@@ -1,0 +1,54 @@
+<!doctype html>
+<!--
+	elementos_Jquery.html (HTML)
+	
+	Objetivo: Estudo sobre como ativar/desativar campo de formulário com JQuery.
+	No HTML basta utilizar a propriedade disabled="disabled". A mesma lógica pode
+	ser utilizada com JQuery utilizando $('#idDoElemento').attr('disabled','disabled').
+	
+	Versão 1.0
+	
+	Site: http://www.dirackslounge.online
+	
+	Programador: Rodolfo A. C. Neves (Dirack) 26/02/2019
+	
+	Email: rodolfo_profissional@hotmail.com
+	
+	Licença: Software de uso livre e código aberto.
+-->
+<head>
+	<meta charset="utf-8">
+	<title>Estudo como ativar/desativar formulário com JQuery</title>
+
+	<!-- JQuery -->
+	<script type="text/javascript" src="../jquery-3.3.1.min.js"></script>
+
+	<!-- Script estudo sobre JQuery -->
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+
+	<!-- Elementos a serem manipulados pelo JQuery -->
+	<div id="teste">
+
+		<h1>Formulário com Plugin do JQuery</h1>
+
+		<!-- Este campo será desabilitado com JQuery -->
+		Inserir CPF:
+		<input type="text" id="cpf"><br>
+
+		<!-- Este campo será habilitado com JQuery -->
+		Inserir HORA:
+		<input type="text" id="hora" disabled="disabled"><br>
+
+		<!-- Este campo será selecionado com JQuery -->
+		Selecionar:
+		<input type="checkbox" id="check"><br>
+
+		Inserir data:
+		<input type="text" id="data">
+	</div>
+
+</body>
+</html>
+
