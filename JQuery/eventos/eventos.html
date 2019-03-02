@@ -1,0 +1,107 @@
+<!doctype html>
+<!--
+	eventos.html (HTML)
+	
+	Objetivo: Estudo sobre eventos em JQuery.
+	
+	Versão 1.0
+	
+	Site: http://www.dirackslounge.online
+	
+	Programador: Rodolfo A. C. Neves (Dirack) 02/03/2019
+	
+	Email: rodolfo_profissional@hotmail.com
+	
+	Licença: Software de uso livre e código aberto.
+-->
+<head>
+	<meta charset="utf-8">
+	<title>Estudo sobre eventos em JQuery</title>
+
+	<style type="text/css">
+		.focado{
+			background-color: #000000;
+			color: #ffffff;
+		}
+
+		#eventosMouse{
+			width:200px;
+			height: 200px;
+			position: absolute;
+			top: 50px;
+			right: 500px;
+			border: 1px solid black;
+		}
+
+		.mouse_emcima{
+			background-color: #000000;
+			color: #ffffff;
+		}
+	</style>
+
+	<!-- JQuery -->
+	<script type="text/javascript" src="../jquery-3.3.1.min.js"></script>
+
+	<!-- Script estudo sobre JQuery -->
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+
+	<!-- Elementos a serem manipulados pelo JQuery -->
+	<!-- O JQuery responde a eventos disparados por estes elementos -->
+	<div id="teste">
+
+		<h3>Evento de scroll</h3>
+		<div id="scroll" style="width:100px; height:200px; overflow-y:scroll;">
+		Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, 
+		e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos 
+		e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, 
+		como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. 
+		Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, 
+		e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus
+		PageMaker.
+		
+		</div><br>
+
+		<!-- Eventos de formulário -->
+		<div id="formulario">
+
+			<form>
+				Nome: 
+				<input type="text" id="nome"><br>
+				
+				Email: 
+				<input type="text" id="email"><br>
+
+				<select id="idade">
+					<option>10 anos</option>
+					<option>20 anos</option>
+					<option>30 anos</option>
+				</select><br><br>
+
+				<input type="submit" value="Enviar">
+			</form><br>
+
+		</div>
+
+		<div id="simulaChat">
+
+			<h3> Simular Chat (Mensagem será exibida no console)</h3>
+			<input type="text" id="chat">
+
+		</div>
+
+
+		<div id="eventosMouse">
+
+			<h3> Eventos de Mouse</h3>
+
+		</div>
+
+
+	</div>
+	
+
+</body>
+</html>
+
