@@ -1,0 +1,75 @@
+<!doctype html>
+<!--
+	index.html (HTML)
+	
+	Objetivo: Projeto do curso PHP profissional do básico ao avançado.
+	Jogo da velha.
+
+	Versão 1.0
+	
+	Site: http://www.dirackslounge.online
+	
+	Programador: Rodolfo A. C. Neves (Dirack) 02/03/2019
+	
+	Email: rodolfo_profissional@hotmail.com
+	
+	Licença: Software de uso livre e código aberto.
+-->
+<head>
+	<meta charset="utf-8">
+	<title>Jogo da velha com JQuery</title>
+
+	<style type="text/css">
+		#areaJogo{
+
+			
+			width: 310px;
+			height: 310px;
+			position: fixed;
+			left: 50%;
+			top: 50%;
+			margin-left: -150px;
+			margin-top: -150px;
+
+		}
+
+		.celula{
+			width: 100px;
+			height: 75px;
+			border: 1px solid black;
+			float: left;
+			text-align: center;
+			padding-top: 25px;
+		}
+
+	</style>
+
+	<!-- JQuery -->
+	<script type="text/javascript" src="../jquery-3.3.1.min.js"></script>
+
+	<!-- Script estudo sobre JQuery -->
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body style="text-align:center;">
+
+	<h1>Jogo da Velha</h1><br>
+	<img src="o.jpg" id="placar" width="50px" height="50px">
+
+	<!-- Área do Jogo da velha -->
+	<!-- O atributo data-marcado armazena quem marcou a célula, 'x' ou 'o' -->
+	<div id="areaJogo">
+		<div id="a1" class="celula" data-marcado=""></div>
+		<div id="a2" class="celula" data-marcado=""></div>
+		<div id="a3" class="celula" data-marcado=""></div>
+		<div id="b1" class="celula" data-marcado=""></div>
+		<div id="b2" class="celula" data-marcado=""></div>
+		<div id="b3" class="celula" data-marcado=""></div>
+		<div id="c1" class="celula" data-marcado=""></div>
+		<div id="c2" class="celula" data-marcado=""></div>	
+		<div id="c3" class="celula" data-marcado=""></div>	
+	</div>
+
+
+</body>
+</html>
+
