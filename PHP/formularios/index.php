@@ -24,6 +24,12 @@ if(isset($_POST['email']) && !empty($_POST['email'])){
 	echo "usuário enviou os dados!";
 	echo "meu email: ".$email;
 
+	// Criar registro de email em arquivo txt
+	file_put_contents("./file.txt",$email,FILE_APPEND);
+
+	// Mover para index.php
+	header('Location: index.php');
+
 }
 
 
