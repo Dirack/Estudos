@@ -31,24 +31,44 @@
 		tr =>	td | td | td
 	-->
 
-	<table>
+	<table width="500" border="1" align="center">
 		<caption>Tabela de exemplo</caption>
-		<tr>
+		<tr bgcolor="#999999">
 			<th>Livro</th>
 			<th>Autor</th>
 			<th>Páginas</th>
 		</tr>
 		<tr>
-			<td>Para Além do bem e do mal</td>
+			<td width="300">Para Além do bem e do mal</td>
 			<td>Nietzsche, F.</td>
 			<td>100</td>
 		</tr>
 
 		<tr>
-			<td>Mein Kampf</td>
+			<td bgcolor="#000000" style="color:#ffffff;" align="center">Mein Kampf</td>
 			<td>Hitler, A.</td>
 			<td>200</td>
 		</tr>	
+
+		<!-- Expandir célula por duas colunas -->
+		<tr>
+			<td>Colspan</td>
+			<td colspan="2">teste</td>
+			
+		</tr>	
+
+		<!-- Expandir célula por duas linhas -->
+		<tr>
+			<td rowspan="2">Rowspan</td>
+			<td>teste</td>
+			<td>teste</td>
+			
+		</tr>	
+		<tr>
+			<td>teste</td>
+			<td>teste</td>
+			
+		</tr>
 	</table>
 </body>
 </html>
