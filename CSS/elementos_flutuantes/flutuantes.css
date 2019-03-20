@@ -1,0 +1,56 @@
+/*
+	 flutuantes.css (CSS)
+	 
+	 Objetivo: Estudo sobre elementos flutuantes com CSS.
+	 
+	 Versão 1.0
+	 
+	 Site: http://www.dirackslounge.online
+	 
+	 Programador: Rodolfo A. C. Neves (Dirack) 20/03/2019
+	 
+	 Email: rodolfo_profissional@hotmail.com
+	 
+	 Licença: Software de uso livre e código aberto.
+*/
+
+.texto{
+			width: 200px;
+			height: 200px;
+			background-color: #eeeeee;
+			color: red;
+			font-size: 20px;
+			font-family: Helvetica,Verdana;
+			text-align: center;
+
+			/* underline, overline, line-through */
+			text-decoration: underline overline;
+
+			/* texto caixa alta (uppeercase) caixa baixa (lowercase) */
+			text-transform: uppercase;
+
+			/* Peso da fonte pode ser bold ou normal também */
+			font-weight: 200px; 
+
+			/* Igualar automaticamente as margens direita e esquerda */
+			margin: auto;
+
+			margin-top: 20px;
+			padding-top: 20px;
+
+}
+
+/* Position absolute fica sujeito a barra de rolagem */
+/* Position fixed fica na página independente da rolagem */
+.absoluto{
+	position: absolute;
+	top: 50px;
+	left: 100px;
+}
+
+.fixo{
+	position: fixed;
+	right: 0px;
+	bottom: 0px;
+	border: 1px solid black;
+}

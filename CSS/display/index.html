@@ -1,0 +1,99 @@
+<!doctype html>
+<!--
+	index.html (HTML)
+	
+	Objetivo: Estudo sobre a propriedade display do CSS.
+	
+	Versão 1.0
+	
+	Site: http://www.dirackslounge.online
+	
+	Programador: Rodolfo A. C. Neves (Dirack) 20/03/2019
+	
+	Email: rodolfo_profissional@hotmail.com
+	
+	Licença: Software de uso livre e código aberto.
+-->
+<head>
+	<meta charset="utf-8">
+	<title>Estudo sobre a propriedade display do CSS</title>
+	<style>
+	
+		.texto{
+			width: 200px;
+			height: 200px;
+			background-color: #eeeeee;
+			color: red;
+			font-size: 20px;
+			font-family: Helvetica,Verdana;
+			text-align: center;
+
+			/* underline, overline, line-through */
+			text-decoration: underline overline;
+
+			/* texto caixa alta (uppeercase) caixa baixa (lowercase) */
+			text-transform: uppercase;
+
+			/* Peso da fonte pode ser bold ou normal também */
+			font-weight: 200px; 
+
+			/* Igualar automaticamente as margens direita e esquerda */
+			margin: auto;
+
+			margin-top: 20px;
+			padding-top: 20px;
+			border: 1px solid black;
+		}
+
+		#some{
+			display: none;
+		}
+
+		#bloco{
+			display: block;
+		}
+
+		#linha{
+			display: inline;
+		}
+
+		#linhaBloco{
+			display: inline-block;
+		}
+
+	</style>
+</head>
+<body>
+
+	<!-- div display:none não aparece na página -->
+	<div class="texto" id="some">
+
+		Essa div desaparece!
+
+	</div>
+
+	<!-- div display:block aparece na página como elemento em bloco -->
+	<div class="texto" id="bloco">
+
+		Essa div aparece em bloco!
+
+	</div>
+
+	<!-- div display:inline aparece na página como elemento em linha -->
+	<div class="texto" id="linha">
+
+		Essa div aparece como elemento em linha!
+
+	</div>
+
+	<!-- div display: inline-block aparece na página como elemento em linha mas em bloco -->
+	<div class="texto" id="linhaBloco">
+
+		Essa div aparece como elemento em linha, mas em bloco!
+
+	</div>
+
+
+</body>
+</html>
+
