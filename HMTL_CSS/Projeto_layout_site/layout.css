@@ -1,0 +1,66 @@
+/*
+	 layout.css (CSS)
+	 
+	 Objetivo: Projeto do curso PHP do básico ao avançado. 
+	 Construindo o layout de um site com HTML e CSS.
+	 
+	 Versão 1.0
+	 
+	 Site: http://www.dirackslounge.online
+	 
+	 Programador: Rodolfo A. C. Neves (Dirack) 21/03/2019
+	 
+	 Email: rodolfo_profissional@hotmail.com
+	 
+	 Licença: Software de uso livre e código aberto.
+*/
+
+body{
+	margin: 0px;
+	font-family: arial;
+}
+
+#topo{
+	background-color: #353535;
+	height: 50px;
+
+}
+
+#topoInterior{
+	width:1000px;
+	margin: auto;
+}
+
+#logomarca{
+
+	float: left;
+	color: #ffffff;
+	line-height: 50px;
+	font-size: 24px;
+
+}
+
+#menu{
+
+	float: right;
+	color: #ffffff;
+}
+
+#menu ul{
+
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+
+#menu ul li{
+	float: left;
+	margin-left: 10px;
+	margin-right: 10px;
+	line-height: 50px;
+	cursor: pointer;
+}
+
+#menu ul li:hover{
+	background-color: #3480c1;
+}
