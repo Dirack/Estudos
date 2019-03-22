@@ -64,3 +64,75 @@ body{
 #menu ul li:hover{
 	background-color: #3480c1;
 }
+
+#banner{
+	height: 300px;
+	background-color: #347aba; 
+}
+
+#bannerInterior{
+	width: 1000px;
+	margin: auto;
+}
+
+#bannerEsquerda{
+	float: left;
+}
+
+#bannerDireita{
+	float: right;
+}
+
+#bannerDireita img{
+	margin-right: 55px;
+}
+
+#frase1{
+	margin-top: 50px;
+	color: #ffffff;
+	font-size: 48px;
+}
+
+#frase2{
+	color: #ffffff;
+	font-size:20px;
+}
+
+#botao{
+	background-color: #ffc001;
+	border-radius:5px;
+	width:282px;
+	height: 56px;
+	font-size: 20px;
+	text-align: center;
+	line-height: 56px;
+	margin-top: 20px;
+	cursor: pointer;
+}
+
+#conteudoInterno{
+	width: 1000px;
+	margin:auto;
+}
+
+#outrosProdutos{
+	margin-left: 400px;
+	height: 90px;
+	text-align: center;
+	line-height: 90px;
+	font-size: 20px;
+}
+
+#fotos img{
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#rodape{
+	background-color: #347aba; 
+	height:50px;
+	text-align: center;
+	color: #ffffff;
+	line-height: 50px;
+	margin-top: 40px;
+}
