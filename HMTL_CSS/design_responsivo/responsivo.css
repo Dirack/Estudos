@@ -1,0 +1,65 @@
+/*
+	 responsivo.css (CSS)
+	 
+	 Objetivo: Estudo sobre design responsivo. Este site se adapta a
+	 largura de tela menor que 400px utilizando media queries do CSS3.
+	 
+	 Versão 1.0
+	 
+	 Site: http://www.dirackslounge.online
+	 
+	 Programador: Rodolfo A. C. Neves (Dirack) 28/03/2019
+	 
+	 Email: rodolfo_profissional@hotmail.com
+	 
+	 Licença: Software de uso livre e código aberto.
+*/
+
+body{
+	margin:0px;
+}
+
+.topo{
+	width: 100%;
+	max-width: 800px;
+  height: 100px;
+  margin: auto;
+	background-color: #EEE;
+}
+
+.logo{
+	width: 50%;
+  height: 100px;
+  float: left;
+	background-color: #DDD;
+}
+
+.corpo{
+	width: 100%;
+	max-width: 800px;
+  height: 200px;
+  margin: auto;
+	background-color: #CCC;
+}
+
+.rodape{
+	width: 100%;
+  max-width: 800px;
+  height: 100px;
+  margin: auto;
+	background-color: #DDD;
+}
+
+
+/* Media queries para celular */
+@media only screen and (max-width:400px)
+{
+	.topo{
+		height: 200px;
+	}
+	
+	.logo{
+		width: 100%;
+	}
+	
+}
