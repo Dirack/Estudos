@@ -1,0 +1,41 @@
+<!doctype html>
+<!--
+	index.html (HTML)
+	
+	Objetivo: Estudo sobre o atributos da tag input no HTML5.
+	
+	Versão 1.0
+	
+	Site: http://www.dirackslounge.online
+	
+	Programador: Rodolfo A. C. Neves (Dirack) 28/03/2019
+	
+	Email: rodolfo_profissional@hotmail.com
+	
+	Licença: Software de uso livre e código aberto.
+-->
+<head>
+	<meta charset="utf-8">
+	<title>Estudo sobre o atributos da tag input no HTML5</title>
+</head>
+<body>
+
+	<!-- Autofocus faz o campo ser focalizado automaticamente quando a página carrega -->
+	<!-- maxlength permite apenas uma determinada quantidade de caracteres seja digitada -->
+	<h3>Autofocus e maxlength</h3>
+	<input autofocus maxlength="4"><br>
+
+	<!-- O valor do atributo 'placeholder' aparece no campo da tag 
+	     input como exemplo. Assim que algo é digitado, ele some.
+	     required só permite o envio se o campo estiver preenchido.
+	     autocomplete='on' completa oque está sendo digitado automaticamente.
+	-->
+	<h3>Placeholder</h3>
+	<form method="POST">
+	<input placeholder="Usuário" required autocomplete="on"><br>
+	<input placeholder="Senha"><br>
+	<input type="submit" value="Enviar">
+	</form>
+</body>
+</html>
+
