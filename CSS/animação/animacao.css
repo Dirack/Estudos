@@ -1,0 +1,48 @@
+/*
+	 animacao.css (CSS)
+	 
+	 Objetivo: Estudo sobre animações com CSS3. A animação é definida em uma estrutura
+	 keyframes e cada porcentagem corresponde a um frame da animação em relação a duração
+	 total da animação definida pela propriedade animation-duration. Assim, se a animação
+	 durar 4s, 50% é o frame executado em 2s.
+
+	 O link entre a animação e o elemento a ser animado é feito pela propriedade 'animation-name'
+	 do elemento, que corresponde a estrura keyframes definida. Então se eu defini uma keyframes
+	 'exemplo', devo adicionar a propriedade 'animation-name: exemplo' ao elemento que desejo animar.
+	 
+	 Versão 1.0
+	 
+	 Site: http://www.dirackslounge.online
+	 
+	 Programador: Rodolfo A. C. Neves (Dirack) 06/04/2019
+	 
+	 Email: rodolfo_profissional@hotmail.com
+	 
+	 Licença: Software de uso livre e código aberto.
+*/
+
+/* Estrutura da animação o tempo da duração é dividido em frames representados pela porcentagem */
+@keyframes exemplo{
+	0% { background-color: red;	top:0px; left:0px;}
+	25%{background-color: blue; top:0px; left:200px;}
+	50% {background-color: purple; top: 200px; left: 200px;}
+	75% {background-color: red; top:200px; left:0px;}
+	100% {background-color: green; top:0px; left:0px;}
+}
+
+body{
+	margin: 0px;
+}
+
+#teste{
+	position: absolute;
+	width: 250px;
+	height: 250px;
+	background-color: green;
+	animation-name: exemplo; /* Linkar com a animação definida na estrutura keyframes */
+	animation-duration: 4s; /* Duração da animação */
+	animation-delay: 1s; /* Começar depois de 1s que a página foi carregada */
+
+	/* Quantidade de repetições, infinite é para ficar repetindo indefinidamente*/
+	animation-iteration-count: infinite; 
+}
