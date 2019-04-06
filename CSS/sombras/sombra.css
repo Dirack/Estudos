@@ -1,0 +1,43 @@
+/*
+	 sombra.css (CSS)
+	 
+	 Objetivo: Estudo sobre sombras com CSS3.
+	 
+	 Versão 1.0
+	 
+	 Site: http://www.dirackslounge.online
+	 
+	 Programador: Rodolfo A. C. Neves (Dirack) 06/04/2019
+	 
+	 Email: rodolfo_profissional@hotmail.com
+	 
+	 Licença: Software de uso livre e código aberto.
+*/
+
+body{
+	margin: 0px;
+}
+
+#exemplo{
+	width: 250px;
+	height: 250px;
+	margin: auto;
+	background-color: green;
+	
+	/* box-shadow: left top blur cor*/
+	box-shadow: 10px 10px 25px #888888;
+	
+}
+
+#texto{
+	width: 250px;
+	height: 250px;
+	margin: auto;
+	margin-top: 30px;
+	line-height: 250px;
+	text-align: center;
+	border: 2px solid black;
+	
+	/* text-shadow: left top blur cor*/
+	text-shadow: 5px 5px 2px #000000;
+}
