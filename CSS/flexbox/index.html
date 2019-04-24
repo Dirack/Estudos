@@ -1,0 +1,57 @@
+<!doctype html>
+<!--
+	index.html (HTML)
+	
+	Objetivo: Estudo sobre Flexbox. Ativa utilizando a propriedade
+	'display: flex'.
+	
+	Versão 1.0
+	
+	Site: http://www.dirackslounge.online
+	
+	Programador: Rodolfo A. C. Neves (Dirack) 24/04/2019
+	
+	Email: rodolfo_profissional@hotmail.com
+	
+	Licença: Software de uso livre e código aberto.
+-->
+<head>
+	<meta charset="utf-8">
+	<title>Estudo sobre Flexbox</title>
+	<style type="text/css">
+		.container{
+			display: flex;
+
+			/* row, column, row-reverse, column-reverse */
+			flex-direction: row-reverse;
+
+			background-color: #ddd;
+		}
+
+		.container div{
+			background-color: red;
+			margin: 10px;
+			padding: 10px;
+			font-size: 18px;
+
+			/* flex:1 Todos terão mesmo tamanho */
+			/* flex: 2 o dobro do tamanho */
+			/* flex: 3 o triplo do tamanho */
+			flex: 1;
+		}
+
+	</style>
+</head>
+<body>
+
+	<!-- -->
+	<div class="container">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>		
+	</div>
+
+
+</body>
+</html>
+
