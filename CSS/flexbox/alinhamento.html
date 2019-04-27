@@ -1,0 +1,70 @@
+<!doctype html>
+<!--
+	index.html (HTML)
+	
+	Objetivo: Estudo sobre alinhamento com Flexbox.
+	Utilize 'justify-content' para alinhar o conteúdo do container
+	flexbox. As opções são center, flex-start (onde o container inicia),
+	flex-end(onde o container termina), space-around (alinha os itens de modo que
+	o espaço entre eles seja igual), space-between (espaço entre os itens)
+
+	A propriedade 'align-items: center' alinha o conteúdo do container na vertical.
+	Possui as mesmas opções de 'justify-content'.
+	
+	Versão 1.0
+	
+	Site: http://www.dirackslounge.online
+	
+	Programador: Rodolfo A. C. Neves (Dirack) 27/04/2019
+	
+	Email: rodolfo_profissional@hotmail.com
+	
+	Licença: Software de uso livre e código aberto.
+-->
+<head>
+	<meta charset="utf-8">
+	<title>Estudo sobre alinhamento com Flexbox</title>
+	<style type="text/css">
+		.container{
+			display: flex;
+
+			justify-content: center;
+			align-items: center; 
+
+			/* row, column, row-reverse, column-reverse */
+			flex-direction: row-reverse;
+
+			background-color: #ddd;
+			height: 500px;
+		}
+
+		.container div{
+			background-color: red;
+			margin: 10px;
+			padding: 10px;
+			font-size: 18px;
+			width: 50px;
+			height: 50px;
+			
+
+			/* flex:1 Todos terão mesmo tamanho */
+			/* flex: 2 o dobro do tamanho */
+			/* flex: 3 o triplo do tamanho */
+			/*flex: 1;*/
+		}
+
+	</style>
+</head>
+<body>
+
+	<!-- Blocos a serem manipulados com flexbox -->
+	<div class="container">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>		
+	</div>
+
+
+</body>
+</html>
+
