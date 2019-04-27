@@ -1,0 +1,70 @@
+<!doctype html>
+<!--
+	index.html (HTML)
+	
+	Objetivo: Estudo sobre Flexbox. Utilizar a propriedade wrap.
+	Por padrão flexbox distorce a largura definida para manter os 
+	blocos na mesma linha (nowrap). Ao mudar 'flex-wrap:' para 'wrap'
+	o flexbox passa a permitir a quebra de linha.
+	
+	Versão 1.0
+	
+	Site: http://www.dirackslounge.online
+	
+	Programador: Rodolfo A. C. Neves (Dirack) 27/04/2019
+	
+	Email: rodolfo_profissional@hotmail.com
+	
+	Licença: Software de uso livre e código aberto.
+-->
+<head>
+	<meta charset="utf-8">
+	<title>Estudo sobre Flexbox WRAP</title>
+	<style type="text/css">
+		.container{
+			display: flex;
+
+			/* Utilize 'nowrap' para manter os blocos vermelhos na mesma linha */
+			flex-wrap: wrap; 
+
+			/* row, column, row-reverse, column-reverse */
+			flex-direction: row-reverse;
+
+			background-color: #ddd;
+		}
+
+		.container div{
+			width: 200px;
+			background-color: red;
+			margin: 10px;
+			padding: 10px;
+			font-size: 18px;
+
+			/* flex:1 Todos terão mesmo tamanho */
+			/* flex: 2 o dobro do tamanho */
+			/* flex: 3 o triplo do tamanho */
+			/*flex: 1;*/ /* flex foi desativado para permitir width */
+		}
+
+	</style>
+</head>
+<body>
+
+	<!-- -->
+	<div class="container">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+		<div>6</div>	
+		<div>7</div>
+		<div>8</div>
+		<div>9</div>
+		<div>10</div>			
+	</div>
+
+
+</body>
+</html>
+
