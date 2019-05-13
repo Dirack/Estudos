@@ -2,7 +2,7 @@
 <!--
 	index.php (PHP)
 	
-	Objetivo: Estudo sobre conexão com o banco de dados em PHP utilizando PDO.
+	Objetivo: Estudo sobre conexão com o banco de dados em PHP utilizando PDO (Parte 2).
 	
 	Versão 1.0
 	
@@ -34,9 +34,36 @@
 
 		try{
 
+			// Conexão com o banco de dados
 			$pdo = new PDO($dsn,$dbuser,$dbpass);
 
-			echo "Conexão normal!";
+			$sql="SELECT * FROM artigos";
+
+			$sql=$pdo->query($sql);
+
+			// Listar a tabela artigos
+			if($sql->rowCount() > 0){
+
+				echo "HÁ usuários cadastrados!<br>";
+
+				foreach($sql->fetchAll() as $mensagem){
+
+					echo "Nome: ".$mensagem['nome']."<br>";
+
+				}
+
+			} else {
+
+				echo "NENHUM usuário cadastrado!";
+
+			}
+
+			//Inserir informação no banco de dados
+			$query="INSERT INTO artigos(nome,titulo) VALUES('Teste2','teste2')";
+
+			$query=$pdo->query($query) or die('Erro na query');
+
+			echo "Inserido com sucesso no id ".$pdo->lastInsertId();
 
 		}catch(PDOException $e){
 
