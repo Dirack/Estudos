@@ -2,13 +2,14 @@
 <!--
 	index.php (PHP)
 	
-	Objetivo: Estudo sobre conexão com o banco de dados em PHP utilizando PDO (Parte 2).
+	Objetivo: Estudo sobre conexão com o banco de dados em PHP utilizando PDO.
+	Atualização de dados no banco de dados (parte 3).
 	
 	Versão 1.0
 	
 	Site: http://www.dirackslounge.online
 	
-	Programador: Rodolfo A. C. Neves (Dirack) 13/05/2019
+	Programador: Rodolfo A. C. Neves (Dirack) 14/05/2019
 	
 	Email: rodolfo_profissional@hotmail.com
 	
@@ -58,12 +59,20 @@
 
 			}
 
-			//Inserir informação no banco de dados
-			$query="INSERT INTO artigos(nome,titulo) VALUES('Teste2','teste2')";
+			//Inserir informação no banco de dados DESCOMENTAR
+			/*$query="INSERT INTO artigos(nome,titulo) VALUES('Teste2','teste2')";
 
 			$query=$pdo->query($query) or die('Erro na query');
 
-			echo "Inserido com sucesso no id ".$pdo->lastInsertId();
+			echo "Inserido com sucesso no id ".$pdo->lastInsertId();*/
+
+			// Atualização de informações no banco de dados
+
+			$query="UPDATE artigos SET autor='Dirack' WHERE id=6";
+
+			$query=$pdo->query($query);
+
+			echo "dados autualizados!";
 
 		}catch(PDOException $e){
 
