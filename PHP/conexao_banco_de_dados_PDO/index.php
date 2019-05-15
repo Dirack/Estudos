@@ -31,7 +31,7 @@
 
 		$dbuser="root"; // Uuário MySQL
 
-		$dbpass="§";	// Senha
+		$dbpass="§"; // Senha
 
 		try{
 
@@ -72,7 +72,17 @@
 
 			$query=$pdo->query($query);
 
-			echo "dados autualizados!";
+			echo "dados autualizados!<br>";
+
+			/* Deletar dados da tabela TODO: DESCOMENTAR */
+			/* XXX IMPORTANTE: Se vc não especificar o WHERE
+			   Toda a tabela será deletada! */
+
+			//$sql="DELETE FROM artigos WHERE id=6";
+
+			//$sql=$pdo->query($sql) or die("Dados NÃO deletados!");
+
+			//echo "Dados deletados com sucesso!";
 
 		}catch(PDOException $e){
 
