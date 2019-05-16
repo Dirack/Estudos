@@ -30,7 +30,7 @@
 
 		$dbuser="root"; // Uuário MySQL
 
-		$dbpass="roxinaroxmpica19"; // Senha
+		$dbpass="§"; // Senha
 
 		try{
 
