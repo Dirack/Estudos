@@ -67,6 +67,7 @@
 			SENHA:<br><input type="text" name="senha"><br>
 			<input type="submit" value="Entrar">
 		</form>
+	</div>
 
 		
 </body>
