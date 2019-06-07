@@ -1,3 +1,19 @@
+/*
+	 variaveis.java (java)
+	 
+	 Objetivo: Ilustrar os tipos de variáveis em java.
+	 
+	 Versão 1.0
+	 
+	 Site: http://www.dirackslounge.online
+	 
+	 Programador: Rodolfo A. C. Neves (Dirack) 07/06/2019
+	 
+	 Email: rodolfo_profissional@hotmail.com
+	 
+	 Licença: Software de uso livre e código aberto.
+*/
+
 package variaveis;
 
 public class variaveis{
