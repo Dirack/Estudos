@@ -2,8 +2,9 @@
 	 main.java (java)
 	 
 	 Objetivo: Parte 2 - Estudo sobre leitura de arquivos com Java.
-	 Neste estudo será pedido o nome do usuário e a resposta
-	 será este nome exibido na tela.
+	 Neste estudo será pedido os dados do usuário e a resposta
+	 será estes dados exibidos na tela. Há ainda um teste para verificar
+	 se o usuário mora em Belém (Exemplo do método equals).
 	 
 	 Versão 1.0
 	 

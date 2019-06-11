@@ -1,7 +1,7 @@
 /*
 	 main.java (java)
 	 
-	 Objetivo: Estudo sobre leitura de arquivos com Java.
+	 Objetivo: Parte 1 - Estudo sobre leitura de arquivos com Java.
 	 Neste estudo será pedido o nome do usuário e a resposta
 	 será este nome exibido na tela.
 	 
