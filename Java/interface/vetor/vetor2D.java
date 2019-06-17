@@ -13,11 +13,20 @@
 	 
 	 Licença: Software de uso livre e código aberto.
 */
+package vetor;
+import vetor.vetorInterface;
 
 public class vetor2D implements vetorInterface{
 
-	double x;
-	double y;
+	protected double x;
+	protected double y;
+
+	public void iniciarVetor(double x1, double x2){
+
+		this.x = x1;
+		this.y = x2;
+
+	}
 
 	public void mostrarComponentesVetor(){
 

@@ -14,6 +14,7 @@
 	 
 	 Licença: Software de uso livre e código aberto.
 */
+import vetor.vetor3D;
 
 public class main{
 
@@ -21,9 +22,7 @@ public class main{
 
 		vetor3D vetor = new vetor3D();
 
-		vetor.x=1.0;
-		vetor.y=2.0;
-		vetor.z=3.0;
+		vetor.iniciarVetor(1.0,2.0,3.0);
 
 		vetor.mostrarComponentesVetor();
 

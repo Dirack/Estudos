@@ -13,9 +13,11 @@
 	 
 	 Licença: Software de uso livre e código aberto.
 */
+package vetor;
 
 public interface vetorInterface{
 
+	public void iniciarVetor(double x1, double x2);
 	public void mostrarComponentesVetor();
 
 }

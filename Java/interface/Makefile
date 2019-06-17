@@ -14,8 +14,11 @@
 # Licença: Software de uso livre e código aberto.
 
 CC = javac
+PAC = ./vetor
 
-all:	vetorInterface.class vetor2D.class vetor3D.class main.class
+all:	pacoteVetor main.class
+
+pacoteVetor: $(PAC)/vetorInterface.class $(PAC)/vetor2D.class $(PAC)/vetor3D.class
 
 %.class:	%.java
 	$(CC) $<
@@ -24,4 +27,5 @@ run:
 	java main
 
 clean:
+	rm $(PAC)/*.class
 	rm *.class
