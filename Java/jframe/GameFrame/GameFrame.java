@@ -29,7 +29,7 @@ public class GameFrame extends Canvas{
 	public void startGameFrame(){
 
 		this.setPreferredSize(new Dimension(WIDTH*SCALE,HEIGHT*SCALE));
-		frame = new JFrame();
+		frame = new JFrame("Game #1");
 		frame.add(this);
 		frame.setResizable(false);
 		frame.pack();
