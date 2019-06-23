@@ -20,8 +20,13 @@ public class main{
 
 	public static void main(String[] args){
 
-		GameFrame tela = new GameFrame();
-		tela.startGameFrame();
+		final int HEIGHT = 160;
+		final int WIDTH = 120;
+		final int SCALE = 3;
+		final String FrameTitle = "Game #1";
+
+		GameFrame tela = new GameFrame(HEIGHT,WIDTH,SCALE);
+		tela.startGameFrame(FrameTitle);
 
 	}
 

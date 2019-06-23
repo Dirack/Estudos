@@ -22,14 +22,22 @@ import javax.swing.JFrame;
 public class GameFrame extends Canvas{
 
 	public static JFrame frame;
-	private final int HEIGHT=160;
-	private final int WIDTH=120;
-	private final int SCALE=3;
+	private int HEIGHT;
+	private int WIDTH;
+	private int SCALE;
 
-	public void startGameFrame(){
+	public GameFrame(int HEIGHT, int WIDTH, int SCALE){
+
+		this.HEIGHT = HEIGHT;
+		this.WIDTH = WIDTH;
+		this.SCALE = SCALE;
+
+	}
+
+	public void startGameFrame(String FrameTitle){
 
 		this.setPreferredSize(new Dimension(WIDTH*SCALE,HEIGHT*SCALE));
-		frame = new JFrame("Game #1");
+		frame = new JFrame(FrameTitle);
 		frame.add(this);
 		frame.setResizable(false);
 		frame.pack();
