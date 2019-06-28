@@ -20,6 +20,6 @@ public class Main
 {
     public static void main(String args[])
     {
-        JOptionPane.showMessageDialog(null, "Exibindo uma mensagem");
+        JOptionPane.showMessageDialog(null, "Exibindo uma mensagem", "Título",JOptionPane.PLAIN_MESSAGE); 
     }
 } 
