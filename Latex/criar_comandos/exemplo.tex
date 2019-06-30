@@ -1,0 +1,88 @@
+%
+% exemplo.tex (LateX)
+%
+% Versão modificada do exemplo disponível em: 
+% https://alvinalexander.com/blog/post/latex/create-your-own-commands-in-latex-using-newcommand 
+% 
+% Objetivo: Estudo sobre criação de comandos no LateX.
+% 
+% Versão 1.0
+% 
+% Site: http://www.dirackslounge.online
+% 
+% Programador: Rodolfo A. C. Neves (Dirack) 30/06/2019
+% 
+% Email: rodolfo_profissional@hotmail.com
+% 
+% Licença: Software de uso livre e código aberto.
+
+\documentclass[a4paper,11pt]{article}
+\author{Rodolfo A. C. Neves (Dirack)}
+\title{Documento de exemplo}
+
+\usepackage{ifthen}			% Utilização de blocos if else
+\usepackage[utf8]{inputenc}		% Determina a codificação utiizada (conversão automática dos acentos)
+\usepackage{graphicx}			% Inclusão de gráficos com \include{arquivo}
+
+\begin{document}
+
+% Função que imprime a frase ``Um texto qualquer'' no documento
+\newcommand{\printTexto}
+{
+  Um texto qualquer
+}
+
+\printTexto
+
+%-----------------------------------------
+% Trocar as tags "enumerate"
+%     por comandos próprios
+%-----------------------------------------
+
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+ 
+\be
+  \item Item 1
+  \item Item 2
+\ee
+
+
+%-----------------------------------------------
+% Exemplo de renewcommand modificando printTexto
+%-----------------------------------------------
+\renewcommand{\printTexto}
+{
+  OUTRO texto qualquer
+}
+ 
+\printTexto
+
+
+% Função que recebe os parâmetros e imprime uma imagem no documento
+% #1 - arquivo com a imagem
+% #2 - Legenda
+% #3 - Label
+% #4 - Autor
+% #5 - Escala da imagem
+\newcommand{\imagex}[5]
+ {
+
+   	\begin{figure}[htb]
+   	\caption{#2}
+  	\begin{center}
+   	\includegraphics[scale=#5]{#1}
+   	\vspace{-0.3cm}
+   	\end{center}
+   	\begin{center}
+   	 Fonte: #4
+   	\end{center}
+   	\label{#3}
+   	\end{figure}
+}
+
+\imagex{images/test.jpg}{Imagem de Exemplo da função ilustrando passagem de parâmetros. 
+E definição de macros.}{fig:1}{Do Autor.}{0.5}
+
+
+\end{document}
