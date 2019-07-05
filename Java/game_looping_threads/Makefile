@@ -13,11 +13,13 @@
 # Licença: Software de uso livre e código aberto.
 
 CC = javac
-PAC = ./game
+FRAME = ./Frame
+RENDER = ./Render
+PAC = $(FRAME)/FrameGame.class $(RENDER)/RenderGame.class
 
-all:	pacoteGame main.class
+all:	libed main.class
 
-pacoteGame: $(PAC)/Game.class
+libed: $(PAC)
 
 %.class:	%.java
 	$(CC) $<
@@ -26,5 +28,5 @@ run:
 	java main
 
 clean:
-	rm $(PAC)/*.class
+	rm $(PAC)
 	rm *.class

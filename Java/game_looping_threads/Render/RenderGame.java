@@ -1,5 +1,5 @@
 /*
-	 Game.java (java)
+	 RenderGame.java (java)
 	 
 	 Objetivo: Estudo sobre game looping e threads em java
 	 
@@ -14,9 +14,9 @@
 	 Licença: Software de uso livre e código aberto.
 */
 
-package game;
+package Render;
 
-public class Game implements Runnable{
+public class RenderGame implements Runnable{
 
 	private boolean isRunning;
 

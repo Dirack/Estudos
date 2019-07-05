@@ -14,13 +14,13 @@
 	 Licença: Software de uso livre e código aberto.
 */
 
-import game.Game;
+import Render.RenderGame;
 
 public class main{
 
 	public static void main(String[] args){
 
-		Game game = new Game();
+		RenderGame game = new RenderGame();
 		game.startGame();
 
 	}
