@@ -24,6 +24,7 @@ import java.awt.Graphics2D;
 import Game.FrameGame;
 import Game.FramesPerSecond;
 import javax.swing.JFrame;
+import java.awt.image.BufferedImage;
 
 public class RenderGame extends FramesPerSecond implements Runnable{
 
@@ -36,6 +37,9 @@ public class RenderGame extends FramesPerSecond implements Runnable{
 	int SCALE;
 	String FrameTitle;
 
+	private BufferedImage image;
+	private BufferStrategy bs;
+
 	public RenderGame(int HEIGHT,int WIDTH,int SCALE,String FrameTitle){
 
 		this.HEIGHT = HEIGHT;
@@ -44,6 +48,7 @@ public class RenderGame extends FramesPerSecond implements Runnable{
 		this.FrameTitle = FrameTitle;
 		this.tela = new FrameGame(this.HEIGHT,this.WIDTH,this.SCALE, this.FrameTitle);
 		this.tela.startGameFrame();
+		this.image = new BufferedImage(this.WIDTH,this.HEIGHT,BufferedImage.TYPE_INT_RGB);
 	}
 
 	public void updateGameFrame(){
@@ -64,9 +69,9 @@ public class RenderGame extends FramesPerSecond implements Runnable{
 
 		System.out.println("Renderizando");
 
-		Graphics g = bs.getDrawGraphics();
-		g.setColor(new Color(19,19,19));
-		g.fillRect(0,0,160*4,120*4);
+		Graphics g = this.image.getGraphics();
+		g.setColor(new Color(255,0,0));
+		g.fillRect(0,0,this.WIDTH*this.SCALE,this.HEIGHT*this.SCALE);
 		bs.show();
 
 	}

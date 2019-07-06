@@ -23,7 +23,7 @@ public class main{
 
 		final int HEIGHT = 160;
 		final int WIDTH = 120;
-		final int SCALE = 3;
+		final int SCALE = 4;
 		final String FrameTitle = "Game #1";
 
 		RenderGame game = new RenderGame(HEIGHT,WIDTH,SCALE, FrameTitle);
