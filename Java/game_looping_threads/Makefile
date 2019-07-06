@@ -13,9 +13,8 @@
 # Licença: Software de uso livre e código aberto.
 
 CC = javac
-FRAME = ./Frame
-RENDER = ./Render
-PAC = $(FRAME)/FrameGame.class $(RENDER)/RenderGame.class
+GAME = ./Game
+PAC = $(GAME)/FrameGame.class $(GAME)/RenderGame.class
 
 all:	libed main.class
 

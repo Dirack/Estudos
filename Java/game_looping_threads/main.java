@@ -14,8 +14,8 @@
 	 Licença: Software de uso livre e código aberto.
 */
 
-import Render.RenderGame;
-import Frame.FrameGame;
+import Game.RenderGame;
+import Game.FrameGame;
 
 public class main{
 
@@ -26,8 +26,8 @@ public class main{
 		final int SCALE = 3;
 		final String FrameTitle = "Game #1";
 
-		FrameGame tela = new FrameGame(HEIGHT,WIDTH,SCALE);
-		tela.startGameFrame(FrameTitle);
+		//FrameGame tela = new FrameGame(HEIGHT,WIDTH,SCALE);
+		//tela.startGameFrame(FrameTitle);
 
 		RenderGame game = new RenderGame();
 		game.startGame();

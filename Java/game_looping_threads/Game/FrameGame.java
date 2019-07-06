@@ -14,7 +14,7 @@
 	 Licença: Software de uso livre e código aberto.
 */
 
-package Frame;
+package Game;
 import java.awt.Canvas;
 import java.awt.Dimension;
 import javax.swing.JFrame;
@@ -25,25 +25,27 @@ public class FrameGame extends Canvas{
 	private int HEIGHT;
 	private int WIDTH;
 	private int SCALE;
+	private String FrameTitle;
 
-	public FrameGame(int HEIGHT, int WIDTH, int SCALE){
+	public FrameGame(int HEIGHT, int WIDTH, int SCALE, String FrameTitle){
 
 		this.HEIGHT = HEIGHT;
 		this.WIDTH = WIDTH;
 		this.SCALE = SCALE;
+		this.FrameTitle = FrameTitle;
 
 	}
 
-	public void startGameFrame(String FrameTitle){
+	public void startGameFrame(){
 
-		this.setPreferredSize(new Dimension(WIDTH*SCALE,HEIGHT*SCALE));
-		frame = new JFrame(FrameTitle);
-		frame.add(this);
-		frame.setResizable(false);
-		frame.pack();
-		frame.setLocationRelativeTo(null);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setVisible(true);
+		this.setPreferredSize(new Dimension(this.WIDTH*this.SCALE,this.HEIGHT*this.SCALE));
+		this.frame = new JFrame(this.FrameTitle);
+		this.frame.add(this);
+		this.frame.setResizable(false);
+		this.frame.pack();
+		this.frame.setLocationRelativeTo(null);
+		this.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.frame.setVisible(true);
 
 	}
 
