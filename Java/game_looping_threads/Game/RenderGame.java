@@ -69,10 +69,13 @@ public class RenderGame extends FramesPerSecond implements Runnable{
 
 		System.out.println("Renderizando");
 
-		Graphics g = this.image.getGraphics();
-		g.setColor(new Color(255,0,0));
-		g.fillRect(0,0,this.WIDTH*this.SCALE,this.HEIGHT*this.SCALE);
-		bs.show();
+		Graphics g = image.getGraphics();
+		g.setColor( Color.BLACK);
+		this.tela.frame.paint(g);
+		/*g.fillRect(0,0,this.WIDTH*this.SCALE,this.HEIGHT*this.SCALE);
+		g = (Graphics2D) bs.getDrawGraphics();
+		g.drawImage(image, 0, 0, this.WIDTH*this.SCALE,this.HEIGHT*this.SCALE, null );
+		bs.show();*/
 
 	}
 

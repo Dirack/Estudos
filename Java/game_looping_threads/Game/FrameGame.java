@@ -18,6 +18,8 @@ package Game;
 import java.awt.Canvas;
 import java.awt.Dimension;
 import javax.swing.JFrame;
+import java.awt.Graphics;
+import java.awt.Color;
 
 public class FrameGame extends Canvas{
 
@@ -47,6 +49,13 @@ public class FrameGame extends Canvas{
 		this.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.frame.setVisible(true);
 
+	}
+
+	public void paint(Graphics g){
+
+		g.fillRect(0,0,this.WIDTH*this.SCALE,this.HEIGHT*this.SCALE);
+
+		g.dispose();
 	}
 
 }
