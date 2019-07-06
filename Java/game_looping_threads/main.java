@@ -26,10 +26,7 @@ public class main{
 		final int SCALE = 3;
 		final String FrameTitle = "Game #1";
 
-		//FrameGame tela = new FrameGame(HEIGHT,WIDTH,SCALE);
-		//tela.startGameFrame(FrameTitle);
-
-		RenderGame game = new RenderGame();
+		RenderGame game = new RenderGame(HEIGHT,WIDTH,SCALE, FrameTitle);
 		game.startGame();
 
 	}

@@ -31,13 +31,17 @@ public class RenderGame extends FramesPerSecond implements Runnable{
 
 	public static FrameGame tela;
 
-	int HEIGHT = 160;
-	int WIDTH = 120;
-	int SCALE = 3;
-	String FrameTitle = "Game #1";
+	int HEIGHT;
+	int WIDTH;
+	int SCALE;
+	String FrameTitle;
 
-	public RenderGame(){
+	public RenderGame(int HEIGHT,int WIDTH,int SCALE,String FrameTitle){
 
+		this.HEIGHT = HEIGHT;
+		this.WIDTH = WIDTH;
+		this.SCALE = SCALE;
+		this.FrameTitle = FrameTitle;
 		this.tela = new FrameGame(this.HEIGHT,this.WIDTH,this.SCALE, this.FrameTitle);
 		this.tela.startGameFrame();
 	}
