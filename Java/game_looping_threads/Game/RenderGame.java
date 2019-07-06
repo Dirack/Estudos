@@ -22,9 +22,10 @@ import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import java.awt.Graphics2D;
 import Game.FrameGame;
+import Game.FramesPerSecond;
 import javax.swing.JFrame;
 
-public class RenderGame implements Runnable{
+public class RenderGame extends FramesPerSecond implements Runnable{
 
 	private boolean isRunning;
 
@@ -69,7 +70,7 @@ public class RenderGame implements Runnable{
 	public synchronized void startGame(){
 
 		this.isRunning = true;
-
+		this.setStartGameTime(System.nanoTime());
 		Thread thread = new Thread(this);
 		thread.start();
 
@@ -79,11 +80,13 @@ public class RenderGame implements Runnable{
 
 		while(this.isRunning){
 
-			//updateGameFrame();
-			renderizeGame();
+			if(this.isRunning(System.nanoTime())){
+				//updateGameFrame();
+				renderizeGame();
+			}
 
 		}
 
-	}	
+	}		
 
 }

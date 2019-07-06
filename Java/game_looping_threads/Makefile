@@ -14,11 +14,11 @@
 
 CC = javac
 GAME = ./Game
-PAC = $(GAME)/FrameGame.class $(GAME)/RenderGame.class
+PAC = $(GAME)/FramesPerSecond.class $(GAME)/FrameGame.class $(GAME)/RenderGame.class
 
 all:	libed main.class
 
-libed: $(PAC)
+libed:	$(PAC)
 
 %.class:	%.java
 	$(CC) $<
