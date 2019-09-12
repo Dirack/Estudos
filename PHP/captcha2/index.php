@@ -18,6 +18,15 @@
 	<meta charset="utf-8">
 	<title>Estudo sobre desenvolvimento de captcha em PHP</title>
 </head>
+<?php
+	session_start();
+	if(isset($_POST['senhaCaptcha']) && !empty($_POST['senhaCaptcha']) && isset($_SESSION['senhaCaptcha'])){
+
+		if($_SESSION['senhaCaptcha'] == md5($_POST['senhaCaptcha'])){
+			echo "Usuário Cadastrado com sucesso!";
+		}
+	}
+?>
 <body>
 
 	<h1>Formulário de cadastro</h1>
@@ -25,12 +34,13 @@
 		Usuário: <input type="text" name="nome"><br>
 		Email: <input type="text" name="email"><br>
 		Senha: <input type="text" name="senha"><br>
-		<img src="gerarImgCaptcha.php" alt="Validador captcha"><br>
+		Digite os números da imagem ao lado:<br>
+		<input type="text" name="senhaCaptcha">		
+		<img src="gerarImgCaptcha.php" alt="Validador captcha">
+		<br>
 		<input type="submit" value="Cadastrar"><br>
 
 	</form>
-<?php
 
-?>
 </body>
 </html>

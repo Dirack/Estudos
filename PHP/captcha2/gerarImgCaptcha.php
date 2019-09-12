@@ -14,11 +14,18 @@
 	 
 	 Licença: GPL-3.0 <https://www.gnu.org/licenses/gpl-3.0.txt>.
 */
-
+session_start();
 define('CAPTCHA_WIDTH',100);
 define('CAPTCHA_HEIGHT',100);
+define('CAPTCHA_NUMCHARS',6);
 
-$string="12345";
+$string="";
+
+for($i=0;$i<CAPTCHA_NUMCHARS;$i++){
+	$string .= chr(rand(97,122));
+}
+
+$_SESSION['senhaCaptcha'] = md5($string);
 
 $img =  imagecreatetruecolor(CAPTCHA_WIDTH,CAPTCHA_HEIGHT);
 $bgcolor = imagecolorallocate($img, 255, 255, 255); // branco
