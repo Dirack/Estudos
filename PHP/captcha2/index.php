@@ -20,10 +20,17 @@
 </head>
 <?php
 	session_start();
+	include("connect.php");
 	if(isset($_POST['senhaCaptcha']) && !empty($_POST['senhaCaptcha']) && isset($_SESSION['senhaCaptcha'])){
 
 		if($_SESSION['senhaCaptcha'] == md5($_POST['senhaCaptcha'])){
-			echo "Usuário Cadastrado com sucesso!";
+			$sql="INSERT INTO controle_usuarios(usuario,email,senha)".
+			" values('".$_POST['usuario']."','".$_POST['email']."','".md5($_POST['senha'])."')";
+			$sql = $pdo->query($sql) or die("Erro no cadastro, Solicitação ao banco falhou!");
+
+			echo "Usuário cadastrado com sucesso!<br>";
+			echo "<a href='./index.php'>Voltar</a>";
+			exit;
 		}
 	}
 ?>
@@ -31,10 +38,10 @@
 
 	<h1>Formulário de cadastro</h1>
 	<form method="POST">
-		Usuário: <input type="text" name="nome"><br>
+		Usuário: <input type="text" name="usuario"><br>
 		Email: <input type="text" name="email"><br>
 		Senha: <input type="text" name="senha"><br>
-		Digite os números da imagem ao lado:<br>
+		Digite os caracteres da imagem ao lado:<br>
 		<input type="text" name="senhaCaptcha">		
 		<img src="gerarImgCaptcha.php" alt="Validador captcha">
 		<br>
