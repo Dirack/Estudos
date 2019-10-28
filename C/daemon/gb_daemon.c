@@ -15,7 +15,7 @@ int main(int argc, char *argv[]) {
         syslog(LOG_INFO, "Going to sleep %d seconds...", SLEEP_TIME);
         sleep(SLEEP_TIME);
         syslog(LOG_INFO, "Woke up!");
-	system("morse roxinaroxmpica19");
+	system("morse pwd:§§§§§§§§");
     }
 
     return 0;
