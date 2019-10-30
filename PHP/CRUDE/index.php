@@ -15,13 +15,31 @@
 	Licença: Software de uso livre e código aberto.
 */
 
-require 'connect.php';
+require 'contact.class.php';
 
-$database = "teste123";
-$host = "localhost";
-$user = "root";
+$database = "§";
+$host = "§";
+$user = "§";
 $password = "§";
+
+$roxano = "roxano_jack@kgmail.com";
+$dirack = "rodolfo_profissional@hotmail.com";
 	
-$conexao = new Connect($database,$host,$user,$password);
+$contact = new Contact($database,$host,$user,$password);
+
+$contact->add($dirack);
+$contact->add($roxano,"Roxano");
+
+echo "Nome (Roxano): ".$contact->getNome($roxano)."<br>";
+
+$contact->setNome($dirack, "Dirack");
+
+echo "Nome (Dirack): ".$contact->getNome($dirack)."<br>";
+
+$contact->delete($roxano);
+
+print_r($contact->getAll());
+
+
 
 ?>

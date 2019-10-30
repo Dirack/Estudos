@@ -17,7 +17,7 @@
 
 class Connect{
 
-	private $pdo;
+	public $pdo;
 
 	public function __construct($database,$host,$user,$password){
 
