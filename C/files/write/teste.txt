@@ -1,0 +1,1 @@
+Texto aleatório de teste para exemplificar como escrever em um arquivo
