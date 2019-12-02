@@ -26,7 +26,7 @@ typedef struct pessoa
 	DATA nasc;
 } PESSOA;
 
-void mostrar(struct pessoa x)
+void mostrar(PESSOA x)
 {
 	printf("nome: %s\n",x.nome);
 	printf("idade: %d\n",x.idade);
@@ -36,7 +36,7 @@ void mostrar(struct pessoa x)
 
 int main(int argc, char* argv[])
 {
-	struct pessoa p = {"Tio Pica",24,1091.12,{8,3,1992}};
+	PESSOA p = {"Tio Pica",24,1091.12,{8,3,1992}};
 
 	mostrar(p);
 
