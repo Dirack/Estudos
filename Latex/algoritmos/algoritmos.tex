@@ -1,0 +1,50 @@
+% 
+% 	algoritmos.tex (LATEX)
+% 
+% 	Objetivo: Estudo sobre como adicionar algotitmos ao documento LaTeX.
+%
+%	Versão 1.0
+% 
+% 	Programador:  -Prof. Dsc. Barbara Quintela 18/06/2013 (Original)
+%		      <https://barbaraquintela.wordpress.com/2013/06/18/algoritmos-no-latex-em-portugues/>
+%
+%		      -Rodolfo A. C. Neves (Dirack) 22/02/2019 (Modificada)
+% 
+%	Licensa: Software de uso livre e gratuito.
+
+\documentclass[a4paper, 12pt]{article}
+
+% Pacotes fundamentais
+  \usepackage{multirow}
+  \usepackage[top=2cm, bottom=2cm, left=2.5cm, right=2.5cm]{geometry}
+  \usepackage[utf8]{inputenc}
+  \usepackage{amsmath, amsfonts, amssymb}
+  \usepackage{float}
+  \usepackage{graphicx}
+  \usepackage[portuguese]{babel}
+  
+  %% Pacotes necessários para o algoritmo
+  \usepackage[portuguese,ruled,lined]{algorithm2e}
+  \usepackage{algorithmic}
+
+\begin{document}
+
+Estudo sobre algorimos em Latex.
+
+\begin{algorithm}[H]
+\Entrada{o proprio texto}
+\Saida{como escrever algoritmos com \LaTeX2e }
+\Inicio{
+inicializa\c{c}\~ao\;
+\Repita{fim do texto}{
+leia o atual\;
+\uIf{entendeu}{
+vá para o próximo\;
+próximo se torna o atual\;}
+\Else{volte ao início da seção\;}
+}
+}
+\caption{Como escrever algoritmos no \LaTeX2e}
+\end{algorithm}
+
+\end{document}
