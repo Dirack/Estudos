@@ -100,4 +100,21 @@ Estudo sobre Tabelas em LATEX
       \end{tabular}
   \end{table}
 
+  
+  %% Exemplo de como controlar o tamanho da coluna da tabela
+    \begin{table}[H]
+      \caption{Controlar o tamanho da coluna da tabela.}
+      \centering % centralizar
+      
+      \begin{tabular}{|p{2.5cm}|p{2cm}|p{1.5cm}|p{1cm}|p{0.5cm}|} % 5 colunas centralizadas 
+
+      \hline
+      1 & 2 & 3 & 4 & 5\\  \hline
+      4 & 5 & 6 & 7 & 8\\ \hline
+      7 & 8 & 9 & 10 & 11\\  \hline
+      
+      \end{tabular}
+  \end{table}
+  
+  
 \end{document}
