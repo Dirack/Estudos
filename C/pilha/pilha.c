@@ -78,13 +78,16 @@ int main(void){
 	push(&p,20);
 	puts("push 30");
 	push(&p,30);
+	printf("top: %d está no topo da pilha\n",top(p));
 	printf("%s está vazia\n",empty(p)?"pilha":"pilha NÃO");
 	print(p);
 	puts("pop");
 	pop(&p);
+	printf("top: %d está no topo da pilha\n",top(p));
 	print(p);
 	puts("pop");
 	pop(&p);
+	printf("top: %d está no topo da pilha\n",top(p));
 	print(p);
 	puts("pop");
 	pop(&p);
