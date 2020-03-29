@@ -18,6 +18,9 @@
 import openpyxl
 
 def printsheets():
+	'''
+	Função para printar tabelas do arquivo .xlsx
+	'''
 	print(wb.get_sheet_names())
 
 # Cria o workbook e printa as tabelas
@@ -33,3 +36,10 @@ printsheets()
 print("remover planilha 1")
 wb.remove_sheet(wb.get_sheet_by_name("Sheet"))
 printsheets()
+
+# Alterar título da planilha
+sheet =  wb.get_active_sheet()
+sheet.title = "Minha planilha de estudos"
+
+# Salvar arquivo
+wb.save("estudo.xlsx")
