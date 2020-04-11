@@ -1,0 +1,53 @@
+#!/bin/bash
+#
+# sg_daemon_service (Shell Script)
+# 
+# Objetivo: Simular script de serviço do daemon sg_daemon e
+# enviar sinais para o programa.
+# 
+# Site: http://www.dirackslounge.online
+# 
+# Versão 1.0
+# 
+# Programador: Rodolfo Dirack 11/10/2020
+# 
+# Email: rodolfo_profissional@hotmail.com
+# 
+# Licença: GPL-3.0 <https://www.gnu.org/licenses/gpl-3.0.txt>.
+
+SG_DAEMON="exemplo.x"
+COMMAND="$PWD/$SG_DAEMON"
+
+case "$1" in
+    start)
+	"$COMMAND" &
+        ;;
+    pause)
+	kill -20 "$(pidof $SG_DAEMON)"
+    ;;
+    refresh)
+	kill -1 "$(pidof $SG_DAEMON)"
+    ;;
+    stop)
+        kill -15 "$(pidof $SG_DAEMON)"
+    ;;
+    kill)
+	kill -9 "$(pidof $SG_DAEMON)"
+    ;;
+    restart|force-reload)
+        kill -9 "$SG_DAEMON"
+        echo "SG daemon stopped"
+        "$COMMAND" &
+        echo "SG daemon started"
+        ;;
+    status)
+        if ps -C "$SG_DAEMON" >/dev/null; then
+            echo "SB daemon is running"
+        else
+            echo "SB daemon is not running"
+        fi
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart|force-reload|status}"
+        ;;
+esac
