@@ -1,0 +1,8 @@
+#!/bin/bash
+#
+# Programa simples para testar as chamadas de sistema
+# e a fila de execução do programa watchmen.c
+
+echo "exe 2"
+
+sleep 60
