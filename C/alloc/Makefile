@@ -13,6 +13,7 @@
 # Licença: GPL-3.0 <https://www.gnu.org/licenses/gpl-3.0.txt>.
 
 DEP= exemplo.x exemplo2.x
+EXE= exercicio.c
 
 default:
 	@echo "Exercícios sobre allocação dinâmica em C."
@@ -23,3 +24,6 @@ x:	$(DEP)
 
 %.x:	%.c
 	gcc $< -o $@
+
+test:	$(EXE:.c=.x)
+	./$<
