@@ -14,6 +14,15 @@ Para correção automática de um estudo, siga os seguintes passos:
 
 - Crie um arquivo novo entitulado 'exercicio.c' onde você resolverá o exercício proposto.
 
+- Adicione o cabeçalho de testes 'test.h', disponível no diretório do exercício, ao seu programa principal.
+
+- Finalize a sua função main do programa principal rodando os testes com o seguinte comando:
+
+```c
+MU_RUN_SUITE(test_suite);
+MU_REPORT();
+```
+
 - Ao finalizar, verifique a correção do exercício com o comando:
 
 ```sh
