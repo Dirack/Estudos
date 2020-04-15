@@ -16,10 +16,11 @@
 
 
 #include <stdio.h>
-#include "../minunit.h"
+#include "../../minunit.h"
 
 static int antes = 0;
 static int depois = 0;
+static int c[5];
 
 void test_setup(void){
 	antes = 4;
@@ -31,8 +32,11 @@ void test_teardown(void){
 }
 
 MU_TEST(test_check){
+	int i;
 	mu_check(antes == 4);
 	mu_check(depois == 0);
+	for(i=0;i<5;i++)
+		mu_check(c[i]==0);
 }
 
 MU_TEST_SUITE(test_suite){
