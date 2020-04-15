@@ -27,3 +27,7 @@ x:	$(DEP)
 
 test:	$(EXE:.c=.x)
 	./$<
+retest:
+	rm $(EXE)
+clean:
+	rm *.x
