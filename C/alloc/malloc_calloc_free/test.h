@@ -23,8 +23,6 @@ static int depois = 0;
 static int c[5];
 
 void test_setup(void){
-	antes = 4;
-	depois = 0;
 }
 
 void test_teardown(void){
