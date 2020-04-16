@@ -42,11 +42,7 @@ MU_TEST(test_check){
 	mu_check(o_antes == 0.);
 	mu_check(o_depois == 1.);
 	mu_check(d_antes == 0.5);
-//	mu_check(d_depois == 0.1);
-//	mu_check(label_antes == "Distância");
-//	mu_check(label_depois == "Profundidade");
-//	mu_check(unit_antes == "Km");
-//	mu_check(unit_depois == "m");
+	mu_check((d_depois-0.1) <= 0.001);
 }
 
 MU_TEST(test_string_eq){
@@ -59,5 +55,5 @@ MU_TEST(test_string_eq){
 MU_TEST_SUITE(test_suite){
 	MU_SUITE_CONFIGURE(&test_setup, &test_teardown);
 	MU_RUN_TEST(test_check);
-//	MU_RUN_TEST(test_string_eq);
+	MU_RUN_TEST(test_string_eq);
 }
