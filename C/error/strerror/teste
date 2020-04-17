@@ -19,8 +19,8 @@
 	exit 1
 }
 
-CHECK=$(./exercicio.x)
-STRING="exercicio.c: Error: No such file or directory"
+CHECK=$(./exercicio.x 2>&1)
+STRING="exercicio.c: ERROR(1): No such file or directory"
 if [ "$CHECK" == "$STRING" ]
 then
 	echo "Teste passou!"
