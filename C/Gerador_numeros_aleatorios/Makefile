@@ -1,26 +1,33 @@
-# Makefile 
+# Makefile
 # 
-# Objetivo: Compilar 'aleat.c' (Gerador de números aleatórios).
+# Objetivo: Compilação e correção de exercício automatizado.
+# 
+# Site: https://dirack.github.io
 # 
 # Versão 1.0
 # 
-# Site: http://www.dirackslounge.online
-# 
-# Programador: Rodolfo A. C. Neves (Dirack) 18/06/2019
+# Programador: Rodolfo A C Neves (Dirack) 15/04/2020
 # 
 # Email: rodolfo_profissional@hotmail.com
 # 
-# Licença: Software de uso livre e código aberto.
+# Licença: GPL-3.0 <https://www.gnu.org/licenses/gpl-3.0.txt>.
 
-CC = gcc
+DEP= aleat.x
+EXE= exercicio.c
 
-all:	aleat.x run
+default:
+	@echo "Exercícios sobre allocação dinâmica em C."
+	@echo "Para compilar utilize: make x"
+	@echo "Para corrigir um exercicio utilize: make test"
 
-run:
-	./aleat.x
+x:	$(DEP)
 
 %.x:	%.c
-	$(CC) $< -o $@
+	gcc $< -o $@
 
+test:	$(EXE:.c=.x)
+	./$<
 clean:
 	rm *.x
+retest:
+	rm $(EXE)
