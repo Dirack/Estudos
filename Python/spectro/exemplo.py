@@ -1,4 +1,5 @@
-# coding: utf-8
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 #
 # exemplo.py (Python)
 # 
@@ -8,12 +9,11 @@
 # 
 # Versão 1.0
 # 
-# Programador: Rodolfo A C Neves (Dirack) 06/05/2020
+# Programador: Rodolfo A C Neves (Dirack) 07/05/2020
 # 
 # Email: rodolfo_profissional@hotmail.com
 # 
 # Licença: GPL-3.0 <https://www.gnu.org/licenses/gpl-3.0.txt>.
-
 
 from Trace import Trace
 

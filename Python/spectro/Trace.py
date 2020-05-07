@@ -1,14 +1,15 @@
-# coding: utf-8
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 #
 # Trace.py (Python)
 # 
-# Objetivo: Define a classe Trace para o programa 'exemplo.py'.
+# Objetivo: Definição dos objetos da classe Trace utilizada em exemplo.py
 # 
-# Site: http://www.dirackslounge.online
+# Site: https://dirack.github.io
 # 
 # Versão 1.0
 # 
-# Programador: Rodolfo Dirack 14/02/2020
+# Programador: Rodolfo A C Neves (Dirack) 07/05/2020
 # 
 # Email: rodolfo_profissional@hotmail.com
 # 
