@@ -1,4 +1,5 @@
-# coding: utf-8
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 # 
 # lacoEmLista.py (Python)
 # 
@@ -21,4 +22,5 @@ valores.append(10)
 valores.append(2)
 
 for c, v in enumerate(valores):
-    print(f'posicao{c} valor{v}')
+    # Only Python 3 execution
+    print(f'posicao={c} valor={v}')
