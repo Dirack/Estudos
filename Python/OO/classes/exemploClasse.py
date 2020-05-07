@@ -1,6 +1,13 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
 # exemploClasse.py (Python)
 # 
 # Objetivo: Exemplo sobre o uso e definicao de classes em python.
+#
+# __init__ is the object constructor
+# __str__ is a especial method, used to return
+# a string representation of the object.
 # 
 # Versao 1.0
 # 
