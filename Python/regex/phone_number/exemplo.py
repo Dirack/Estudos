@@ -17,6 +17,10 @@
 
 import re
 
-phoneRegex = re.compile(r'\d{3}-\d{3}-\d{4}')
-mo = phoneRegex.search('My number is 415-555-4242')
+phoneRegex = re.compile(r'(\(\d{3}\))-(\d{3}-\d{3}-\d{4})')
+mo = phoneRegex.search('My number is (055)-415-555-4242')
 print('Phone number: '+mo.group())
+
+areaCode, mainNumber = mo.groups()
+print('Area Code: '+areaCode)
+print('Main number: '+mainNumber)
