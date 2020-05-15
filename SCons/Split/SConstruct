@@ -1,0 +1,4 @@
+src_files = Split('''main.c
+		file1.c
+		file2.c''')
+Program(target='program.x',source=src_files)
