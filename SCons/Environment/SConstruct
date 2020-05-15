@@ -1,0 +1,7 @@
+env = Environment()
+print(env.Dump())
+
+env.Append(NEW_VAR='added')
+print("NEW_VAR=%s"%env['NEW_VAR'])
+
+print(env['ENV'])
