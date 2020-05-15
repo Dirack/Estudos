@@ -1,0 +1,8 @@
+Import('env')
+
+if 'PASS_TARGET' in env:
+	Default(env['PASS_TARGET'])
+
+Program('teste','teste.c')
+
+Program('teste2','teste2.c')

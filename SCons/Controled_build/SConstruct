@@ -1,0 +1,6 @@
+env = Environment()
+
+if COMMAND_LINE_TARGETS:
+	env.Append(PASS_TARGET=COMMAND_LINE_TARGETS)
+
+SConscript('SConscript','env')
