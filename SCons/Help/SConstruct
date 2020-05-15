@@ -1,4 +1,8 @@
 Help('''
 	Type 'scons -h' to get help
 	Study about scons!!!
+	Type 'scons i=2' to see something cool!
 	:)''')
+
+if ARGUMENTS.get('i'):
+	print("You passed i="+ARGUMENTS.get('i'))
