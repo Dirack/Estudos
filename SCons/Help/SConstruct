@@ -1,0 +1,4 @@
+Help('''
+	Type 'scons -h' to get help
+	Study about scons!!!
+	:)''')
