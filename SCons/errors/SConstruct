@@ -17,12 +17,14 @@
 
 import atexit
 
-def print_build_failures():
+def print_build_failures(message):
     from SCons.Script import GetBuildFailures
     for bf in GetBuildFailures():
     	print("***************************")
-    	print("Abaixo mensagem de falha!!!")
+    	print(message)
         print("%s FALHOU: %s" % (bf.node, bf.errstr))
-atexit.register(print_build_failures)
+
+message = "Mensagem de falha!!!"
+atexit.register(print_build_failures,message)
 
 Program('inexistente.c')
