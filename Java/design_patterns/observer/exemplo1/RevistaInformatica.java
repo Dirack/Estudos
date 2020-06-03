@@ -43,6 +43,13 @@ public class RevistaInformatica extends Observable {
         Assinante1 assinante1 = new Assinante1(revistaInformatica);
 
         revistaInformatica.setNovaEdicao(novaEdicao);
+	try{
+		Thread.sleep(2000);
+	}catch(InterruptedException e){
+		e.getStackTrace();
+	}
+	novaEdicao++;
+        revistaInformatica.setNovaEdicao(novaEdicao);
     }
 
 }
