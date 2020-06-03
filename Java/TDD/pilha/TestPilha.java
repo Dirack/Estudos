@@ -19,9 +19,18 @@ import junit.framework.TestCase;
 
 public class TestPilha extends TestCase{
 
-	public void testpilhaVazia(){
+	public void testPilhaVazia(){
 		Pilha p = new Pilha();
 		assertTrue(p.estaVazia());
 		assertEquals(0,p.tamanho());
+	}
+
+	public void testEmpilhaElemento(){
+		Pilha p = new Pilha();
+		p.empilha(1);
+		assertFalse(p.estaVazia());
+	//	p.empilha(2);
+		assertEquals(1,p.tamanho());
+		assertEquals(1,p.topo());
 	}
 }

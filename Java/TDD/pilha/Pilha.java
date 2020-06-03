@@ -16,11 +16,21 @@
 
 public class Pilha{
 	
+	int elemento;
+
 	public boolean estaVazia(){
-		return true;
+		return (this.tamanho() == 0);
 	}
 
 	public int tamanho(){
-		return 0; 
+		return this.elemento; 
+	}
+
+	public void empilha(int i){
+		this.elemento=i;
+	}
+
+	public int topo(){
+		return this.elemento;
 	}
 }
