@@ -16,7 +16,7 @@
 
 CC = javac
 JVM = java
-DEP = 
+DEP = Pilha.class 
 TEST = TestPilha.java
 
 all:	$(DEP)
