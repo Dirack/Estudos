@@ -17,19 +17,22 @@
 import org.junit.Assert.*;
 import junit.framework.TestCase;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class TestPilha extends TestCase{
 
 	@Test
+	@Tag("PilhaVazia")
 	public void testPilhaVazia(){
 		Pilha p = new Pilha();
 		assertTrue(p.estaVazia());
 		assertEquals(0,p.tamanho());
 	}
 
-	@Disabled("Pule este teste!!!")
+	//@Disabled("Pule este teste!!!")
 	@Test
+	@Tag("EmpilhaElemento")
 	public void testEmpilhaElemento(){
 		Pilha p = new Pilha();
 		p.empilha(1);
