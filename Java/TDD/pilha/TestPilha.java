@@ -48,4 +48,18 @@ public class TestPilha{
 		assertEquals(2,p.tamanho());
 		assertEquals(2,p.topo());
 	}
+
+	@Test
+	@Tag("Desempilha")
+	@DisplayName("DESEMPILHA ELEMENTOS")
+	public void testDesempilhaElemento(){
+		Pilha p = new Pilha();
+
+		/* Empilha 2 elementos e desempilha 1 */
+		p.empilha(1);
+		p.empilha(2);
+		assertEquals(2,p.desempilha());
+		assertEquals(1,p.tamanho());
+		//assertEquals(1,p.topo());
+	}
 }

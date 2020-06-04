@@ -16,7 +16,7 @@
 
 public class Pilha{
 	
-	int elemento;
+	int[] elementos = new int[10];
 	int tamanho=0;
 
 	public boolean estaVazia(){
@@ -28,11 +28,17 @@ public class Pilha{
 	}
 
 	public void empilha(int i){
-		this.elemento=i;
+		this.elementos[tamanho]=i;
 		this.tamanho++;
 	}
 
 	public int topo(){
-		return this.elemento;
+		return this.elementos[this.tamanho-1];
+	}
+	
+	public int desempilha(){
+		int topo = this.topo();
+		tamanho--;
+		return topo;
 	}
 }
