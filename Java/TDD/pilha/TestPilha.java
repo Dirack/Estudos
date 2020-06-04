@@ -16,15 +16,20 @@
 
 import org.junit.Assert.*;
 import junit.framework.TestCase;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 public class TestPilha extends TestCase{
 
+	@Test
 	public void testPilhaVazia(){
 		Pilha p = new Pilha();
 		assertTrue(p.estaVazia());
 		assertEquals(0,p.tamanho());
 	}
 
+	@Disabled("Pule este teste!!!")
+	@Test
 	public void testEmpilhaElemento(){
 		Pilha p = new Pilha();
 		p.empilha(1);

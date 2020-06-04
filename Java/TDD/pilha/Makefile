@@ -25,7 +25,7 @@ all:	$(DEP)
 	$(CC) $<
 
 Test%.class:	Test%.java
-	$(CC) -cp junit-4.13.jar:hamcrest-core-2.2.jar:. $<
+	$(CC) -cp junit-4.13.jar:hamcrest-core-2.2.jar:junit-jupiter-api-5.0.0.jar:apiguardian-api-1.0.0.jar:. $<
 
 test:	$(TEST:.java=.class)
 	$(JVM) -jar junit-platform-console-standalone-1.6.2.jar -cp . $(addprefix -c , $(TEST:.java=))
