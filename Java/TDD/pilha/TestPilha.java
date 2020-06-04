@@ -19,6 +19,7 @@ import junit.framework.TestCase;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.DisplayName;
 
 public class TestPilha extends TestCase{
 
@@ -33,6 +34,7 @@ public class TestPilha extends TestCase{
 	//@Disabled("Pule este teste!!!")
 	@Test
 	@Tag("EmpilhaElemento")
+	@DisplayName("TEST EMPILHA")
 	public void testEmpilhaElemento(){
 		Pilha p = new Pilha();
 		p.empilha(1);
