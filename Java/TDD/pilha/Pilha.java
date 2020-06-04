@@ -17,17 +17,19 @@
 public class Pilha{
 	
 	int elemento;
+	int tamanho=0;
 
 	public boolean estaVazia(){
 		return (this.tamanho() == 0);
 	}
 
 	public int tamanho(){
-		return this.elemento; 
+		return this.tamanho; 
 	}
 
 	public void empilha(int i){
 		this.elemento=i;
+		this.tamanho++;
 	}
 
 	public int topo(){

@@ -25,22 +25,28 @@ public class TestPilha extends TestCase{
 
 	@Test
 	@Tag("PilhaVazia")
+	@DisplayName("PILHA VAZIA")
 	public void testPilhaVazia(){
 		Pilha p = new Pilha();
 		assertTrue(p.estaVazia());
 		assertEquals(0,p.tamanho());
 	}
 
-	//@Disabled("Pule este teste!!!")
 	@Test
 	@Tag("EmpilhaElemento")
-	@DisplayName("TEST EMPILHA")
+	@DisplayName("EMPILHA ELEMENTOS")
 	public void testEmpilhaElemento(){
 		Pilha p = new Pilha();
+		
+		/* Empilha primeiro elemento */
 		p.empilha(1);
 		assertFalse(p.estaVazia());
-	//	p.empilha(2);
-		assertEquals(1,p.tamanho());
 		assertEquals(1,p.topo());
+		assertEquals(1,p.tamanho());
+
+		/* Empilha segundo elemento */
+		p.empilha(2);
+		assertEquals(2,p.tamanho());
+		assertEquals(2,p.topo());
 	}
 }
