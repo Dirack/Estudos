@@ -16,7 +16,8 @@
 
 public class Pilha{
 	
-	int[] elementos = new int[10];
+	final int MAX = 10;
+	int[] elementos = new int[MAX];
 	int tamanho=0;
 
 	public boolean estaVazia(){
@@ -28,6 +29,9 @@ public class Pilha{
 	}
 
 	public void empilha(int i){
+		if(this.tamanho == this.MAX){
+			throw new PilhaCheiaException();
+		}
 		this.elementos[tamanho]=i;
 		this.tamanho++;
 	}

@@ -64,15 +64,33 @@ public class TestPilha{
 	}
 
 	@Test
-	@Tag("erroDesempilharPilhaVazia")
+	@Tag("lancarErroDesempilharPilhaVazia")
 	@DisplayName("EXCEPTION PILHA VAZIA")
 	public void testPilhaVaziaException() throws PilhaVaziaException{
 		Pilha p = new Pilha();
 
 		/* Tenta remover de pilha vazia */
-		//if(p.estaVazia())
-		//	throw new PilhaVaziaException("Não é possível desempilhar. Pilha vazia!");
 		assertThrows(PilhaVaziaException.class,()->{p.desempilha();});
-		//p.desempilha();
+	
+	}
+
+	@Test
+	@Tag("lancarErroEmpilharPilhaCheia")
+	@DisplayName("EXCEPTION PILHA CHEIA")
+	public void testPilhaCheiaException() throws PilhaCheiaException{
+		Pilha p = new Pilha();
+		int i;
+
+		/* Empilha elementos até encher a pilha */
+		for(i=0;i<p.MAX;i++){
+			p.empilha(i);
+		}
+
+		/* Tentar empilhar elemento em pilha cheia */
+		assertThrows(PilhaCheiaException.class,()->{
+				p.empilha(11);
+
+			}
+		);
 	}
 }

@@ -16,7 +16,7 @@
 
 CC = javac
 JVM = java
-DEP = Pilha.class PilhaVaziaException.class 
+DEP = Pilha.class PilhaVaziaException.class PilhaCheiaException.class
 TEST = TestPilha.java
 
 all:	$(DEP)
