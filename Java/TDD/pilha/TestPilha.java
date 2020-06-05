@@ -60,6 +60,19 @@ public class TestPilha{
 		p.empilha(2);
 		assertEquals(2,p.desempilha());
 		assertEquals(1,p.tamanho());
-		//assertEquals(1,p.topo());
+		assertEquals(1,p.topo());
+	}
+
+	@Test
+	@Tag("erroDesempilharPilhaVazia")
+	@DisplayName("EXCEPTION PILHA VAZIA")
+	public void testPilhaVaziaException() throws PilhaVaziaException{
+		Pilha p = new Pilha();
+
+		/* Tenta remover de pilha vazia */
+		//if(p.estaVazia())
+		//	throw new PilhaVaziaException("Não é possível desempilhar. Pilha vazia!");
+		assertThrows(PilhaVaziaException.class,()->{p.desempilha();});
+		//p.desempilha();
 	}
 }

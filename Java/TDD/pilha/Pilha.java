@@ -37,6 +37,8 @@ public class Pilha{
 	}
 	
 	public int desempilha(){
+		if(this.estaVazia())
+			throw new PilhaVaziaException();
 		int topo = this.topo();
 		tamanho--;
 		return topo;
