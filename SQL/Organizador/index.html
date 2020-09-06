@@ -1,0 +1,71 @@
+<!doctype html>
+<!--
+	index.php (PHP)
+	
+	Objetivo: Programa organizar para organizar a vida e os estudos.
+	Tem um menu inferior com cada área da vida. Cada botão deste menu
+	ativa um console e um menu lateral com opções daquela área que exibe
+	as atividades da área da vida selecionada por categoria.
+	
+	Versão 1.0
+	
+	Site: http://www.dirackslounge.online
+	
+	Programador: Rodolfo A. C. Neves (Dirack) 03/03/2019
+	
+	Email: rodolfo_profissional@hotmail.com
+	
+	Licença: Software de uso livre e código aberto.
+-->
+<head>
+	<meta charset="utf-8">
+	<title>Organizador de Vida</title>
+
+	<link type="text/css" rel="stylesheet" href="vida.css">
+
+	<!-- JQuery -->
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+
+	<!-- Máscara para manipulação de datas JQuery -->
+	<script type="text/javascript" src="jquery.mask.js"></script>
+
+	<!-- Script manipulação da página com JQuery -->
+	<script type="text/javascript" src="script.js"></script>
+
+	<!-- Plugin do JQuery criado pelo programador (manipular seletor de score) -->
+	<script type="text/javascript" src="seletor.js"></script>
+
+	<!-- Script manipulação das opções para o ícone violao -->
+	<script type="text/javascript" src="violao.js"></script>
+</head>
+<body style="text-align:center;">
+
+	<!-- Menu de opções para o console de acordo com a área escolhida -->
+	<div id="menu">
+	<h3>Opções</h3>
+
+	</div>
+
+	<div id="canvas">
+
+		<div id="console">
+
+		</div>
+
+	</div>
+
+	<!-- menu fixo na parte inferior da página -->
+	<!-- Cada ícone é um aspecto da vida a ser organizado -->
+	<div id="menuAple">
+		<div class="icone"><img src="icones/violao.png" id="violao"></div>
+		<div class="icone"><img src="icones/dinheiro.png"></div>
+		<div class="icone"><img src="icones/livro.png"></div>
+		<div class="icone"><img src="icones/scrum.png"></div>
+		<div class="icone"></div>
+		<div class="icone"></div>
+	</div>
+
+
+</body>
+</html>
+

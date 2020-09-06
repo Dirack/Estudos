@@ -1,0 +1,95 @@
+/*
+	 vida.css (CSS)
+	 
+	 Objetivo: Programa organizar para organizar a vida e os estudos.
+	 
+	 Versão 1.0
+	 
+	 Site: http://www.dirackslounge.online
+	 
+	 Programador: Rodolfo A. C. Neves (Dirack) 04/03/2019
+	 
+	 Email: rodolfo_profissional@hotmail.com
+	 
+	 Licença: Software de uso livre e código aberto.
+*/
+
+body{
+  padding:0px;
+	padding-bottom: 50px;
+	margin:0px;
+	margin-bottom: 50px;
+	background-image: url('images/tempo.jpg');
+}
+
+.musicaTitulo{
+	cursor:pointer;
+}
+
+#seletorScore{
+	width:140px;
+	height: 60px;
+	display:none;
+	position: absolute;
+}
+
+#seletorScore button{
+	float: left;
+	margin 10px;
+}
+
+
+		#menuAple{
+			width:800px;
+			height: 70px;
+			position: fixed;
+			bottom: 0px;
+			left: 50%;
+			margin-left:-400px;
+			border: 1px solid gray;
+			background-image: linear-gradient(to bottom, #b5b5b5, #ffffff);
+		}
+
+		.icone{
+			width: 70px;
+			height: 70px;
+			line-height: 70px;
+			margin-left: 10px;
+			float: left;
+			cursor: pointer;
+		}
+
+.iconeViolao, .iconeCavaco{
+	margin-left: 10px;
+	float: left;
+	cursor: pointer;
+}
+
+#canvas{
+	display: none;
+	border: 1px solid black;
+	min-height: 500px;
+	width: 1060px;
+	position: absolute;
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-bottom: 100px;
+	padding:20px;
+	background-color: #300a24;
+	color:#ffffff;
+	border-radius: 20px;
+	padding-bottom: 150px;
+}
+
+		#menu{
+			border-radius: 20px;
+			padding: 10px;
+			display: none;
+			border: 1px solid black;
+			height: 480px;
+			width: 200px;
+			margin-top: 20px;
+			margin-right: 0px;
+			float: right;
+			background-image: linear-gradient(to bottom, #b5b5b5, #ffffff);
+		}
