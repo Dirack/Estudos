@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<!--
+	index.html (HTML)
+	
+	Objetivo: Projeto do curso PHP do básico ao profissional.
+	Construção de um Mega portal de notícias.
+	
+	Versão 1.0
+	
+	Site: http://www.dirackslounge.online
+	
+	Programador: Rodolfo A. C. Neves (Dirack) 06/04/2019
+	
+	Email: rodolfo_profissional@hotmail.com
+	
+	Licença: Software de uso livre e código aberto.
+-->
+<head>
+	<meta charset="utf-8">
+
+	<!-- Site reponsivo -->
+	<meta id="viewport" name="viewport" content="width=device-width, user-scaleble=no">
+	<title>Mega Portal de notícias</title>
+	<link type="text/css" rel="stylesheet" href="portal.css">
+	
+	<!-- Menu mobile para celular -->
+	<script type="text/javascript">
+		function abreFechaMenu(){
+
+			menu = document.getElementById("menuMobile");
+
+
+			if(menu.style.display == "none" || menu.style.display == ""){
+				menu.style.display = "block";
+			}else{
+				menu.style.display = "none";
+			}
+
+		}
+
+	</script>
+</head>
+<body>
+
+	<!-- Barra preta no topo da página -->
+	<div class="topo">
+		<div class="topoInt">
+
+			<!-- Menu à esquerda com letras brancas no topo da página-->
+			<div class="topoLeft">
+				  <ul>
+					  <li><a href="./" class="ativo">HOME</a></li>
+					  <li><a href="quemSomos">QUEM SOMOS</a></li>
+					  <li><a href="anuncie">ANUNCIE AQUI</a></li>
+					  <li><a href="contato">CONTATO</a></li>
+				  </ul>
+
+			</div>
+		
+			<!-- Redes sociais e pesquisa -->
+			<div class="topoRight">
+				<input type="image" src="images/lupa.png">
+				<textarea class="topoBusca" style="resize: none;" placeholder="Busca..."></textarea>
+				<a href=""><img src="images/plus.png" width="26" height="26"></a>
+				<a href=""><img src="images/twitter.png" width="26" height="26"></a>
+				<a href=""><img src="images/youtube.png" width="26" height="26"></a>
+				<a href=""><img src="images/linkedin.png" width="26" height="26"></a>
+				<a href=""><img src="images/instagram.png" width="26" height="26"></a>
+			</div>
+		</div>
+	</div>
+
+	<!-- Topo com a inscrição "MEGA PORTAL" -->
+	<div class="topo2">
+		<div class="topo2Int">
+
+			<div class="logo">MEGA PORTAL</div>
+			<div class="banner"></div>
+
+		</div>
+
+	</div>
+
+	<!-- Menu drop down em vermelho do site -->
+	<div class="menuDropDown">
+
+			<div class="menuDropDownInt">
+
+					<span class="menuMobile" onclick="abreFechaMenu();"> ▼</span>
+
+					<ul id="menuMobile">
+						<li><a href="">HOME</a></li>
+						<li><a href="">ECONOMIA</a></li>
+						<li>
+							<a href="">ENTRETENIMENTO<span class="dropdown"> ▼</span></a>
+						
+							<!-- submenu dropdown aparece quando 
+							o mouse está sobre ENTRETENIMENTO -->
+							<div class="submenu">
+								<a href=""><div class="submenuItem">Item 1</div></a>
+								<a href=""><div class="submenuItem">Item 2</div></a>
+								<a href=""><div class="submenuItem">Item 3</div></a>
+								<a href=""><div class="submenuItem">Item 4</div></a>
+								<a href=""><div class="submenuItem">Item 5</div></a>
+								<a href=""><div class="submenuItem">Item 6</div></a>
+
+							</div>
+
+						</li>
+						<li><a href="">ESPORTES</a></li>
+						<li><a href="">GERAL</a></li>
+						<li><a href="">NOTÍCIAS</a></li>
+						<li><a href="">POLÍCIA</a></li>
+						<li><a href="">VÍDEOS</a></li>
+					</ul>
+
+			</div>
+
+
+	</div>
+
+	<!-- Barra de últimas notícias -->
+	<div class="ultimasNoticias">
+
+			<div class="ultimasNoticiasInt">
+
+					<div class="noticiasArea">
+						
+							<div class="noticiasTitulo">
+								ÚLTIMAS NOTÍCIAS
+							</div>
+
+							<div class="noticias">
+								Uma notícia aleatória qualquer só para ocupar espaço.
+							</div>	
+
+
+					</div>
+
+
+			</div>
+
+
+	</div>
+
+	<!-- Área de conteúdo so site -->
+	<div class="container">
+
+			<div class="containerInt">
+
+				<!-- Conteúdo à esquerda no site -->
+				<div class="leftSide">
+
+						<div class="slideShow">
+
+							<div class="slideShowArea">
+	
+								<div class="slide" style="background-image: url('https://www.google.com.br/google.jpg');">								
+									
+						<!-- Bolinhas no topo do slide para marcar a passagem das fotos -->								
+
+									<div class="slideBolinhas">
+										<div class="bolinha" id="bola-1"></div>
+										<div class="bolinha" id="bola-2"></div>
+										<div class="bolinha" id="bola-3"></div>
+										<div class="bolinha" id="bola-4"></div>
+									</div>
+
+									<div class="slideInfo">
+										<div class="slideTitulo">Título de teste</div>
+										<div class="slideSubTitulo">Qualquer coisa</div>
+									</div>
+
+								</div>
+								<div class="slide"></div>
+								<div class="slide"></div>
+								<div class="slide"></div>
+
+							</div>
+
+						</div>
+
+						<div class="widget">
+							<div class="widgetTitulo">NOTÍCIAS</div>
+							<div class="widgetConteudo noticia">
+								<div class="noticiaArea1">
+
+									<div class="noticiaItem noticiaBig">
+										<div class="noticiaImg">
+											<img src="">
+
+										</div>
+										<div class="noticiaTitulo">
+																			
+											Algum título qualquer
+											Algum título qualquer
+											Algum título qualquer
+											Algum título qualquer
+										</div>
+										<div class="noticiaInfo">
+											500 comentários
+										</div>
+
+									</div>
+
+								</div>
+								<div class="noticiaArea2">
+									<div class="noticiaItem">
+										<div class="noticiaImg">
+											<img src="">
+
+										</div>
+										<div class="noticiaTitulo">
+											Algum título qualquer
+										</div>
+										<div class="noticiaInfo">
+											500 comentários
+										</div>
+
+									</div>
+
+									<div class="noticiaItem">
+										<div class="noticiaImg">
+											<img src="">
+
+										</div>
+										<div class="noticiaTitulo">
+											Algum título qualquer
+										</div>
+										<div class="noticiaInfo">
+											500 comentários
+										</div>
+
+									</div>
+
+									<div class="noticiaItem">
+										<div class="noticiaImg">
+											<img src="">
+
+										</div>
+										<div class="noticiaTitulo">
+											Algum título qualquer
+										</div>
+										<div class="noticiaInfo">
+											500 comentários
+										</div>
+
+									</div>
+	
+									<div class="noticiaItem">
+										<div class="noticiaImg">
+											<img src="">
+
+										</div>
+										<div class="noticiaTitulo">
+											Algum título qualquer
+										</div>
+										<div class="noticiaInfo">
+											500 comentários
+										</div>
+
+									</div>
+
+
+
+								</div>
+
+								
+								
+							</div>
+						</div>
+
+						<div class="widget">
+							<div class="widgetTitulo">ESPORTES</div>
+							<div class="widgetConteudo noticia">
+								<div class="noticiaArea1">
+
+									<div class="noticiaItem noticiaBig">
+										<div class="noticiaImg">
+											<img src="">
+
+										</div>
+										<div class="noticiaTitulo">
+																			
+											Algum título qualquer
+											Algum título qualquer
+											Algum título qualquer
+											Algum título qualquer
+										</div>
+										<div class="noticiaInfo">
+											500 comentários
+										</div>
+
+									</div>
+
+								</div>
+								<div class="noticiaArea2">
+									<div class="noticiaItem">
+										<div class="noticiaImg">
+											<img src="">
+
+										</div>
+										<div class="noticiaTitulo">
+											Algum título qualquer
+										</div>
+										<div class="noticiaInfo">
+											500 comentários
+										</div>
+
+									</div>
+
+									<div class="noticiaItem">
+										<div class="noticiaImg">
+											<img src="">
+
+										</div>
+										<div class="noticiaTitulo">
+											Algum título qualquer
+										</div>
+										<div class="noticiaInfo">
+											500 comentários
+										</div>
+
+									</div>
+
+									<div class="noticiaItem">
+										<div class="noticiaImg">
+											<img src="">
+
+										</div>
+										<div class="noticiaTitulo">
+											Algum título qualquer
+										</div>
+										<div class="noticiaInfo">
+											500 comentários
+										</div>
+
+									</div>
+	
+									<div class="noticiaItem">
+										<div class="noticiaImg">
+											<img src="">
+
+										</div>
+										<div class="noticiaTitulo">
+											Algum título qualquer
+										</div>
+										<div class="noticiaInfo">
+											500 comentários
+										</div>
+
+									</div>
+
+
+
+								</div>
+
+								
+								
+							</div>
+						</div>
+
+
+
+				</div>
+
+				<!-- Barra lateral à direita do site -->
+				<div class="rightSide">
+
+					<div class="widget">
+						<div class="widgetTitulo">SOCIAL</div>
+						<div class="widgetConteudo">
+							<a href=""><img src="images/plus.png" width="26" height="26"></a>
+							<a href=""><img src="images/twitter.png" width="26" height="26"></a>
+							<a href=""><img src="images/youtube.png" width="26" height="26"></a>
+							<a href=""><img src="images/linkedin.png" width="26" height="26"></a>
+							<a href=""><img src="images/instagram.png" width="26" height="26"></a>
+
+						</div>
+					</div>
+
+					<div class="widget">
+						<div class="widgetTitulo">ÚLTIMAS NOTÍCIAS</div>
+						<div class="widgetConteudo">
+							<div class="noticiaItem">
+								<a href="">Texto aleatório só pra exemplificar
+								essa parada, não tem nenhum sentido no
+								que estou escrevendo é apenas pra preencher
+								este espaço.</a>
+							</div>
+							<div class="noticiaItem">
+								<a href="">Texto aleatório só pra exemplificar
+								essa parada, não tem nenhum sentido no
+								que estou escrevendo é apenas pra preencher
+								este espaço.</a>
+							</div>
+							<div class="noticiaItem">
+								<a href="">Texto aleatório só pra exemplificar
+								essa parada, não tem nenhum sentido no
+								que estou escrevendo é apenas pra preencher
+								este espaço.</a>
+							</div>
+							<div class="noticiaItem">
+								<a href="">Texto aleatório só pra exemplificar
+								essa parada, não tem nenhum sentido no
+								que estou escrevendo é apenas pra preencher
+								este espaço.</a>
+							</div>
+							<div class="noticiaItem">
+								<a href="">Texto aleatório só pra exemplificar
+								essa parada, não tem nenhum sentido no
+								que estou escrevendo é apenas pra preencher
+								este espaço.</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="widget">
+						<div class="widgetTitulo">PUBLICIDADE</div>
+						<div class="widgetConteudo">
+							<img src="images/logo2.png" width="275px">
+						</div>
+					</div>
+				
+					<!-- widget: Facebook page plugin -->
+					<div class="widget">
+						<div class="widgetTitulo">ENCONTRE-NOS NO FACEBOOK</div>
+						<div class="widgetConteudo">
+		<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fhomenscombolsonaro%2F&tabs=timeline&width=275&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1263115790535989" width="275" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+	</div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,563 @@
+/*
+	 portal.css (CSS)
+	 
+	 Objetivo: Projeto do curso PHP do básico ao profissional.
+	 Construção de um Mega portal de notícias.
+	 
+	 Versão 1.0
+	 
+	 Site: http://www.dirackslounge.online
+	 
+	 Programador: Rodolfo A. C. Neves (Dirack) 07/04/2019
+	 
+	 Email: rodolfo_profissional@hotmail.com
+	 
+	 Licença: Software de uso livre e código aberto.
+*/
+
+body{
+	margin: 0px;
+	font-size: 12px;
+	font-family: Arial;
+}
+
+.topo{
+	height: 30px;
+	background-color: #333333;
+}
+
+.topoInt{
+	height: 30px;
+	width: 100%;
+	max-width: 1040px;
+	margin: auto;
+}
+
+.topoLeft{
+	width: 50%;
+	height: 30px;
+	float: left;
+}
+
+.topoRight{
+	width: 50%;
+	height: 28px;
+	float: right;
+	margin-top: 2px;
+}
+
+.topoLeft ul{
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+.topoLeft li{
+	height: 30px;
+	line-height: 30px;
+	float: left;
+	margin-left: 8px;
+	margin-right: 8px;
+}
+
+.topoLeft li a{
+	text-decoration: none;
+	color: #ffffff;
+}
+
+.topoLeft .ativo{
+	color: blue;
+}
+
+.topoBusca{
+	float: right;
+	width: 110px;
+	height: 23px;
+	outline: 0;
+	line-height: 23px;
+}
+
+.topoRight a{
+	float: right;
+}
+
+.topoRight input{
+	float: right;
+	height: 26px;
+	font-size: 12px;
+	padding: 0px;
+}
+
+
+.topo2{
+	height: 95px;
+}
+
+.topo2Int{
+	height: 95px;
+	width: 100%;
+	max-width: 1040px;
+	margin: auto;
+}
+
+.logo{
+	width: 230px;
+	height: 95px;
+	float: left;
+	text-align: center;
+	line-height: 95px;
+	font-size: 25px;
+	font-weight: bolder;
+	font-family: 'serif';
+	color: red;
+}
+
+.topo2Int .banner{
+	width: 650px;
+	height: 80px;
+	margin-top: 7px;
+	background-color: red;
+	float: right;
+}
+
+.menuDropDown{
+	height: 40px;
+	background-color: red;
+}
+
+.menuDropDownInt{
+	width: 100%;
+	max-width: 1040px;
+	margin: auto;
+	height: 40px;
+}
+
+.menuDropDownInt ul{
+	list-style-type: none;
+	margin: 0px;
+}
+
+.menuDropDownInt ul li{
+	float: left;
+	height: 40px;
+	padding-left: 8px;
+	padding-right: 8px;
+	line-height: 40px;
+	color: #ffffff;
+}
+
+.menuDropDownInt ul li a{
+	text-decoration: none;
+}
+
+.submenu{
+	width: 150px;
+	position: absolute;
+	background-color: red;
+	display: none;
+	color: #ffffff;
+}
+
+.menuDropDownInt ul li:hover .submenu{
+	display: block;
+}
+
+.dropdown{
+	color: #ffffff;
+}
+
+.submenuItem{
+	line-height: 30px;
+	padding-left: 10px;
+}
+
+.submenuItem:hover{
+	background-color: #ff5555;
+}
+
+.ultimasNoticias{
+	height: 40px;
+}
+
+.ultimasNoticiasInt{
+	margin: auto;
+	height: 50px;
+	width: 100%;
+	max-width: 1040px;
+}
+
+.noticiasArea{
+	border: 1px solid #CCC;
+	height: 28px;
+	margin-top: 10px;
+	background-color: #FFF;
+}
+
+.noticiasTitulo{
+	background-color: red;
+	height: 28px;
+	color: #FFF;
+	display: inline-block;
+	text-align: center;
+	line-height: 28px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 16px;
+}
+
+.noticias{
+	color: #000;
+	padding: 5px;
+	display: inline-block;
+}
+
+.containerInt{
+	width: 100%;
+	max-width: 1040px;
+	margin: auto;
+}
+
+.leftSide{
+	min-height: 200px;
+	width: 753px;
+	float: left;
+}
+
+.rightSide{
+	width: 275px;
+	min-height: 200px;
+	float: right;
+	margin-left: 12px;
+}
+
+.widget{
+	border: 1px solid #ccc;
+	background-color: #fff;
+	margin-bottom: 10px;
+}
+
+.widgetTitulo{
+	background-color: #ddd;
+	border-bottom: 1px solid #ccc;
+	height: 30px;
+	line-height: 30px;
+	padding-left: 5px;
+	font-size: 14px;
+
+}
+
+.widgetConteudo{
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.noticiaItem{
+	font-size: 14px;
+	margin: 0px 10px;
+	padding: 10px 0px;
+	border-bottom: 1px solid #ccc;
+	text-align: left;
+
+}
+
+.noticiaItem a{
+	text-decoration: none;
+	color: #000;
+}
+
+.slideShow{
+	height: 335px;
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+
+.slideShowArea{
+	height:335px;
+}
+
+.slide{
+	height: 335px;
+	width: 100%;
+	float: left;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.slideInfo{
+	height: 70px;
+	margin-top: 245px;
+	background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.5), #000000);
+}
+
+.slideTitulo{
+	font-size: 20px;
+	color: #fff;
+	padding-top: 15px;
+	padding-left: 20px;
+}
+
+.slideSubTitulo{
+	font-size: 13px;
+	color: #fff;
+	padding-left: 20px;
+}
+
+.bolinha{
+	background-color: #999;
+	height: 20px;
+	width: 20px;
+	border-radius: 10px;
+	margin-left: 10px;
+	display: inline-block;
+}
+
+.noticiaArea1{
+	width: 430px;
+	height: 420px;
+	float: left;
+}
+
+.noticiaArea2{
+	width: 320px;
+	height: 420px;
+	float: left;
+}
+
+.noticiaItem{
+	height: 88px;
+	text-align: left;
+
+}
+
+.noticiaImg img{
+	width: 80px;
+	height: 80px;
+	float: left;
+}
+
+.noticiaImg{
+	padding: 3px;
+	border: 1px solid gray;
+	float: left;
+}
+
+.noticiaTitulo{
+	float: left;
+	font-size: 16px;
+	margin-left: 6px;
+}
+
+.noticiaInfo{
+	float: left;
+	width: 200px;
+	font-size: 12px;
+	margin-left: 6px;
+}
+
+
+.noticia{
+	height: 440px;
+}
+
+.noticiaBig .noticiaImg{
+	width: 384px;
+	height: 222px;
+}
+
+.noticiaBig .noticiaImg img{
+	width: 382px;
+	height: 220px;
+}
+
+.noticiaBig .noticiaTitulo{
+	font-size: 30px;
+}
+
+.noticiaArea2 .noticiaItem, .noticiaArea1 .noticiaItem{
+	border: none;
+}
+
+.menuMobile{
+	display: none;
+}
+
+/* Design responsivo para monitor pequeno */
+@media only screen (min-width: 907px) and (max-width: 1057px) {
+
+	.topoInt,
+	.topo2Int,
+	.menuDropDownInt,
+	.ultimasNoticiasInt,
+	.containerInt{
+		max-width: 890px;
+	}
+
+	.leftSide{
+		max-width: 590px;
+	}
+
+	.noticiaArea1{
+		max-width: 268px;
+
+	}
+	
+	.noticiaBig .noticiaImg, 
+	.noticiaBig img{
+		max-width: 250px;
+	}
+	
+	.noticiaBig .noticiaTitulo{
+		font-size: 25px;
+	}
+
+}
+
+/* Design responsivo para tablet */
+@media only screen and (min-width: 783px) and (max-width: 967px){
+
+	.topoInt,
+	.topo2Int,
+	.menuDropDownInt,
+	.ultimasNoticiasInt,
+	.containerInt{
+		max-width: 768px;
+	}
+
+	.topo2 .banner{
+		display: none;
+	}
+
+	.logo{
+		float: none;
+		margin: auto;
+	}
+
+	.rightSide{
+		display: none;
+	}
+
+	.leftSide{
+		float: none;
+		width: auto;
+	}
+
+	.noticiaArea1{
+		max-width: 446px;
+
+	}
+	
+	.noticiaBig .noticiaImg, 
+	.noticiaBig img{
+		max-width: 415px;
+	}
+	
+	.noticiaBig .noticiaTitulo{
+		max-width: 415px;
+		font-size: 25px;
+	}
+
+	#menuMobile{
+		display: block !important;
+	}
+}
+
+/* Design responsivo para celular */
+@media only screen and (max-width: 783px){
+
+	.topoInt,
+	.topo2Int,
+	.menuDropDownInt,
+	.ultimasNoticiasInt,
+	.containerInt{
+		max-width: 320px;
+	}
+
+	.topo2 .banner, .topoLeft{
+		display: none;
+	}
+
+	.topoRight{
+		width: 100%;
+	}
+
+	.ultimasNoticias{
+		display: none;
+	}
+
+	.menuDropDownInt ul{
+		background-color: red;
+		position: absolute;
+		display: none;
+	}
+
+	.menuDropDownInt ul li{
+		float: none;
+		height: auto;
+	}
+
+	.menuDropDownInt a{
+		color: #ffffff;
+	}
+
+	.menuMobile{
+		display: block;
+		line-height: 40px;
+		font-size: 30px;
+		color: #ffffff;
+	}
+
+	.submenu{
+		position: static;
+		display: block;
+	}
+
+	.dropdown{
+		display: none;
+	}
+
+	.logo{
+		float: none;
+		margin: auto;
+	}
+
+	.rightSide{
+		display: none;
+	}
+
+	.leftSide{
+		float: none;
+		width: auto;
+		margin-top: 10px;
+	}
+
+	.noticiaArea1{
+		max-width: 320px;
+		height: 400px;
+
+	}
+
+	.noticia{
+		height: 840px;
+	}
+	
+	.noticiaBig .noticiaImg, 
+	.noticiaBig img{
+		max-width: 290px;
+	}
+	
+	.noticiaBig .noticiaTitulo{
+		max-width: 290px;
+		font-size: 25px;
+	}
+
+}
+
+
+
+
+
+
+
+
