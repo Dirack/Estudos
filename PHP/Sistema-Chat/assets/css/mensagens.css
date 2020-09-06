@@ -1,0 +1,93 @@
+/*
+	 mensagens.css (CSS)
+	 
+	 Objetivo: Layout das mensagens a serem exibidas no chat.
+	 As minhas mensagens estão destacadas em azul, as mensagens
+	 da outra pessoa em cinza.
+	 
+	 Versão 1.0
+	 
+	 Site: http://www.dirackslounge.online
+	 
+	 Programador: Rodolfo A. C. Neves (Dirack) 12/05/2019
+	 
+	 Email: rodolfo_profissional@hotmail.com
+	 
+	 Licença: Software de uso livre e código aberto.
+*/
+
+.widgetMensagem{
+	margin: 10px;
+	display: flex;
+	flex-direction: column;
+	font-family: Arial;
+	font-size: 15px;
+}
+
+.dataMensagem{
+	color: #bec3c9;
+	align-self: center;
+	margin-bottom: 10px;
+}
+
+.mensagem{
+	display: flex;
+	width: 50%;
+}
+
+.textoMensagem{
+	padding: 10px;
+	border-radius: 25px;
+}
+
+.outraPessoa{
+	background-color: #f1f0f0;
+}
+
+.euPessoa{
+	background-color: #0084ff;
+	color: #ffffff;
+	align-self: flex-end;
+	border-radius: 25px;
+}
+
+.fotoPessoa{
+	width: 40px;
+	height: 40px;
+	margin-top: 3px;
+	margin-right: 5px;
+	padding-left: 4px;
+	border-radius: 20px;
+	background-position: 50% 50%;
+	background-size: cover;
+	display: flex;
+	align-items: end;
+	flex-direction: row-reverse;
+}
+
+.bolinhaOnline{
+	width: 8px;
+	height: 8px;
+	background-color: #42b72a;
+	border-radius: 4px;
+	margin: 1px;
+}
+
+.sombraBolinhaOnline{
+	background-color: #ffffff;
+	width: 11px;
+	height: 11px;
+	border-radius: 6px;
+}
+
+.imagemMensagem{
+	display: flex;
+}
+
+.imagemPessoa{
+	align-self: flex-end;
+}
+
+.euPessoaContainer{
+	align-self: flex-end;
+}

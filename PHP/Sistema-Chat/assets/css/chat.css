@@ -1,0 +1,153 @@
+/*
+	 chat.css (CSS)
+	 
+	 Objetivo: Sistema de chat com HTML/CSS, Javascript e PHP.
+	 
+	 Versão 1.0
+	 
+	 Site: http://www.dirackslounge.online
+	 
+	 Programador: Rodolfo A. C. Neves (Dirack) 12/05/2019
+	 
+	 Email: rodolfo_profissional@hotmail.com
+	 
+	 Licença: Software de uso livre e código aberto.
+*/
+
+body{
+	background-color: #e9ebee;
+}
+
+.chatBotao{
+	background-color: #eee;
+	position: absolute;
+	width: 80px;
+	height: 80px;
+	border: 1px solid black;
+	border-radius: 40px;
+	bottom: 0px;
+	right: 0px;
+	margin: 40px;
+	background-image: url('../icones/chatBotao.png');
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	z-index: 1;
+}
+
+.chat{
+	position: absolute;
+	border-radius: 5px !important;
+	width: 400px;
+	height: 400px;
+	bottom: 150px;
+	right: 50px;
+	display: flex;
+	flex-direction: column;
+	font-family: Arial;
+}
+
+headerChat{
+	background-color: #ffffff;
+	border-bottom: 1px solid gray;
+	flex: 1;
+	display: flex;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.imagemPessoa {
+	flex: 1;
+	padding-left: 4px;
+}
+
+.fotoPessoa{
+	width: 60px;
+	height: 60px;
+	margin-top: 3px;
+	border-radius: 30px;
+	background-image: url('../images/perfil.jpg');
+	background-position: 50% 50%;
+	background-size: cover;
+	display: flex;
+	align-items: end;
+	flex-direction: row-reverse;
+}
+
+.bolinhaOnline{
+	width: 15px;
+	height: 15px;
+	background-color: #42b72a;
+	border-radius: 8px;
+	margin: 4px;
+}
+
+.sombraBolinhaOnline{
+	background-color: #ffffff;
+	width: 22px;
+	height: 22px;
+	border-radius: 11px;
+}
+
+.nomePessoa{
+	flex: 2;
+	line-height: 20px;
+	padding-top: 15px;
+}
+
+.nomePessoaStatus{
+	font-size: 15px;
+	color: #abaeb4;
+}
+
+.menuChat{
+	flex: 2;
+	line-height: 65px;
+}
+
+.menuChatBotao{
+		display: flex;
+}
+
+.botao{
+	flex:1;
+	color: #bec2c9;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+mensagemChat{
+	background-color: #ffffff;
+	flex: 4;
+}
+
+footerChat{
+	background-color: #ffffff;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.formMensagem{
+	flex: 1;
+}
+
+.formMensagem input{
+	width: 96%;
+	border: none;
+	padding-top: 5px;
+	font-size: 18px;
+	padding-left: 4px;
+}
+
+.menuMensagem{
+	flex: 1;
+}
+
+.historicoMensagens iframe{
+	width: 100%;
+	height: 265px;
+	border: none;
+}
