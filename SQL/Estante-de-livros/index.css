@@ -1,0 +1,50 @@
+/* 
+
+	index.css (CSS)
+
+	Objetivo: Folha de estilo CSS para a interface de baco de dados index.php
+
+	Email: rodolfo_profissional@hotmail.com
+	    
+	Programador: Rodolfo A. C. Neves (Dirack) 02/02/2019
+*/
+
+@charset "UTF-8";
+
+body{
+ 
+}
+
+#menu{
+	float: right;
+	border:1px solid black;
+	margin: 0px 0px 0px 0px;
+	padding: 20px;
+	width: 350px;
+	border-radius:10px;
+	 background-color: #498af4;
+}
+
+#console{
+	margin: 0px 400px 0px 20px ;
+	border:1px solid black;
+	padding: 20px;
+	border-radius:10px;
+	background-color: #300a24;
+	color:#ffffff;
+}
+
+#menu a{
+	text-decoration: none;
+	border:1px solid black;
+	margin-right: 5px; 
+	padding: 3px;
+	border-radius:5px;
+	background-color: #0000FF;
+	color: #ffffff;
+}
+
+#menu a:hover{
+	background-color:#eeefff;
+	color: #000000;
+}
