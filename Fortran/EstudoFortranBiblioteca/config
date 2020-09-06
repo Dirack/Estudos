@@ -1,0 +1,43 @@
+#!/bin/bash
+#
+# config (Shell Script)
+#
+# Objetivo: Configurar e instalar a biblioteca Fortran 'libdirack'.
+# 
+# Fucionamento: Dê permissão de execução a este arquivo e execute.
+#
+#		~$ chmod 777 config
+#		~$ ./config
+#
+# Site: http://www.dirackslouge.online
+#
+# Versão 1.0
+#
+# Programador: Rodolfo A. C. Neves 10/06/2019
+#
+# email (Manutenção): rodolfo_profissional@hotmail.com
+# 
+# Licença: Software de uso livre e código aberto.
+
+# Diretório principal da sua instalação da biblioteca libdirack
+DIRACK_PATH="/finclude"
+
+# Verificar se o diretório DIRACK_PATH já existe
+if [ -d "$DIRACK_PATH" ] 
+then
+
+	echo -e "\033[00;01mInstalando a biblioteca libdirack no diretório $DIRACK_PATH ...\033[m"
+
+	echo -e "\033[00;01mCompilando arquivos da biblioteca e instalando...\033[m" && make install
+	echo -e "\033[00;01mPronto! :)\033[m"
+
+else
+
+	echo -e "\033[32mO diretório $DIRACK_PATH não existe, criando o diretório...\033[m"
+	sudo mkdir "$DIRACK_PATH"
+	[ -n "$0" ] && echo -e "\033[00;01mCompilando arquivos da biblioteca e instalando...\033[m" && make install
+	echo -e "\033[00;01mPronto! :)\033[m"
+
+fi
+
+
