@@ -1,0 +1,40 @@
+/*
+	 bexigas.css (CSS)
+	 
+	 Objetivo: Projeto do curso de PHP do básico ao profissional.
+	 Criar um jogo de estourar bexigas.
+	 
+	 Versão 1.0
+	 
+	 Site: http://www.dirackslounge.online
+	 
+	 Programador: Rodolfo A. C. Neves (Dirack) 01/03/2019
+	 
+	 Email: rodolfo_profissional@hotmail.com
+	 
+	 Licença: Software de uso livre e código aberto.
+*/
+
+#placar{
+	border: 1px solid black;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	text-align: center;
+	font-size:20px;
+	padding: 20px;
+	background-color:#f2f2f2;
+}
+
+.bola{
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	border: 1px solid black;
+	border-radius:25px;
+}
+
+#pontuacao{
+	font-size: 50px;
+}
+
