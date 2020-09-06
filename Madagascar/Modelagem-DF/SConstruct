@@ -1,0 +1,160 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+# Madagascar-Modelagem Diferenças Finitas  (Script do Pacote Madagascar)
+#
+# Objetivo: Realizar a modelagem de traços sísmicos através do método das 
+# diferenças finitas e gerar a saída (traços sísmicos modelados) em arquivos ASCII. 
+#
+# Site do MADAGASCAR: http://www.ahay.org/wiki/Main_Page
+# 
+# Versão 2.0
+#
+# Programador:  -Vinícius (Vini) 05/06/2019 (1.0 - Versão Original)
+#
+#		-Rodolfo A. C. Neves (Dirack) 05/06/2019 (2.0 - Correção de bugs e documentação)
+#
+# email (manutenção): rodolfo_profissional@hotmail.com
+#
+# Licensa:
+#  		Copyright (C) 2018 grupo de programação aplicada à geofísica (GPGEOF)
+#  		da Universidade Federal do Pará (UFPA); Belém, Pará, Brasil. 
+#
+#  		Esse programa é um software livre; você pode redistribuir e/ou modificar
+#  		sobre os termos da licensa pública geral (LPG) publicada pela Free 
+#  		Software Foundation; na versão 2 da licensa, ou (a seu critério) qualquer
+#  		versão posterior.
+#
+#  		Este programa é distribuído na esperança que será útil, mas SEM NENHUMA
+#  		GARANTIA; nem mesmo a garantia implícita de MERCANTILIDADE ou SERVENTIA
+#  		A UM PROPÒSITO DETERMINADO. veja a LPG licensa pública geral para mais
+#  		detalhes.
+#
+#  		Você deve ter recebido uma cópia da LPG licensa pública geral junto com
+#  		este programa; se não, escreva para a Free Software Foundation, Inc., 
+#  		51 Franklin Street, Quinquagésimo andar, Boston, MA  02110-1301, USA.
+
+from rsf.proj import * 
+from rsf.recipes import fdmod as fd
+
+parametrosModelagem = {
+    'nx':400,   'ox':0, 'dx':5.,  'lx':'x', 'ux':'m',
+    'nz':200,   'oz':0, 'dz':5.,  'lz':'z', 'uz':'m',
+    'nt':4001,  'ot':0, 'dt':0.0004, 'lt':'t', 'ut':'s',
+    'kt':110,
+    'ompnth':8, 
+    'jsnap':50, # velocidade 
+    'nb':300,
+    'frequenciaWavelet':20,
+    'height':8, # tamanho dos graficos gerados
+    'dens':2200.,
+    'sx':[0.,0.,0.,0.,0.,0.],
+    'sz':[100.,200.,300.,480,580.,60.,],
+    'rx':[2000.,2000.,2000.,2000.,2000.,2000.],
+    'rz':[120.,250.,340.,400.,530.,670.],
+    'numeroDeTiros':6
+    }
+
+# Setar parâmetros da modelagem para o programa awefd
+fd.param(parametrosModelagem)
+
+pontosInterfaces = ((0.6,0.50,0.40,0.30),
+          (0.4,0.65,0.9,1.15),
+          (1.5,1.0,0.5,0),
+          (1.30,1.30,1.60,1.20))
+
+velocidades = (1800.,
+              2200.,
+              1800.,
+              2500.,
+              3500.)
+
+def array2string(array,sep=' '):
+    return string.join(map(str,array),sep)
+stringVelocidades = array2string(velocidades,',')
+
+numeroPontosDasInterfaces = len(pontosInterfaces[0])
+numeroDeInterfaces = len(pontosInterfaces)
+
+Flow('pontosInterfaces.asc',None,
+     '''
+     echo %s
+     n1=%d n2=%d o1=0 d1=%g
+     data_format=ascii_float in=$TARGET     
+     ''' % (string.join(map(array2string,pontosInterfaces),' '),
+            numeroPontosDasInterfaces,numeroDeInterfaces,(parametrosModelagem['ox']+(parametrosModelagem['nx']-1)*parametrosModelagem['dx'])/(numeroPontosDasInterfaces-1)))
+
+Flow('pontosInterfaces','pontosInterfaces.asc','dd form=native')
+
+Flow('interfacesModelo','pontosInterfaces',
+     'add scale=500 | spline o1=0 d1=%(dx)g n1=%(nx)d' %parametrosModelagem)
+
+Flow('ModeloVelocidades','interfacesModelo',
+     '''
+     unif2 d1=%g n1=%d v00=%s |
+     put label=Velocidade unit=m/s
+     ''' % (parametrosModelagem['dz'],parametrosModelagem['nz'],stringVelocidades))
+
+Flow('ModeloDensidades',None,
+     '''
+     spike mag=%(dens)g 
+     n1=%(nz)d o1=%(oz)g d1=%(dz)g
+     n2=%(nx)d o2=%(ox)g d2=%(dx)g |
+     put label=Densidade unit=Km/m^3 label1=%(lz)s label2=%(lx)s unit1=%(uz)s unit2=%(ux)s
+     ''' % parametrosModelagem)
+
+coordenadasDasFontes=[]
+coordenadasDosReceptores=[]
+for i in range(parametrosModelagem['numeroDeTiros']):
+
+  fd.point('coordenadasDasFontes_%s'%i, parametrosModelagem['sx'][i], parametrosModelagem['sz'][i],parametrosModelagem)
+  coordenadasDasFontes.append('coordenadasDasFontes_%s'%i)
+
+  fd.point('coordenadasDosReceptores_%s'%i, parametrosModelagem['rx'][i], parametrosModelagem['rz'][i],parametrosModelagem)
+  coordenadasDosReceptores.append('coordenadasDosReceptores_%s'%i) 
+
+   
+Flow('coordenadasDasFontes',coordenadasDasFontes, 'cat ${SOURCES[1:6]} axis=2' )
+Flow('coordenadasDosReceptores',coordenadasDosReceptores, 'cat ${SOURCES[1:6]} axis=2' )
+
+## Plotagem do modelo, fontes e receptores
+Plot('ModeloVelocidades', fd.cgrey('''wantscalebar=y allpos=y title="Modelo de Velocidades" color=j label="Vel" unit="m/s"
+                     ''' , parametrosModelagem))        
+Plot('coordenadasDasFontes',fd.ssplot('wantscalebar=y symbol=* plotcol=0 symbolsz=10',parametrosModelagem))
+Plot('coordenadasDosReceptores',fd.rrplot('wantscalebar=y symbol=v plotcol=2 symbolsz=7',parametrosModelagem))
+
+for mod in [ 'ModeloVelocidades']:
+  Result(mod,[mod,'coordenadasDasFontes','coordenadasDosReceptores'],'Overlay')
+
+# Plotagem da wavelet
+fd.wavelet('wavelet_tmp',parametrosModelagem['frequenciaWavelet'],parametrosModelagem)
+
+Flow('wavelet','wavelet_tmp','transp')
+
+Result('wavelet','window n2=500 | wiggle title=Wavelet label2=A unit2=t label1=Tempo unit1=s poly=y')
+
+# Modelagem com diferenças finitas
+for i in range(parametrosModelagem['numeroDeTiros']):
+     
+    fd.awefd('registro_%s'%i,
+             'campoAcusticoModelado_%s'%i,
+             'wavelet',
+             'ModeloVelocidades',
+             'ModeloDensidades',
+             'coordenadasDasFontes_%s'%i,
+             'coordenadasDosReceptores',
+             'free=n',# permitir flag opcional
+             parametrosModelagem)
+
+    Result('campoAcusticoModelado_%s'%i, fd.wgrey('title="Modelagem DF - Tiro %s" pclip=99'%i,parametrosModelagem))
+
+    for j in range(parametrosModelagem['numeroDeTiros']):
+        Flow('registro_%s_%s'%(i,j), 'registro_%s'%i, 'window n1=1 f1=%d | window min1=%f | sfput o1=0 '%(j,(parametrosModelagem['kt']-1)*parametrosModelagem['dt']) )  
+  
+        Result('registro_%s_%s'%(i,j),
+        '''
+        wiggle title="Registro - Fonte %s - receptor %s" transp=y poly=y yreverse=y label1=Tempo unit1=s label2=A unit2=t
+        '''%(i,j))
+        Flow('ascii/registro_%s_%s.ascii'%(i,j), 'registro_%s_%s'%(i,j),'sfdd form=ascii out=${TARGETS[0]}', stdout=0)
+
+End()
