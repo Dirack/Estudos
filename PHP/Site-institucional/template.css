@@ -1,0 +1,108 @@
+/* 
+	template.css (CSS) - Folha de estilo CSS para template.php
+
+	Objetivo: Projeto do curso PHP do zero ao profissional.
+	CriaÃ§Ã£o de um site institucional.
+
+	Programador: Rodolfo A. C. Neves (Dirack) 08/02/2019
+
+	Email: rodolfo_profissional@hotmail.com
+    
+*/
+
+@charset "UTF-8";
+
+body{
+	margin:0;
+	background-color: #1e1e1e;
+}
+
+.topo{
+	margin: auto;
+	width: 100%;
+	max-width: 980px;
+	height: 470px;
+}
+
+.topo1{
+	height: 120px;
+}
+
+.banner{
+	height: 350px;
+	background-color: #514e51;
+}
+
+.menu{
+	margin: auto;
+	margin-top:0px;
+	width: 100%;
+	max-width: 980px;
+	height: 50px;
+	background-color: #0062b7;
+}
+
+.container{
+	margin: auto;
+	width: 100%;
+	max-width: 980px;
+	min-height: 400px;
+	background-color: #ffffff;
+}
+
+.rodape{
+	margin: auto;
+	width:100%;
+	max-width:980px;
+	height:100px;
+	background-color: #303030;
+	margin-bottom:50px;
+}
+
+.menu ul{
+	list-style:none;
+	margin: 0px;
+	padding:0px;
+}
+
+.menu li{
+	float: left;
+	height: 50px;
+	color: #ffffff;
+	line-height: 50px;
+	padding-left:10px;
+	padding-right: 10px;
+}
+
+.sobre img{
+	float: left;
+	margin-right: 20px;
+	margin-right:20px;
+	padding:0px 0px 20px 20px;
+}
+
+.sobre p{
+	margin-right: 20px;
+	text-align: justify;
+}
+
+h4 {
+	margin:0px;
+}
+
+.sobre{
+	padding-top:20px;
+}
+
+.portifolio{
+  clear: both;
+	padding:20px;
+}
+
+.portifolio img{
+	width:160px;
+	height: 160px;
+	float:left;
+	border: 3px solid #e2e3ee;
+	margin: 10px;
+}
