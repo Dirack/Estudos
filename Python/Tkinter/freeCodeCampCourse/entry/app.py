@@ -22,6 +22,7 @@ e = Entry(root,
 	width=50,
 	borderwidth=5)
 e.pack()
+e.insert(0,"Enter your name: ")
 
 def myClick():
 	'''
