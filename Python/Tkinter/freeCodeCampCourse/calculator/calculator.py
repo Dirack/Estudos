@@ -15,6 +15,7 @@
 # Licença: GPL-3.0 <https://www.gnu.org/licenses/gpl-3.0.txt>.
 
 from tkinter import *
+import re
 
 root = Tk()
 root.title('Simple calculator')
@@ -23,11 +24,17 @@ e = Entry(root, width=35, borderwidth=5)
 e.grid(row=0,column=0,columnspan=3,padx=10,pady=10)
 
 def calculate(string):
-	l = filter(None,string.split('+'))
-	l = map(lambda i: int(i),l)
-	if len(l)==0:
+
+	regex = re.compile(r'\+|\-|\*|\/')
+	calc = regex.search(string)
+	if calc:
+		delim = calc.group()
+	else:
 		return None
-	return sum(l)
+	l = filter(None,string.split(delim))
+	l = map(lambda i: str(float(i)),l)
+	
+	return eval(delim.join(l))
 
 def buttonAdd(text):
 	if text=='clear':
@@ -58,16 +65,24 @@ especialButtons = {
 	'zero':
 	{'text':'0','row':4,'column':0,'padx':40,'pady':20,'span':False},
 
+	'multiply':
+	{'text':'*','row':4,'column':1,'padx':40,'pady':20,'span':False},
+
+	'divide':
+	{'text':'/','row':4,'column':2,'padx':42,'pady':20,'span':False},
+
+	'subtract':
+	{'text':'-','row':5,'column':0,'padx':41,'pady':20,'span':False},
+
 	'clear':
-	{'text':'clear','row':4,'column':1,'padx':79,'pady':20,'span':True},
+	{'text':'clear','row':5,'column':1,'padx':80,'pady':20,'span':True},
 
 	'plus':
-	{'text':'+','row':5,'column':0,'padx':40,'pady':20,'span':False},
+	{'text':'+','row':6,'column':0,'padx':38,'pady':20,'span':False},
 
 	'equals':
-	{'text':'=','row':5,'column':1,'padx':91,'pady':20,'span':True}
-}
-
+	{'text':'=','row':6,'column':1,'padx':91,'pady':20,'span':True}
+}	
 for k,v in especialButtons.items():
 	button = Button(root,
 			text=v['text'],
