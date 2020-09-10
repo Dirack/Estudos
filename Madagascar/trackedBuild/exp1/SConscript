@@ -1,0 +1,15 @@
+#!/usr/bin/env python
+#
+
+from rsf.proj import *
+
+Flow('mapa',None,
+	'''
+	spike n1=10 d1=1 o1=0 n2=20 d2=1 o2=0 k1=5 k2=10 mag=10 |
+	sfricker ma=lixo.rsf
+	''')
+
+Result('mapa',
+	'''
+	grey
+	''')
