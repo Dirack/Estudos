@@ -1,0 +1,6 @@
+from rsf.tex import *
+
+End(options='reproduce',
+	include=r'''
+	\usepackage[utf8]{inputenc}
+	''')
