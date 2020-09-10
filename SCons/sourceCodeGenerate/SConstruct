@@ -1,0 +1,33 @@
+# coding: utf-8
+#
+# SConstruct (Python)
+# 
+# Objetivo: Exemplo de geração de código fonte com SCons.
+# 
+# Site: https://dirack.github.io
+# 
+# Versão 1.0
+# 
+# Programador: Rodolfo A C Neves (Dirack) 10/09/2020
+# 
+# Email: rodolfo_profissional@hotmail.com
+# 
+# Licença: GPL-3.0 <https://www.gnu.org/licenses/gpl-3.0.txt>.
+
+env = Environment()
+env.Append(CPPPATH = "#")
+
+## Header example
+env.Append(BUILDERS =
+   {'Copy1' : Builder(action = 'cat < $SOURCE > $TARGET',
+                      suffix='.h', src_suffix='.bar')})
+env.Copy1('test.bar') # produces test.h from test.bar.
+env.Program('app','main.cpp') # indirectly depends on test.bar
+
+## Source file example
+env.Append(BUILDERS =
+  {'Copy2' : Builder(action = 'cat < $SOURCE > $TARGET',
+                     suffix='.cpp', src_suffix='.bar2')})
+foo = env.Copy2('foo.bar2') # produces foo.cpp from foo.bar2.
+env.Program('app2',['main2.cpp'] + foo) # compiles main2.cpp and foo.cpp into app2.
+
