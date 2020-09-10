@@ -17,11 +17,14 @@
 # Licença: GPL-3.0 <https://www.gnu.org/licenses/gpl-3.0.txt>.
 
 from rsf.tex import *
+from rsf.proj import Flow
 import os
 import logging
 
-logging.basicConfig(level=logging.DEBUG,format='%(asctime)s - %(message)s')
+logging.basicConfig(filename='out.log',level=logging.INFO,
+			format='%(asctime)s - %(levelname)s - %(message)s')
 
+logging.info('***[Experiment Started]***')
 
 env =  Environment(ENV=os.environ)
 
@@ -34,14 +37,16 @@ logging.debug('sconscripts = %s' % sconscripts)
 for i in sconscripts:
 	try:
 		SConscript(i,exports='env')
+		logging.info("Expement %s Succed!",i)
 	except:
-		logging.debug("Experiment %s Failed!",i)
+		logging.error("Experiment %s Failed!",i)
+logging.disable(logging.CRITICAL)
+Flow('out.tex',None,
+	'''
+	./log2tex %s
+	''' %('out.log'))
 
-
-#SConscript(sconscripts[0],exports='env')
-#SConscript(sconscripts[1],exports='env')
-
-#End(options='reproduce',
-#	     include=r'''
-#	     \usepackage[utf8]{inputenc}
-#	     ''')
+End(options='reproduce',
+	     include=r'''
+	     \usepackage[utf8]{inputenc}
+	     ''')
