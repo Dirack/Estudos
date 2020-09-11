@@ -14,13 +14,30 @@
 # 
 # Licença: GPL-3.0 <https://www.gnu.org/licenses/gpl-3.0.txt>.
 
-FILENAME=$(basename "$1" | cut -d'.' -f1)
-LATEXFILENAME="$FILENAME.tex"
-FILE=$(cat "$FILENAME.log")
+FILENAME="$1"
+LATEXFILENAME="paper.tex"
 
-echo '\section{Logfile dos experimentos}' > "$LATEXFILENAME"
-echo '\begin{verbatim}' >> "$LATEXFILENAME"
-echo "$FILE" >> "$LATEXFILENAME"
-echo '\end{verbatim}' >> "$LATEXFILENAME"
+STARTTIME=$(grep 'PSTA' "$FILENAME" | sed 's/PSTA//')
+ENDTIME=$(grep 'PEND' "$FILENAME" | sed 's/PEND//')
+
+HEADER="\\title{Experiment Report}
+\\author{Jarvis Robot}
+\\maketitle
+
+\\begin{abstract}
+This is an automatically generated report do not delete or modify!
+Your experiment started at (${STARTTIME%%- INFO*}) and finhesed at (${ENDTIME%%- INFO*})
+returned status:${ENDTIME##*INFO -}
+\\end{abstract}
+
+"
+
+echo "$HEADER"
+
+echo '\section{Experiment Logfile}'
+#echo '\begin{lstlisting}'
+echo '\lstinputlisting{'$FILENAME'}'
+#cat "$FILENAME" #| sed '/PERR/s/^/\\textbf\{/;/PERR/s/$/\}/'
+#echo '\end{lstlisting}'
 
 

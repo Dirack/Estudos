@@ -20,14 +20,17 @@ from rsf.tex import *
 from rsf.proj import Flow
 import os
 import logging
-
-logging.basicConfig(filename='out.log',level=logging.INFO,
-			format='%(asctime)s - %(levelname)s - %(message)s')
-
-logging.info('***[Experiment Started]***')
+import tempfile
 
 env =  Environment(ENV=os.environ)
-env.AlwaysBuild('out.tex')
+env.AlwaysBuild('paper.tex')
+
+logfile = tempfile.mkstemp(suffix='.log')[1]
+
+logging.basicConfig(filename=logfile,level=logging.INFO,
+			format='%(asctime)s - %(levelname)s - %(message)s')
+
+logging.info('PSTA ***[Experiment Started]***')
 
 experiments = filter(os.path.isdir,os.listdir(os.path.curdir))
 sconscripts = filter(os.path.isfile,map(lambda e: str(e)+'/SConscript',experiments))
@@ -42,10 +45,10 @@ total=len(experiments)
 for i in sconscripts:
 	try:
 		SConscript(i,exports='env')
-		logging.info("Expement %s Succed!",i)
+		logging.info("Experiment %s Succed!",i)
 		succed = succed + 1
 	except:
-		logging.error("Experiment %s Failed!",i)
+		logging.error("PERR Experiment %s Failed!",i)
 		fail = fail + 1
 		currentExperimentDir = os.path.dirname(i)
 		logging.warning(
@@ -65,15 +68,22 @@ for i in sconscripts:
 			except:
 				logging.warning("BUGSCRIPT failed!")
 
-logging.info('Total of '+str(fail+succed)+'/'+str(total)+' experiments executed, '+str(fail)+' failed and '+str(succed)+' succed')
+logging.info('PEND Total of '+str(fail+succed)+'/'+str(total)+' experiments executed, '+str(fail)+' failed and '+str(succed)+' succed')
 
 logging.disable(logging.CRITICAL)
-Flow('out.tex',None,
+Flow('paper.tex',None,
 	'''
 	./log2tex %s
-	''' %('out.log'))
+	''' %(logfile))
 
 End(options='reproduce',
 	     include=r'''
 	     \usepackage[utf8]{inputenc}
+	     \usepackage{microtype}
+	     \usepackage{listings}
+	     \usepackage[left=2.5cm,top=2.5cm,right=2.5cm,bottom=2.5cm]{geometry}
+	     \setlength{\parindent}{1.3cm}
+	     \usepackage{color}
+	     \definecolor{mygray}{rgb}{0.8,0.8,0.8}
+	     \lstset{backgroundcolor=\color{mygray},breaklines=true}
 	     ''')
