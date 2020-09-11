@@ -1,6 +1,0 @@
-from rsf.proj import *
-
-env = Environment()
-env.AlwaysBuild('bugscript.log')
-
-Flow('bugscript.log','filter.rsf','in')
