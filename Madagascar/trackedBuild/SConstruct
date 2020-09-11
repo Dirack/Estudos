@@ -22,6 +22,9 @@ import os
 import logging
 import tempfile
 
+# Download experiments
+SConscript('SConscript')
+
 env =  Environment(ENV=os.environ)
 env.AlwaysBuild('paper.tex')
 

@@ -1,0 +1,19 @@
+#!/usr/bin/env python
+
+
+import os
+import tempfile
+
+experiments = [
+'https://raw.githubusercontent.com/Dirack/Estudos/test/Madagascar/trackedBuild/exp1/SConscript',
+'https://raw.githubusercontent.com/Dirack/Estudos/test/Madagascar/trackedBuild/exp2/SConscript',
+'https://raw.githubusercontent.com/Dirack/Estudos/test/Madagascar/trackedBuild/exp3/SConscript',
+'https://raw.githubusercontent.com/Dirack/Estudos/test/Madagascar/trackedBuild/exp4/SConscript']
+
+for i in experiments:
+#	try:
+	expdir = tempfile.mktemp(dir=os.path.curdir)
+	os.mkdir(expdir)
+	p = os.popen('wget -c -P '+str(expdir)+' '+str(i))
+#	except:
+#		print("Download failed!")
