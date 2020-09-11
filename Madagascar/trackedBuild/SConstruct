@@ -40,6 +40,24 @@ for i in sconscripts:
 		logging.info("Expement %s Succed!",i)
 	except:
 		logging.error("Experiment %s Failed!",i)
+		currentExperimentDir = os.path.dirname(i)
+		logging.warning(
+		'''Experiment Failed - Show files list\n\t Files=> %s
+		''', str(os.listdir(currentExperimentDir)))
+		
+		if os.path.isdir(currentExperimentDir+'/'+'Fig'):
+			logging.warning(
+			'''Experiment Failed - Show Fig list\n\t Fig=> %s
+			''', str(os.listdir(currentExperimentDir+'/'+'Fig')))
+		
+		# Try to run a BUGSCRIPT (This is a SConscript with another name
+		# to allow the experiment to do a set of commands if the build fails)
+		if os.path.isfile(currentExperimentDir+'/BUGSCRIPT'):
+			try:
+				SConscript(currentExperimentDir+'/BUGSCRIPT')
+			except:
+				logging.warning("BUGSCRIPT failed!")
+
 logging.disable(logging.CRITICAL)
 Flow('out.tex',None,
 	'''
