@@ -28,6 +28,6 @@ def popup():
 	else:
 		Label(root,text="You clicked no!").pack()
 
-Button(root,text="popup",command=popup()).pack()
+Button(root,text="popup",command=popup).pack()
 
 root.mainloop()
