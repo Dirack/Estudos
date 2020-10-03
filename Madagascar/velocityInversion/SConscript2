@@ -1,0 +1,75 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+# SConscript2  (Madagascar Script)
+#
+# Purpose: Study about velocity continuation. 
+#
+# Site: http://www.dirackslounge.online
+# 
+# Version 1.0
+#
+# Programer: Rodolfo A. C. Neves (Dirack) 11/08/2020
+#
+# Email: rodolfo_profissional@hotmail.com
+#
+# License: GPL-3.0 <https://www.gnu.org/licenses/gpl-3.0.txt>.
+
+# Madagascar package
+from rsf.proj import *
+
+# Error report function
+import atexit
+from madagascarRecipes.errorReport import print_build_failures
+
+# CRE recipe
+from madagascarRecipes.pefInterpolation import pefInterpolation as pefin
+from madagascarRecipes.kimodel import multiLayerModel as mlmod
+from madagascarRecipes.kimodel import kirchoffNewtonModeling as kinewmod
+from madagascarRecipes.velocityAnalisys import velocityAnalisys as nmoStack
+
+# Velocity continuation recipe
+from rsf.recipes.velcon import velcon
+
+Flow('dataTransposed','multiLayerDataCube','transp plane=23 | transp plane=34')
+
+# Pre-stack velocity continuation
+velcon(data='dataTransposed',        # data name
+           nv=100,          # continuation steps
+           v0=1.5,          # initial velocity
+           dv=0.01,          # velocity step
+           nx=201,          # lateral dimension
+           nh=161,          # number of offsets
+           padt=1024,        # time padding
+           padt2=2048,       # extra time padding
+           padx=None,   # lateral padding
+           v1=None,     # other velocity
+           n1=None,     # time extent
+           dt=0.004,    # time sampling
+           dx=0.025,     # midpoint sampling
+           units='km',  # lateral units
+           vslope=None, # semblance muting
+           vx0=0,       # semblance muting
+           x0=0,        # lateral origin
+           srect1=3,    # semblance vertical smoothing
+           srect2=1,    # semblance lateral smoothing
+           rect1=10,    # vertical smoothing
+           rect2=10)   # lateral  smoothing
+ 
+# Post-stack velocity continuation
+Flow('velcon','stackedSection',
+	'''
+	pad beg2=200 end2=200 | cosft sign2=1 |
+	stolt vel=1.5 |
+	vczo v0=1.5 dv=0.01 nv=100 verb=y |
+	transp plane=23 | cosft sign2=-1 |
+	window min2=0 max2=5
+	''')
+
+# Show error message if fail
+message = '''
+SCosncript Failed build
+'''
+
+atexit.register(print_build_failures,message)
+End()

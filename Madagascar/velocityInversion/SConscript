@@ -1,0 +1,113 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+# SConscript  (Madagascar Script)
+#
+# Purpose: Generate model and data cubes, NMO stacking,
+# Kirchhoff Migration and time to depth conversion.
+#
+# Site: http://www.dirackslounge.online
+# 
+# Version 1.0
+#
+# Programer: Rodolfo A. C. Neves (Dirack) 03/06/2020
+#
+# Email: rodolfo_profissional@hotmail.com
+#
+# License: GPL-3.0 <https://www.gnu.org/licenses/gpl-3.0.txt>.
+
+# Madagascar package
+from rsf.proj import *
+
+# Error report function
+import atexit
+from madagascarRecipes.errorReport import print_build_failures
+
+# CRE recipe
+from madagascarRecipes.pefInterpolation import pefInterpolation as pefin
+from madagascarRecipes.kimodel import multiLayerModel as mlmod
+from madagascarRecipes.kimodel import kirchoffNewtonModeling as kinewmod
+from madagascarRecipes.velocityAnalisys import velocityAnalisys as nmoStack
+
+xmax = 6.0
+zmax = 2.0
+
+layers = ((0.30,0.50,0.20,0.30),
+	  (1.65,1.85,1.55,1.65))
+
+velocities = (1.508,
+	      1.690,
+	      2.0)
+
+# Generate multi layer model and data cube
+mlmod(interfaces='interfaces',
+	dipsfile='interfacesDip',
+	modelfile='mod1',
+	xmax=xmax,
+	zmax=zmax,
+	layers=layers,
+	velocities=velocities)
+
+kinewmod(reflectors='interfaces',
+	reflectorsDip='interfacesDip',
+	filename='multiLayerDataCube',
+	velocities=velocities)
+
+# NMO Stack
+nmoStack(dataCube='multiLayerDataCube',
+	pick='vnmo',
+	stack='stackedSection',
+	vrms='vrms',
+	v0=1.5,
+	dv=0.01,
+	nv=100,
+	vel0=1.5,
+	rect1=15,
+	rect2=40,
+	rect3=3,
+	dt=0.004)
+
+# Kirchhoff Migration
+Flow('kirchhoffSection',['stackedSection','vrms'],
+	'''
+	kirchnew velocity=${SOURCES[1]}
+	'''
+	)
+
+# Convert RMS velocity to Dix velocity
+Flow(['vdix','vout'],'vrms','dix vrmsout=${TARGETS[1]}')
+
+# Time to depth Conversion
+# Depth velocity model
+nz = 199
+dz = 0.01
+Flow('depthVelModel','vrms',
+	'''
+	time2depth velocity=$SOURCES nz=%i dz=%g intime=y twoway=y |
+	put label1=Depth unit1=Km
+	''' % (nz,dz))
+
+# Depth section
+Flow('depthSection',['kirchhoffSection','vrms'],
+	'''
+	time2depth velocity=${SOURCES[1]} nz=%i dz=%g intime=y |
+	put label1=Depth unit1=Km
+	''' % (nz,dz))
+
+# Iterative time to depth conversion
+Flow('t2d tt2d xt2d ft2d gt2d ct2d','depthVelModel vrms',
+	'''
+	tdconvert niter=3 verb=y cgiter=2000 eps=5 shape=y rect1=4 rect2=15 dix=${SOURCES[1]}
+	t0=${TARGETS[1]} x0=${TARGETS[2]} f0=${TARGETS[3]} grad=${TARGETS[4]} cost=${TARGETS[5]}
+	''')
+
+# Use aliases to split building
+Alias('model','multiLayerDataCube.rsf')
+
+# Show error message if fail
+message = '''
+SCosncript Failed build
+'''
+
+atexit.register(print_build_failures,message)
+End()
