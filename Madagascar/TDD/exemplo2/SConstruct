@@ -1,0 +1,10 @@
+from rsf.proj import *
+import unittest
+
+
+class TestQualquer(unittest.TestCase):
+	def test_seila(self):
+		self.assertEqual(3,3)
+
+
+unittest.main()
