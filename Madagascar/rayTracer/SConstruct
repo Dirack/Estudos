@@ -1,0 +1,97 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+# SConstruct  (Madagascar Script)
+#
+# Purpose: Study of ray tracing.
+#
+# Site: http://www.dirackslounge.online
+# 
+# Version 1.0
+#
+# Programer: Rodolfo A. C. Neves (Dirack) 08/08/2020
+#
+# Email: rodolfo_profissional@hotmail.com
+#
+# License: GPL-3.0 <https://www.gnu.org/licenses/gpl-3.0.txt>.
+
+# Madagascar package
+from rsf.proj import *
+
+raysfile='rays'
+modelfile='model'
+overlay='ovelay'
+escfile='esc'
+a0=-45
+nr=10
+amax=45
+
+xmax = 6.0
+zmax = 2.0
+
+def arr2str(array,sep=' '):
+	'''
+	Convert a tuple into a comma separeted string
+	'''
+	return string.join(map(str,array),sep)
+
+# Velocity Model
+interfaces = 'iterfaces'
+dipsfile = 'dipsfile'
+ascInterfaces = 'layers.asc' 
+layersFile = 'layers' 
+
+layers = [0.65,0.65,0.65,0.65]
+#layers = map(lambda x: x+uniform(-0.1,0.1),layers)
+velocities = [1.508,2.0]
+
+vstr=arr2str(velocities,',')
+		
+n1 = 4 #len(layers[0])
+n2 = 1 #len(layers)
+
+Flow(ascInterfaces,None,
+     '''
+     echo %s
+     n1=%d n2=%d o1=0 d1=%g
+     data_format=ascii_float in=$TARGET
+     ''' % (arr2str(layers),n1,n2,xmax/(n1-1)))
+
+Flow(layersFile,ascInterfaces,'dd form=native')
+
+d = 0.00101 # non-round for reproducibility
+
+Flow(interfaces,layersFile,'spline o1=0 d1=%g n1=%d' % (d,int(1.5+xmax/d)))
+
+Flow(dipsfile,interfaces,'deriv scale=y')
+
+Flow(modelfile,interfaces,
+     '''
+     unif2 d1=%g n1=%d v00=%s |
+     smooth rect1=5 rect2=5 repeat=5
+     ''' % (d,int(1.5+zmax/d),vstr))
+
+
+
+# Shoot ray in the model
+Flow(raysfile,modelfile,
+		'''
+		rays2 yshot=3 zshot=1 nt=10000 dt=0.01 a0=%g amax=%g nr=%i escvar=n
+		''' % (a0,amax,nr))
+
+# Keep escape values of rays (z,x,t,angle)
+Flow(escfile,modelfile,
+		'''
+		rays2 yshot=3 zshot=1 nt=10000 dt=0.01 a0=%g amax=%g nr=%i escvar=y
+		''' % (a0,amax,nr))
+
+# plot the model
+Plot(modelfile,'grey color=j scalebar=y label1=Depth unit1=km label2=Position unit2=km barlabel=Velocity barunit=km/s barreverse=y title=Model allpos=y')
+
+# plot the ray
+Plot(raysfile,'graph transp=y yreverse=y min1=0 max1=2 min2=0 max2=6 wantaxis=n wanttitle=n scalebar=y plotcol=7 plotfat=3')
+
+# overlay model and ray
+Result(overlay,[modelfile, raysfile],'Overlay')
+
+End()
