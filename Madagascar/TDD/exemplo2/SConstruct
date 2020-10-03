@@ -1,10 +1,6 @@
 from rsf.proj import *
+import soma
 import unittest
 
-
-class TestQualquer(unittest.TestCase):
-	def test_seila(self):
-		self.assertEqual(3,3)
-
-
-unittest.main()
+if __name__ == "SCons.Script":
+	unittest.main(module=soma)
