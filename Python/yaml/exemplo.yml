@@ -1,0 +1,11 @@
+# Isto é um comentário http://www.yamllint.com/
+frutas: 
+  - nome: banana
+    cor: amarela
+    quantidade: 5
+  - nome: morango
+    cor: vermelho
+    quantidade: 10
+  - nome: limão
+    cor: verde
+    quantidade: 20
