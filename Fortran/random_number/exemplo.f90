@@ -1,4 +1,5 @@
 PROGRAM exemplo
+IMPLICIT NONE
 !
 ! exemplo.f90 (Fortran 90)
 ! 
