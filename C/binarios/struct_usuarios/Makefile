@@ -12,7 +12,10 @@
 # 
 # Licença: GPL-3.0 <https://www.gnu.org/licenses/gpl-3.0.txt>.
 
-all:	usuarios.h gera_binario_usuarios.x ler_usuarios.x
+all:	usuarios.h gera_binario_usuarios.x ler_usuarios.x ler_arquivo_gera_binario.x
 
 %.x:	%.c
 	gcc $< -o $@
+
+clean:
+	rm *.x

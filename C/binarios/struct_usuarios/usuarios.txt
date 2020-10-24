@@ -1,0 +1,3 @@
+Rodolfo 28 1000.0
+Fulano 16 2000.0
+Cicrano 12 0.0
