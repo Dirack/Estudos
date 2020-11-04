@@ -1,44 +1,42 @@
-/* Simplified system command */
 /*
-  Copyright (C) 2007 University of Texas at Austin
-  
-  This program is free software; you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation; either version 2 of the License, or
-  (at your option) any later version.
-  
-  This program is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  GNU General Public License for more details.
-  
-  You should have received a copy of the GNU General Public License
-  along with this program; if not, write to the Free Software
-  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+* system.c (C)
+* 
+* Objetivo: Estudo execução de Shell command em c.
+* 
+* Site: https://dirack.github.io
+* 
+* Versão 1.0
+* 
+* Programador: Rodolfo A C Neves (Dirack) 03/11/2020
+* 
+* Email: rodolfo_profissional@hotmail.com
+* 
+* Licença: GPL-3.0 <https://www.gnu.org/licenses/gpl-3.0.txt>.
 */
-#include <sys/types.h>
+
+#include <stdio.h>
 #include <sys/wait.h>
 #include <unistd.h>
 
-#include "system.h"
-#include "error.h"
-
-void sf_system(const char *command)
-/*< System command >*/
+void system(const char *command)
 {
-    pid_t pid;
-    int status;
+	pid_t pid;
+	int status;
 
-    pid = fork();
+	pid = fork();
 
-    if (pid < 0) {
-	sf_error("Failed to fork");
-    } else if (pid==0) { /* child */
-	execl("/bin/sh","sh","-c",command,(char*) NULL);
-	_exit(127);
-    } else { /* parent */
-	waitpid(pid,&status,0);
-	if (status < 0) sf_error("Failed to run \"%s\"",command);
-    }
+	if(pid<0){
+		fprintf(stderr,"%s: failed to fork",__FILE__);
+	}else if(pid==0){/* child */
+		execl("/bin/sh","sh","-c",command,(char*)NULL);
+		_exit(127);
+	}else{/* parent */
+		waitpid(pid,&status,0);
+		if(status<0) fprintf(stderr,"%s: failed to run \"%s\"",__FILE__,command);
+	}
 }
 
+int main(void){
+
+	system("echo 'rodar comando shell em c. ~$ ls' && ls");
+}
