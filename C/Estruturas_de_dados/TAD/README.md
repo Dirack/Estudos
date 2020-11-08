@@ -37,3 +37,13 @@ Os dados de f somente podem ser acessados pelas funções de manipulação do ti
 - fgetc
 - feof
 - etc
+
+#### Modularização da TAD
+
+A convenção em linguagem C é preparar dois arquivos para implementar um TAD
+
+- Arquivo ".h": protótipos das funções, tipos de ponteiros, e dados globalmente acessíveis
+
+- Arquivo ".c": declaração do tipo de dados e implementação das funções
+
+Assim separamos o "conceito" (definição do tipo) de sua "implementação"
