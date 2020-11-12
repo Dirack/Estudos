@@ -36,7 +36,7 @@ void mostrar(PESSOA x)
 
 int main(int argc, char* argv[])
 {
-	PESSOA p = {"Tio Pica",24,1091.12,{8,3,1992}};
+	PESSOA p = {"Rodolfo",24,1091.12,{8,3,1992}};
 
 	mostrar(p);
 
