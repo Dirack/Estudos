@@ -1,5 +1,5 @@
 CC = gcc
-TEST = test_pilha.x test_operadores.x test_calculadora.x
+TEST = test_pilha.x test_operadores.x test_calculadora.x test_interface.x
 UNITY = Unity/unity.c
 
 all:	$(TEST)
