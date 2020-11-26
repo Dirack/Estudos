@@ -19,10 +19,11 @@ float acessa (MatrizSimetrica* mat, int i, int j) {
         printf("\nAcesso invalido.\n");
         exit(1);
     }
-    if (i>=j)
-        k = i*(i+1)/2 + j;
-    else
-        k = j*(j+1)/2 + i;
+    	if (i>=j){
+        	k = i*(i+1)/2 + j;
+	}else{
+        	k = j*(j+1)/2 + i;
+	}
     return mat->v[k];
 }
  
@@ -32,6 +33,11 @@ void atribui (MatrizSimetrica* mat, int i, int j, float v) {
         printf("\nAtribuicao invalida.\n");
         exit(1);
     }
-    k = i*mat->dim+j;
-    mat->v[k] = v;
+    	if (i>=j){
+       		k = i*(i+1)/2 + j;
+	}else{
+        	k = j*(j+1)/2 + i;
+	}
+    mat->v[k]=v;
+
 }
