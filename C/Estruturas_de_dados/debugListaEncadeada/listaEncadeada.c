@@ -20,16 +20,21 @@ list *insere (list *l, char c) {
 /*função para fazer a ordenação de caracteres utilizando um vetor*/
 list *ordenar (list *L) {
     list *p;
-    int cont_dig, cont_caract, cont;
+    int cont_dig=0, cont_caract=0, cont=0;
     int i=0, j=0;
+    char* vetor;
+    char* vetor2;
     for(p = L; p != NULL; p= p->prox) {
         if(isdigit(p->caractere))
             cont_dig++;
         else
             cont_caract++;
         }
-    char *vetor = (char*) malloc(cont_dig*sizeof(char)); /*Alocando espaço na memória para o vetor de digitos*/
-    char *vetor2 = (char*) malloc(cont_caract*sizeof(char)); /*Alocando espaço na memória para vetor de caracteres*/
+    if(cont_dig>0)
+    	vetor = (char*) malloc(cont_dig*sizeof(char)); /*Alocando espaço na memória para o vetor de digitos*/
+
+    if(cont_caract>0)
+    	vetor2 = (char*) malloc(cont_caract*sizeof(char)); /*Alocando espaço na memória para vetor de caracteres*/
     for(p = L; p != NULL; p=p->prox) {
         if(isdigit(p->caractere)) {      
             vetor[i]= p->caractere;
@@ -93,7 +98,7 @@ int main () {
 	printf("=> %c\n",caractere);
         l = insere(l, caractere);
     }
-    //l = ordenar(l);
+    l = ordenar(l);
     imprime(l);
     printf("\n");
     //system("pause");
