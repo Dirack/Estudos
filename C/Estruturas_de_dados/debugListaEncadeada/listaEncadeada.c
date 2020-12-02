@@ -17,6 +17,25 @@ list *insere (list *l, char c) {
     novo->prox = l;
     return novo;
 }
+
+void inverteVetorDigitos(char* v, int length){
+
+	char tmp[length];
+	int i;
+
+	if(length<=1) return;
+
+	/* copia vetor para tmp */
+	for(i=0;i<length;i++){
+		tmp[i]=v[i];
+	}
+
+	/* inverte vetor v */
+	for(i=0;i<length;i++){
+		v[i]=tmp[length-i-1];
+	}	
+}
+
 /*função para fazer a ordenação de caracteres utilizando um vetor*/
 list *ordenar (list *L) {
     list *p;
@@ -45,6 +64,11 @@ list *ordenar (list *L) {
             j++;
         }
     }
+    
+    /* Se o usuário passou dígitos, inverter a ordem dos dígitos passados */
+    if(cont_dig>0)
+	inverteVetorDigitos(vetor,cont_dig);
+
     list *organizado;
     organizado = NULL;
     for (cont = 0; cont < i; cont++) {
