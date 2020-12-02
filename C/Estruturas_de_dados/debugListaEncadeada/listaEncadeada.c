@@ -55,10 +55,10 @@ list *ordenar (list *L) {
 /*função para imprimir*/
 void imprime(list *L) {
     list *p = L;
-    while(p!= NULL) {
-        printf("%c",p->caractere);
-        p= p->prox;
-    }
+    if(p==NULL) return;
+    
+    printf("%c",p->caractere);
+    imprime(p->prox);
 }
  
 void flush_in()
@@ -71,10 +71,18 @@ void flush_in()
    while( (ch = fgetc(stdin)) != EOF && ch != '\n' ){}
 } 
 
+void init(list** l){
+
+	*l = NULL;
+}
+
 int main () {
     char caractere;
     int i, numero;
     list *l;
+
+	init(&l);
+
     printf("Digite o numero de caracteres que voce deseja ordenar:\n");
 	scanf("%d", &numero);
 	flush_in();
@@ -83,10 +91,10 @@ int main () {
 	scanf("%c", &caractere);
 	flush_in();
 	printf("=> %c\n",caractere);
-        //l = insere(l, caractere);
+        l = insere(l, caractere);
     }
     //l = ordenar(l);
-    //imprime(l);
-    //printf("\n");
+    imprime(l);
+    printf("\n");
     //system("pause");
 }
