@@ -15,4 +15,9 @@
 all:	exemplo.x
 
 exemplo.x:	exemplo.c
-	gcc exemplo.c -o exemplo.x
+	gcc -g exemplo.c -o exemplo.x
+
+clean:
+	rm *.x
+
+.PHONY:	clean
