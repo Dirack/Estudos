@@ -11,3 +11,9 @@ typedef struct lista LISTA;
 LISTA* cria_lista();
 
 void libera_lista(LISTA* li);
+
+int tamanho_lista(LISTA* li);
+
+int lista_cheia(LISTA* li);
+
+int lista_vazia(LISTA* li);

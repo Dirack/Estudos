@@ -17,3 +17,24 @@ LISTA* cria_lista(){
 void libera_lista(LISTA* li){
 	free(li);
 }
+
+int tamanho_lista(LISTA* li){
+	if(li==NULL)
+		return -1;
+	else
+		return li->qtd;
+}
+
+int lista_cheia(LISTA* li){
+	if(li==NULL)
+		return -1;
+	else
+		return (li->qtd==MAX);
+}
+
+int lista_vazia(LISTA* li){
+	if(li==NULL)
+		return -1;
+	else
+		return (li->qtd==0);
+}
