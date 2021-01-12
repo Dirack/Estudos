@@ -1,0 +1,9 @@
+#!/usr/bin/expect -f
+
+spawn ./teste.sh # chama o script a ser testado
+
+send -- "ROBÔ\r" # Envia a string para o script
+
+send -- "28\r" # Envia a string para o script
+
+expect "%" # Espera o script encerrar
