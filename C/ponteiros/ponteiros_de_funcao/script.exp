@@ -1,0 +1,11 @@
+#!/usr/bin/expect -f
+
+set NUM 2
+
+while { $NUM <= 5 } {
+spawn ./exemplo2.x
+expect -- "Introduza"
+send -- "$NUM\r"
+expect "%"
+set NUM [ expr $NUM + 1 ]
+}
