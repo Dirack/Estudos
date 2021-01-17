@@ -1,0 +1,16 @@
+#!/usr/bin/expect -f
+
+spawn ./exemplo.x
+
+expect -- "Qual o seu nome?"
+send -- "Robô usuário\r"
+expect -- "Qual a sua idade?"
+send -- "100\r"
+expect -- "Qual o seu nome?"
+send -- "Robô funcionário\r"
+expect -- "Qual o seu cargo?"
+send -- "porteiro\r"
+expect -- "Qual o seu cpf?"
+send -- "10101010\r"
+
+expect "%"
