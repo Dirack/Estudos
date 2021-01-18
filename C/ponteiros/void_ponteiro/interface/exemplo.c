@@ -20,22 +20,23 @@
 #include <string.h>
 #include "user.h"
 #include "funcionario.h"
-
-void interface(void* pessoa, void (*print)(void*)){
-
-	printf("*** Sistema de cadastro ***\n");
-	(*print)(pessoa);
-	printf("******\n");
-}
+#include "interface.h"
 
 int main(void){
 
 	user u;
 	funcionario f;
+	int i;
 
-	u = user_init();
-	interface(u,user_print);
-
-	f = funcionario_init();
-	interface(f,funcionario_print);
+	print_menu(&i);
+	if(i==1){
+		u = user_init();
+		print_pessoa(u,user_print);
+	}else if(i==2){
+		f = funcionario_init();
+		print_pessoa(f,funcionario_print);
+	}else{
+		fprintf(stderr,"Escolha %d desconhecida\n",i);
+		exit(1);
+	}
 }

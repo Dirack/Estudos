@@ -2,10 +2,17 @@
 
 spawn ./exemplo.x
 
+expect "Escolha"
+send -- "1\r"
 expect -- "Qual o seu nome?"
 send -- "Robô usuário\r"
 expect -- "Qual a sua idade?"
 send -- "100\r"
+expect "%"
+
+spawn ./exemplo.x
+expect "Escolha"
+send -- "2\r"
 expect -- "Qual o seu nome?"
 send -- "Robô funcionário\r"
 expect -- "Qual o seu cargo?"
