@@ -1,0 +1,27 @@
+# gdb_script (GDB Script)
+# 
+# Objetivo: Gerar logging file de depuração com GDB.
+# Utilize o comando 'gdb -q --command=gdb_script --args ./main.x'.
+# 
+# Site: https://dirack.github.io
+# 
+# Versão 1.0
+# 
+# Programador: Rodolfo A C Neves (Dirack) 17/01/2021
+# 
+# Email: rodolfo_profissional@hotmail.com
+# 
+# Licença: GPL-3.0 <https://www.gnu.org/licenses/gpl-3.0.txt>.
+
+
+set logging file file.txt
+set logging on
+
+start
+break soma
+break subtracao
+c
+echo soma
+p soma
+quit
+y
