@@ -1,9 +1,11 @@
 #!/usr/bin/expect -f
 
-spawn ./teste.sh # chama o script a ser testado
+spawn ./teste.sh 
 
-send -- "ROBÔ\r" # Envia a string para o script
+expect "Digite seu nome:"
+send -- "ROBÔ\r"
 
-send -- "28\r" # Envia a string para o script
+expect "Qual a sua idade,"
+send -- "28\r" 
 
-expect "%" # Espera o script encerrar
+expect "%"
