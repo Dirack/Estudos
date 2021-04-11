@@ -1,0 +1,17 @@
+#!/bin/bash
+
+SESSIONNAME="creVel"
+ROOT="$RSFSRC/user/creVelocityInversion"
+
+func(){
+	tmux send-keys -t "$SESSIONNAME" "$*"
+}
+
+tmux has-session -t $SESSIONNAME &> /dev/null
+
+if [ $? != 0 ]
+then
+	tmux new-session -s $SESSIONNAME -c $ROOT \; rename-window creVelInv \; new-window -c $ROOT/test \; rename-window test \; new-window -c $ROOT/test/stereoniptomo \; rename-window stereo
+else
+	tmux attach -t $SESSIONNAME
+fi
