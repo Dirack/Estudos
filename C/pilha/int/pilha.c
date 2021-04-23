@@ -30,7 +30,9 @@ void init(NO** pilha)
 }
 
 void push(NO** pilha, int num)
+/*< Ajuda da função push >*/
 {
+/* comentário qualquer */
 	NO* tmp;
 	tmp = (NO*) malloc(sizeof(NO));
 	if(tmp==NULL) return;

@@ -15,7 +15,10 @@
 # 
 # Licença: GPL-3.0 <https://www.gnu.org/licenses/gpl-3.0.txt>.
 
-echo 0
+while true; do echo -n .; sleep 1; done &
+trap 'kill $!' SIGTERM SIGKILL
+echo "Running command find"
 find $HOME -name "*.TXT" -exec cp -f {} backup/ \;
-echo 100
-sleep 2
+echo done
+#sleep 2
+kill $!

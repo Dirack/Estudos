@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 int main(){
-	int i, x, c, r, s, qtd, soma;
+	int i, x=1, c, r, s, qtd, soma;
 	char cobaia;
 	double percCoelho, percRatos, percSapos;
 
@@ -16,7 +16,7 @@ int main(){
 	
 	for(i=0; i<x; i++){
 		 printf("Quantidade de cobaias: ");
-		 scanf("%d", &qtd);
+		 scanf(" %d", &qtd);
 		 soma = soma + qtd;
 		 printf("Tipo de cobaia:");
 		 scanf(" %s", &cobaia);
@@ -27,7 +27,9 @@ int main(){
 		 	r = r + qtd;
 		 }else if(cobaia == 's' || cobaia == 'S'){
 			 s = s + qtd;
-		 }
+		 }else{
+			printf("error\n"); return 1;
+		}
 	} 
 
 	printf("Relatorio Final : \n"); 
@@ -35,8 +37,8 @@ int main(){
 	printf("Total de coelhos : %d \n", c);
 	printf("Total de ratos : %d \n", r);
 	printf("Total de sapos : %d \n", s);
-	percCoelho = (c/soma)* 100;
-	percRatos = (r/soma)* 100;
+	percCoelho = ((c*100)/soma);
+	percRatos = ((r*100)/soma);
 	percSapos = (s/soma)*100;
 	printf("Percentual de coelhos : %.2lf %% \n", percCoelho);
 	printf("Percentual de ratos : %.2lf  %% \n", percRatos);
