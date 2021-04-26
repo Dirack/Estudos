@@ -1,3 +1,19 @@
+/*
+* splines_naturais.c (C)
+* 
+* Objetivo: Estudo sobre splines cúbicos naturais em C.
+* 
+* Site: https://dirack.github.io
+* 
+* Versão 1.0
+* 
+* Programador: Rodolfo A C Neves (Dirack) 26/04/2021
+* 
+* Email: rodolfo_profissional@hotmail.com
+* 
+* Licença: GPL-3.0 <https://www.gnu.org/licenses/gpl-3.0.txt>.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -5,19 +21,22 @@
 
 int main(void){
 
-	int n=N_POINTS;
-	float x[N_POINTS]={1,2,4,6,7};
-	float y[N_POINTS]={2,4,1,3,3};
-	float s2[N_POINTS];
-	int i, ip1, ip2, im1, m;
-	float hb, ha, deltaa, deltab, t;
-	float e[N_POINTS-2], d[N_POINTS-2];
+	int n=N_POINTS; // Número de pontos do spline
+	float x[N_POINTS]={1,2,4,6,7}; // Coordenada x
+	float y[N_POINTS]={2,4,1,3,3}; // Coordenada y
+	float s2[N_POINTS]; // Matriz de segundas derivadas
+	int i, ip1, ip2, im1, m; // contador de laço
+	float hb, ha, deltaa, deltab, t; // variáveis temporárias
+	float e[N_POINTS-2]; // Vetor de hi's
+	float d[N_POINTS-2]; // Diagonal principal
 
+	/* Os vetores devem possuir mais de 3 pontos */
 	if(n<3){
 		fprintf(stderr,"Erro, n<3\n");
 		exit(-1);
 	}
 
+	/* O vetor x deve estar em ordem crescente */
 	for(i=1;i<n;i++){
 		if(x[i-1]>x[i]){
 			fprintf(stderr,"Erro, vetor x deve possuir ordem crescente\n");
@@ -42,17 +61,17 @@ int main(void){
 		t = e[im1]/d[im1];
 		d[i] = d[i]-t*e[im1];
 		s2[ip1] = s2[ip1]-t*s2[i];
-		//printf("%d\n",i);
 	}
 
 	/* Solução por substituições retroativas */
-	s2[m+1]=s2[m+1]/d[m];
-	for(i=m;i<2;i--){
+	s2[m]=s2[m]/d[m-1];
+	for(i=m-1;i>0;i--){
 		ip1=i+1; im1=i-1;
 		s2[i]=(s2[i]-e[im1]*s2[ip1])/d[im1];
 	}
 	s2[0]=0; s2[n-1]=0;
 
+	/* Exibir o resultado */
 	for(i=0;i<N_POINTS;i++)
 		printf("s2[%d]=%f\n",i,s2[i]);
 }
