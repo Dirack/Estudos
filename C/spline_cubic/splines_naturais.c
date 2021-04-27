@@ -28,7 +28,8 @@ int main(void){
 	int i, ip1, ip2, im1, m; // contador de laço
 	float hb, ha, deltaa, deltab, t; // variáveis temporárias
 	float e[N_POINTS-2]; // Vetor de hi's
-	float d[N_POINTS-2]; // Diagonal principal
+	float dp[N_POINTS-2]; // Diagonal principal
+	float a, b, c, d; // Coeficientes
 
 	/* Os vetores devem possuir mais de 3 pontos */
 	if(n<3){
@@ -50,7 +51,7 @@ int main(void){
 		ip1 = i+1; ip2 = i+2;
 		hb = x[ip2]-x[ip1];
 		deltab = (y[ip2]-y[ip1])/hb;
-		e[i] = hb; d[i] = 2*(ha+hb);
+		e[i] = hb; dp[i] = 2*(ha+hb);
 		s2[ip1] = 6*(deltab-deltaa);
 		ha=hb; deltaa=deltab;
 	}
@@ -58,20 +59,30 @@ int main(void){
 	/* Eliminação de Gauss */
 	for(i=1;i<m;i++){
 		ip1=i+1; im1=i-1;
-		t = e[im1]/d[im1];
-		d[i] = d[i]-t*e[im1];
+		t = e[im1]/dp[im1];
+		dp[i] = dp[i]-t*e[im1];
 		s2[ip1] = s2[ip1]-t*s2[i];
 	}
 
 	/* Solução por substituições retroativas */
-	s2[m]=s2[m]/d[m-1];
+	s2[m]=s2[m]/dp[m-1];
 	for(i=m-1;i>0;i--){
 		ip1=i+1; im1=i-1;
-		s2[i]=(s2[i]-e[im1]*s2[ip1])/d[im1];
+		s2[i]=(s2[i]-e[im1]*s2[ip1])/dp[im1];
 	}
 	s2[0]=0; s2[n-1]=0;
 
-	/* Exibir o resultado */
+	/* Exibir as segundas derivadas */
 	for(i=0;i<N_POINTS;i++)
 		printf("s2[%d]=%f\n",i,s2[i]);
+
+	/* Calcular e exibir os coeficientes dos splines */
+	for(i=0;i<N_POINTS-1;i++){
+		ha = x[i+1]-x[i];
+		a = (s2[i+1]-s2[i])/(6*ha);
+		b = s2[i]/2;
+		c = (y[i+1]-y[i])/ha-(s2[i+1]+2*s2[i])*(ha/6);
+		d = y[i];
+		printf("a=%f b=%f c=%f d=%f\n",a,b,c,d);
+	}
 }
