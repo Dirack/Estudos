@@ -4,7 +4,9 @@
 # 
 # Objetivo: Estudo sobre descritores de arquivos e processos (Avançado).
 # 
-# Tutorial: https://guialinux.uniriotec.br/arquivo/
+# Tutoriais: 
+# - https://guialinux.uniriotec.br/arquivo/
+# - https://daemoniolabs.wordpress.com/2012/02/24/manipulando-arquivos-descritores-no-shell/
 #
 # Site: https://dirack.github.io
 # 
