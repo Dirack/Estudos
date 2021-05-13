@@ -51,6 +51,52 @@ O protótipo da função malloc mostra que o retorno da função é um ponteiro 
 void * malloc (size_t size)
 ```
 
+## Alocação com calloc
+
+A função ''calloc()'' aloca um bloco de memória de tamanho suficiente para conter um vetor com ''count'' 
+elementos de tamanho ''eltSize'' cada um. O conteúdo do bloco alocado é preenchido por zeros.
+
+```c
+#include <stdlib.h>
+void * calloc (size_t count, size_t eltSize)
+```
+
+Exemplo:
+
+```
+float *v ;
+int i ;
+
+v = calloc( 1000, sizeof(float) ) ;  // aloca 1.000 floats
+
+for (i=0; i < 1000; i++)             // inicializa o vetor
+   v[i] = 1.0 / (i + 1) ;
+```
+
+## Liberando a memória com free
+
+A chamada ''free'' deve ser invocada para liberar uma área de memória previamente alocada dinamicamente:
+
+```c
+#include <stdlib.h>
+void free (void *ptr)
+```
+
+Esta função libera um bloco de memória previamente alocado, apontado por ''ptr''. Atenção: o ponteiro ''ptr''
+continua apontando para o bloco liberado e por isso é aconselhável mudar seu valor para ''NULL'' após a liberação:
+
+```c
+ptr = malloc (1024) ;
+...
+free (ptr) ;
+ptr = NULL ;                 // não é obrigatório, mas aconselhável
+```
+
+A memória alocada por um programa é automaticamente liberada quando sua execução encerra.
+Por isso, o uso da chamada ''free()'' não é obrigatório no final do programa.
+Contudo, é recomendado utilizá-lo sempre, para desenvolver o hábito salutar de sempre liberar um bloco alocado.
 
 
-Fonte: https://www.inf.ufpr.br/roberto/ci067/10_aloc.html
+### Fontes
+
+* https://www.inf.ufpr.br/roberto/ci067/10_aloc.html
