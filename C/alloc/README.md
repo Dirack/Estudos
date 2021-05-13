@@ -65,7 +65,7 @@ void * calloc (size_t count, size_t eltSize)
 
 Exemplo:
 
-```
+```c
 float *v ;
 int i ;
 
