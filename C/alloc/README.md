@@ -32,5 +32,25 @@ Por default, o compilador gcc gera código que pode alocar memória até 4GB, me
 Para gerar código executável com capacidade para alocar memória dinamicamente além desse limite,
 devem ser usados flags de compilação específicos, como ''-mcmodel=medium'' ou ''-mcmodel=large''.
 
+### Alocação dinâmica na prática
+
+Para fazer a alocação dinâmica, utilizamos a chamada à função malloc:
+
+```c
+#include <stdlib.h>
+struct mystruct *ptr;
+...
+ptr = malloc( sizeof(struct mystruct) );
+if (ptr == 0) abort();       // caso a alocação não tenha ocorrido
+```
+
+O protótipo da função malloc mostra que o retorno da função é um ponteiro genérico void, portanto é necessário fazer o casting após a alocação:
+
+```c
+// Protótipo da função malloc
+void * malloc (size_t size)
+```
+
+
 
 Fonte: https://www.inf.ufpr.br/roberto/ci067/10_aloc.html
