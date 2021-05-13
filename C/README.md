@@ -4,3 +4,5 @@
 
 ## Índice
 
+* [Alocação dinâmica](https://github.com/Dirack/Estudos/tree/master/C/alloc)
+
