@@ -1,0 +1,3 @@
+## Alocação dinâmica
+
+TODO
