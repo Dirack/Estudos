@@ -3,13 +3,15 @@
 Neste estudo iremos aprender sobre alocação dinâmica em C. Quando iniciada a execução, o espaço de endereços de um processo
 em execução é dividido em várias segmentos lógicos. Os mais importantes são:
 
-* Text: contém o código do programa e suas constantes. Este segmento é alocado durante a criação do processo (''exec'') e permanece do mesmo tamanho durante toda a vida do processo.
+* **Text:** contém o código do programa e suas constantes. Este segmento é alocado durante a criação do processo (''exec'') e permanece do mesmo tamanho durante toda a vida do processo.
 
-* Data: este segmento é a memória de trabalho do processo, aonde ficam alocadas as variáveis globais e estáticas. Tem tamanho fixo ao longo da execução do processo.
+* **Data:** este segmento é a memória de trabalho do processo, aonde ficam alocadas as variáveis globais e estáticas. Tem tamanho fixo ao longo da execução do processo.
 
-* Stack: contém a pilha de execução, onde são armazenadas os parâmetros, endereços de retorno e variáveis locais de funções. Pode variar de tamanho durante a execução do processo.
+* **Stack:** contém a pilha de execução, onde são armazenadas os parâmetros, endereços de retorno e variáveis locais de funções. Pode variar de tamanho durante a execução do processo.
 
-* Heap: contém blocos de memória alocadas dinamicamente, a pedido do processo, durante sua execução. Varia de tamanho durante a vida do processo.
+* **Heap:** contém blocos de memória alocadas dinamicamente, a pedido do processo, durante sua execução. Varia de tamanho durante a vida do processo.
+
+<img src="https://github.com/Dirack/Estudos/blob/master/C/alloc/areas-memoria.png" width=800>
 
 Um programa em C suporta três tipos de alocação de memória:
 
@@ -32,7 +34,7 @@ Por default, o compilador gcc gera código que pode alocar memória até 4GB, me
 Para gerar código executável com capacidade para alocar memória dinamicamente além desse limite,
 devem ser usados flags de compilação específicos, como ''-mcmodel=medium'' ou ''-mcmodel=large''.
 
-### Alocação dinâmica na prática
+## Alocação dinâmica na prática
 
 Para fazer a alocação dinâmica, utilizamos a chamada à função malloc:
 
