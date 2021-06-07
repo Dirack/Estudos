@@ -1,0 +1,2 @@
+set args <testein.rsf n1=20 d1=0.5 > testeout.rsf
+start
