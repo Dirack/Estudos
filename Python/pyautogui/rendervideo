@@ -1,0 +1,81 @@
+#!/usr/bin/python3
+
+import subprocess as sub
+import time
+import pyautogui as pya
+import signal
+import sys
+
+pya.PAUSE=2
+video=str(sys.argv[1])
+
+osprog = sub.Popen('openshot-qt',
+	stdout=sub.DEVNULL, 
+    	stderr=sub.DEVNULL)
+
+#sys.exit(0)
+#osprog.wait()
+#while (osprog.poll()!=0):
+time.sleep(15)
+
+
+pya.hotkey('ctrl','o')
+time.sleep(5)
+pya.hotkey('ctrl','f')
+pya.typewrite('gravacoes')
+pya.press('down')
+pya.press('enter')
+pya.hotkey('ctrl','f')
+pya.typewrite('projetos')
+pya.press('down')
+pya.press('enter')
+pya.hotkey('ctrl','f')
+pya.typewrite(video)
+pya.press('enter')
+
+time.sleep(10)
+pya.hotkey('ctrl','e')
+pya.click(888,329)
+pya.press('end')
+pya.press('enter')
+
+pya.click(900,400)
+pya.press('end')
+pya.press('enter')
+
+
+pya.press('enter')
+
+time.sleep(20)
+#print(pya.locateOnScreen('botoes.png'))
+#sys.exit(0)
+im = pya.screenshot()
+pixel = im.getpixel((922,141))
+
+var = pya.pixelMatchesColor(922,141,pixel)
+#print(var)
+#print(pixel)
+print('wait to render',end='')
+#osprog.send_signal(signal.SIGTERM)
+#sys.exit(0)
+while (var):
+	var = pya.pixelMatchesColor(922,141,pixel)
+	time.sleep(20)
+	#print(var,end=' ')
+
+for i in range(4):
+	pya.click(1351,46)
+	print("Try to close")
+	time.sleep(10)
+	if (osprog.poll()==0):
+		break
+	time.sleep(50)
+
+if (osprog.poll()!=0):
+	osprog.send_signal(signal.SIGTERM)
+	print("Tentei fechar o openshot 3 vezes e não consegui!")
+
+#print("VAR"+str(var))
+#osprog.wait()
+
+print('FIM')

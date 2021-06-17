@@ -1,0 +1,33 @@
+#!/usr/bin/python3
+
+import subprocess as sub
+import time
+import pyautogui as pya
+import signal
+import sys
+import os
+
+print("Check for audio to render...")
+files = os.listdir('/home/dirack/gravacoes/todo')
+print('Audio files to render: '+str(len(files)))
+
+if (len(files)==0):
+	print('There is no audio files to render, exit...')
+else:
+	print('Rendering audio...')
+	audiorender = sub.Popen('treataudio')
+	audiorender.wait()
+
+print("Check for video to render...")
+files = os.listdir('/home/dirack/gravacoes/projetos')
+print('Video files to render: '+str(len(files)))
+
+if (len(files)==0):
+	print('There is no video files to render, exit...')
+else:
+	print('Rendering video...')
+	for video in files:
+		if video.endswith('.osp'):
+			videorender = sub.Popen(['rendervideo',video])
+			videorender.wait()
+

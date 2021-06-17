@@ -1,0 +1,40 @@
+#!/usr/bin/python3
+
+import subprocess as sub
+import time
+import pyautogui as pya
+import signal
+import sys
+
+pya.PAUSE=2
+
+osprog = sub.Popen('audacity',
+	stdout=sub.DEVNULL, 
+    	stderr=sub.DEVNULL)
+
+time.sleep(20)
+pya.hotkey('ctrl',',')
+
+time.sleep(5)
+im = pya.screenshot()
+pixel = im.getpixel((1033,500))
+
+pya.click(528,296)
+pya.press('end')
+pya.click(684,571)
+pya.hotkey('ctrl','a')
+pya.press('enter')
+
+#x=1066, y=574
+var = False
+while(not var):
+	pya.click(1033,500)
+	var = pya.pixelMatchesColor(1033,500,pixel)
+	time.sleep(10)
+
+
+time.sleep(10)
+pya.click(1064,572)
+time.sleep(5)
+pya.click(1348,46)
+print('FIM')
