@@ -27,7 +27,7 @@ int main(void){
 		return(-1);
 	}
 
-	while(!feof(fp)){
+	while(1){
 		c = getc(fp);
 		/* replace ! with + */
 		if(c=='!'){
@@ -36,6 +36,7 @@ int main(void){
 			ungetc(c,fp);
 		}
 		fgets(buffer,255,fp);
+		if(feof(fp)) break;
 		fputs(buffer,stdout);
 	}
 	return(0);
