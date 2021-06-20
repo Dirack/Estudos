@@ -1,0 +1,12 @@
+#!/bin/bash
+
+while :
+do
+	dialog --title "Pomodoro" --msgbox "Começar novo pomodoro" 0 0
+	dialog --title "Pomodoro" --infobox 'O pomodoro irá começar em 5 segundos' 0 0; sleep 5
+	dialog --title "Pomodoro" --pause "Comece a trabalhar..." 20 20 $1
+	paplay --volume 60000 acabou.wav & 
+	dialog --title "Pomodoro" --infobox "Pomodoro finalizado, comece a descansar" 0 0;sleep 5
+	dialog --title "Pomodoro" --pause "Tempo para descansar..." 20 20 $2
+	paplay --volume 60000 descanso.wav & 
+done

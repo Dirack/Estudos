@@ -1,0 +1,77 @@
+	#!/bin/bash
+
+INTERVALO_POMO=$(sed -n '2p' pomo.config)
+INTERVALO_DESC=$(sed -n '3p' pomo.config)
+
+
+pomodoro(){
+	gnome-terminal --geometry=20x10+1000+0 -- bash -c "exec ./pomodoro $INTERVALO_POMO $INTERVALO_DESC"
+	clear
+	exit 0
+}
+
+ajustar(){
+	POMO=$(dialog --stdout --title "Ajustar o intervalo do pomodoro" --timebox '\nDICA: Use as setas e o TAB.' 0 0 00 00 30 )
+	[ "$?" -ne "0" ] && return
+	HORAS=$(echo $POMO | cut -d":" -f1)
+	HORAS=$(echo "$HORAS*60*60" | bc )
+	MINUTOS=$(echo $POMO | cut -d":" -f2)
+	MINUTOS=$(echo "$MINUTOS*60" | bc )
+	SEGUNDOS=$(echo "$POMO" | cut -d":" -f3)
+	SEGUNDOS=$(echo "$HORAS+$MINUTOS+$SEGUNDOS" | bc)
+	INTERVALO_POMO=$(echo $SEGUNDOS)
+
+	DESC=$(dialog --stdout --title "Ajustar o intervalo de descanso" --timebox '\nDICA: Use as setas e o TAB.' 0 0 00 00 00 )
+	[ "$?" -ne "0" ] && return
+	HORAS=$(echo $DESC | cut -d":" -f1)
+	HORAS=$(echo "$HORAS*60*60" | bc )
+	MINUTOS=$(echo $DESC | cut -d":" -f2)
+	MINUTOS=$(echo "$MINUTOS*60" | bc )
+	SEGUNDOS=$(echo "$DESC" | cut -d":" -f3)
+	SEGUNDOS=$(echo "$HORAS+$MINUTOS+$SEGUNDOS" | bc)
+	INTERVALO_DESC=$(echo $SEGUNDOS)
+}
+
+salvar(){
+	dialog --title "Pomodoro" --yesno "Salvar configuração atual?\nPomodoro: $INTERVALO_POMO\nDescanso: $INTERVALO_DESC" 0 0
+	if [ "$?" -eq "0" ]
+	then
+		echo '# Arquivo de configuração do programa pomodoro' > pomo.config
+		echo -e "$INTERVALO_POMO\n$INTERVALO_DESC" >> pomo.config
+		dialog --title "Pomodoro" --infobox "Configuração atualizada!" 0 0
+	else
+		dialog --title "Pomodoro" --infobox "Configuração NÃO salva!" 0 0
+	fi
+}
+
+while :
+do
+
+        ESCOLHA=$(dialog --stdout \
+                --item-help \
+		--cancel-label "Sair" \
+		--title "Pomodoro" \
+                --menu "Escolha: " \
+                0 0 0 \
+                1 "Iniciar Pomodoro" "Iniciar pomodoro" \
+                2 "Ajustar parâmetros" "Ajustar tempo do pomodoro e tempo de descanso" \
+                3 "Salvar configuração" "Salvar configuração atual dos parâmetros")
+
+        [ "$?" -eq "1" ] && {
+                break
+        }
+
+	case $ESCOLHA in
+	1)
+		pomodoro
+	;;
+	2)
+		ajustar
+	;;
+	3)
+		salvar
+	;;
+	esac
+done
+
+exit 0
