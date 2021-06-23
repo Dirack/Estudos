@@ -15,3 +15,15 @@ Ao compilar o arquivo principal, lembre de linkar:
 ```sh
 gcc main.c -lalloc -o main.x
 ```
+
+Utilize o comando a seguir para visualizar o conteúdo da lib:
+
+```sh
+ar -t lib/liballoc.a
+```
+
+E o comando abaixo para visualizar a lista de símbolos:
+
+```sh
+nm lib/liballoc.a
+```
