@@ -37,7 +37,9 @@ int main(int argc, char* argv[])
 			x = i1*0.5; i=x; x -= i;
 			y = i2*0.5; j=y; y -= j;
 			sf_eno2_apply(map,i,j,x,y,&f[i2*20+i1],f2,FUNC);
+			#ifdef GDB_DEBUG
 			sf_warning("%d %d %d %d %d %f",i2*20+i1,i,j,x,y,f[i2*n1+i1]);
+			#endif
 		}
 	}
 	sf_eno2_close(map);

@@ -3,3 +3,7 @@ from rsf.proj import *
 Flow('testein',None,'spike n1=10 n2=10 d1=1 o1=0 d2=1 o2=0 k1=2 l1=4 k2=2 l2=4')
 
 Plot('testein','grey scalebar=y')
+
+Flow('testeout','testein','./interp.x')
+
+Plot('testeout','grey scalebar=y')
