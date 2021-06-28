@@ -50,10 +50,10 @@ void eliminacao_gauss(float A[][MAXDIM], float* x, float* X, int n){
 
 
 int main(){
-	int i, j, k, n=2;
-	float A[MAXDIM][MAXDIM]={{1,1},{4,2}};
-	float x[2]={15,48}, X[2]={0,0};
-	
+	int i, j, k, n=4;
+	float A[MAXDIM][MAXDIM]={{1,1,0,3},{2,1,-1,1},{3,-1,-1,2},{-1,2,3,-1}};
+	float x[4]={4,1,-3,4}, X[4]={0,0,0,0};
+
 	for(i=0; i<n; i++){
 		printf("|");
 		for(j=0; j<n; j++){
