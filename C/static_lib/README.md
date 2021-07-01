@@ -1,5 +1,7 @@
 # Estudo sobre bibliotecas estáticas em C
 
+[Tutorial original](https://medium.com/@meghamohan/everything-you-need-to-know-about-libraries-in-c-e8ad6138cbb4)
+
 Use '/usr/local/lib' para guardar a biblioteca estática e 
 '/usr/local/include' para guardar o header.
 
