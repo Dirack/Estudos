@@ -3,6 +3,15 @@
 Este é um exemplo sobre como calcular a derivada de uma função utilizando o método das diferenças finitas em C.
 As fórmulas utilizadas foram retiradas deste [Tutorial na Wikipédia](https://pt.wikipedia.org/wiki/M%C3%A9todo_das_diferen%C3%A7as_finitas).
 
+Basta expandir as funções em série de Taylor e depois fazer a diferença para ter uma boa aproximação da derivada:
+
+![taylor](https://github.com/Dirack/Estudos/blob/master/C/diferencas_finitas/res/taylor.svg)
+![taylor2](https://github.com/Dirack/Estudos/blob/master/C/diferencas_finitas/res/taylor2.svg)
+
+A fórmula da derivada:
+
+![mdf](https://github.com/Dirack/Estudos/blob/master/C/diferencas_finitas/res/mdf.svg)
+
 Para compilar e rodar o exemplo, basta utilizar o comando a seguir:
 
 ```sh
