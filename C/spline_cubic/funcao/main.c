@@ -31,6 +31,6 @@ int main(void){
 	/* Calcular e exibir os coeficientes dos splines */
 	calcular_coeficientes(n,x,y,a);
 	for(i=0;i<N_POINTS-1;i++){
-		printf("a=%f b=%f c=%f d=%f\n",a[0+i*4],a[1+i*4],a[2+i*4],a[3+i*4]);
+		printf("s_%d: a=%f b=%f c=%f d=%f\n",i,a[0+i*4],a[1+i*4],a[2+i*4],a[3+i*4]);
 	}
 }
