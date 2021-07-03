@@ -14,3 +14,13 @@ Para visualizar os gráficos das funções no Python3 utilizando a biblioteca ma
 ```sh
 make view
 ```
+
+## Dependências
+
+- Instalação do gcc: sudo apt install gcc
+
+- Instalação do Python3: sudo apt install python3
+
+- Instalação do pip3: sudo apt install python3-pip
+
+- Instalação do módulo matplotlib no Python3: sudo pip3 install matplotlib
