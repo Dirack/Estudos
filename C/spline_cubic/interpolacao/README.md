@@ -12,7 +12,9 @@ make
 ```
 
 O programa principal 'main.x' irá gerar os pontos x e y da função para o arquivo 'file.txt' e chamar o script do python 'plot.py' para plotar
-o gráfico com o módulo 'matplotlib.pyplot'.
+o gráfico com o módulo 'matplotlib.pyplot'. A seguir, a imagem que deverá ser gerada:
+
+![spline](https://github.com/Dirack/Estudos/blob/master/C/spline_cubic/interpolacao/spline.png)
 
 ## Dependências
 
