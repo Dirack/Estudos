@@ -17,10 +17,26 @@ make view
 
 ## Dependências
 
-- Instalação do gcc: sudo apt install gcc
+- Instalação do gcc:
 
-- Instalação do Python3: sudo apt install python3
+```sh
+sudo apt install gcc
+```
 
-- Instalação do pip3: sudo apt install python3-pip
+- Instalação do Python3:
 
-- Instalação do módulo matplotlib no Python3: sudo pip3 install matplotlib
+```sh
+sudo apt install python3
+```
+
+- Instalação do pip3:
+
+```sh
+sudo apt install python3-pip
+```
+
+- Instalação do módulo matplotlib no Python3:
+
+```sh
+sudo pip3 install matplotlib
+```
