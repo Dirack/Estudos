@@ -3,6 +3,8 @@
 > Este exemplo foi retirado da página 207 e 202 do livro Algoritmos numéricos: Uma
 > abordagem moderna de cálculo numérico.
 
+[:arrow_up: Voltar](https://github.com/Dirack/Estudos/tree/master/C/spline_cubic#estudos-sobre-interpola%C3%A7%C3%A3o-polinomial-com-splines-c%C3%BAbicos-implementado-em-c)
+
 * Exemplo 3.33: Resolver o exemplo 3.30 utilizando um programa baseado no algoritmo da Figura 3.10 (Algoritmo splines cúbicos naturais).
 
 * Exemplo 3.30: Dados os pontos (1,2) (2,4), (4,1), (6,3) e (7,3), calcular as derivadas segundas dos splines cúbicos naturais.
