@@ -9,7 +9,7 @@
 
 A saída esperada deste programa de exemplo são as segundas derivadas dos splines e os coeficientes logo a seguir, dados nas tabelas abaixo:
 
-   | Derivadas |
+s_i | Derivada |
 --- | --- |
 s_0 | 0.00000 |
 s_1 | -4.70000 |
