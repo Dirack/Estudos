@@ -1,14 +1,16 @@
-# Estudos sobre o pacote de processamento sísmico Madagascar
+# Explicação sobre o nome do pacote de processamento sísmico Madagascar
 
-[Porque Madagascar?](https://reproducibility.org/blog/2006/04/19/madagascar/)
+Retirado do artigo [Porque Madagascar?](https://reproducibility.org/blog/2006/04/19/madagascar/) do blog do pacote Madagascar.
 
-Madagascar?
+![madagascar](https://github.com/Dirack/Estudos/blob/master/Madagascar/madagascar_name/map.png)
 
 April 19, 2006 Celebration
 
 RSF is a meanigless abbreviation that nobody can remember.
 We do need a better name for the package.
 I suggest Madagascar and can justify it scientifically.
+
+![rsf](https://github.com/Dirack/Estudos/blob/master/Madagascar/madagascar_name/rsf.png)
 
 I had a brilliant idea to look up RSF in the international airport codes.
 It turns out that there is no airport with RSF as the code.
