@@ -23,3 +23,6 @@ We can use one of the island’s unique creatures (lemur, tenrec, fossa)
 for the logo. Madagascar is a symbol of isolation, which is a reminder
 of what RSF does not want to be. Comments?
 
+# Publicação do Madagascar
+
+RSF/Madagascar was first presented at the [EAGE Workshop Open Source E&P Software – Putting the Pieces Together in Vienna on June 11, 2006.](https://reproducibility.org/wiki/Conferences#Vienna_2006_.28EAGE.29)
