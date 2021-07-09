@@ -17,3 +17,7 @@
 #include <stdlib.h>
 
 void* sf_alloc(size_t n, size_t size);
+
+char* sf_charalloc(int n);
+
+void *sf_realloc(void* ptr, size_t n, size_t size);
