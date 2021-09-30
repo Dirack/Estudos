@@ -23,3 +23,9 @@ Adicione o repositório local a /etc/apt/sources.list:
 ```
 deb [trusted=yes] file:///opt/debs ./
 ```
+
+Para um repositório remoto, funciona da mesma maneira:
+
+```sh
+deb [trusted=yes] https://dirack.github.io/debian ./
+```
