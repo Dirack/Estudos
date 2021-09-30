@@ -1,8 +1,8 @@
 # Estudo sobre pacotes debian no Linux
 
-Gerar o pacote em uma pasta com o nome do pacote e versão, exemplo 'teste_0.1_all'. A estrutura de diretórios da pasta deve ser:
-
-__TODO__
+Gerar o pacote em uma pasta com o nome do pacote e versão, exemplo 'teste_0.1_all'. A estrutura de diretórios da pasta deve ser semelhante
+a do [exemplo](https://github.com/Dirack/Estudos/tree/master/Shell_script/debian/teste/teste_0.3_all) neste repositório e deve conter o arquivo
+de controle em DEBIAN/control.
 
 Para fazer o build do pacote, vá um diretório acima da pasta do pacote e rode o seguinte comando:
 
