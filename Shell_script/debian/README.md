@@ -16,6 +16,8 @@ Gere a lista de pacotes do repositório que será lida pelo apt:
 dpkg-scanpackages -m . /dev/null > Packages
 ```
 
+A opção -m permite múltiplas versões do mesmo pacote serem listadas.
+
 Adicione o repositório local a /etc/apt/sources.list:
 
 ```
