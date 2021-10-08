@@ -1,0 +1,29 @@
+from rsf.proj import *
+
+# stdout=-1 (no output)
+# stdout=0 (to /dev/null)
+# stdout=1 (default, output to target)
+
+# Just print on the screen
+Flow('dummy',None,
+	'''
+	echo oi
+	''',rsfflow=0,suffix='.txt',stdout=-1)
+
+# Redirect to capa.txt
+Flow('capa',None,
+	'''
+	echo oi
+	''',rsfflow=0,suffix='.txt',stdout=1)
+
+
+# rsfflow=0 (not using Madagascar commands)
+# rsfflow=1 (using Madagascar commands)
+# src_suffix (sources suffix)
+# suffix (target suffix)
+
+# Copy capa.txt to docia.txt
+Flow('docia','capa',
+	'''
+	cat
+	''',rsfflow=0,suffix='.txt',src_suffix='.txt')
