@@ -1,0 +1,257 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+# Modelagem Kirchoff (Script do Madagascar)
+#
+# Objetivo: Simular a aquisição sísmica através da modelagem Kirchoff.
+# produz o modelo de velocidades. Gerar o cubo de dados e dividir os
+# cmp's para facilitar a correção NMO.
+#
+# TODO Geometria da aquisição simulada:
+#
+# Site: www.dirackslounge.online
+# 
+# Versão 1.0
+#
+# Programador: Rodolfo A. C. Neves 20/07/2018
+#
+# email: rodolfo_profissional@hotmail.com
+#
+# Funcionamento: digite 'scons' no terminal e aperte enter.
+# 
+# Licença: Software de uso livre e código aberto.
+
+# Importe a Biblioteca do madagascar 
+from rsf.proj import *
+
+
+#----------{ Modelagem: Gerar os refletores, realizar aquisição }------------------------
+#
+# layers é uma lista que armazena os pontos sobre os refletores
+# nlays é o número de camadas, será o tamanho de layers
+#
+# Os pontos serão armazenados em arquivos de texto '.asc' e indexados
+# pelo número do refletor, exemplo inp0.asc, o laço em nlays serve
+# para armazenar cada ponto de layers nesses arquivos '.asc'
+#-----------------------------------------------------------------------------------------
+
+layers = (
+     ((0,2),(3.5,2),(4.5,2.5),(5,2.25),
+       (5.5,2),(6.5,2.5),(10,2.5)),
+     ((0,2.5),(10,3.5)),
+     ((0,3.2),(3.5,3.2),(5,3.7),
+       (6.5,4.2),(10,4.2)),
+     ((0,4.5),(10,4.5))
+)
+
+nlays = len(layers)
+
+for i in range(nlays):
+     inp = 'inp%d' % i
+     Flow(inp+'.asc',None,
+          '''
+          echo %s in=$TARGET
+          data_format=ascii_float n1=2 n2=%d
+          ''' % \
+          (' '.join(map(lambda x: ' '.join(map(str,x)),
+                           layers[i])),len(layers[i])))
+
+#-------------------------------------------------------------------------
+# Converta os arquivos '.asc' para arquivos do Madagascar '.rsf' com sfdd.
+#
+# dim1 recebe o número de pontos do eixo 1 do modelo, a interpolação
+# dos pontos fornecidos no passo anterior irá formar os refletores
+# no modelo. Por isso utiliza-se o sfspline sobre o eixo 1.
+# 
+# O refletor 4 é plano, é construído a partir do penúltimo fluxo abaixo
+# utilizando apenas o sfmath.
+#--------------------------------------------------------------------------
+
+dim1 = 'o1=0 d1=0.001 n1=10001'
+
+Flow('lay1','inp0.asc',
+     'dd form=native | spline %s fp=0,0' % dim1)
+Flow('lay2',None  ,
+     'math %s output="2.5+x1*0.1" '      % dim1)
+Flow('lay3','inp2.asc',
+     'dd form=native | spline %s fp=0,0' % dim1)
+Flow('lay4',None  ,'math %s output=4.5'  % dim1)
+
+
+# Concatenar todos os refletores em um único arquivo 'lays.rsf'
+
+Flow('lays','lay1 lay2 lay3 lay4',
+     'cat axis=2 ${SOURCES[1:4]}')
+
+# Plotar os refletores
+graph = '''
+graph min1=2.5 max1=7.5 min2=0 max2=5
+yreverse=y wantaxis=n wanttitle=n screenratio=1
+'''
+Plot('lays0','lays',graph + ' plotfat=10 plotcol=0')
+Plot('lays1','lays',graph + ' plotfat=2 plotcol=7')
+Plot('lays2','lays',graph + ' plotfat=2')
+
+
+#---------{ Construir o modelo de Velocidades }------------
+#
+# A velocidade varia linearmente com a profundidade.
+# Seguindo a equação v(x1)=1.5+0.36*x1
+#
+# Unidades de medida: Km, s e Km/s
+# 
+# Após produzir o modelo de velocidades, concatena com
+# os refletores.
+#-----------------------------------------------------------
+
+
+Flow('vofz',None,
+     '''
+     math output="1.5+0.36*x1"
+     d2=0.01 n2=1001 d1=0.01 n1=501
+     label1=Depth unit1=km
+     label2=Distance unit2=km
+     label=Velocity unit=km/s
+     ''')
+
+Plot('vofz',
+     '''
+     window min2=2.5 max2=7.5 |
+     grey scalebar=n color=j allpos=y bias=1.5 labelsz=14 labelfat=2 font=4 titlesz=20 titlefat=2
+     title=Model screenratio=1
+     ''')
+
+Result('model','vofz lays0 lays1','Overlay')
+
+#------------{ Sismograma sintético }----------------
+#
+# A modelagem kirchoff (realizada com o 'sfkirmod') 
+# precisa da inclinação dos refletores,
+# por isso utilizamos o 'sfderiv'.
+# Essas inclinações serão armazenadas em 'dips.rsf'.
+#
+# nh é o número de receptores
+# ns o número de fontes
+# dh intervalo entre os receptores
+# ds intervalo entre as fontes
+# h0 e s0 posição inicial do receptor e das fontes
+# freq é a frequência pico da fonte
+# dt intervalo de amostragem
+# nt número de amostras
+#----------------------------------------------------
+
+Flow('dips','lays','deriv scale=y')
+
+Flow('modl','lays dips',
+     '''
+     kirmod cmp=y dip=${SOURCES[1]} 
+     nh=51  dh=0.1  h0=0
+     ns=20 ds=0.05 s0=0
+     freq=10 dt=0.004 nt=1501
+     vel=1.5 gradz=0.36 verb=y |
+     pow pow1=1 |
+     put d2=0.05 
+     label1=Time        unit1=s
+     label2=Half-Offset unit2=km 
+     label3=Midpoint    unit3=km 
+     ''',split=[1,10001], reduce='add')
+
+#------------------------------------------------
+# Plotar o cubo de dados (modl.vpl): 
+#
+#	O 'cubo de dados' é o dado sísmico
+#	organizado em um hipercubo 4D com
+#	a amplitude A(h,m,t) definida para cada
+#	coordenada h(offset), 
+#	m(CMP) e t(tempo de chegada).
+#------------------------------------------------
+
+Result('modl',
+        '''
+        byte |
+        grey3 color=o flat=n movie=0
+        title="Raw Data"
+        ''')
+
+# Função para definir parâmetros da plotagem
+def graph(col=7,fat=1):
+    return '''
+    graph min2=0 max2=5 pad=n transp=y yreverse=y wanttitle=n
+    plotcol=%d plotfat=%d wantaxis=n
+    ''' % (col,fat)
+
+# Armazenar a coordenada x(offset) no arquivo 'offset.rsf'
+Flow('offset',None,
+	'''
+	math n1=51 d1=0.05 o1=0 output="x1"
+	''') 
+
+#-------------------------{ Correção NMO }-------------------------------
+#
+# Separar cada CMP do 'cubo de dados' e realizar a correção NMO em
+# cada um deles separadamente.
+#
+#------------------------------------------------------------------------
+
+for i in  range(20):
+
+	slice='cmp-%d' % i # CMP janelado
+
+	pick='cmppick-%d' % i # picking de velocidades do CMP
+
+	fit='cmpfit-%d' % i # picking de velocidades do CMP
+
+	nmo='cmpnmo-%d' % i # CMP aplicada a correção NMO
+
+	scan='cmpscan-%d' %i # Painel de semblance das velocidades de empilhamento
+
+	slow ='cmpslow-%d' %i # Plotagem do picking de velocidades do CMP
+
+	posicao=i*0.05 # Coordenada do CMP
+
+	#Separar o CMP do cubo de dados com 'sfwindow' e fazer o plot
+
+	Flow(slice,'modl',
+		'''
+		window min3=%g max3=%g
+		
+		''' % (posicao, posicao)) 
+
+	Plot(slice,
+	'''
+	grey title="Synthetic CMP"  label2="Trace Number" unit2= grid2=n wherexlabel=b wheretitle=t
+	''')		
+
+	#----------------{ Análise de velocidades }---------------------------------
+	# 'sfvscan' implementa a análise de velocidades escaneando as velocidades 
+	# de empilhamento gerando um painel de semblance.
+	# 'sfpick' faz o picking de velocidades automático, 
+	# a partir do painel gerado pelo 'sfvscan'.
+	#---------------------------------------------------------------------------
+
+
+
+	Flow(scan,slice,'vscan slowness=n half=y v0=1.5 nv=66 dv=0.05 semblance=y',split=[3,250])
+	Flow(pick,scan,'pick rect1=17 rect2=17 vel0=1.5')
+
+	Flow(fit,pick,'window n3=1')
+	Plot(slow,fit,graph(1,7))
+	Plot(scan,scan,'grey wanttitle=n color=seismic')
+	Plot(fit,[scan, slow],'Overlay')
+
+	##--------{ Correção NMO }---------------------
+	# Realiza a correção NMO com 'sfnmo' e plota
+	# o CMP corrigido com o picking de velocidades
+	# e o CMP original lado a lado.
+	##---------------------------------------------
+
+	Flow(nmo,[slice, 'offset', fit],
+	'''
+	nmo offset=${SOURCES[1]} velocity=${SOURCES[2]} half=y
+	''')
+
+	Plot(nmo,'grey title="NMO Corrected"  label2="Trace Number" unit2= grid2=n wherexlabel=b wheretitle=t')
+
+	Result(nmo, [fit, slice, nmo],'SideBySideAniso',vppen='txscale=1.5')
+	
+End()
