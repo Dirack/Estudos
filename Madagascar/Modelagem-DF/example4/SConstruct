@@ -1,6 +1,9 @@
 from rsf.proj import *
 import math
 
+# Recipes
+from rsf.recipes.kimodel import multiLayerModel as mlmod
+
 def arr2str(array,sep=' '):
         '''
         
@@ -14,10 +17,94 @@ def arr2str(array,sep=' '):
 # Wave Equation Modeling
 # ------------------------------------------------------------
 ##################################
+# Create Velocity Model
+##################################
+
+xmax=8
+zmax=3
+layer1 = ((0.9,1.00,1.20,0.90,1.00,1.00),)
+layer2 = ((1.85,1.85,1.85,1.85,1.85,1.85),)
+
+# Constant velocity model for stereoniptomo
+Flow('model',None,
+     '''
+     spike n1=1401 d1=0.01 o1=0 n2=1001 d2=0.01 o2=0 mag=1.508 |
+     put label1=Depth unit1=km label2=Position unit2=km
+     ''' )
+
+# Points of the cubic spline velocity function
+#Flow('sza',None,'math n1=11 d1=1 o1=-2 output="1.0"')
+#Flow('szb',None,'math n1=11 d1=1 o1=-2 output="1.8"')
+Flow('sza.asc',None,
+	'''
+	echo %s
+	n1=5 o1=0 d1=2.5
+	data_format=ascii_float in=$TARGET
+	''' % (' '.join(map(arr2str,layer1))))
+
+Flow('sza','sza.asc','dd form=native')
+
+Flow('szb.asc',None,
+	'''
+	echo %s
+	n1=5 o1=0 d1=2.5
+	data_format=ascii_float in=$TARGET
+	''' % (' '.join(map(arr2str,layer2))))
+
+Flow('szb','szb.asc','dd form=native')
+
+Flow('sz_2',['sza','szb'],
+	'''
+	rcat ${SOURCES[1]} axis=1 |
+        put n1=10
+	''')
+
+sz='sz_2'
+#sz='sza'
+sv='sv_2'
+Flow(sv,None,
+	'''
+	spike nsp=3 mag=%s k1=1,2,3 n1=3
+	'''%('1.5,1.7,2.0'))
+
+Flow('mod2',['model','sz_2','sv_2'],
+	'''
+	buildmodel sz=${SOURCES[1]} vz=${SOURCES[2]} border=n zblen=2 xblen=2
+	''')
+
+Result('mod2','grey title="Velocity model" color=j scalebar=y barreverse=y barunit=Km/s label1=Depth label2=Distance unit1=Km unit2=Km barlabel=Velocity allpos=y bias=1.5')
+
+Result('splinevellayer','mod2',
+	'''
+	window n1=1 f1=150 | graph label1=Distance label2=Velocity title="Velocity variation - Second layer"
+	''')
+
+# left border
+Flow('left-border','mod2',
+	'''
+	window n2=1 f2=0 |
+	spray n=2001 d=0.01 o=0
+	''')
+
+# right border
+Flow('right-border','mod2',
+	'''
+	window n2=1 f2=1000 |
+	spray n=2001 d=0.01 o=0
+	''')
+
+Flow('fullmodel',['left-border','mod2','right-border'],
+	'''
+	rcat ${SOURCES[1:3]} axis=2
+	''')
+
+Result('fullmodel','grey title="Velocity model" color=j scalebar=y barreverse=y barunit=Km/s label1=Depth label2=Distance unit1=Km unit2=Km barlabel=Velocity allpos=y bias=1.5')
+
+##################################
 # Set up sources and receivers 
 ##################################
 
-Flow('rz','fullmodel','window n1=1 | math output=0.1')
+Flow('rz','fullmodel','window n1=1 | math output=0.01')
 Flow('rx','fullmodel','window n1=1 | math output=x1')
 Flow('rxz','rx rz','cat axis=2 ${SOURCES[1]} | transp') 
 
@@ -44,7 +131,7 @@ ns=1
 ##################################
 
 for i in range(ns):
-    x=8.5+i*0.5
+    x=28.5+i*0.5
     sourcexz='sxz'+str(x)
     Flow(sourcexz,None,
          'spike n1=3 nsp=3 k1=1,2,3 mag=%g,%g,1' % (x,z))
