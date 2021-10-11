@@ -1,0 +1,85 @@
+from rsf.proj import *
+import math
+
+def arr2str(array,sep=' '):
+        '''
+        
+        Convert a tuple into a comma separeted string
+        
+        :param array: tuple to be converted
+        '''
+        return sep.join(map(str,array))
+
+# ------------------------------------------------------------
+# Wave Equation Modeling
+# ------------------------------------------------------------
+##################################
+# Set up sources and receivers 
+##################################
+
+Flow('rz','fullmodel','window n1=1 | math output=0.1')
+Flow('rx','fullmodel','window n1=1 | math output=x1')
+Flow('rxz','rx rz','cat axis=2 ${SOURCES[1]} | transp') 
+
+Flow('sz','fullmodel','window n1=1 j2=20 | math output=0.1')
+Flow('sx','fullmodel','window n1=1 j2=20 | math output=x1')
+Flow('sy','fullmodel','window n1=1 j2=20 | math output=0.1')
+Flow('sxz',['sx','sz','sy'],
+     '''
+     cat axis=2 space=n
+     ${SOURCES[0]} ${SOURCES[1]} ${SOURCES[2]} | transp
+     ''', stdin=0)
+
+Flow('wavelet',None,
+     '''
+     spike nsp=1 n1=5000 d1=0.001 k1=201 |
+     ricker1 frequency=10 | transp  
+     ''' )
+
+z=0
+ns=1
+
+##################################
+# Modeling 
+##################################
+
+for i in range(ns):
+    x=8.5+i*0.5
+    sourcexz='sxz'+str(x)
+    Flow(sourcexz,None,
+         'spike n1=3 nsp=3 k1=1,2,3 mag=%g,%g,1' % (x,z))
+
+    datax='data'+str((i+1)*15)
+    wfl='wfl'+str((i+1)*15)
+    snap='snap'+str((i+1)*15)
+   
+    Flow([datax,wfl],['wavelet','fullmodel','fullmodel',sourcexz,'rxz'],
+         '''
+         awefd2d
+         ompchunk=1 ompnth=0 
+         verb=y snap=y jsnap=100
+         nb=0
+         vel=${SOURCES[1]}
+         den=${SOURCES[2]}
+         sou=${SOURCES[3]}
+         rec=${SOURCES[4]}
+         wfl=${TARGETS[1]}
+         cden=y free=n dens=n snap=y expl=y
+         ''')
+
+##################################
+# Display shot gather and snapshot
+##################################    
+
+for i in range(ns):
+    dataview='data'+str((i+1)*15)
+    Result(dataview,
+           '''
+           window j2=5 |
+           transp |
+           grey title="Shot gather xs=%2.1f (km)"
+           gainpanel=all 
+           label1=Time unit1=s label2=Position unit2=km
+           ''' % (8.5) )
+
+End()

@@ -1,0 +1,107 @@
+from rsf.proj import *
+import math
+
+# Recipes
+from rsf.recipes.kimodel import multiLayerModel as mlmod
+
+def arr2str(array,sep=' '):
+        '''
+        
+        Convert a tuple into a comma separeted string
+        
+        :param array: tuple to be converted
+        '''
+        return sep.join(map(str,array))
+
+# ------------------------------------------------------------
+# Wave Equation Modeling
+# ------------------------------------------------------------
+##################################
+# Create Velocity Model
+##################################
+
+xmax=8
+zmax=3
+layer1 = ((0.9,1.00,1.20,0.90,1.00,1.00),)
+layer2 = ((2.85,2.85,2.85,2.85,2.85,2.85),)
+
+# Constant velocity model for stereoniptomo
+Flow('model',None,
+     '''
+     spike n1=1401 d1=0.0101 o1=0 n2=1001 d2=0.01 o2=0 mag=1.508 |
+     put label1=Depth unit1=km label2=Position unit2=km
+     ''' )
+
+# Points of the cubic spline velocity function
+#Flow('sza',None,'math n1=11 d1=1 o1=-2 output="1.0"')
+#Flow('szb',None,'math n1=11 d1=1 o1=-2 output="1.8"')
+Flow('sza.asc',None,
+	'''
+	echo %s
+	n1=5 o1=0 d1=2.5
+	data_format=ascii_float in=$TARGET
+	''' % (' '.join(map(arr2str,layer1))))
+
+Flow('sza','sza.asc','dd form=native')
+
+Flow('szb.asc',None,
+	'''
+	echo %s
+	n1=5 o1=0 d1=2.5
+	data_format=ascii_float in=$TARGET
+	''' % (' '.join(map(arr2str,layer2))))
+
+Flow('szb','szb.asc','dd form=native')
+
+Flow('sz_2',['sza','szb'],
+	'''
+	rcat ${SOURCES[1]} axis=1 |
+        put n1=10
+	''')
+
+sz='sz_2'
+#sz='sza'
+sv='sv_2'
+Flow(sv,None,
+	'''
+	spike nsp=3 mag=%s k1=1,2,3 n1=3
+	'''%('1.5,1.7,2.0'))
+
+Flow('mod2',['model','sz_2','sv_2'],
+	'''
+	buildmodel sz=${SOURCES[1]} vz=${SOURCES[2]} |
+	put o2=15
+	''')
+
+Result('mod2','grey title="Velocity model" color=j scalebar=y barreverse=y barunit=Km/s label1=Depth label2=Distance unit1=Km unit2=Km barlabel=Velocity allpos=y bias=1.5')
+
+Result('splinevellayer','mod2',
+	'''
+	window n1=1 f1=150 | graph label1=Distance label2=Velocity title="Velocity variation - Second layer"
+	''')
+
+# Build model borders
+border=((0.9,0.9,0.9,0.9),(2.85,2.85,2.85,2.85))
+velocities=(1.5,1.6,2.0)
+
+# Generate multi layers model
+mlmod(interfaces='border-int',
+        dipsfile='border-dip',
+        modelfile='border',
+        xmax=15,
+        zmax=15,
+        layers=border,
+        velocities=velocities)
+
+Result('border','grey title="Border" color=j scalebar=y barreverse=y barunit=Km/s label1=Depth label2=Distance unit1=Km unit2=Km barlabel=Velocity allpos=y bias=1.5')
+
+Flow('border-cut','border','window n1=1401')
+
+Flow('fullmodel',['border-cut','mod2','border-cut'],
+	'''
+	rcat ${SOURCES[1:3]} axis=2
+	''')
+
+Result('fullmodel','grey title="Velocity Model" color=j scalebar=y barreverse=y barunit=Km/s label1=Depth label2=Distance unit1=Km unit2=Km barlabel=Velocity allpos=y bias=1.5')
+
+End()
