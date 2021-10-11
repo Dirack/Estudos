@@ -17,10 +17,10 @@
 
 require 'contact.class.php';
 
-$database = "§";
-$host = "§";
-$user = "§";
-$password = "§";
+$database = "Estudos";
+$host = "localhost";
+$user = "root";
+$password = "root";
 
 $roxano = "roxano_jack@kgmail.com";
 $dirack = "rodolfo_profissional@hotmail.com";

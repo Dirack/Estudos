@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
 # Madagascar-Modelagem Diferenças Finitas  (Script do Pacote Madagascar)
@@ -70,7 +70,7 @@ velocidades = (1800.,
               3500.)
 
 def array2string(array,sep=' '):
-    return string.join(map(str,array),sep)
+    return sep.join(map(str,array))
 stringVelocidades = array2string(velocidades,',')
 
 numeroPontosDasInterfaces = len(pontosInterfaces[0])
@@ -81,7 +81,7 @@ Flow('pontosInterfaces.asc',None,
      echo %s
      n1=%d n2=%d o1=0 d1=%g
      data_format=ascii_float in=$TARGET     
-     ''' % (string.join(map(array2string,pontosInterfaces),' '),
+     ''' % (' '.join(map(array2string,pontosInterfaces)),
             numeroPontosDasInterfaces,numeroDeInterfaces,(parametrosModelagem['ox']+(parametrosModelagem['nx']-1)*parametrosModelagem['dx'])/(numeroPontosDasInterfaces-1)))
 
 Flow('pontosInterfaces','pontosInterfaces.asc','dd form=native')

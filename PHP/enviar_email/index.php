@@ -30,19 +30,32 @@ ini_set('display_startup_erros',1);
 error_reporting(E_ALL);
 
 /* Enviar email com a função mail() */
-$para = "rodolfo_profissional@hotmail.com";
-$assunto = "Email de teste";
-$msg = "Email de teste";
-$remetente = "Script PHP de teste";
-$remetente = "From: ".$remetente;
+if(isset($_POST['nome']) && !empty($_POST['nome'])){
 
-$success = mail($para,$assunto,$msg,$remetente);
-if (!$success) {
-    $errorMessage = error_get_last();
-	echo "erro: $errorMessage";
-}else{
-	echo "foi!!!";
+	$nome = addslashes($_POST['nome']);
+	$email = addslashes($_POST['email']);
+	$msg = addslashes($_POST['msg']);
+
+	$para = "rodolfo_profissional@hotmail.com";
+	$assunto = "Teste aleatório";
+	$corpo = "Nome: ".$nome." - Email: ".$email." - Mensagem: ".$msg;
+	$cabecalho = "From: ".$para."\r\n".
+		"Reply-To: ".$email."\r\n".
+		"X-Mailer: PHP/".phpversion();
+	$success = mail($para,$assunto,$corpo,$cabecalho);
+	if (!$success) {
+	    $errorMessage = error_get_last();
+		echo "erro: $errorMessage";
+	}else{
+		echo "foi!!!";
+	}
+	echo "<h2>Email enviado!</h2>";
+	exit;
 }
-
 ?>
-
+<form method=POST>
+	Nome: <input type=text name=nome><br>
+	Email: <input type=text name=email><br>
+	Mensagem: <textarea name=msg></textarea><br>
+	<input type=submit value=Enviar>
+</form>
