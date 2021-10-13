@@ -1,8 +1,22 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+#
+# SConstruct (Madagascar Script)
+# 
+# Purpose: Finite differences modeling for a lateral velocity variation layer.
+# 
+# Site: https://dirack.github.io
+# 
+# Version 1.0
+# 
+# Programmer: Rodolfo A C Neves (Dirack) 13/10/2021
+# 
+# Email: rodolfo_profissional@hotmail.com
+# 
+# License: GPL-3.0 <https://www.gnu.org/licenses/gpl-3.0.txt>.
+
 from rsf.proj import *
 import math
-
-# Recipes
-from rsf.recipes.kimodel import multiLayerModel as mlmod
 
 def arr2str(array,sep=' '):
         '''
@@ -20,21 +34,17 @@ def arr2str(array,sep=' '):
 # Create Velocity Model
 ##################################
 
-xmax=8
-zmax=3
 layer1 = ((0.9,1.00,1.20,0.90,1.00,1.00),)
 layer2 = ((1.85,1.85,1.85,1.85,1.85,1.85),)
 
-# Constant velocity model for stereoniptomo
+# Constant velocity model
 Flow('model',None,
      '''
      spike n1=1401 d1=0.01 o1=0 n2=1001 d2=0.01 o2=0 mag=1.508 |
      put label1=Depth unit1=km label2=Position unit2=km
      ''' )
 
-# Points of the cubic spline velocity function
-#Flow('sza',None,'math n1=11 d1=1 o1=-2 output="1.0"')
-#Flow('szb',None,'math n1=11 d1=1 o1=-2 output="1.8"')
+# Points of the cubic spline representation of the interfaces
 Flow('sza.asc',None,
 	'''
 	echo %s
@@ -60,7 +70,8 @@ Flow('sz_2',['sza','szb'],
 	''')
 
 sz='sz_2'
-#sz='sza'
+
+# Layer's velocities
 sv='sv_2'
 Flow(sv,None,
 	'''
@@ -69,10 +80,10 @@ Flow(sv,None,
 
 Flow('mod2',['model','sz_2','sv_2'],
 	'''
-	buildmodel sz=${SOURCES[1]} vz=${SOURCES[2]} border=n zblen=2 xblen=2
+	buildmodel sz=${SOURCES[1]} vz=${SOURCES[2]}
 	''')
 
-Result('mod2','grey title="Velocity model" color=j scalebar=y barreverse=y barunit=Km/s label1=Depth label2=Distance unit1=Km unit2=Km barlabel=Velocity allpos=y bias=1.5')
+Result('mod2','grey title="Velocity model center" color=j scalebar=y barreverse=y barunit=Km/s label1=Depth label2=Distance unit1=Km unit2=Km barlabel=Velocity allpos=y bias=1.5')
 
 Result('splinevellayer','mod2',
 	'''
@@ -125,13 +136,14 @@ Flow('wavelet',None,
 
 z=0
 ns=1
+x0=28.5
 
 ##################################
 # Modeling 
 ##################################
 
 for i in range(ns):
-    x=28.5+i*0.5
+    x=x0+i*0.5
     sourcexz='sxz'+str(x)
     Flow(sourcexz,None,
          'spike n1=3 nsp=3 k1=1,2,3 mag=%g,%g,1' % (x,z))
@@ -167,6 +179,6 @@ for i in range(ns):
            grey title="Shot gather xs=%2.1f (km)"
            gainpanel=all 
            label1=Time unit1=s label2=Position unit2=km
-           ''' % (8.5) )
+           ''' % (x0) )
 
 End()
