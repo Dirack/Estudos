@@ -120,7 +120,7 @@ Flow('rz','r','math output=0.01')
 Flow('rx','r','math output=x1')
 Flow('rxz','rx rz','cat axis=2 ${SOURCES[1]} | transp') 
 
-Flow('sz','fullmodel','window n1=1 j2=20 | math output=0.1')
+Flow('sz','fullmodel','window n1=1 j2=20 | math output=0')
 Flow('sx','fullmodel','window n1=1 j2=20 | math output=x1')
 Flow('sy','fullmodel','window n1=1 j2=20 | math output=0.1')
 Flow('sxz',['sx','sz','sy'],
