@@ -115,7 +115,7 @@ Result('fullmodel','grey title="Velocity model" color=j scalebar=y barreverse=y 
 # Set up sources and receivers 
 ##################################
 
-Flow('r',None,'spike n1=50 d1=0.025 o1=28.525')
+Flow('r',None,'spike n1=100 d1=0.025 o1=27.250')
 Flow('rz','r','math output=0.01')
 Flow('rx','r','math output=x1')
 Flow('rxz','rx rz','cat axis=2 ${SOURCES[1]} | transp') 
@@ -155,8 +155,8 @@ for i in range(ns):
 	math output="input+%g" |
 	rcat axis=2 ${SOURCES[1]} |
 	transp |
-	put o1=0.025 unit1=Km 
-	'''%(0.025*i))
+	put o1=%g unit1=Km
+	'''%((0.025*i),(x-50*0.025)))
 
 	datax='data'+str(x)
 	wfl='wfl'+str(x)
@@ -174,11 +174,14 @@ for i in range(ns):
 	 rec=${SOURCES[4]}
 	 wfl=${TARGETS[1]}
 	 cden=y free=n dens=n snap=y expl=y |
-	 sfput label1=Offset n3=1 d3=0.025 o3=%g o1=0.
-	 '''%(x))
+	 put label1=Offset n3=1 d3=0.025 o3=%g o1=%g |
+	 transp plane=21 |
+	 mutter v0=1.8 t0=0.3
+	 '''%(x,-50*0.025))
 	data.append(datax)
 
 Flow('data',data,'rcat ${SOURCES[1:%d]} axis=3'%ns)
+
 ##################################
 # Display shot gather and snapshot
 ##################################    
@@ -188,12 +191,9 @@ for i in range(ns):
 	dataview='data'+str(x)
 	Result(dataview,
 	   '''
-	   window j2=5 |
-	   transp |
 	   grey title="Shot gather xs=%2.3f (km)"
 	   gainpanel=all 
 	   label1=Time unit1=s label2=Position unit2=km
-	   min2=%g
-	   ''' % (x,x-50*0.025) )
+	   ''' % (x))
 
 End()
