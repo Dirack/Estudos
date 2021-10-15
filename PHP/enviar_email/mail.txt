@@ -1,0 +1,5 @@
+To: rodolfo_profissional@hotmail.com
+Subject: sendmail test
+From: rodolfo_profissional@hotmail.com
+
+And here goes the e-mail body, test test test..
