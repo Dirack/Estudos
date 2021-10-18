@@ -136,7 +136,7 @@ Flow('wavelet',None,
      ''' )
 
 z=0
-ns=20
+ns=int(ARGUMENTS.get('ns',1))
 x0=28.5
 
 ##################################
