@@ -1,4 +1,4 @@
-	#!/bin/bash
+#!/bin/bash
 
 INTERVALO_POMO=$(sed -n '2p' pomo.config)
 INTERVALO_DESC=$(sed -n '3p' pomo.config)

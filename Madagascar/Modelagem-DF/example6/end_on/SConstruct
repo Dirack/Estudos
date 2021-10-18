@@ -219,4 +219,21 @@ Flow('nmo','cmpdata cmpmask pick',
 
 Flow('stack','nmo','stack')
 
+dt=0.004
+Flow('vrms','pick',
+	     '''
+	     sfmul $SOURCE | 
+	     sfcausint |
+	     sfmath output="sqrt(input*%g/(x1+%g))" |
+	     sfput n3=1 d3=1 o3=0 
+	     '''%(dt,dt))
+
+Flow('kirchhoffMigrated',['stack','vrms'],
+	'''
+	kirchnew velocity=${SOURCES[1]} |
+	pow pow1=2
+	''')
+
+Result('kirchhoffMigrated','grey title="Kirchhoff Migrated Section"')
+
 End()
