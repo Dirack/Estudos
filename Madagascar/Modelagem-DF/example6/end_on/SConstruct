@@ -195,4 +195,28 @@ for i in range(ns):
 	   label1=Time unit1=s label2=Position unit2=km
 	   ''' % (x) )
 
+Flow('cmpdata cmpmask','data',
+	'''
+	shot2cmp mask=${TARGETS[1]}
+	''')
+
+Flow('scan','cmpdata cmpmask',
+	'''
+	vscan semblance=y mask=${SOURCES[1]}
+	v0=1.4 dv=0.05 nv=100
+	''')
+
+Flow('pick','scan',
+	'''
+	pick rect1=50 rect2=100 vel0=1.4 |
+	window
+	''')
+
+Flow('nmo','cmpdata cmpmask pick',
+	'''
+	nmo mask=${SOURCES[1]} velocity=${SOURCES[2]}
+	''')
+
+Flow('stack','nmo','stack')
+
 End()
