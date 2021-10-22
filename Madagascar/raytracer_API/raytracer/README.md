@@ -18,7 +18,7 @@ typedef struct RayTrace* raytrace;
 #endif
 
 struct RayTrace {
-	bool sym;
+	bool sym; // if symplectic
 	int dim; // Grid dimension 2D, 3D
 	int nt; // Ray samples in time
 	float dt, z0;
@@ -31,9 +31,24 @@ struct RayTrace {
 
 ### iso\_rhs
 
+```c
+raytrace raytrace_init(int dim            /* dimensionality (2 or 3) */, 
+					   bool sym,          /* if symplectic */
+					   int nt             /* number of ray tracing steps */, 
+					   float dt           /* ray tracing step (in time) */,
+					   int* n             /* slowness dimensions [dim] */, 
+					   float* o, float* d /* slowness grid [dim] */,
+					   float* slow2       /* slowness squared [n3*n2*n1] */, 
+					   int order          /* interpolation order */)
+```
+
+It is just a function wrapper to grid2\_init function that initialize the grid. It allocates memory for the raytrace object and after that
+it calls grid2\_init function to initialize grid.
+
 ### term
 
-Function to verify if the ray is outside the grid.
+Function to verify if the ray is outside the grid. It is just a wrapper function to grid2\_term function that will check if the current ray location
+is outside the grid.
 
 ### raytrace\_init
 
