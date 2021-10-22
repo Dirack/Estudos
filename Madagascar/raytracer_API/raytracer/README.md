@@ -1,8 +1,14 @@
-### raytrace.c documentation
+# Program raytrace.c documentation
+
+## Macro definition
 
 DEG2RAD is a macro to degrees to radian conversion
 
 ORDER is the order of eno interpolation (?)
+
+## Abstract Data Type (ADT)
+
+The main struct in the program is RayTrace, that is the raytrace object with the grid object inside grd2 (2D grid).
 
 ```c
 typedef struct RayTrace* raytrace;
@@ -20,6 +26,8 @@ struct RayTrace {
 };
 /* concrete data type */
 ```
+
+## Functions
 
 ### iso\_rhs
 
@@ -45,7 +53,7 @@ int trace_ray (raytrace rt  /* ray tracing object */,
 ```
 
 
-#### Trace a ray.
+Trace a ray.
  * Values of x and p are changed inside the function.
  * The trajectory traj is stored as follows:
  {z0,y0,z1,y1,z2,y2,...} in 2-D
