@@ -31,6 +31,17 @@ struct RayTrace {
 
 ### iso\_rhs
 
+right-hand side for isotropic raytracing (?)
+
+### term
+
+Function to verify if the ray is outside the grid. It is just a wrapper function to grid2\_term function that will check if the current ray location
+is outside the grid.
+
+### raytrace\_init
+
+Function to initialize raytrace object.
+
 ```c
 raytrace raytrace_init(int dim            /* dimensionality (2 or 3) */, 
 					   bool sym,          /* if symplectic */
@@ -44,15 +55,6 @@ raytrace raytrace_init(int dim            /* dimensionality (2 or 3) */,
 
 It is just a function wrapper to grid2\_init function that initialize the grid. It allocates memory for the raytrace object and after that
 it calls grid2\_init function to initialize grid.
-
-### term
-
-Function to verify if the ray is outside the grid. It is just a wrapper function to grid2\_term function that will check if the current ray location
-is outside the grid.
-
-### raytrace\_init
-
-Function to initialize raytrace object
 
 ### raytrace\_close
 
