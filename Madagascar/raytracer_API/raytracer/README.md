@@ -61,14 +61,12 @@ Trace a ray.
  * Vector p points in the direction of the ray. 
  The length of the vector is not important.
  Example initialization:
- p[0] = cos(a); p[1] = sin(a) in 2-D, a is between 0 and 2\*pi radians
- p[0] = cos(b); p[1] = sin(b)\*cos(a); p[2] = sin(b)\*sin(a) in 3-D
- b is inclination between 0 and   pi radians
- a is azimuth     between 0 and 2\*pi radians
+   - p[0] = cos(a); p[1] = sin(a) in 2-D, a is between 0 and 2\*pi radians
+   - p[0] = cos(b); p[1] = sin(b)\*cos(a); p[2] = sin(b)\*sin(a) in 3-D
+   - b is inclination between 0 and   pi radians a is azimuth between 0 and 2\*pi radians
  * The output code for it = trace\_ray(...)
- it=0 - ray traced to the end without leaving the grid
- it>0 - ray exited at the top of the grid
- it<0 - ray exited at the side or bottom of the grid
- * The total traveltime along the ray is 
- nt\*dt if (it = 0); abs(it)\*dt otherwise 
+   - it=0 - ray traced to the end without leaving the grid
+   - it>0 - ray exited at the top of the grid
+   - it<0 - ray exited at the side or bottom of the grid
+ * The total traveltime along the ray is nt\*dt if (it = 0); abs(it)\*dt otherwise 
 
