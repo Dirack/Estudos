@@ -51,6 +51,15 @@ returns the value of the velocity for this point.
 sf_eno2_apply(grd->pnt, i, j, x, y, &f, f1, FUNC);
 ```
 
+### grid2\_vgrad
+
+Extract (1/2 of) gradient values from the grid.
+It is a wrapper function to sf_eno2_apply that extracts a value from the slowness grid for a (x,y) coordinate.
+
+```c
+sf_eno2_apply(grd->pnt, i, j, x, y, &f, f1, DER);
+```
+
 ### grid2\_term
 
 ```c
@@ -59,3 +68,7 @@ int grid2_term (void* par /* grid */,
 /*< Termination criterion. returns 0 if xy (data coordinates)
   are inside the grid >*/
  ```
+
+### grid2\_close
+
+This function free internal storage. Its is just a wrapper function to sf_eno2_close function that frees the sf_eno2 struct.
