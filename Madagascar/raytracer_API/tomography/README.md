@@ -2,6 +2,19 @@
 
 ## Macro definition
 
+NR is the number of reflection ray pairs to trace for each NIP source
+
+NT is the number of time samples for each ray
+
+DT is the time sampling for each ray
+
+GDB_DEBUG is a preprocessor macro to debug definition
+
+DANGLE is the angle sampling to each reflection ray from the normal ray (axial ray)
+
+ORDER and DEG2RAD are macro definitions from raytrace.h. ORDER is the interpolation order for the velocity grid (eno interpolation). And
+DEG2RAD is a coefficient to convert angles in degrees to radians
+
 ## Function
 
 ### creTimeApproximation
