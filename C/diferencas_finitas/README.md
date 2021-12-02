@@ -6,6 +6,7 @@ As fórmulas utilizadas foram retiradas deste [Tutorial na Wikipédia](https://p
 Basta expandir as funções em série de Taylor e depois fazer a diferença para ter uma boa aproximação da derivada:
 
 ![taylor](https://github.com/Dirack/Estudos/blob/master/C/diferencas_finitas/res/taylor.svg)
+
 ![taylor2](https://github.com/Dirack/Estudos/blob/master/C/diferencas_finitas/res/taylor2.svg)
 
 A fórmula da derivada:
