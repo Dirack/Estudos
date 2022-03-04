@@ -1,0 +1,23 @@
+from rsf.proj import *
+
+Flow(['filt','lag'],'stackedSectionForTest1',
+	'''
+	bandpass fhi=40 flo=5 |
+	lopef a=5,10 w=10,50 lag=${TARGETS[1]}
+	''')
+
+Flow('spik','stackedSectionForTest1',
+	'''
+	pef minlag=.004 maxlag=.140 pnoise=.1 mincorr=0 maxcorr=1.
+	''')
+
+Flow('dec',['stackedSectionForTest1','filt'],'decon filt=${SOURCES[1]} predictive=y')
+
+Plot('stackedSectionForTest1','grey title="Before Decon"')
+Plot('dec','grey title="After Decon"')
+Result('together',['stackedSectionForTest1','dec'],'SideBySideIso')
+
+Plot('spik','grey title="After Decon"')
+Result('together2',['stackedSectionForTest1','spik'],'SideBySideIso')
+
+End()
