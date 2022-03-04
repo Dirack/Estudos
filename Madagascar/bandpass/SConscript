@@ -1,0 +1,21 @@
+from rsf.proj import *
+
+Fetch('stackedSectionForTest1'+'.rsf',server='https://github.com/Dirack/dirack.github.io/',
+	top='raw/master/data/',
+	dir='tacutu/',
+	usedatapath=0)
+
+Flow('original_spectra','stackedSectionForTest1','spectra')
+
+Plot('original_spectra','grey title="Original Spectra"')
+
+Flow('filtered_spectra','stackedSectionForTest1',
+	'''
+	bandpass fhi=40 flo=10 | spectra
+	''')
+
+Plot('filtered_spectra','grey title="Filtered Spectra"')
+
+Result('spectras',['original_spectra','filtered_spectra'],'SideBySideIso')
+
+End()
