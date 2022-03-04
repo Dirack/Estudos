@@ -1,5 +1,10 @@
 from rsf.proj import *
 
+Fetch('stackedSectionForTest1'+'.rsf',server='https://github.com/Dirack/dirack.github.io/',
+	top='raw/master/data/',
+	dir='tacutu/',
+	usedatapath=0)
+
 Flow(['filt','lag'],'stackedSectionForTest1',
 	'''
 	bandpass fhi=40 flo=5 |
