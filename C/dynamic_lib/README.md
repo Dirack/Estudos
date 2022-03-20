@@ -28,6 +28,8 @@ O programa principal pode ser montado com o seguinte comando de compilação:
 gcc main.c libTest.so -o main.x
 ```
 
+## Linkagem de bibliotecas dinâmicas
+
 A biblioteca dinâmica precisará ser encontrada pelo linker, para fazê-lo
 existem duas possibilidades:
 
