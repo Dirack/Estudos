@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,shink-to-fit=no">
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<style type="text/css">
+		.row [class^=col-], .row .col{
+			border: 1px solid black;
+		}
+	</style>
+	<title>Projeto Bootstrap - Estudo Grid</title>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<!-- O limite mínimo de width das colunas é um celular -->
+			<!-- sm (pequeno), md (médio) e lg (largo) -->
+			<div class="col-sm" style="background-color:#FF0000">...</div>
+			<div class="col-sm" style="background-color:#00FF00">...</div>
+			<div class="col-sm" style="background-color:#FF0000">...</div>
+		</div>
+		<div class="row">
+			<!-- w-100 acrescenta uma linha -->
+			<div class="col-sm" style="background-color:#FF0000">...</div>
+			<div class="w-100"></div>
+			<div class="col-sm" style="background-color:#00FF00">...</div>
+		</div>
+
+		<div class="row">
+                        <!-- col-2 a coluna ocupa 2/12 espaços -->
+                        <div class="col-sm" style="background-color:#FF0000">...</div>
+                        <div class="col" style="background-color:#00FF00">...</div>
+                        <div class="col-2" style="background-color:#FF0000">...</div>
+                </div>
+
+	</div>
+
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="bootstrap.bundle.min.js"></script>
+</body>
+</html>
