@@ -41,6 +41,8 @@ $(document).ready(function(){
 			dataType:'json',
 			success:function(json){
 				console.log(json);
+				console.log('Meu nome é: '+json.usuário);
+				console.log('Minha senha é: '+json.senha);
 			},
 
 		});
