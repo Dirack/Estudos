@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,shink-to-fit=no">
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<style type="text/css">
+		.row [class^=col-], .row .col{
+			border: 1px solid black;
+			height: 50px;
+		}
+		.media{
+			border:1px solid black;
+			background-color: #eeeeee;
+		}
+	</style>
+	<title>Projeto Bootstrap - Estudo Tipografia</title>
+</head>
+<body>
+	<div class="container">
+		<form method="POST">
+			<div class="form-group">
+				<label for="email">Email</label>
+				<input id="email" class="form-control-plain-text form-control-lg" value="fulano@hotmail.com" type="email" name="email" readonly>
+			</div>
+			<div class="form-group">
+				<label id="email2">Email</label>
+				<input id="email" class="form-control form-control-lg" value="fulano@hotmail.com" type="email" name="email">
+			</div>
+			<div class="form-group">
+				<label for="senha">Senha</label>
+				<input id="senha" class="form-control form-control-sm" type="senha" name="senha">
+			</div>
+			<div class="form-group">
+				<input class="btn btn-primary" type="submit" value="Entrar">
+			</div>
+		</form>
+		<form method="POST" class="form-inline">
+			<div class="form-group">
+				<label for="email">Email</label>
+				<input id="email" class="form-control-plain-text form-control-lg" value="fulano@hotmail.com" type="email" name="email" readonly>
+			</div>
+			<div class="form-group">
+				<label id="email2">Email</label>
+				<input id="email" class="form-control form-control-lg" value="fulano@hotmail.com" type="email" name="email">
+			</div>
+			<div class="form-group">
+				<label for="senha">Senha</label>
+				<input id="senha" class="form-control form-control-sm" type="senha" name="senha">
+			</div>
+			<div class="form-group">
+				<input class="btn btn-primary" type="submit" value="Entrar">
+			</div>
+		</form>
+
+		<hr>
+		<form method="POST">
+			<div class="form-row">
+				<div class="col">
+					<div class="form-group">
+						<label for="email">Email</label>
+						<input id="email" class="form-control" value="fulano@hotmail.com" type="email" name="email" readonly>
+					</div>
+				</div>
+				<div class="col">
+					<div class="form-group">
+						<label id="email2">Email</label>
+						<input id="email" class="form-control" value="fulano@hotmail.com" type="email" name="email">
+					</div>
+				</div>
+				<div class="col">
+					<div class="form-group">
+						<label for="senha">Senha</label>
+						<input id="senha" class="form-control" type="senha" name="senha">
+					</div>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="col">
+					<div class="form-group">
+						<input class="btn btn-primary" type="submit" value="Entrar">
+					</div>
+				</div>
+			</div>
+		</form>
+
+	</div>
+
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="bootstrap.bundle.min.js"></script>
+</body>
+</html>

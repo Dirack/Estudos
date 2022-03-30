@@ -16,7 +16,7 @@ DEP=splines_naturais.c
 
 all:	main.x
 	./main.x > file.txt
-	python3 plot.py
+	#python3 plot.py
 
 main.x:	 main.c $(DEP:.c=.h)
 	gcc $< $(DEP) -o $@ -g

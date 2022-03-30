@@ -30,7 +30,7 @@ int main(void){
 	float xx, xs, yx; // Função interpolada
 	float ox; // Origem do spline no eixo x
 	float dx; // Amostragem da função interpolada
-	int nx=100; // Número de amostras da função interpolada
+	int nx=2; // Número de amostras da função interpolada
 
 	/* Calcular e exibir os coeficientes dos splines */
 	calcular_coeficientes(n,x,y,a);

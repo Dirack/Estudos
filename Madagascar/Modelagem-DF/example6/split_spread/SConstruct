@@ -237,4 +237,7 @@ Flow('kirchhoffMigrated',['stack','vrms'],
 
 Result('kirchhoffMigrated','grey title="Kirchhoff Migrated Section"')
 
+# Brute stack
+Flow('bstack','cmpdata','stack')
+
 End()
