@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,shink-to-fit=no">
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<style type="text/css">
+		.row [class^=col-], .row .col{
+			border: 1px solid black;
+			height: 50px;
+		}
+		.media{
+			border:1px solid black;
+			background-color: #eeeeee;
+		}
+	</style>
+	<title>Projeto Bootstrap - Estudo Tipografia</title>
+</head>
+<body>
+	<div class="container">
+		<button class="btn btn-primary" data-toggle="modal" data-target="#janela">Clique para abrir</button>
+
+		<div class="modal fade" id="janela">
+			<div class="modal-dialog modal-dialog-centered modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Título do Modal</h5>
+						<button class="close" data-dismiss="modal"><span>&times;</span></button>
+					</div>
+					<div class="modal-body">
+						<div class="row">
+							<div class="col">Item 1</div>
+							<div class="col">Item 2</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-primary">Salvar</button>
+						<button class="btn btn-danger" data-dismiss="modal">Fechar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="bootstrap.bundle.min.js"></script>
+	<!-- Ativar o tooltip com javascript -->
+	<script type="text/javascript">
+		$(function(){
+			$('[data-tooltip="tooltip"]').tooltip();
+		});
+	</script>
+</body>
+</html>
