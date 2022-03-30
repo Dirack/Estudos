@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,shink-to-fit=no">
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<style type="text/css">
+		.row [class^=col-], .row .col{
+			border: 1px solid black;
+			height: 50px;
+		}
+		.media{
+			border:1px solid black;
+			background-color: #eeeeee;
+		}
+	</style>
+	<title>Projeto Bootstrap - Estudo Tipografia</title>
+</head>
+<body>
+	<div class="container">
+		<ul class="list-group">
+			<li class="list-group-item active">Item 1</li>
+			<li class="list-group-item disable">Item 2</li>
+			<li class="list-group-item">Item 3</li>
+		</ul>
+		<div class="list-group list-group-flush">
+			<a href="#" class="list-group-item list-group-item-action list-group-item-success">Item 1</a>
+			<a href="#" class="list-group-item list-group-item-action list-group-item-primary">Item 2</a>
+			<a href="#" class="list-group-item list-group-item-action list-group-item-danger">Item 3</a>
+		</div>
+		<ul class="list-group">
+			<li class="list-group-item d-flex justify-content-between align-items-center">
+				Curso Shell Script profissional 1
+				<span class="badge badge-primary badge-pill">12</span>
+			</li>
+			<li class="list-group-item">
+				Curso Shell Script profissional 2
+				<span class="badge badge-primary badge-pill">1</span>
+			</li>
+			<li class="list-group-item">
+				Curso Shell Script profissional 3
+				<span class="badge badge-primary badge-pill">34</span>
+			</li>
+		</ul>
+		<div class="list-group">
+			<a href="#" class="list-group-item list-group-item-action">
+				<div class="d-flex justify-content-between">
+					<h5>Notícia qualquer</h5>
+					<small>2 dias atrás</small>
+				</div>
+				<p>Texto qualquer aleatório de resumo...</p>
+			</a>
+			<a href="#" class="list-group-item list-group-item-action">
+				<div class="d-flex justify-content-between">
+					<h5>Notícia qualquer</h5>
+					<small>2 dias atrás</small>
+				</div>
+				<p>Texto qualquer aleatório de resumo...</p>
+			</a>
+			<a href="#" class="list-group-item list-group-item-action">
+				<div class="d-flex justify-content-between">
+					<h5>Notícia qualquer</h5>
+					<small>2 dias atrás</small>
+				</div>
+				<p>Texto qualquer aleatório de resumo...</p>
+			</a>
+		</div>
+
+	</div>
+
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="bootstrap.bundle.min.js"></script>
+	<!-- Ativar o tooltip com javascript -->
+	<script type="text/javascript">
+		$(function(){
+			$('[data-tooltip="tooltip"]').tooltip();
+		});
+	</script>
+</body>
+</html>
