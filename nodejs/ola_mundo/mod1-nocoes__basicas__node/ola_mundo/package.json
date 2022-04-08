@@ -1,0 +1,22 @@
+{
+  "name": "ola_mundo",
+  "version": "1.0.0",
+  "description": "Exemplo olá mundo nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"start": "echo \"olá capa dócia\"",
+	"watch": "tsc -w"
+  },
+  "keywords": [
+    "Ola",
+    "mundo",
+    "teste",
+    "inútil"
+  ],
+  "author": "Rodolfo Dirack",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^17.0.23"
+  }
+}
