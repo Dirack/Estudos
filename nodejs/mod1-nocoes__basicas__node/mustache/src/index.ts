@@ -12,7 +12,15 @@ console.log(path.join(__dirname,'../public'));
 server.use(express.static(path.join(__dirname,'../public')));
 
 server.use('/',(req: Request, res: Response)=>{
-	res.render('home');
+	let dirack = {
+		name: 'Rodolfo',
+		age: '30'
+	}
+	res.render('home',{
+		user: 'Dirack',
+		dirack,
+		fulano: {name:'fulano',age:'90'}
+	});
 });
 
 server.use((req: Request, res: Response)=>{
