@@ -1,0 +1,28 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8">
+	<title>Estudo</title>
+</head>
+<body>
+
+<h1 id="titulo">Título lixo</h1>
+
+<div class="lista">
+	Arroz, feijão e macarrão
+</div>
+
+<div class="lista">
+	Água, refrigerante e cerveja
+</div>
+
+<input type="text" name="email">
+<button>Click</button>
+
+<script>
+	document.getElementById('titulo').innerHTML = 'Título bom';
+	document.getElementsByClassName('lista')[1].innerHTML = 'lista censurada';
+	document.getElementsByTagName('button')[0].innerHTML='Clicou!';
+	document.getElementsByName('email')[0].value = 'test';
+</script>
+</body>
+</html>
