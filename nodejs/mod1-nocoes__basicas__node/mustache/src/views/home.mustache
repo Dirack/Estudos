@@ -9,5 +9,34 @@
 	Fala, {{user}} <br>
 	Opa, {{dirack.name}}, tu tem {{dirack.age}} anos?<br>
 	O {{fulano.name}} é velho, tem {{fulano.age}} anos...
+	<br>
+	Exibição condicional: {{#showWelcome}}Não exibir isso!{{/showWelcome}}
+	<br>
+	{{#showOld}}Exibir isso!{{/showOld}}
+
+	<hr>
+	<h2>Exibir lista de produtos</h2>
+	<ul>
+	{{#products}}
+		<li>{{title}} - R$ {{price}}</li>
+	{{/products}}
+	</ul>
+
+	<hr>
+	<h2>Lista de frases motivacionais</h2>
+	<ul>
+	{{#lista}}
+		<li>{{.}}</li>
+	{{/lista}}
+	</ul>
+
+	<ul>
+	{{#lista2}}
+		<li>{{.}}</li>
+	{{/lista2}}
+	{{^lista2}}
+	Hoje não tem nenhuma frase lixo para fazer vc se sentir bem...
+	{{/lista2}}
+	</ul>
 </body>
 </html>
