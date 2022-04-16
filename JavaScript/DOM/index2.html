@@ -1,0 +1,74 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8">
+	<title>Estudo</title>
+	<style>
+		#nome{
+			width:200px;
+			height: 200px;
+		}
+
+		.verde{
+			background-color: green;
+			color: white;
+		}
+
+		.vermelho{
+			background-color: red;
+			color: white;
+		}
+
+		.azul{
+			background-color: blue;
+			color: white;
+		}
+
+		.preto{
+			background-color: black;
+			color: white;
+		}
+		.branco{
+			background-color: white;
+			color: black;
+		}
+	</style>
+</head>
+<body>
+	<div id="nome">Dirack</div>
+	<button onclick="verde()">Verde</button>
+	<button onclick="vermelho()">Vermelho</button>
+	<button onclick="azul()">Azul</button>
+
+	<hr>
+
+	<button class="btn preto" onclick="trocar()">Botão</button>
+
+	<script>
+		function verde(){
+			document.querySelector("#nome").classList.remove("vermelho");
+			document.querySelector("#nome").classList.remove("azul");
+			document.querySelector("#nome").classList.add("verde");
+		}
+
+		function vermelho(){
+			document.querySelector("#nome").classList.remove("verde");
+			document.querySelector("#nome").classList.remove("azul");
+			document.querySelector("#nome").classList.add("vermelho");
+		}
+		function azul(){
+			document.querySelector("#nome").classList.remove("vermelho");
+			document.querySelector("#nome").classList.remove("verde");
+			document.querySelector("#nome").classList.add("azul");
+		}
+		function trocar(){
+			if(document.querySelector(".btn").classList.contains("preto")){
+				document.querySelector(".btn").classList.remove("preto");
+				document.querySelector(".btn").classList.add("branco");
+			}else{
+				document.querySelector(".btn").classList.remove("branco");
+				document.querySelector(".btn").classList.add("preto");
+			}
+		}
+	</script>
+</body>
+</html>
