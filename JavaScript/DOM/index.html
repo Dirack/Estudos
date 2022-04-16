@@ -18,11 +18,14 @@
 <input type="text" name="email">
 <button>Click</button>
 
+<div id="query"></div>
+
 <script>
 	document.getElementById('titulo').innerHTML = 'Título bom';
 	document.getElementsByClassName('lista')[1].innerHTML = 'lista censurada';
 	document.getElementsByTagName('button')[0].innerHTML='Clicou!';
 	document.getElementsByName('email')[0].value = 'test';
+	document.querySelector('#query').innerHTML = 'Adicionado com querySelector';
 </script>
 </body>
 </html>
