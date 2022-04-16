@@ -1,0 +1,14 @@
+{{>partials/header}}
+
+<form method="GET">
+<input type="number" name="ano"><br>
+<input type="submit" value="Enviar">
+</form>
+
+<hr>
+
+{{#mostraridade}}
+Vc tem {{idade}} anos.
+{{/mostraridade}}
+
+{{>partials/footer}}
