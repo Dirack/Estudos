@@ -29,3 +29,9 @@ E o comando abaixo para visualizar a lista de símbolos:
 ```sh
 nm lib/liballoc.a
 ```
+
+Para criar um index para a biblioteca utilize o comando ranlib. Este comando cria um header na biblioteca com os símbolos dos conteúdos do arquivo objeto, isto ajuda o compilador a referenciar os símbolos rapidamente.
+
+```sh
+ranlib liballoc.a
+```
