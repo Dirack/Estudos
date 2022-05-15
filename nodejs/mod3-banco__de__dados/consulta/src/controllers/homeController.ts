@@ -5,8 +5,24 @@ import {Op} from 'sequelize';
 
 export const home = async (req: Request, res: Response)=>{
 
+	// build + save
+	const user1 = User.build({
+		name: "Fulaninho"
+	});
+	let idade = 27;
+	user1.age = idade;
+	await user1.save();
+
+	// create
+	const user = await User.create({
+		name: "Ciclano",
+		age: 39
+	});
+
 	let users = await User.findAll({
-		attributes:['name','age']
+		attributes:['name','age'],
+		offset: 2,
+		limit: 2
 	});
 	console.log(JSON.stringify(users));
 
@@ -18,6 +34,21 @@ export const home = async (req: Request, res: Response)=>{
 		where:{
 			[Op.or]:[{name:'Testador'},{age:31}]
 		}
+	});
+
+	let searchuser = await User.findAll({
+		where:{
+			name:{[Op.like]:'Te%'}
+		}
+	});
+
+	let alfa = await User.findAll({
+		where:{
+			age:{
+				[Op.gte]:18
+			}
+		},
+		order:[['name','DESC'],['age','DESC']]
 	});
 
     let age: number = 90;
@@ -39,6 +70,8 @@ export const home = async (req: Request, res: Response)=>{
         frasesDoDia: [],
 	users,
 	auser,
-	ouser
+	ouser,
+	searchuser,
+	alfa
     });
 };
