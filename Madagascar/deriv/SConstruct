@@ -1,0 +1,13 @@
+from rsf.proj import *
+
+Flow('sinx',None,'math n1=600 d1=0.01 o1=-3.14159 output="sin(x1)"')
+
+Flow('deriv','sinx','./main.x')
+
+Result('derivative','sinx deriv',
+	'''
+	rcat ${SOURCES[1]} axis=2 |
+	graph grid=y min1=-3 max1=3 min2=-1 max2=1
+	''')
+
+End()
