@@ -14,6 +14,12 @@ export const home = async (req: Request, res: Response)=>{
 		await fulano.save();
 	}
 
+	let apagar = await User.findAll({where:{name:'Testador Alterado'}});
+	if(apagar.length > 0){
+		let ap = apagar[0];
+		await ap.destroy();
+	}
+
 	let results = await User.findAll({where:{id:6}});
 	console.log("RESULTS: ",results);
 
