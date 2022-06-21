@@ -1,0 +1,5 @@
+from rsf.proj import *
+
+Flow('velsmo','vel','./teste.x rect1=10 rect2=10 repeat=2')
+
+Flow('velsmo2','vel','./teste.x rect1=10 rect2=10 repeat=2')
