@@ -1,0 +1,15 @@
+set pagination off
+set logging file gdb.output
+set logging on
+
+# This line is a comment
+break quadrado
+    command 1
+    backtrace
+    continue
+end
+
+run
+
+set logging off
+quit
