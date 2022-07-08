@@ -4,9 +4,10 @@ set logging on
 
 # This line is a comment
 break quadrado
-    command 1
-    backtrace
-    continue
+	command 1
+	backtrace
+	printf "i is %d\n", i
+	continue
 end
 
 run
