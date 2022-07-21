@@ -10,3 +10,7 @@ function calcular(n1: number,n2: number){
 botao.addEventListener('click',function(){
 	res.innerHTML = calcular(+numero1.value,+numero2.value).toString();
 });
+
+let coisas: any = ['capa','docia','fulano'];
+
+coisas.push(23);
