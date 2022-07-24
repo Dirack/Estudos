@@ -10,9 +10,10 @@ const server = express();
 
 // Se não passar nada libera todos os domínios
 // Em origin, libera um domínio específico
-server.use(cors({
+/*server.use(cors({
 	origin: "https://resttesttest.com"
-}));
+}));*/
+server.use(cors());
 
 server.use(express.static(path.join(__dirname,"../public")));
 server.use(express.urlencoded({extended: true}));

@@ -13,6 +13,12 @@ router.post('/frases',ApiController.frases);
 
 router.get('/listar',ApiController.listar);
 
+router.get('/umafrase/aleatoria',ApiController.aleatoria);
+
 router.get('/umafrase/:id',ApiController.umafrase);
+
+router.put('/atualizar/:id',ApiController.atualizar);
+
+router.delete('/deletar/:id',ApiController.deletar);
 
 export default router;
