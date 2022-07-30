@@ -1,3 +1,19 @@
+# coding: utf-8
+#
+# SConstruct (sconscript)
+# 
+# Objetivo: Exemplo de uso da API sf_deriv para calcular a derivada do seno.
+# 
+# Site: https://www.geofisicando.com
+# 
+# Versão 1.0
+# 
+# Programador: Rodolfo A C Neves (Dirack) 30/07/2022
+# 
+# Email: rodolfo_profissional@hotmail.com
+# 
+# Licença: GPL-3.0 <https://www.gnu.org/licenses/gpl-3.0.txt>.
+
 from rsf.proj import *
 
 Flow('sinx',None,'math n1=600 d1=0.01 o1=-3.14159 output="sin(x1)"')
