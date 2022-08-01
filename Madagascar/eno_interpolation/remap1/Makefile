@@ -20,4 +20,4 @@ help:
 	@echo "make (To run the example)"
 	@echo "make debug (to generate a GDB version of the program)"
 
-.PHONY:	eno2interp.x clean
+.PHONY:	interp.x eno2interp.x clean

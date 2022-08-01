@@ -47,6 +47,7 @@ sf_eno2 sf_eno2_init (int order      /* interpolation order */,
     sf_eno2 pnt;
     int i2;
     
+	sf_warning("capa");
     pnt = (sf_eno2) sf_alloc(1,sizeof(*pnt));
     pnt->order = order; 
     pnt->n1 = n1; 
@@ -57,6 +58,7 @@ sf_eno2 sf_eno2_init (int order      /* interpolation order */,
     pnt->f  = sf_floatalloc(pnt->ng);
     pnt->f1 = sf_floatalloc(pnt->ng);
     pnt->ent = (sf_eno*) sf_alloc(n2,sizeof(sf_eno));
+	sf_warning("capa");
     for (i2 = 0; i2 < n2; i2++) {
 	pnt->ent[i2] = sf_eno_init (order, n1);
     }
