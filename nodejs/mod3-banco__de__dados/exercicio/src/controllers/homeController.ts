@@ -73,3 +73,5 @@ export const addUser = async (req: Request, res: Response)=>{
 	}
 	res.redirect('../');
 };
+
+
