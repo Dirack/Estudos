@@ -1,0 +1,72 @@
+{{>partials/header}}
+
+Opa {{name}} {{lastName}}, tudo bem?
+{{#showOld}}
+    Como vai a vida?
+{{/showOld}}
+{{^showOld}}
+    Beleza?
+{{/showOld}}
+<hr/>
+<fieldset>
+	<legend>Add User</legend>
+	<form method="POST" action="/addUser">
+		<input type="text" name="name" placeholder="name"><br><br>
+		<input type="text" name="age" placeholder="age"><br><br>
+		<input type="submit" value="Add">
+	</form>
+</fieldset>
+
+<hr/>
+<h2>Produtos</h2>
+<ul>
+    {{#products}}
+        {{>partials/productItem}}
+    {{/products}}
+</ul>
+
+<hr/>
+<h2>Produtos a partir de R$ 12</h2>
+<ul>
+    {{#expensives}}
+        {{>partials/productItem}}
+    {{/expensives}}
+</ul>
+
+<hr/>
+
+<h2>Usuários do banco:</h2>
+<ul>
+	{{#alfa}}
+		<li>{{name}} - idade: {{age}}
+			<a href="/usuario/{{id}}/mais">+</a>
+			<a href="/usuario/{{id}}/menos">-</a>
+			<a href="/usuario/{{id}}/excluir">x</a>
+		</li>
+	{{/alfa}}
+</ul>
+
+<ul>
+	{{#users}}
+		<li>{{name}} - idade: {{age}} </li>
+	{{/users}}
+</ul>
+
+{{#auser}}<p>{{name}} tem 31 anos</p>{{/auser}}
+{{#ouser}}<p>{{name}} tem 31 anos ou se chama Testador</p>{{/ouser}}
+{{#searchuser}}<p>{{name}} e {{age}}</p>{{/searchuser}}
+
+
+
+<hr/>
+
+<ul>
+    {{#frasesDoDia}}
+        <li>{{.}}</li>
+    {{/frasesDoDia}}
+    {{^frasesDoDia}}
+        Não há frases motivacionais hoje.
+    {{/frasesDoDia}}
+</ul>
+
+{{>partials/footer}}
