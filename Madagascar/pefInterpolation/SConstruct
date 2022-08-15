@@ -1,0 +1,134 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+#
+# SConstruct (Python3)
+# 
+# Purpose: Full velocity inversion with NIP tomography.
+# Velocity model with plane interfaces.
+# 
+# Site: https://dirack.github.io
+# 
+# Version 1.0
+# 
+# Programmer: Rodolfo A C Neves (Dirack) 31/01/2022
+# 
+# Email: rodolfo_profissional@hotmail.com
+# 
+# License: GPL-3.0 <https://www.gnu.org/licenses/gpl-3.0.txt>.
+
+# Madagascar Package
+from rsf.proj import *
+
+# Madagascar Recipes
+from rsf.recipes.pefInterpolation2 import pefInterpolation as pef
+from rsf.recipes.kimodel import multiLayerModel as mlmod
+from rsf.recipes.kimodel import kirchhoffNewtonModeling as kinewmod
+from rsf.recipes.kimodel import arr2str
+
+# Main Files
+trueModel='trueModel'
+stackedSection='stackedSection'
+parametersCube='parametersCube'
+dataCube='multiLayerDataCube'
+interpolatedDataCube='interpolatedDataCube2'
+
+# Establish building dependencies
+Depends('interpolatedDataCube.rsf','multiLayerDataCube.rsf')
+Depends('interpolatedDataCube2.rsf','interpolatedDataCube.rsf')
+Depends('crsParameters-m0-0-t0-0.rsf','interpolatedDataCube2.rsf')
+
+# Original velocity model
+xmax = 6.0
+zmax = 4.0
+
+layers = ((1.00,1.20,0.90,1.00),
+          (1.85,1.85,1.85,1.85))
+
+velocities = (1.508,
+              1.690,
+              2.0)
+
+### Modeling ###
+
+# Generate multi layer model
+mlmod(interfaces='interfaces',
+        dipsfile='interfacesDip',
+        modelfile=trueModel,
+        xmax=xmax,
+        zmax=zmax,
+        layers=layers,
+        velocities=velocities)
+
+# plot the original velocity model
+Result(trueModel,
+	'''
+	grey color=j scalebar=y label1=Depth unit1=km
+	label2=Position unit2=km barlabel=Velocity barunit=km/s
+	barreverse=y title="Velocity Model - Plane Interfaces" allpos=yi bias=1.0
+	''')
+
+# Generate a modeled data cube
+nt=1001
+dt=0.004
+nm=201
+dm=0.025
+nh=161
+dh=0.025
+
+kinewmod(reflectors='interfaces',
+        reflectorsDip='interfacesDip',
+        filename='multiLayerDataCube',
+        velocities=velocities,
+        nt=nt,
+        dt=dt,
+        ns=nm,
+        ds=dm,
+        nh=nh,
+        dh=dh)
+
+### VFSA and CRE Stacking ####
+
+# It uses Very Fast Simulated Aneeling and non hyperbolic CRS
+# to get zero offset CRS parameters (RN, RNIP and BETA) from interpolated data cube
+
+# VFSA Parameters
+v0 = float(ARGUMENTS.get('v0',1.5))
+ot0 = float(ARGUMENTS.get('ot0',1.0))
+dt0 = float(ARGUMENTS.get('dt0',0.008))
+nt0 = int(ARGUMENTS.get('nt0',251))
+om0 = float(ARGUMENTS.get('om0',1.5))
+dm0 = float(ARGUMENTS.get('dm0',0.025))
+nm0 = int(ARGUMENTS.get('nm0',121))
+aperture = int(ARGUMENTS.get('aperture',30))
+repeat = int(ARGUMENTS.get('repeat',4))
+itmax = int(ARGUMENTS.get('itmax',500))
+cds = bool(ARGUMENTS.get('cds',False))
+
+Flow(parametersCube,[dataCube],
+        '''
+        vfsacrsnh nm0=%d om0=%g dm0=%g nt0=%d ot0=%g dt0=%g v0=%g itmax=%d repeat=%d verb=y rnmin=2.5 rnmax=10 rnipmin=1.8 rnipmax=5
+        '''%(nm0,om0,dm0,nt0,ot0,dt0,v0,itmax,repeat))
+
+Flow('creTrajectories',[dataCube,parametersCube],
+        '''
+        cretrajec param=${SOURCES[1]} nm0=%d om0=%g dm0=%g nt0=%d ot0=%g dt0=%g verb=y 
+        '''%(nm0,om0,dm0,nt0,ot0,dt0))
+
+Flow('cretimecurves',['creTrajectories',parametersCube],
+        '''
+        getcretimecurve param=${SOURCES[1]} nm0=%d om0=%g dm0=%g nt0=%d ot0=%g dt0=%g verb=y v0=%g |
+        put label1=Offset unit1=Km label2=t0 unit2=s label3=m0 unit3=Km
+        n2=%d d2=%g o2=%g n3=%d d3=%g o3=%g
+        '''%(nm0,om0,dm0,nt0,ot0,dt0,v0,nt0,dt0,ot0,nm0,dm0,om0))
+
+Flow(stackedSection,[dataCube,'creTrajectories','cretimecurves'],
+        '''
+        crepefandstack cremh=${SOURCES[1]} timeCurves=${SOURCES[2]} aperture=%d nm0=%g om0=%g dm0=%g nt0=%g ot0=%g dt0=%g
+        ''' % (aperture,nm0,om0,dm0,nt0,ot0,dt0))
+
+Result(stackedSection,
+	'''
+	grey title="Stacked Section"
+	''')
+
+End()
