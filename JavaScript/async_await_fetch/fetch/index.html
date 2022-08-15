@@ -1,0 +1,11 @@
+<script>
+function getUser(Id) {
+ const userData = fetch(`http://localhost:4000/umafrase/${Id}`)
+   .then(response => response.json())
+   .then(data => console.log(data.autor+" disse:"+data.txt))
+   .catch(error => console.log(error))
+   .finally(() => console.log("fim"))
+}
+
+getUser(1); // "Nome Sobrenome"
+</script>

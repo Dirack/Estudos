@@ -1,0 +1,13 @@
+<script>
+const endpoints = [
+ "http://localhost:4000/umafrase/0",
+ "http://localhost:4000/umafrase/1",
+ "http://localhost:4000/umafrase/2"
+]
+
+const promises = endpoints.map(url => fetch(url).then(res => res.id))
+
+Promise.all(promises)
+ .then(data => console.log(data))
+ //.then(body => console.log(body.autor+" disse:"+body.txt))
+</script>

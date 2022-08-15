@@ -1,0 +1,11 @@
+<meta charset="utf-8">
+<script>
+async function getUser(userId) {
+ let response = await fetch(`http://localhost:4000/umafrase/${userId}`);
+ let userData = await response.json();
+ return userData;
+}
+
+let [user1, user2] = Promise.all([getUser(1), getUser(2)])
+
+</script>

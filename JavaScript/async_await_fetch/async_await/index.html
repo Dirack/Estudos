@@ -1,0 +1,17 @@
+<meta charset="utf-8">
+<script>
+async function getUser(userId) {
+ let response = await fetch(`http://localhost:4000/umafrase/${userId}`);
+ let userData = await response.json();
+	console.log(userData.autor);
+ return userData.autor; 
+}
+
+async function exibe(){
+	let capa = await getUser(1);
+	console.log(capa);
+}
+
+exibe();
+
+</script>
