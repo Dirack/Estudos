@@ -78,7 +78,12 @@ export const uploadArray = async (req: Request, res: Response)=>{
 };
 
 export const uploadFields = async (req: Request, res: Response)=>{
-	const files = req.files as {[filename:string]:Express.Multer.File[]};
+	type UploadFiles = {
+		avatar: Express.Multer.File[];
+		gallery: Express.Multer.File[];
+	};
+	console.log(req.files);
+	const files = req.files as UploadFiles;
 	console.log("AVATAR:",files.avatar);
 	console.log("GALLERY:",files.gallery);
 	res.json({});
