@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>Menu de navegação</title>
+    <style>
+    body {
+        background:#EEE;
+    }
+    aside {
+        position:fixed;
+        top:0;
+        right:0;
+        z-index:999;
+        display:flex;
+    }
+    #menu-opener {
+        width:40px;
+        height:40px;
+        cursor:pointer;
+        margin-top:10px;
+        margin-right:10px;
+    }
+    #menu-area {
+        width:0;
+        height:100vh;
+        background:#ccc;
+        overflow-x:hidden;
+        overflow-y:auto;
+        transition: all ease .5s;
+    }
+    #menu-area ul, #menu-area li {
+        padding:0;
+        list-style:none;
+    }
+    #menu-area li {
+        display:block;
+        padding:10px;
+        color:#555;
+        cursor:pointer;
+    }
+    #menu-area li:hover {
+        background:#DDD;
+    }
+    </style>
+    </head>
+<body>
+<h1 id="titulo">Seja bem vindo(a)</h1>
+<aside>
+    <div id="menu-opener">
+        <img src="menu.png" width="36">
+    </div>
+    <div id="menu-area">
+        <ul>
+            <li>Home</li>
+            <li>Sobre</li>
+            <li>Contato</li>
+        </ul>
+    </div>
+</aside>
+<script>
+	document.getElementById('menu-opener').addEventListener('click',()=>{
+			
+		let menu = document.getElementById('menu-area');
+		let width = menu.style.width;
+		if(width === '200px'){
+			menu.style.width = '0';
+		}else{
+			menu.style.width = '200px';
+		}
+	});
+</script>
+</body>
+</html>
