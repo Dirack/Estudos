@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Estudo plotly stream</title>
+	<script src="https://cdn.plot.ly/plotly-2.14.0.min.js"></script>
+</head>
+<body>
+
+	<div id="myDiv"></div>
+
+	<script>
+		function rand() {
+		  return Math.random();
+		}
+
+		Plotly.newPlot('myDiv', [{
+		  y: [1,2,3].map(rand),
+		  mode: 'lines',
+		  line: {color: '#80CAF6'}
+		}, {
+		  y: [1,2,3].map(rand),
+		  mode: 'lines',
+		  line: {color: '#DF56F1'}
+		}]);
+
+		var cnt = 0;
+
+		var interval = setInterval(function() {
+
+		  Plotly.extendTraces('myDiv', {
+		    y: [[rand()], [rand()]]
+		  }, [0, 1])
+
+		  if(++cnt === 100) clearInterval(interval);
+		}, 300);
+
+</script>
+
+</body>
+</html>

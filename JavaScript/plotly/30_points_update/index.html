@@ -1,0 +1,67 @@
+<html>
+    <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="plotly-2.14.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+    <div class="navbar"><span>Real-Time Chart with Plotly.js</span></div>
+    <div class="wrapper">
+
+        <div id="myDiv"></div>
+        <script>
+		var arrayLength = 30
+
+		var newArray = []
+
+
+		for(var i = 0; i < arrayLength; i++) {
+
+		  var y = Math.round(Math.random()*10) + 1
+
+		  newArray[i] = y
+
+		}
+
+
+		Plotly.newPlot('myDiv', [{
+
+		  y: newArray,
+
+		  mode: 'lines',
+
+		  line: {color: '#80CAF6'}
+
+		}]);
+
+
+		var cnt = 0;
+
+
+		var interval = setInterval(function() {
+
+
+		  var y = Math.round(Math.random()*10) + 1
+
+		  newArray = newArray.concat(y)
+
+		  newArray.splice(0, 1)
+
+
+		  var data_update = {
+
+		    y: [newArray]
+
+		  };
+
+
+		  Plotly.update('myDiv', data_update)
+
+
+		  if(++cnt === 100) clearInterval(interval);
+
+		}, 500);
+                 </script>
+    </div>
+    </body>
+</html>

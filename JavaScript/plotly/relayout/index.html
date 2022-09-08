@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Estudo plotly stream</title>
+	<script src="https://cdn.plot.ly/plotly-2.14.0.min.js"></script>
+</head>
+<body>
+
+	<div id="myDiv"></div>
+
+	<script>
+		function rand() {
+		  return Math.random();
+		}
+
+		var time = new Date();
+
+		var data = [{
+		  x: [time],
+		  y: [rand],
+		  mode: 'lines',
+		  line: {color: '#80CAF6'}
+		}]
+
+		Plotly.newPlot('myDiv', data);
+
+		var cnt = 0;
+
+		var interval = setInterval(function() {
+
+		  var time = new Date();
+
+		  var update = {
+		  x:  [[time]],
+		  y: [[rand()]]
+		  }
+
+		  var olderTime = time.setMinutes(time.getMinutes() - 1);
+		  var futureTime = time.setMinutes(time.getMinutes() + 1);
+
+		  var minuteView = {
+			xaxis: {
+			  type: 'date',
+			  range: [olderTime,futureTime]
+			}
+		      };
+
+		  Plotly.relayout('myDiv', minuteView);
+		  Plotly.extendTraces('myDiv', update, [0])
+
+		  if(++cnt === 100) clearInterval(interval);
+		}, 1000);
+
+</script>
+
+</body>
+</html>
