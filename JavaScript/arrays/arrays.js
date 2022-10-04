@@ -53,3 +53,25 @@ document.write("lista=["+lista+"]<br>");
 lista.splice(2,3); // remover 3 valores a partir da posição 2
 document.write("lista=["+lista+"]<br>");
 
+lista1 = ["capa","docia","nola"];
+lista2 = [1,2,3];
+document.write("concat="+lista1.concat(lista2)+"<br>");
+document.write(lista1.reverse()+"<br>");
+document.write(lista2.map((item)=>{return item*2;}));
+document.write(lista2.filter((item)=>{
+	if(item>2){
+		return true;
+	}else{
+		return false;
+	}
+})+"<br>");
+document.write(lista2.every((item)=>{
+	if(item>2){
+		return true;
+	}else{
+		return false;
+	}
+})+"<br>");
+document.write(lista2.some((item)=>{
+	return (item>2)? true: false;
+})+"<br>");
