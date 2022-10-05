@@ -75,3 +75,12 @@ document.write(lista2.every((item)=>{
 document.write(lista2.some((item)=>{
 	return (item>2)? true: false;
 })+"<br>");
+
+document.write(lista2.find((item)=>{
+	return (item>2)?true:false;
+})+"<br>");
+
+
+document.write(lista2.findIndex((item)=>{
+	return (item>2)?true:false;
+})+"<br>");
