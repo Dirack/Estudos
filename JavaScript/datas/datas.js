@@ -17,6 +17,10 @@
 // Objeto date do JavaScript
 dt = new Date();
 
+document.write(dt.toDateString()+"<br>");
+
+document.write(dt.toUTCString()+"<br>");
+
 // horas
 document.write("Hora: "+dt.getHours()+"<br>");
 

@@ -6,11 +6,12 @@
 </head>
 <body>
 	<script>
-		const createElement = function (tagName){
+		const createElement = function (tagName, text){
 			const element = document.createElement(tagName);
+			element.textContent = text;
 			return element;
 		}
-		console.log(createElement("h1"));
+		console.log(createElement("h1","Estudo"));
 	</script>
 </body>
 </html>

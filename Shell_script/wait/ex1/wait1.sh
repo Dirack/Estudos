@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "testing wait command1" &
+echo "testing wait command1" && sleep 10 && echo "Finished command1" &
 process_id=$!
 echo "testing wait command2" &
 wait $process_id
