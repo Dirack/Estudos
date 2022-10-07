@@ -1,0 +1,37 @@
+<!doctype html>
+<!--
+	index.html (HTML)
+	
+	Objetivo: Estudo sobre design responsivo. Este site se adapta a
+	largura de tela menor que 400px utilizando media queries do CSS3.
+	
+	Versão 1.0
+	
+	Site: http://www.dirackslounge.online
+	
+	Programador: Rodolfo A. C. Neves (Dirack) 28/03/2019
+	
+	Email: rodolfo_profissional@hotmail.com
+	
+	Licença: Software de uso livre e código aberto.
+-->
+<head>
+	<meta charset="utf-8">
+
+	<!-- Garante o design responsivo. A propriedade content serve para garantir que
+	     o design se adapte a largura da tela. A propriedade user-scalable para não 
+	     permitir que o usuário dê zoom (opicional)-->
+	<meta id="viewport" name="viewport" content="width=device-width, user-scalable=no">
+
+	<title>Estudo sobre design responsivo</title>
+	<link type="text/css" rel="stylesheet" href="responsivo.css">
+</head>
+<body>
+
+	<picture>
+		<source media="(min-width: 750px)" srcset="tux2.jpg">
+		<img src="tux.png">
+	</picture>
+</body>
+</html>
+
