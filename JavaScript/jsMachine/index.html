@@ -6,12 +6,25 @@
 </head>
 <body>
 	<script>
-		const createElement = function (tagName, text){
-			const element = document.createElement(tagName);
-			element.textContent = text;
+		const createElement = function (elementObj){
+			const element = document.createElement(elementObj.tagName);
+			if(elementObj.text) element.textContent = elementObj.text;
+			if(elementObj.classList){
+				for(let i in elementObj.classList)
+					element.classList.add(elementObj.classList[i]);
+			}
+                        if(elementObj.attrList){
+                                for(let i in elementObj.attrList)
+                                        element.setAttribute(
+						elementObj.attrList[i].name,
+						elementObj.attrList[i].value
+					);
+                        }
+
 			return element;
 		}
-		console.log(createElement("h1","Estudo"));
+		console.log(createElement({tagName:"img",classList:["w-100","img-cover","img"],
+			attrList:[{name:"capa",value:"docia"},{name:"nola",value:"capa"}]}));
 	</script>
 </body>
 </html>
