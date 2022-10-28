@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Estudo CSS Grid</title>
+</head>
+<body>
+	<div class="container">
+		<div class="item">1</div>
+		<div class="item">1</div>
+		<div class="item">1</div>
+		<div class="item">1</div>
+		<div class="item">1</div>
+		<div class="item">1</div>
+		<div class="item">1</div>
+		<div class="item">1</div>
+		<div class="item">1</div>
+	</div>
+<style>
+	.container{
+		display: grid;
+		grid-template-columns: repeat(3,1fr);
+	}
+	.item{
+		background-color: blue;
+		border: 5px solid black;
+		font-size: 20px;
+	}
+</style>
+</body>
+</html>
