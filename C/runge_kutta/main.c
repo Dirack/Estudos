@@ -49,10 +49,9 @@ int main(void){
 	for(i=0;i<n;i++){
 
 		y = runge_kutta_step(funcao,x,y,h);
-
+		x += h;
 		printf("x=%f y=%f\n",
 			x,
 			y);
-		x += h;
 	}
 }
