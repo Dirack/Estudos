@@ -10,4 +10,4 @@
 * [HTML-CSS](https://github.com/Dirack/Estudos/tree/master/HTML_CSS#estudos-sobre-html-css)
 * [Typescript](https://github.com/Dirack/Estudos/tree/master/typescript#estudos-sobre-typescript)
 * [SCons](https://github.com/Dirack/Estudos/tree/master/SCons#estudos-sobre-scons)
-
+* [Python](https://github.com/Dirack/Estudos/tree/master/Python#estudos-sobre-python)
