@@ -12,7 +12,7 @@
 * GDB
 * Git
 * [HTML-CSS](https://github.com/Dirack/Estudos/tree/master/HTML_CSS#estudos-sobre-html-css)
-* Java
+* [Java](https://github.com/Dirack/Estudos/tree/master/Java#java)
 * JavaScript
 * JQuery
 * Latex
