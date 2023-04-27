@@ -13,7 +13,7 @@
 # 
 # Licença: GPL-3.0 <https://www.gnu.org/licenses/gpl-3.0.txt>.
 
-
+lay src
 set logging file file.txt
 set logging on
 
@@ -23,5 +23,5 @@ break subtracao
 c
 echo soma
 p soma
-quit
-y
+#quit
+#y

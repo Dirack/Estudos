@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+	<style>
+		#container{
+			width: 50%;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="myDiv"></div>
+	</div>
+	<script>
+		// Some info about viewport percentages:
+// http://stackoverflow.com/questions/1575141/make-div-100-height-of-browser-window
+
+Plotly.plot('container', [{
+    type: 'bar',
+    x: [1, 2, 3, 4],
+    y: [5, 10, 2, 8],
+    marker: {
+        color: '#C8A2C8',
+        line: {
+            width: 2.5
+        }
+    }
+}], {
+    title: 'Auto-Resize',
+    font: {
+        size: 16
+    }
+});
+
+	</script>
+</body>
+</html>

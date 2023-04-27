@@ -20,7 +20,7 @@
 
 import pydoc
 
-RECIPES=['errorReport']
+RECIPES=['SConstruct']
 
 for i in RECIPES:
 	pydoc.writedoc(i)

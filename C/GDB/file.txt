@@ -1,0 +1,21 @@
+Temporary breakpoint 2 at 0x555555555185: file main.c, line 21.
+
+Temporary breakpoint 2, main () at main.c:21
+Breakpoint 3 at 0x555555555149: file soma.h, line 19.
+Breakpoint 4 at 0x555555555167: file soma.h, line 24.
+
+Breakpoint 3, soma (f1=4.59163468e-41, f2=-nan(0x7fd810)) at soma.h:19
+soma$2 = {float (float, float)} 0x555555555149 <soma>
+A debugging session is active.
+
+	Inferior 1 [process 48415] will be killed.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+Temporary breakpoint 1 at 0x1185: file main.c, line 21.
+
+Temporary breakpoint 1, main () at main.c:21
+Breakpoint 2 at 0x555555555149: file soma.h, line 19.
+Breakpoint 3 at 0x555555555167: file soma.h, line 24.
+
+Breakpoint 2, soma (f1=4.59163468e-41, f2=-nan(0x7fd850)) at soma.h:19
+soma$1 = {float (float, float)} 0x555555555149 <soma>

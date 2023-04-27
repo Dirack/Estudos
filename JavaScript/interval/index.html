@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Estudo interval</title>
+</head>
+<body>
+
+<div class="demo"></div>
+<button onclick="comecar()">Começa</button>
+<button onclick="parar()">Para</button>
+<button onclick="pararRodou()">Para Rodou</button>
+
+<script>
+
+	let timer;
+
+	function comecar(){
+		timer = setInterval(showTime, 1000);
+	}
+
+	function parar(){
+		clearInterval(timer);
+	}
+
+	function showTime(){
+		let d = new Date();
+		let h = d.getHours();
+		let m = d.getMinutes();
+		let s = d.getSeconds();
+		let txt = `${h}:${m}:${s}`;
+		document.querySelector(".demo").innerHTML = txt;
+	}
+
+	let capa = setTimeout(function (){
+		console.log("Rodou!")
+	},5000);
+
+	function pararRodou(){
+		clearTimeout(capa);
+	}
+</script>
+</body>
+</html>

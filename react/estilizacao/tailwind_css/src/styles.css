@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.botao{
+	background-color: green;
+	color: white;
+	font-weight: bold;
+	padding: 10px 20px;
+	border: 2px solid black;
+	border-radius: 30px;
+}

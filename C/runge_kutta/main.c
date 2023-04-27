@@ -19,6 +19,7 @@
 
 
 #include <stdio.h>
+#include <math.h>
 #include "runge.h"
 
 /* Use x0=0 y0=2 */
@@ -44,14 +45,14 @@ int main(void){
 	x=x0;
 	y=y0;
 
-	printf("x=%f y=%f\n",x,y);
+	printf("| %f | %f | %f |\n",x,y,expf(x));
 
 	for(i=0;i<n;i++){
 
 		y = runge_kutta_step(funcao,x,y,h);
 		x += h;
-		printf("x=%f y=%f\n",
+		printf("| %f | %f | %f |\n",
 			x,
-			y);
+			y,expf(x));
 	}
 }

@@ -57,3 +57,6 @@ document.write("Data DD/MM/AAAA: "+dia+'/'+mes+'/'+ano+"<br>");
 // Adicionar horas
 dt.setHours(dt.getHours()+2);
 document.write("Hora atual mais 2: "+dt.getHours()+"<br>");
+document.write(dt.getMinutes()+" "+dt.getSeconds()+"<br>");
+document.write(dt.getTime()+"<br>");
+document.write(Date.now()+"<br>");

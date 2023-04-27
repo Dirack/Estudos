@@ -1,0 +1,6 @@
+'''
+isto
+teste
+capa
+'''
+from rsf.proj import *

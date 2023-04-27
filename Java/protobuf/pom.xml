@@ -1,0 +1,5 @@
+<dependency>
+  <groupId>com.google.protobuf</groupId>
+  <artifactId>protobuf-java</artifactId>
+  <version>3.21.9</version>
+</dependency>

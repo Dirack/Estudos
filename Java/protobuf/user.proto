@@ -1,5 +1,7 @@
 syntax="proto3";
 
-message User {
+option java_outer_classname="User";
+
+message aUser {
 	string name = 1;
 }
