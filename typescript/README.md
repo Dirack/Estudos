@@ -1,3 +1,15 @@
+# Oque é TypeScript?
+TypeScript é uma linguagem de programação de código aberto desenvolvida pela Microsoft. É um superconjunto sintático estrito de JavaScript e adiciona tipagem estática opcional à linguagem.
+TypeScript mantém uma relação incomum com o JavaScript, ou seja, oferece todos os recursos do JavaScript e uma camada adicional sobre eles: o sistema de tipos TypeScript.
+TypeScript adiciona suporte de tipo para JavaScript e captura erros de tipo durante a compilação.
+
+Usar TypeScript vai te trazer algumas vantagens como:
+
+- Feedback mais rápido de erros;
+- Processo de refatoração mais fácil;
+- Autocomplete da linguagem, muito boa no vscode;
+- Poder adotar gradualmente typescript em uma base de código;
+
 # Estudos sobre typescript
 
-* [Compilação com TS](https://github.com/Dirack/Estudos/tree/master/typescript/compilacao#estudo-compila%C3%A7%C3%A3o-com-typescript)
+* [Compilação com TS](https://github.com/Dirack/Estudos/tree/master/typescript/compilacao#estudo-compila%C3%A7%C3%A3o-com-typescript) - Instalação do TypeScript e compilação de arquivo TypeScript
