@@ -18,3 +18,4 @@ Usar TypeScript vai te trazer algumas vantagens como:
 * [Union Types](https://github.com/Dirack/Estudos/tree/master/typescript/union#union-types)
 * [Type e Interface](https://github.com/Dirack/Estudos/tree/master/typescript/type_interface#type-e-interface)
 * [Type Assertion](https://github.com/Dirack/Estudos/tree/master/typescript/type_assertion#type-assertion)
+* [Types literais](https://github.com/Dirack/Estudos/tree/master/typescript/type_literais#types-literais)
