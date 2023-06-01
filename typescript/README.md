@@ -17,3 +17,4 @@ Usar TypeScript vai te trazer algumas vantagens como:
 * [Types em objetos](https://github.com/Dirack/Estudos/tree/master/typescript/objetos#types-em-objetos)
 * [Union Types](https://github.com/Dirack/Estudos/tree/master/typescript/union#union-types)
 * [Type e Interface](https://github.com/Dirack/Estudos/tree/master/typescript/type_interface#type-e-interface)
+* [Type Assertion](https://github.com/Dirack/Estudos/tree/master/typescript/type_assertion#type-assertion)
