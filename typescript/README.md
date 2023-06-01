@@ -16,3 +16,4 @@ Usar TypeScript vai te trazer algumas vantagens como:
 * [Usando types nos parâmetros de uma função](https://github.com/Dirack/Estudos/tree/master/typescript/type_funcoes#usando-types-nos-par%C3%A2metros-de-uma-fun%C3%A7%C3%A3o)
 * [Types em objetos](https://github.com/Dirack/Estudos/tree/master/typescript/objetos#types-em-objetos)
 * [Union Types](https://github.com/Dirack/Estudos/tree/master/typescript/union#union-types)
+* [Type e Interface](https://github.com/Dirack/Estudos/tree/master/typescript/type_interface#type-e-interface)
