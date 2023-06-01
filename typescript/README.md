@@ -14,3 +14,4 @@ Usar TypeScript vai te trazer algumas vantagens como:
 
 * [Compilação com TS](https://github.com/Dirack/Estudos/tree/master/typescript/compilacao#estudo-compila%C3%A7%C3%A3o-com-typescript) - Instalação do TypeScript e compilação de arquivo TypeScript
 * [Usando types nos parâmetros de uma função](https://github.com/Dirack/Estudos/tree/master/typescript/type_funcoes#usando-types-nos-par%C3%A2metros-de-uma-fun%C3%A7%C3%A3o)
+* [Types em objetos](https://github.com/Dirack/Estudos/tree/master/typescript/objetos#types-em-objetos)
