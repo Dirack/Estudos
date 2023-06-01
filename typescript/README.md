@@ -20,3 +20,4 @@ Usar TypeScript vai te trazer algumas vantagens como:
 * [Type Assertion](https://github.com/Dirack/Estudos/tree/master/typescript/type_assertion#type-assertion)
 * [Types literais](https://github.com/Dirack/Estudos/tree/master/typescript/type_literais#types-literais)
 * [Retorno void](https://github.com/Dirack/Estudos/tree/master/typescript/void#retorno-void)
+* [Aspectos gerais de configuração do TypeScript](https://github.com/Dirack/Estudos/tree/master/typescript/configuracoes#aspectos-gerais-de-configura%C3%A7%C3%A3o-do-typescript)
