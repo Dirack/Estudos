@@ -1,0 +1,1 @@
+# Type e Interface
