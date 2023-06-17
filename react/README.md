@@ -10,6 +10,10 @@ O React utiliza o conceito de [Single Page Application (SPA)](https://github.com
 Os arquivos escritos em JSX são transpilados pelo Babel para código JavaScript para o navegador. Isto é
 feito para facilitar a criação de componente react com código HTML ao invés de vários elementos react.
 
+## Índice
+
+* [Listas e estilização](https://github.com/Dirack/Estudos/tree/master/react/estilizacao#listas-e-estiliza%C3%A7%C3%A3o)
+
 ## Criando projeto ReactJS com Create React App (CRA)
 
 Use o seguinte comando:
