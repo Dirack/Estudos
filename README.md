@@ -25,5 +25,5 @@
 * [ReactJS](https://github.com/Dirack/Estudos/tree/master/react#reactjs)
 * [SCons](https://github.com/Dirack/Estudos/tree/master/SCons#estudos-sobre-scons)
 * Shell_script
-* SQL
+* [SQL](https://github.com/Dirack/Estudos/tree/master/SQL#estudos-sobre-sql)
 * [Typescript](https://github.com/Dirack/Estudos/tree/master/typescript#estudos-sobre-typescript)
