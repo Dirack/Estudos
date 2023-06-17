@@ -46,3 +46,13 @@ npm run dev
 
 Uma SPA é uma aplicação que carrega apenas um único documento web e, em seguida, atualiza o conteúdo desse documento
 único por meio de APIs JavaScript. No primeiro acesso, todo conteúdo é transferido para o cliente.
+
+## O que é Virtual DOM?
+
+Quando estamos desenvolvendo aplicações com HTML, é por meio do DOM que podemos manipular os elementos presentes nele. Porém, cada acesso ao DOM leva um pequeno tempo, e cada alteração obriga o navegador a renderizar novamente a parte da tela afetada. Então se tivermos muitas coisas para atualizar, nossa aplicação terá problemas de perfomance.
+
+É aí que entra o Virtual DOM (VDOM). Ele é uma representação do DOM mantida em memória. Assim, quando precisamos fazer alguma alteração, ela é feita no Virtual DOM, que é bem mais rápido que o DOM. Com isso ele analisa todos os lugares que serão afetados e sincroniza com o DOM em um processo chamado Reconciliação. A vantagem disso é que essa análise permite que haja o menor número possível de acessos ao DOM, melhorando muito a performance das aplicações.
+
+Lembrando que o Virtual DOM não é algo do navegador, e sim, um conceito implementado por bibliotecas como o React.
+
+Por ser algo feito em memória, e não algo preso ao DOM criado pelo navegador, o Virtual DOM também permite que a gente crie páginas no servidor. Hoje em dia é comum que algumas aplicações renderizem a tela inicial no servidor para enviar um HTML pronto com os dados ao usuário, passando a impressão de que tudo já foi carregado, para só então carregar o resto da aplicação. Isso pode ser feito utilizando bibliotecas e frameworks como Angular, React e Vue. Um caso bem famoso que utiliza esta técnica é a Netflix.
