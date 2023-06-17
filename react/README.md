@@ -1,6 +1,6 @@
 # ReactJS
 
-> Estudos sobre o framework ReactJS
+> Estudos sobre a biblioteca ReactJS
 
 ReactJS é uma biblioteca leve de JavaScript que utiliza o virtual Document Object Model (DOM).
 Foi criada e é mantida pelo Facebook.
