@@ -1,3 +1,44 @@
 # ReactJS
 
 > Estudos sobre o framework ReactJS
+
+ReactJS é uma biblioteca leve de JavaScript que utiliza o virtual Document Object Model (DOM).
+Foi criada e é mantida pelo Facebook.
+
+O React utiliza o conceito de Single Page Application (SPA).
+
+Os arquivos escritos em JSX são transpilados pelo Babel para código JavaScript para o navegador. Isto é
+feito para facilitar a criação de componente react com código HTML ao invés de vários elementos react.
+
+## Criando projeto ReactJS com Create React App (CRA)
+
+Use o seguinte comando:
+
+```
+npx create-react-app nomeDoProjeto --template typescript
+```
+
+Para rodar utilize:
+
+```
+npm start
+```
+
+## Criando projeto ReactJS com vite
+
+Use o seguinte comando:
+
+```
+npm init vite nomeDoProjeto -- --template react-ts
+```
+
+Para rodar utilize:
+
+```
+npm run dev
+```
+
+## Oque é SPA?
+
+Uma SPA é uma aplicação que carrega apenas um único documento web e, em seguida, atualiza o conteúdo desse documento
+único por meio de APIs JavaScript. No primeiro acesso, todo conteúdo é transferido para o cliente.
