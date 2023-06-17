@@ -5,7 +5,7 @@
 ReactJS é uma biblioteca leve de JavaScript que utiliza o virtual Document Object Model (DOM).
 Foi criada e é mantida pelo Facebook.
 
-O React utiliza o conceito de Single Page Application (SPA).
+O React utiliza o conceito de [Single Page Application (SPA)](https://github.com/Dirack/Estudos/tree/master/react#oque-%C3%A9-spa).
 
 Os arquivos escritos em JSX são transpilados pelo Babel para código JavaScript para o navegador. Isto é
 feito para facilitar a criação de componente react com código HTML ao invés de vários elementos react.
