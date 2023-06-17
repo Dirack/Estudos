@@ -27,3 +27,4 @@
 * Shell_script
 * [SQL](https://github.com/Dirack/Estudos/tree/master/SQL#estudos-sobre-sql)
 * [Typescript](https://github.com/Dirack/Estudos/tree/master/typescript#estudos-sobre-typescript)
+* [Webpack](https://github.com/Dirack/Estudos/tree/master/webpack#estudo-sobre-webpack)
