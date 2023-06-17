@@ -22,7 +22,7 @@
 * [NodeJS](https://github.com/Dirack/Estudos/tree/master/nodejs#estudos-sobre-nodejs)
 * PHP
 * [Python](https://github.com/Dirack/Estudos/tree/master/Python#estudos-sobre-python)
-* React
+* [ReactJS](https://github.com/Dirack/Estudos/tree/master/react#reactjs)
 * [SCons](https://github.com/Dirack/Estudos/tree/master/SCons#estudos-sobre-scons)
 * Shell_script
 * SQL
