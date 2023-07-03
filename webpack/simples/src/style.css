@@ -1,0 +1,10 @@
+.botao{
+    color:white;
+    background-color: black;
+}
+
+.galeria{
+    width: 500px;
+    height: 500px;
+    background-image: url('./images/camus.jpg');
+}
