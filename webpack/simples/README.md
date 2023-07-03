@@ -1,3 +1,5 @@
+# Instalação e uso simples
+
 npm init
 
 npm install webpack webpack-cli --save-dev
