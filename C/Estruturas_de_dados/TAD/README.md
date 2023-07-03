@@ -1,4 +1,4 @@
-#### Tipo Abstrato de dados (TAD)
+# Tipo Abstrato de dados (TAD)
 
 Tipo de dados: define o conjunto de valores (domínio) que uma variável pode assumir.
 
@@ -38,7 +38,7 @@ Os dados de f somente podem ser acessados pelas funções de manipulação do ti
 - feof
 - etc
 
-#### Modularização da TAD
+# Modularização da TAD
 
 A convenção em linguagem C é preparar dois arquivos para implementar um TAD
 
