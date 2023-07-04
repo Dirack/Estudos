@@ -1,0 +1,12 @@
+* {
+	margin: 0;
+	padding: 0;
+	color: #fff;
+}
+
+body,
+html {
+	min-height: 100vh;
+	height: 100%;
+	background-color: #1c1c1c
+}
