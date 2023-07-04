@@ -13,6 +13,8 @@ feito para facilitar a criação de componente react com código HTML ao invés 
 
 ## Índice
 
+* [Componentes](https://github.com/Dirack/Estudos/tree/master/react/quadrado#exemplo-react-components)
+* [Componentes (Exemplo extra)](https://github.com/Dirack/Estudos/tree/master/react/quadrado2#exemplo-2-react-components)
 * [Listas e estilização](https://github.com/Dirack/Estudos/tree/master/react/estilizacao#listas-e-estiliza%C3%A7%C3%A3o)
 
 ## Criando projeto ReactJS com Create React App (CRA)
