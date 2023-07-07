@@ -16,7 +16,7 @@ feito para facilitar a criação de componente react com código HTML ao invés 
 * [Componentes](https://github.com/Dirack/Estudos/tree/master/react/quadrado#exemplo-react-components)
 * [Componentes (Exemplo extra)](https://github.com/Dirack/Estudos/tree/master/react/quadrado2#exemplo-2-react-components)
 * [Listas e estilização](https://github.com/Dirack/Estudos/tree/master/react/estilizacao#listas-e-estiliza%C3%A7%C3%A3o)
-* [Requisição GET com fetch](https://github.com/Dirack/Estudos/tree/master/react/requisicoes/get#requisi%C3%A7%C3%A3o-get-com-fetch)
+* [Requisição GET com fetch await](https://github.com/Dirack/Estudos/tree/master/react/requisicoes/get_fetch_await#requisi%C3%A7%C3%A3o-get-com-fetch-await)
 
 ## Criando projeto ReactJS com Create React App (CRA)
 
