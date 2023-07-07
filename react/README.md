@@ -30,7 +30,7 @@ npx create-react-app nomeDoProjeto --template typescript
 Para rodar utilize:
 
 ```
-npm start
+npm run start
 ```
 
 ## Criando projeto ReactJS com vite
