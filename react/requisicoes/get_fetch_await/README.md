@@ -1,1 +1,1 @@
-# Requisição GET com fetch
+# Requisição GET com fetch await
