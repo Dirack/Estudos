@@ -2,11 +2,11 @@
 
 Utilizar variáveis
 
-```sass
-$cor-padrao: #EEE
+```scss
+$cor-padrao: #EEE;
 
 .quadrado{
-  background-color: $cor-padrao
+  background-color: $cor-padrao;
 }
 ```
 
@@ -14,7 +14,7 @@ $cor-padrao: #EEE
 
 Dá para agrupar propriedades dentro de elementos
 
-```sass
+```scss
 nav {
   background-color: #EEE;
 
@@ -27,3 +27,14 @@ nav {
   }
 }
 ```
+
+## Importando arquivos
+
+Utilize para importar o arquivo '_reset.scss' (utilize '\_' como prefixo do arquivo a ser importado):
+
+```scss
+@import 'reset'
+```
+
+__Importante:__ O Sass junta os arquivos importados em um arquivo só no ato da compilação, isso torna
+o carregamento mais rápido do que no import do CSS convencional
