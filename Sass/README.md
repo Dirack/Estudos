@@ -1,3 +1,13 @@
+# Sass
+
+## O que é SASS?
+
+Segundo sua própria página, a sigla SASS significa “Syntactically Awesome Style Sheets” – ou seja, Folhas de Estilo com Sintaxe Espetacular.
+
+A ideia é manter a mesma lógica do CSS (seletores, regras etc), mas de uma maneira mais organizada, intuitiva e com trechos de código facilmente reutilizáveis.
+
+Com o SASS, é muito mais fácil desenvolver um projeto grande e não se perder no meio de tanto código.
+
 ## Variáveis
 
 Utilizar variáveis
