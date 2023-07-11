@@ -117,3 +117,33 @@ li {
   background-color: red;
 }
 ```
+
+## Operações matemáticas
+
+Dá para fazer operações matemáticas com variáveis
+
+```scss
+width: $item-width / 2;
+width: $item-width * 2;
+width: $item-width * 5;
+```
+
+## Condicionais e looping
+
+```scss
+@for $i from 1 through 10 {
+  .item-#{$i}{
+    font-size:14px;
+    border: 1px solid gray;
+    padding: 5px;
+
+    @if $i <= 3{
+      font-weight: bold;
+    }
+    @else{
+      font-weight: normal;
+    }
+  }
+}
+```
+``````
