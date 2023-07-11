@@ -54,3 +54,25 @@ li {
   @include girar(90deg);
 }
 ```
+
+## Expandindo propriedades
+
+```scss
+
+/* Grupo de propriedades */
+
+%fundamento-msg{
+  padding: 10px;
+  color: white;
+}
+
+/* Para utilizar o grupo utilize o @extend */
+.msg-info{
+  @extend %fundamento-msg;
+  background-color: purple;
+}
+.msg-error{
+  @extend %fundamento-msg;
+  background-color: red;
+}
+```
