@@ -38,3 +38,19 @@ Utilize para importar o arquivo '_reset.scss' (utilize '\_' como prefixo do arqu
 
 __Importante:__ O Sass junta os arquivos importados em um arquivo só no ato da compilação, isso torna
 o carregamento mais rápido do que no import do CSS convencional
+
+## Mixin
+
+```scss
+@mixin girar($graus){
+  transform: rotate($graus);
+  -webkit-transform: rotate($graus);
+  -mz-transform: rotate($graus);
+  -ms-transform: rotate($graus);
+}
+
+/* Para utilizar o mixin utilize o @include */
+li {
+  @include girar(90deg);
+}
+```
