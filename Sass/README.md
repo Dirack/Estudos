@@ -8,6 +8,37 @@ A ideia é manter a mesma lógica do CSS (seletores, regras etc), mas de uma man
 
 Com o SASS, é muito mais fácil desenvolver um projeto grande e não se perder no meio de tanto código.
 
+## Instalação com npm
+
+```
+npm install -g sass
+```
+
+## Compilação do CSS com o SASS
+
+Para compilar sem gerar sem o mapa utilize --no-source-map.
+Defina o estilo da saída com --style.
+
+```
+sass pasta/base.scss dist/output.css --no-source-map --style compressed
+```
+
+## Watch mode no SASS
+
+Para ativar o watch mode utilize --watch.
+
+Compilação de um único arquivo:
+
+```
+sass pasta/base.scss dist/output.css --no-source-map --style compressed --watch
+```
+
+Compilação de uma pasta:
+
+```
+sass --no-source-map --style compressed --watch assets/sass:assets/css
+```
+
 ## Variáveis
 
 Utilizar variáveis
