@@ -146,4 +146,19 @@ width: $item-width * 5;
   }
 }
 ```
-``````
+
+## Referência ao item
+
+Utilize o caractere especial '&' para fazer referência ao item do grupo. No caso abaixo, a tag 'a' que engloba
+o grupo.
+
+```scss
+
+a {
+  background-color: purple;
+  &:hover{
+    background-color: blue;
+  }
+}
+```
+
