@@ -16,6 +16,12 @@ npm install webpack webpack-cli --save-dev
 npx webpack
 ```
 
+## Watcher
+
+```
+webpack --config webpack.config.js --watch
+```
+
 # Índice
 
 - [Instalação e uso simples](https://github.com/Dirack/Estudos/tree/master/webpack/simples#instala%C3%A7%C3%A3o-e-uso-simples)
