@@ -15,3 +15,12 @@
   <input type="submit" value="enviar" />
 </form>
 ```
+
+# Atalhos para directivas
+
+```html
+
+<a :href="url">Acessar</a>
+
+<button @click="clicou"></button>
+```
