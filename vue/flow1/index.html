@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Estudo VUE</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <div v-if="pais == 'argentina'">
+                <p v-html="argentina"></p>
+                <p>América do Sul</p>
+            </div>
+            <div v-if="pais == 'brazil'">
+                <p v-html="brazil"></p>
+                <p>América do Sul</p>
+            </div>
+            <div v-if="pais == 'china'">
+                <p v-html="china"></p>
+                <p>Ásia</p>
+            </div>
+            <div v-if="pais == 'uk'">
+                <p v-html="uk"></p>
+                <p>Europa</p>
+            </div>
+            <div v-if="pais == 'usa'">
+                <p v-html="usa"></p>
+                <p>América do Norte</p>
+            </div>
+            <div>
+                <p v-html="(
+                    pais == 'argentina'? argentina:
+                    pais == 'brazil'? brazil:
+                    pais == 'china'? china:
+                    pais == 'uk'? uk:
+                    pais == 'usa'? usa: ''
+                )"></p>
+                <p v-html="(
+                    pais == 'argentina'? 'América do Sul':
+                    pais == 'brazil'? 'América do Sul':
+                    pais == 'china'? 'Ásia':
+                    pais == 'uk'? 'Europa':
+                    pais == 'usa'? 'América do Norte': ''
+                )"></p>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
