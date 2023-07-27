@@ -18,3 +18,13 @@
   <button>Clique aqui</button>
 </div>
 ```
+
+```html
+<input type="text" v-on:keyup="teclou" />
+
+<input type="text" v-on:keyup="teclou($event)" />
+
+<input type="text" v-on:keyup.13="teclou()" />
+
+<input type="text" v-on:keyup.enter="teclou()" />
+```
