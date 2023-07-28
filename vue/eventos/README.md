@@ -24,7 +24,21 @@
 
 <input type="text" v-on:keyup="teclou($event)" />
 
-<input type="text" v-on:keyup.13="teclou()" />
+<input type="text" v-on:keyup.13="teclou" />
 
-<input type="text" v-on:keyup.enter="teclou()" />
+<input type="text" v-on:keyup.enter="teclou" />
+
+<input type="text" v-on:keyup.shift.67="teclou" />
+
+<button v-on:click.shift.exact="teclou">Clique aqui</button>
+
+<button v-on:click.exact="teclou">Clique aqui</button>
+
+<button v-on:click.left="teclou">Clique aqui</button>
+
+<button v-on:click.right.prevent="teclou">Clique aqui</button>
+
+<button v-on:click.right.prevent.shift="teclou">Clique aqui</button>
+
+<button v-on:click.middle="teclou">Clique aqui</button>
 ```
