@@ -22,10 +22,29 @@
   <option>B</option>
   <option>C</option>
 </select>
-<p>Opção: {{opcao}}
+<p>Opção: {{opcao}}</p>
 ```
 
 ```html
 <select v-model="opcao">
   <option v-for="item in opcoes" v-bind:value="item.letra">{{item.nome}}</option>
 </select>
+```
+
+```html
+<input type="checkbox"  v-model="marcado" true-value="sim" false-value="não" />
+<p>Marcado: {{marcado}}</p>
+```
+
+```html
+<select v-model="selecionado">
+  <option v-bind:value="{name:'Fulano',idade:10}">Opção A</option>
+  <option v-bind:value="{name:'Ciclano',idade:30}">Opção B</option>
+  <option v-bind:value="{name:'Beltrano',idade:40}">Opção C</option>
+</select>
+<p>Selecionado: {{selecionado.name}}</p>
+```
+
+```html
+<input type="number" v-model.number="idade" />
+```
