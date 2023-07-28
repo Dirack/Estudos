@@ -47,4 +47,5 @@
 
 ```html
 <input type="number" v-model.number="idade" />
+<input type="text" v-model.trim="nome" />
 ```
