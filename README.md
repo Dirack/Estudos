@@ -13,7 +13,7 @@
 * Git
 * [HTML-CSS](https://github.com/Dirack/Estudos/tree/master/HTML_CSS#estudos-sobre-html-css)
 * [Java](https://github.com/Dirack/Estudos/tree/master/Java#java)
-* JavaScript
+* [JavaScript](https://github.com/Dirack/Estudos/tree/master/JavaScript#javascript)
 * JQuery
 * Latex
 * Madagascar
