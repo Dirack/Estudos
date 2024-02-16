@@ -2,6 +2,10 @@
 
 > Framework para testes unitários em PHP
 
+## Índice
+
+- [Teste simples](https://github.com/Dirack/Estudos/tree/master/PHP/PHPUnit/teste_simples#exemplo-de-teste-unit%C3%A1rio-simples-com-php-unit)
+
 ## Instalação do composer
 
 Instale as dependências:
