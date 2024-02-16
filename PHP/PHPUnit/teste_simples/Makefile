@@ -16,5 +16,5 @@ run_test:
 
 help:
 	@echo "Este Makefile roda os testes da pasta 'test' utilizando o PHP Unit e o composer"
-	@echo "Os alvos 'install', 'build_composer_json', 'update' realizam a configuração do teste
-	@echo "O alvo 'run_test' roda o teste unitário
+	@echo "Os alvos 'install', 'build_composer_json', 'update' realizam a configuração do teste"
+	@echo "O alvo 'run_test' roda o teste unitário"
