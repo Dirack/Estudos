@@ -20,7 +20,7 @@
 * Manage_External_Tools
 * Matematica
 * [NodeJS](https://github.com/Dirack/Estudos/tree/master/nodejs#estudos-sobre-nodejs)
-* PHP
+* [PHP](https://github.com/Dirack/Estudos/tree/master/PHP#php)
 * [Python](https://github.com/Dirack/Estudos/tree/master/Python#estudos-sobre-python)
 * [ReactJS](https://github.com/Dirack/Estudos/tree/master/react#reactjs)
 * [SCons](https://github.com/Dirack/Estudos/tree/master/SCons#estudos-sobre-scons)
