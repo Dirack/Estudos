@@ -4,7 +4,10 @@
 
 ## Índice
 
-- [Teste simples](https://github.com/Dirack/Estudos/tree/master/PHP/PHPUnit/teste_simples#exemplo-de-teste-unit%C3%A1rio-simples-com-php-unit)
+- [Teste simples](https://github.com/Dirack/Estudos/tree/master/PHP/PHPUnit/teste_simples#exemplo-de-teste-unit%C3%A1rio-simples-com-php-unit) - Exemplo de teste unitário simples com PHP Unit
+- [Data provider](https://github.com/Dirack/Estudos/tree/master/PHP/PHPUnit/data_provider#exemplo-de-teste-unit%C3%A1rio-com-data-provider-no-php-unit) - Testar vários casos de teste na mesma função de teste utilizando data provider
+- [Arquivo não existe](https://github.com/Dirack/Estudos/tree/master/PHP/PHPUnit/expect_error#exemplo-de-teste-verificar-ser-arquivo-n%C3%A3o-existe-com-php-unit) - Verificar se arquivo não existe
+- [Incomplete e output](https://github.com/Dirack/Estudos/tree/master/PHP/PHPUnit/incomplete_and_output#exemplo-de-teste-unit%C3%A1rio-incompleto-e-an%C3%A1lise-da-sa%C3%ADda-do-echo-com-php-unit) - Ignorar testes unitários e analisar a saída do comando echo
 
 ## Instalação do composer
 
