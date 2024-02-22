@@ -27,6 +27,30 @@ class CalculadoraTest extends TestCase{
 
 		$this->assertRegExp('/^[a-z]{3}$/','opa');
 	}
+
+	public function testDir(){
+
+		$this->assertDirectoryExists('test');
+		$this->assertDirectoryIsReadable('test');
+		$this->assertDirectoryIsWritable('test');
+	}
+
+	public function testFile(){
+		$this->assertFileEquals('arq1.txt','arq2.txt');
+	}
+
+	public function testSeveralExamples2(){
+		$this->assertTrue(true);
+		$this->assertFalse(false);
+		$this->assertNull(null);
+		$this->assertEquals(1,1);
+		$this->assertStringStartsWith("Teste","Teste de uma string");
+		$this->assertStringEndsWith("string","Teste de uma string");
+		$this->assertGreaterThan(10,11);
+		$this->assertGreaterThanOrEqual(10,11);
+		$this->assertLessThan(10,5);
+		$this->assertLessThanOrEqual(10,5);
+	}
 }
 
 ?>
