@@ -1,5 +1,7 @@
 # Múltiplas entradas e saídas
 
+A seguir, o exemplo de arquivo 'webpack.config.js' para múltiplas entradas e saídas. Basta configurar o 'entry' e o 'output' do módulo:
+
 ```js
 const path = require('path');
 
