@@ -1,15 +1,14 @@
-# Criando componente
+# Usando sass e webpack
 
-npm init
+Para rodar este exemplo de uso, primeiro fazemos a instalação dos módulos do node:
 
-npm install webpack webpack-cli --save-dev
+```
+npm install
+```
 
-npm install jquery
+Depois basta chamar o script de build definido no arquivo 'package.json:
 
-npx webpack
+```
+npm run build
+```
 
-npm install style-loader css-loader --save-dev
-
-npm install file-loader --save-dev
-
-npm install sass-loader node-sass --save-dev
