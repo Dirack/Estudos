@@ -30,4 +30,5 @@ webpack --config webpack.config.js --watch
 - [Instalação e uso simples](https://github.com/Dirack/Estudos/tree/master/webpack/simples#instala%C3%A7%C3%A3o-e-uso-simples) - Exemplo de utilização básica do webpack com jquery e npx
 - [Criando componente](https://github.com/Dirack/Estudos/tree/master/webpack/componente#criando-componente) - Exemplo de criação de módulos e componentes com webpack
 - [Sass e webpack](https://github.com/Dirack/Estudos/tree/master/webpack/sass#usando-sass-e-webpack) - Exemplo de integração do sass com o webpack
+- [Output organizado](https://github.com/Dirack/Estudos/tree/master/webpack/organizado#exemplo-de-output-organizado-por-pastas-no-webpack) - Exemplo de output organizado por pastas
 - [Múlltiplas entradas e saídas](https://github.com/Dirack/Estudos/tree/master/webpack/multiplas#m%C3%BAltiplas-entradas-e-sa%C3%ADdas) - Exemplo de utilização de múltiplas entradas de arquivos fonte e múltiplas saídas
