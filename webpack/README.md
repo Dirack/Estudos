@@ -16,7 +16,10 @@ npm install webpack webpack-cli --save-dev
 npx webpack
 ```
 
-## Watcher
+## Rodar o webpack com arquivo de configuração webpack.config.js e Watcher
+
+A opção --config permite que um arquivo de configuração seja passado ao webpack (mais detalhes nos exemplos abaixo). E a opção --watch ativa o modo watcher, onde
+o webpack fica monitorando as alterações nos arquivos, aí não será preciso rodar o comando de execução do webpack várias vezes.
 
 ```
 webpack --config webpack.config.js --watch
