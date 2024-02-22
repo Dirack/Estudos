@@ -25,5 +25,5 @@ webpack --config webpack.config.js --watch
 # Índice
 
 - [Instalação e uso simples](https://github.com/Dirack/Estudos/tree/master/webpack/simples#instala%C3%A7%C3%A3o-e-uso-simples) - Exemplo de utilização básica do webpack com jquery e npx
-- [Criando componente](https://github.com/Dirack/Estudos/tree/master/webpack/componente#criando-componente)
+- [Criando componente](https://github.com/Dirack/Estudos/tree/master/webpack/componente#criando-componente) - Exemplo de criação de módulos e componentes com webpack
 - [Múlltiplas entradas e saídas](https://github.com/Dirack/Estudos/tree/master/webpack/multiplas#m%C3%BAltiplas-entradas-e-sa%C3%ADdas)
