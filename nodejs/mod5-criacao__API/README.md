@@ -1,5 +1,9 @@
 # Criação de API em nodejs
 
+## Índice
+
+- [Exemplo de criação de API](https://github.com/Dirack/Estudos/tree/master/nodejs/mod5-criacao__API/projeto_base#exemplo-de-cria%C3%A7%C3%A3o-de-api-em-nodejs)
+
 ## O que é uma API?
 
 APIs são mecanismos que permitem que dois componentes de software se comuniquem usando um conjunto de definições e protocolos. Por exemplo, o sistema de software do instituto meteorológico contém dados meteorológicos diários. A aplicação para a previsão do tempo em seu telefone “fala” com esse sistema por meio de APIs e mostra atualizações meteorológicas diárias no telefone.
