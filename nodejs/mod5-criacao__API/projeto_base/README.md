@@ -17,7 +17,9 @@ npm run start-dev
 ## Para testar a API
 
 A forma mais fácil de testar é importar a collection de requisições desta API no postman e utilizar.
-Estas estão no arquivo [Criação API - mod5 nodejs b7web.postman_collection.json](https://github.com/Dirack/Estudos/blob/master/nodejs/mod5-criacao__API/projeto_base/Cria%C3%A7%C3%A3o%20API%20-%20mod5%20nodejs%20b7web.postman_collection.json).
+
+Estas requisições estão no arquivo [Criação API - mod5 nodejs b7web.postman_collection.json](https://github.com/Dirack/Estudos/blob/master/nodejs/mod5-criacao__API/projeto_base/Cria%C3%A7%C3%A3o%20API%20-%20mod5%20nodejs%20b7web.postman_collection.json) e este arquivo pode ser importado diretamente no postman.
+
 O ideal é utilizar o postman para estas requisições. Para instalar o postman no Ubuntu 20.04:
 
 ```
