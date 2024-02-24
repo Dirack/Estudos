@@ -16,12 +16,35 @@ npm run start-dev
 
 ## Para testar a API
 
-Você pode utilizar o site https://resttesttest.com para testar as requisições a esta API. Esta API roda na porta 4000. Daí é só fazer a requisição para
-'http://localhost'. As requisições a seguir não precisam de banco de dados:
+A forma mais fácil de testar é importar a collection de requisições desta API no postman e utilizar.
+Estas estão no arquivo [Criação API - mod5 nodejs b7web.postman_collection.json](https://github.com/Dirack/Estudos/blob/master/nodejs/mod5-criacao__API/projeto_base/Cria%C3%A7%C3%A3o%20API%20-%20mod5%20nodejs%20b7web.postman_collection.json).
+O ideal é utilizar o postman para estas requisições. Para instalar o postman no Ubuntu 20.04:
+
+```
+sudo snap install postman
+```
+
+A seguir, as opções de requisição.
+
+Esta API roda na porta 4000. Daí é só fazer a requisição para
+'http://localhost:4000'. As requisições GET a seguir não precisam de banco de dados:
 
 - /ping - Responde com pong
 - /random -  Responde com número aleatório
 - /nome/:nome - Responde com um nome
+
+Para os exemplos que utilizam o banco de dados, você irá precisar importar o banco de dados 'Estudos.sql' que está presente neste repositório no seu PhpMyAdmin.
+A senha de conexão e demais informações estão presentes no arquivo '.env' deste repositório, você terá de editar o arquivo para inserir as suas credenciais.
+A seguir as requisições POST:
+
+- /umafrase/aleatoria - Retorna uma frase aleatória do banco
+- /umafrase/:id - Retorna uma frase específica
+
+Os exemplos que utilizam verbos diferentes do GET são um pouco mais complexos.
+
+- /frases - Enviar como requisição POST e no body da requisição enviar como tipo urlencoded a chave autor com o valor 'NomeDoAutor' e a chave txt com o valor 'frase qualquer'
+- /atualizar/:id - Enviar como requisição PUT e no body da requisição enviar como tipo urlencoded a chave autor com o valor 'NomeDoAutor' e a chave txt com o valor 'frase qualquer'
+- /deletar/:id - Enviar requisição DELETE com o id da frase que se pretende deletar na URL
 
 ## Tutorial de criação da API
 
