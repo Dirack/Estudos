@@ -20,3 +20,20 @@ Todas as configurações e instruções para iniciar ou parar containers são di
 
 É fácil gerenciar containers com a ajuda da API do Docker ou da interface de linha de comando (ILC).
 Se forem necessários vários containers, os usuários podem controlá-los com a Ferramenta de composição do Docker.
+
+## Entendendo a teoria por trás do docker: Cgroups e namespaces
+
+
+Control groups ou cgroups é uma implementação interessante do kernel Linux que permite particionar os recursos do sistema (CPU, memória, I/O) por grupo de processos.
+
+Por exemplo, em um sistema Linux que roda um servidor web e um banco de dados você pode usar esta
+funcionalidade para alocar 50% de CPU para o grupo de processos responsáveis pelo acesso ao banco de dados, evitando que muitos acessos ao servidor web monopolizem a CPU.
+
+Você consegue também alocar recursos por usuários em um servidor Linux.
+Por exemplo, usuários comuns tem acesso apenas à 30% da CPU e 1G de RAM, enquanto que administradores tem acesso à 70% da CPU e o restante da memória do sistema.
+
+Para não ficar apenas em exemplos de servidores Linux que usam cgroups, o Android também é um usuário desta funcionalidade.
+Processos importantes no Android, incluindo a aplicação (activity) em foreground e os serviços do framework, são colocados em
+um grupo do cgroups para garantir acesso aos recursos de CPU e RAM quando necessário.
+
+[Leia mais sobre cgroups](https://sergioprado.org/gerenciando-acesso-recursos-linux-com-control-groups/)
