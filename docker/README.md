@@ -51,3 +51,12 @@ Processos importantes no Android, incluindo a aplicação (activity) em foregrou
 um grupo do cgroups para garantir acesso aos recursos de CPU e RAM quando necessário.
 
 [Leia mais sobre cgroups...](https://sergioprado.org/gerenciando-acesso-recursos-linux-com-control-groups/)
+
+### O que é Copy on Write?
+
+Em resumo, as imagens docker são compostas por camadas ready only (apenas leitura) e uma camada onde é permitida a escrita em tempo de execução.
+As camadas de leitura são compartilhadas por todos os containers que utilizam a mesma imagem, apenas a camada de escrita é particular para cada container.
+Isso é feito para garantir a integridade das camadas compartilhadas pelos containers (eles utilizam os mesmos dados e informações) e melhorar o desempenho
+(não é necessário replicar dados compartilhados).
+
+[Leia mais sobre copy on write](https://matheuslao.dev/posts/docker-images-ro-rw-layers-cow-dive/)
