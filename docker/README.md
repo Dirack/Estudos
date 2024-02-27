@@ -3,6 +3,9 @@
 ## Índice
 
 - [Comandos básicos de docker](https://github.com/Dirack/Estudos/blob/master/docker/tutorial.md#tutorial-b%C3%A1sico-dos-comandos-do-docker) -  Tutorial básico dos comandos do docker
+- [Estudo: Criar container do nginx e fazer requisição para ele via curl](https://github.com/Dirack/Estudos/blob/master/docker/tutorial.md#estudo-criar-container-do-nginx-e-fazer-requisi%C3%A7%C3%A3o-para-ele-via-curl)
+- [Estudo: Ver o quanto de recursos o container está utilizando](https://github.com/Dirack/Estudos/blob/master/docker/tutorial.md#estudo-ver-o-quanto-de-recursos-o-container-est%C3%A1-utilizando)
+- [Estudo: Teste de stress no container](https://github.com/Dirack/Estudos/blob/master/docker/tutorial.md#estudo-teste-de-stress-no-container)
 - [Container com PHP e Mysql](https://github.com/Dirack/Estudos/tree/master/docker/php_mysql#exemplo-de-cria%C3%A7%C3%A3o-e-orquestra%C3%A7%C3%A3o-de-container-com-docker-e-docker-compose---php-e-mysql) - Exemplo de criação e orquestração de containers com docker e docker compose. Neste exemplo, um container com PHP, outro com Mysql e outro com PHPmyadmin são criados e orquestrados para exibir uma lista de usuários com PHP
 
 ## O que é Docker?
