@@ -23,6 +23,20 @@ Se forem necessários vários containers, os usuários podem controlá-los com a
 
 ## Entendendo a teoria por trás do docker: Cgroups e namespaces
 
+Basicamente, um container (independente da tecnologia) é formado por 2 elementos: Cgroups e Namespaces.
+Resumidamente, o namespace oferece isolamento dos recursos e o cgroups impõe limites de recursos aos ambientes isolados.
+
+### O que é namespace?
+
+Introduzido em 2002, na versão 2.4.19 do kernel Linux, Namespace é uma feature que permite criar e lidar com diversos contextos em um mesmo sistema,
+vendo propriedades globais diferentes e isoladas em cada contexto. Para facilitar o entendimento, com namespace é possível criar um contexto (ou ambiente)
+de rede isolado do ambiente físico. Nesse novo contexto, existirão interfaces de rede física que não são visíveis no contexto do sistema; essas interfaces terão endereços
+físicos e lógicos diferentes do contexto do sistema e todo tráfego, regras de firewall, existentes nesse novo contexto,
+não são vistos por nenhum outro contexto, incluindo o contexto do sistema.
+
+[Leia mais sobre namespaces...](https://medium.com/@lets00/namespace-14c4e64d0559)
+
+### O que é cgroups?
 
 Control groups ou cgroups é uma implementação interessante do kernel Linux que permite particionar os recursos do sistema (CPU, memória, I/O) por grupo de processos.
 
@@ -36,4 +50,4 @@ Para não ficar apenas em exemplos de servidores Linux que usam cgroups, o Andro
 Processos importantes no Android, incluindo a aplicação (activity) em foreground e os serviços do framework, são colocados em
 um grupo do cgroups para garantir acesso aos recursos de CPU e RAM quando necessário.
 
-[Leia mais sobre cgroups](https://sergioprado.org/gerenciando-acesso-recursos-linux-com-control-groups/)
+[Leia mais sobre cgroups...](https://sergioprado.org/gerenciando-acesso-recursos-linux-com-control-groups/)
