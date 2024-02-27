@@ -1,0 +1,39 @@
+version: "3"
+
+services:
+  www:
+    build: .
+    restart: always
+    ports:
+      - "8000:80"
+    volumes:
+      - "./www:/var/www/html"
+    networks:
+      - default
+  
+  db:
+    image: mysql:5.7
+    restart: always
+    ports:
+      - '3307:3306'
+    environment:
+      MYSQL_DATABASE: 'meudb'
+      MYSQL_USER: 'dirack'
+      MYSQL_PASSWORD: 12345
+      MYSQL_ROOT_PASSWORD: 12345
+    volumes:
+      - 'db_data:/var/lib/mysql'
+    networks:
+      - default
+
+  app:
+    image: phpmyadmin/phpmyadmin:latest
+    links:
+      - db
+    ports:
+      - "81:80"
+    environment:
+      - PMA_ARBITRARY=1
+
+volumes:
+  db_data:
