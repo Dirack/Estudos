@@ -1,5 +1,9 @@
 # Estudos sobre docker
 
+## Índice
+
+- [Container com PHP e Mysql](https://github.com/Dirack/Estudos/tree/master/docker/php_mysql#exemplo-de-cria%C3%A7%C3%A3o-e-orquestra%C3%A7%C3%A3o-de-container-com-docker-e-docker-compose---php-e-mysql) - Exemplo de criação e orquestração de containers com docker e docker compose. Neste exemplo, um container com PHP, outro com Mysql e outro com PHPmyadmin são criados e orquestrados para exibir uma lista de usuários com PHP
+
 ## O que é Docker?
 
 O Docker é um software de código aberto usado para implantar aplicativos dentro de containers virtuais.
