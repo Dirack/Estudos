@@ -5,6 +5,8 @@
 O Docker é um software de código aberto usado para implantar aplicativos dentro de containers virtuais.
 A conteinerização permite que vários aplicativos funcionem em diferentes ambientes complexos.
 
+[Tutorial Fábio Akita: Entendendo Funcionamento de Containers](https://www.youtube.com/watch?v=85k8se4Zo70)
+
 ## Docker vs Máquina Virtual
 
 Embora o Docker e as máquinas virtuais tenham um propósito semelhante, seu desempenho, portabilidade e suporte a sistemas operacionais diferem significativamente.
