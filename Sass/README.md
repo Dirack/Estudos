@@ -1,5 +1,7 @@
 # Sass
 
+[:arrow_up: Voltar a home](https://github.com/Dirack/Estudos/tree/master#estudos)
+
 ## O que é SASS?
 
 Segundo sua própria página, a sigla SASS significa “Syntactically Awesome Style Sheets” – ou seja, Folhas de Estilo com Sintaxe Espetacular.
