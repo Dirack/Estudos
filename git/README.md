@@ -1,5 +1,7 @@
 # Estudos sobre versionamento de código com o Git
 
+[:arrow_up: Voltar a home](https://github.com/Dirack/Estudos/tree/master#estudos)
+
 Git é um sistema de controle de versões distribuído, usado principalmente no desenvolvimento de software, mas pode ser usado para registrar o histórico de edições de qualquer tipo de arquivo (Exemplo: alguns livros digitais são disponibilizados no GitHub e escrito aos poucos publicamente).
 O Git foi inicialmente projetado e desenvolvido por Linus Torvalds para o desenvolvimento do kernel Linux, mas foi adotado por muitos outros projetos.
 
