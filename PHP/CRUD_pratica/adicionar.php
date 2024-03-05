@@ -15,6 +15,8 @@ if(!empty($_POST['email'])){
 
 ?>
 
+<h1>Adicionar</h1>
+
 <form method="POST">
 
     Nome:

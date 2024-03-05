@@ -51,7 +51,7 @@ $contatos = new Contact($database,$host,$user,$password);
 		<td><?php echo $item['nome']; ?></td>
 		<td><?php echo $item['email']; ?></td>
 		<td>
-			<a href="">[ EDITAR ]</a>
+			<a href="update.php?id=<?php echo $item['id']; ?>">[ EDITAR ]</a>
 			<a href="excluir.php?id=<?php echo $item['id'];?>">[ EXCLUIR ]</a>
 		</td>
 	</tr>

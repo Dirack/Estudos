@@ -67,6 +67,19 @@ class Contact extends Connect{
 		return '';
 	}
 
+	public function getInfo($id){
+		$sql = "SELECT * FROM crude WHERE id = :id";
+		$sql = $this->pdo->prepare($sql);
+		$sql->bindValue(':id',$id);
+		$sql->execute();
+
+		if($sql->rowCount() > 0){
+			return $sql->fetch();
+		}else{
+			return array();
+		}
+	}
+
 	public function getAll(){
 		$sql = "SELECT * FROM crude";
 		$sql = $this->pdo->query($sql);
@@ -91,6 +104,18 @@ class Contact extends Connect{
 
 		return false;
 
+	}
+
+	public function update($nome,$email,$id){
+		//if($this->contactExists($email)) return false;
+
+		$sql = "UPDATE crude SET nome=:nome, email=:email WHERE id=:id";
+		$sql = $this->pdo->prepare($sql);
+		$sql->bindValue(':nome',$nome);
+		$sql->bindValue(':email',$email);
+		$sql->bindValue(':id',$id);
+		$sql->execute();
+		return true;
 	}
 
 	public function deleteFromEmail($email){
