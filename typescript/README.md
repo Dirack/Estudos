@@ -1,4 +1,7 @@
 # Oque é TypeScript?
+
+[:arrow_up: Voltar a home](https://github.com/Dirack/Estudos/tree/master#estudos)
+
 TypeScript é uma linguagem de programação de código aberto desenvolvida pela Microsoft. É um superconjunto sintático estrito de JavaScript e adiciona tipagem estática opcional à linguagem.
 TypeScript mantém uma relação incomum com o JavaScript, ou seja, oferece todos os recursos do JavaScript e uma camada adicional sobre eles: o sistema de tipos TypeScript.
 TypeScript adiciona suporte de tipo para JavaScript e captura erros de tipo durante a compilação.
