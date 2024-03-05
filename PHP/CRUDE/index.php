@@ -15,12 +15,17 @@
 	Licença: Software de uso livre e código aberto.
 */
 
+ini_set('display_errors', 1);
+ini_set('log_errors', 1);
+ini_set('error_log', dirname(__FILE__) . '/error_log.txt');
+error_reporting(E_ALL);
+
 require 'contact.class.php';
 
 $database = "Estudos";
 $host = "localhost";
 $user = "root";
-$password = "root";
+$password = "12345";
 
 $roxano = "roxano_jack@kgmail.com";
 $dirack = "rodolfo_profissional@hotmail.com";
