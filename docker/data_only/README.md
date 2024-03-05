@@ -1,5 +1,9 @@
 # Exemplo utilização de volumes data only docker
 
+A utilização de container data-only é uma forma antiga para a persistência de dados. A forma atual é utilizar volumes, como no exemplo a seguir.
+
+[Leia mais sobre data-only](https://medium.com/@rasheedamir/docker-good-bye-data-only-container-pattern-a28f90493a5a)
+
 Primeiro, crie um volume 'dbdados':
 
 ```
