@@ -10,7 +10,7 @@
 * CSS
 * Fortran
 * [GDB](https://github.com/Dirack/Estudos/tree/master/GDB#estudo-sobre-depura%C3%A7%C3%A3o-utilizando-o-gnu-debugger-gdb)
-* Git
+* [Git](https://github.com/Dirack/Estudos/tree/master/git#estudos-sobre-versionamento-de-c%C3%B3digo-com-o-git)
 * [HTML-CSS](https://github.com/Dirack/Estudos/tree/master/HTML_CSS#estudos-sobre-html-css)
 * [Java](https://github.com/Dirack/Estudos/tree/master/Java#java)
 * [JavaScript](https://github.com/Dirack/Estudos/tree/master/JavaScript#javascript)
