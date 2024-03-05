@@ -1,4 +1,4 @@
-# Estudo sobre CRUD em PHP
+# Estudo sobre CRUD em PHP na prática
 
 ## O que é um CRUD e por que é importante para o desenvolvimento web
 
