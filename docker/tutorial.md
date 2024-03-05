@@ -83,6 +83,16 @@ Da mesma forma, para ver os processos que estão rodando no container:
 docker container top <containerID>
 ```
 
+Para a remoção de containers que não estão sendo utilizados e volumes que não estão sendo utilizados, respectivamente:
+
+```
+docker container prune
+```
+
+```
+docker volume prune
+```
+
 ## Estudo: Criar container do nginx e fazer requisição para ele via curl
 
 Inicie um container do nginx e depois utilize o comando a seguir para obter o endereço de IP (IPAddress):
