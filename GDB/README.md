@@ -1,5 +1,7 @@
 # Estudo sobre depuração utilizando o GNU debugger (GDB)
 
+[:arrow_up: Voltar a home](https://github.com/Dirack/Estudos/tree/master#estudos)
+
 O GNU Debugger, mais conhecido por GDB, é um depurador do GNU. Ele pode ser usado para depuração em sistemas Unix-like e suporta muitas linguagens de programação, como a C, C++, Fortran, Objective-C, Pascal, Java, e parcialmente outras.
 
 [Leia mais sobre GDB...](https://pt.wikipedia.org/wiki/GNU_Debugger)
