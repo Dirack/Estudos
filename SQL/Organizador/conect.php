@@ -10,7 +10,7 @@
 //////////// Conexão com banco de dados //////////////////
 $servername = "localhost"; //servidor
 $username = "root"; //usuário
-$password = "§"; // Sua senha no servidor aqui
+$password = "12345"; // Sua senha no servidor aqui
 $db_name = "tarefas"; //banco de dados (database)
 
 // Conexão com o servidor
