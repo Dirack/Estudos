@@ -15,7 +15,8 @@
 - [INSERT INTO](https://github.com/Dirack/Estudos/tree/master/SQL/insert_into#insert-into)
 - [UPDATE](https://github.com/Dirack/Estudos/tree/master/SQL/update#update)
 - [DELETE](https://github.com/Dirack/Estudos/tree/master/SQL/delete#delete)
-- [Exemplo de uso: Organizador](https://github.com/Dirack/Estudos/tree/master/SQL/Organizador#organizador) - Exemplo de implementação de interface web com conexão a banco de dados MySQL e PHP
+- [Exemplo de uso: Organizador](https://github.com/Dirack/Estudos/tree/master/SQL/Organizador#organizador) - Exemplo de implementação de interface web com conexão a banco de dados MySQL e PHP para o gerenciamento de repertório musical
+- [Exemplo de uso: Estante de livros](https://github.com/Dirack/Estudos/tree/master/SQL/Estante-de-livros#estante-de-livros) - Exemplo de implementação de interface web com conexão a banco de dados MySQL e PHP para o gerenciamento de estudos e repertório musical
 
 
 ## O que é um Banco de Dados?
