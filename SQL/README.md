@@ -9,6 +9,12 @@
 - [ORDER BY](https://github.com/Dirack/Estudos/tree/master/SQL/select#where-order-by)
 - [LIMIT](https://github.com/Dirack/Estudos/tree/master/SQL/select#where-limit)
 - [COUNT, AVERAGE e SUM](https://github.com/Dirack/Estudos/tree/master/SQL/count_avg_sum#count-avg-e-sum)
+- [GROUP BY](https://github.com/Dirack/Estudos/tree/master/SQL/group_by#group-by)
+- [Subquery](https://github.com/Dirack/Estudos/tree/master/SQL/subquery#subquery)
+- [JOIN](https://github.com/Dirack/Estudos/tree/master/SQL/join#join)
+- [INSERT INTO](https://github.com/Dirack/Estudos/tree/master/SQL/insert_into#insert-into)
+- [UPDATE](https://github.com/Dirack/Estudos/tree/master/SQL/update#update)
+- [DELETE](https://github.com/Dirack/Estudos/tree/master/SQL/delete#delete)
 
 
 ## O que é um Banco de Dados?
