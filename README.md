@@ -7,6 +7,7 @@
 * Assembly
 * [Bootstrap 4](https://github.com/Dirack/Estudos/tree/master/Bootstrap#estudos-sobre-bootstrap-4)
 * [C](https://github.com/Dirack/Estudos/tree/master/C#estudos-de-programa%C3%A7%C3%A3o-em-linguagem-c)
+* [C++](https://github.com/Dirack/Estudos/tree/master/c%2B%2B#estudos-sobre-c)
 * CSS
 * Fortran
 * [GDB](https://github.com/Dirack/Estudos/tree/master/GDB#estudo-sobre-depura%C3%A7%C3%A3o-utilizando-o-gnu-debugger-gdb)
