@@ -19,3 +19,9 @@ npx cypress open
 ```
 
 Este comando irá abrir o cypress e iniciar o programa e configurações na primeira vez que o cypress for iniciado no projeto.
+
+Para rodar os testes deste repositório via linha de comandos, basta utilizar:
+
+```
+npx cypress run
+```
