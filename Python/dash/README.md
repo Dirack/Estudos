@@ -3,6 +3,7 @@
 ## Índice
 
 - [Hello world dash](https://github.com/Dirack/Estudos/tree/master/Python/dash/hello#exemplo-simples-de-cria%C3%A7%C3%A3o-de-dashboards-no-python-com-dash) - Exemplo olá mundo, dash
+- [Overview básico](https://github.com/Dirack/Estudos/tree/master/Python/dash/quick_start#estudo-cria%C3%A7%C3%A3o-de-dashboards-no-python-utilizando-dash) - Exemplos básicos das principais funcionalidades
 
 ## Quick Start
 
