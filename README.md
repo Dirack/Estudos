@@ -32,3 +32,4 @@
 * [Webpack](https://github.com/Dirack/Estudos/tree/master/webpack#estudo-sobre-webpack)
 * [VueJS](https://github.com/Dirack/Estudos/tree/master/vue#vuejs)
 * [Docker](https://github.com/Dirack/Estudos/tree/master/docker#estudos-sobre-docker)
+* [Cypress](https://github.com/Dirack/Estudos/tree/master/cypress#estudos-sobre-testes-end-to-end-com-cypress)
