@@ -2,6 +2,8 @@
 
 ## Índice
 
+- [Hello world, cypress](https://github.com/Dirack/Estudos/tree/master/cypress/hello#exemplo-de-teste-simples-com-o-cypress) - Exemplo simples de utilização do cypress para testes
+
 ## Quick Start
 
 O cypress pode ser facilmente instalado em um projeto via npm:
