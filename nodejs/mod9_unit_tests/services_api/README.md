@@ -7,6 +7,12 @@ A conexão e os detalhes de conexão estão no arquivo '.env' deste repositório
 A forma mais simples de utilizar este exemplo é criando um database 'Estudos' no PHPmyadmin e importar o arquivo 'usuarios.sql' deste repositório. Este arquivo tem a tabela com os dados
 utilizados. __Impotante!__ esta tabela será dropada e os dados serão perdidos e reinseridos durante os testes, não colocar dados importantes nesta tabela de testes!
 
+Este exemplo possui 3 testes:
+
+- [Math.test.ts](https://github.com/Dirack/Estudos/blob/master/nodejs/mod9_unit_tests/services_api/src/libs/Math.test.ts) - Teste de biblioteca de funções matemáticas
+- [api.test.ts](https://github.com/Dirack/Estudos/blob/master/nodejs/mod9_unit_tests/services_api/src/routes/api.test.ts) - Teste dos endpoints da API
+- [UserService.test.ts](https://github.com/Dirack/Estudos/blob/master/nodejs/mod9_unit_tests/services_api/src/services/UserService.test.ts) - Teste para os services do banco de dados MySQL
+
 ## Tutorial de configuração do jest
 
 Basta instalar o jest e os types:
