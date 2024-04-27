@@ -1,7 +1,5 @@
 # Estudo sobre testes com jest e nodejs
 
-A configuração dos testes com jest é feita com o seguinte comando:
+## Índice
 
-```
-npm install -D jest ts-jest @types/jest
-```
+- [Suíte de teste simples com jest](https://github.com/Dirack/Estudos/tree/master/nodejs/mod9_unit_tests/jest_config#exemplo-testes-com-jest-e-nodejs)
