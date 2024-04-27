@@ -9,9 +9,9 @@ utilizados. __Impotante!__ esta tabela será dropada e os dados serão perdidos 
 
 Este exemplo possui 3 testes:
 
-- [Math.test.ts](https://github.com/Dirack/Estudos/blob/master/nodejs/mod9_unit_tests/services_api/src/libs/Math.test.ts) - Teste de biblioteca de funções matemáticas
-- [api.test.ts](https://github.com/Dirack/Estudos/blob/master/nodejs/mod9_unit_tests/services_api/src/routes/api.test.ts) - Teste dos endpoints da API
-- [UserService.test.ts](https://github.com/Dirack/Estudos/blob/master/nodejs/mod9_unit_tests/services_api/src/services/UserService.test.ts) - Teste para os services do banco de dados MySQL
+- [Math.test.ts](https://github.com/Dirack/Estudos/blob/master/nodejs/jest_unit_tests/services_api/src/libs/Math.test.ts) - Teste de biblioteca de funções matemáticas
+- [api.test.ts](https://github.com/Dirack/Estudos/blob/master/nodejs/jest_unit_tests/services_api/src/routes/api.test.ts) - Teste dos endpoints da API
+- [UserService.test.ts](https://github.com/Dirack/Estudos/blob/master/nodejs/jest_unit_tests/services_api/src/services/UserService.test.ts) - Teste para os services do banco de dados MySQL
 
 ## Tutorial de configuração do jest
 
