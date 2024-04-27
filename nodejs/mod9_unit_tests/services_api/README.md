@@ -1,5 +1,12 @@
 # Exemplo testes com Jest e nodejs
 
+## Quick start
+
+A conexão e os detalhes de conexão estão no arquivo '.env' deste repositório. Você pode verificar este arquivo para encontrar as variáveis utilizadas para conexão, como senha, database utilizado e etc. Você pode editar estas variáveis de acordo com os valores requeridos para conexão no seu banco.
+
+A forma mais simples de utilizar este exemplo é criando um database 'Estudos' no PHPmyadmin e importar o arquivo 'usuarios.sql' deste repositório. Este arquivo tem a tabela com os dados
+utilizados. __Impotante!__ esta tabela será dropada e os dados serão perdidos e reinseridos durante os testes, não colocar dados importantes nesta tabela de testes!
+
 ## Tutorial de configuração do jest
 
 Basta instalar o jest e os types:
