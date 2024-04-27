@@ -6,7 +6,7 @@ describe('Testing api',()=>{
 
 	let email = 'test@jest.com'
 	let password = '1234';
-	jest.setTimeout(2*5000);
+	jest.setTimeout(3*5000);
 	beforeAll(async ()=>{
 		await User.sync({force:true});
 	});
@@ -31,11 +31,12 @@ describe('Testing api',()=>{
 			});
 	});
 
-	/*it.only('register not allowed',(done)=>{
+	it('register not allowed',(done)=>{
 		request(app)
 			.post('/register')
 			.send(`email=${email}&password=${password}`)
 			.then(response=>{
+				console.log(response.body.error);
 				expect(response.body.error).not.toBeUndefined();
 				return done();
 			});
@@ -69,6 +70,6 @@ describe('Testing api',()=>{
 				expect(response.body.error).not.toBeUndefined();
 				return done();
 			});
-	});*/
+	});
 
 });
