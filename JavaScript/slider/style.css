@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    background-color: red;
+    height: 50px;
+}
+
+.slider{
+    background-color: grey;
+    width: calc(100vw * 3);
+    height: 400px;
+    display: flex;
+    transition: all ease 0.3s;
+}
+
+.slider--item{
+    height: inherit;
+    width: 100vw;
+}
+
+.slider :nth-child(1){
+    background-color: green;
+}
+
+.slider :nth-child(2){
+    background-color: blue;
+}
+
+.slider :nth-child(3){
+    background-color: orange;
+}
