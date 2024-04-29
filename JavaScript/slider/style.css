@@ -15,12 +15,29 @@ header{
     height: 50px;
 }
 
+.controls{
+    position: absolute;
+    z-index: 99;
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    height: 100%;
+    align-items: center;
+}
+
 .slider{
     background-color: grey;
-    width: calc(100vw * 3);
-    height: 400px;
+    width: 100vw;
+    flex: 1;
     display: flex;
     transition: all ease 0.3s;
+}
+
+.slider--width{
+    display: flex;
+    width: 100vw;
+    flex: 1;
+    height: 100%;
 }
 
 .slider--item{
@@ -28,14 +45,19 @@ header{
     width: 100vw;
 }
 
-.slider :nth-child(1){
+.slider--width :nth-child(1){
     background-color: green;
 }
 
-.slider :nth-child(2){
+.slider--width :nth-child(2){
     background-color: blue;
 }
 
-.slider :nth-child(3){
+.slider--width :nth-child(3){
     background-color: orange;
+}
+
+.controls button{
+    height: 50px;
+    cursor: pointer;
 }
