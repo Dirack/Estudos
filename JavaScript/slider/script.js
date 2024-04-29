@@ -30,3 +30,5 @@ function goNext(){
     console.log(larguraTela)
     console.log(currentSlide,totalSlides)
 }
+
+setInterval(goNext,5000)
