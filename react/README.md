@@ -47,6 +47,19 @@ Para rodar utilize:
 npm run dev
 ```
 
+## Criando projeto ReactJS com Next
+
+Use o seguinte comando:
+
+```
+npx create-next-app
+```
+Para rodar o projeto utilize:
+
+```
+npm run dev
+```
+
 ## Oque é SPA?
 
 Uma SPA é uma aplicação que carrega apenas um único documento web e, em seguida, atualiza o conteúdo desse documento
