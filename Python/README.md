@@ -6,3 +6,4 @@
 * [Gerenciamento de pacotes e ambientes com conda](https://github.com/Dirack/Estudos/tree/master/Python/conda#estudo-sobre-o-conda-o-gerenciador-de-pacotes-e-ambientes-do-python)
 * [Criação de dashboards com dash](https://github.com/Dirack/Estudos/tree/master/Python/dash#estudos-sobre-cria%C3%A7%C3%A3o-de-dashboards-com-dash-em-python)
 * [Bancos de dados MySQL](https://github.com/Dirack/Estudos/tree/master/Python/mysql#conex%C3%A3o-com-banco-de-dados-mysql)
+* [Builtin functions](https://github.com/Dirack/Estudos/tree/master/Python/builtin_functions#builtin-functions)
