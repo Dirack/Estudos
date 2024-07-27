@@ -1,5 +1,17 @@
 # Builtin functions
 
+ Exemplos de uso das funções builtin do python:
+ - enumerate
+ - filter
+ - format
+ - map
+ - pow
+ - range
+ - round
+ - slice
+ - sorted
+ - sum
+
 ```py
 seasons = ["spring","summer","fall","winter"]
 
