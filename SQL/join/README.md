@@ -12,7 +12,7 @@ SELECT
  - INNER JOIN - Lista todos os items que tem a relação de correspondência entre as tabelas estabelecida no ON
 
 - SELF JOIN
-```
+```sql
 create table aself(
 id int auto_increment primary key,
 name varchar(100),
