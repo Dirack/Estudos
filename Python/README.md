@@ -9,3 +9,4 @@
 * [Bancos de dados MySQL](https://github.com/Dirack/Estudos/tree/master/Python/mysql#conex%C3%A3o-com-banco-de-dados-mysql)
 * [Builtin functions](https://github.com/Dirack/Estudos/tree/master/Python/builtin_functions#builtin-functions)
 * [POO](https://github.com/Dirack/Estudos/tree/master/Python/OO#programa%C3%A7%C3%A3o-orientada-a-objetos-poo)
+* [Flask](https://github.com/Dirack/Estudos/tree/master/Python/flask#estudos-sobre-flask)
