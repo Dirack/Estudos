@@ -1,0 +1,14 @@
+<h1>Template</h1>
+
+<table>
+<thead>
+    <th>Nome</th>
+</thead>
+<tbody>
+    {% for e in estudantes %}
+    <tr>
+        <td>{{e.nome}}</td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
