@@ -1,1 +1,1 @@
-# Estudo todo list com flask e sqalchemy, testes no pytest
+# Estudo todo list com flask e sqlalchemy, testes no pytest
