@@ -19,7 +19,7 @@ def all():
     from application import db
     from application.models.Todo import Todo
     tasks = Todo.query.all()
-    tasks = [{"id":t.id,"nome":t.nome,"data":datetime.strftime(t.data,'%Y-%m-%d %H:%M:%S')} for t in tasks]
+    tasks = [{"id":t.id,"nome":t.nome,"data":datetime.strftime(t.data,'%Y-%m-%d %H:%M:%S'),"done":t.done} for t in tasks]
     return jsonify(tasks)
 
 @crud_bp.route("/delete/<id>")

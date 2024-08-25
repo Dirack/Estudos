@@ -7,12 +7,12 @@
     <body>
         <div id="app">
             <div class="controle">
-                <button>Liberar</button>
-                <button>Fechar</button>
+                <button v-if="sinalStatus === 'red'" v-on:click="liberar">Liberar</button>
+                <button v-else v-on:click="fechar">Fechar</button>
             </div>
 
             <div class="sinalContainer">
-                <sinal />
+                <sinal v-bind:status="sinalStatus" />
             </div>
         </div>
         <script src="script.js"></script>

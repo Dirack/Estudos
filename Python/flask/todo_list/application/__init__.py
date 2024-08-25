@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from application.blueprints.hello_world.helloworld import helloworld_bp
 from application.blueprints.ping_pong.ping_pong import ping_pong_bp
@@ -12,6 +13,7 @@ from application.models import Todo
 def create_app(config_obj=ProdConfig):
 
     app = Flask(__name__)
+    CORS(app)
 
     app.config.from_object(config_obj)
 
