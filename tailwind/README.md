@@ -59,12 +59,17 @@ export default config;
 Para ajustar espaçamentos e tamanhos
 
 ```html
-<div class="bg-blue-600 w-1/3 h-36">Div qualquer</div>
-<div class="bg-blue-600 w-2/3 h-36">Div qualquer</div>
-<div class="bg-blue-600 w-full h-36">Div qualquer</div>
+<div class="bg-blue-600 w-1/3 h-36 ml-2">Div qualquer</div>
+<div class="bg-blue-600 w-2/3 h-36 mx-3">Div qualquer</div>
+<div class="bg-blue-600 w-full h-36 p-2">Div qualquer</div>
 <div class="bg-blue-600 w-full h-screen">Div qualquer</div>
 <div class="bg-blue-600 w-full min-h-1/2">Div qualquer</div>
 ```
+
+Para margin e padding utilizamos m e p, respectivamente seguido das direções, um traço e o valor. As direções são dadas pelas letras:
+
+- l (left), r (right), x (eixo x), y (eixo y), b (bottom), t (top)
+- m-[100px] (Valores fixos também são possíveis)
 
 Daí basta utilizar como outra classe qualquer do tailwind:
 
