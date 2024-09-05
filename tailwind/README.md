@@ -71,6 +71,13 @@ Para margin e padding utilizamos m e p, respectivamente seguido das direções, 
 - l (left), r (right), x (eixo x), y (eixo y), b (bottom), t (top)
 - m-[100px] (Valores fixos também são possíveis)
 
+O mesmo padrão pode ser utilizado para manipulação de texto:
+
+```html
+<div class="text-blue-600 text-center text-underline">Div qualquer</div>
+<div class="text-red-200 font-bold uppercase truncate line-clamp-3">Div qualquer</div>
+```
+
 Daí basta utilizar como outra classe qualquer do tailwind:
 
 ```html
