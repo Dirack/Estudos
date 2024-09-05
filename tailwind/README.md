@@ -109,3 +109,23 @@ Exemplo alerta de erro com tailwind:
   Você não tem mais acesso.<a class="underline ml-1">Faça o Upgrade agora!</a>
 </div>
 ```
+
+Exemplo card de invite com tailwind:
+
+```html
+<div class="w-96 rounded-md border-gray-500 bg-white p-4">
+  <div>
+    <div class="inline-block">
+      <img class="w-14 h-14 rounded-full" src="" />
+    </div>
+    <div class="inline-block ml-5">
+      <div class="text-black pb-2">Rafaela Silva</div>
+      <div class="text-gray-500">Mandou um convite para você!</div>
+    </div>
+  </div>
+  <div>
+    <div class="rounded-md px-5 py-2 bg-blue-800 text-white">Aceitar</div>
+    <div class="ml-3 rounded-md px-5 py-2 border border-gray-200 text-black">Negar</div>
+  </div>
+</div>
+```
