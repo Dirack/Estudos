@@ -92,3 +92,12 @@ Olá mundo, Tailwind
 
 <input class="outline-4" />
 ```
+
+Exemplo criando botões com tailwind:
+
+```html
+<div class="w-screen h-screen p-5">
+  <div class="inline-block cursor-pointer bg-blue-500 text-white rounded-md px-5 py-3 border-none">Clique aqui</div>
+  <div class="inline-block cursor-pointer text-white rounded-md px-5 py-3 border-none">Clique aqui</div>
+</div>
+```
