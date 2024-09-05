@@ -101,3 +101,11 @@ Exemplo criando botões com tailwind:
   <div class="inline-block cursor-pointer text-white rounded-md px-5 py-3 border-none">Clique aqui</div>
 </div>
 ```
+
+Exemplo alerta de erro com tailwind:
+
+```html
+<div class="bg-yellow-100 border-l-4 border-yellow-500 p-3 text-yellow-700">
+  Você não tem mais acesso.<a class="underline ml-1">Faça o Upgrade agora!</a>
+</div>
+```
