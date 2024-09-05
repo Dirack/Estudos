@@ -83,3 +83,12 @@ Daí basta utilizar como outra classe qualquer do tailwind:
 ```html
 <div class="bg-vermelhao">Texto vermelhão</div>
 ```
+
+Para colocar bordas
+```html
+<div class="border-2 border-l-green-500/40 rounded border-dotted">
+Olá mundo, Tailwind
+</div>
+
+<input class="outline-4" />
+```
