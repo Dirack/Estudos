@@ -56,6 +56,16 @@ const config: Config = {
 export default config;
 ```
 
+Para ajustar espaçamentos e tamanhos
+
+```html
+<div class="bg-blue-600 w-1/3 h-36">Div qualquer</div>
+<div class="bg-blue-600 w-2/3 h-36">Div qualquer</div>
+<div class="bg-blue-600 w-full h-36">Div qualquer</div>
+<div class="bg-blue-600 w-full h-screen">Div qualquer</div>
+<div class="bg-blue-600 w-full min-h-1/2">Div qualquer</div>
+```
+
 Daí basta utilizar como outra classe qualquer do tailwind:
 
 ```html
