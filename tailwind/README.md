@@ -1,10 +1,27 @@
 # Estudos sobre TailwindCSS
 
+## Índice
+
+- [Exercício tela de login com TailwindCSS](https://github.com/Dirack/Estudos/tree/master/tailwind/login_system#tela-de-login-com-tailwindcss)
+- [Exemplo de responsividade](https://github.com/Dirack/Estudos/tree/master/tailwind/responsividade#responsividade-com-tailwindcss)
+
+## Quick Start
+
 Para testar via CDN basta adicionar na página HTML:
 
 ```
 <script src="https://cdn.tailwindcss.com"></script>
 ```
+
+Ou para testar com o NextJS:
+
+```
+npx create-next-app
+```
+
+Daí basta escolher o tailwindCSS nas configurações do projeto
+
+## Tutorial básico
 
 basico sobre cores no tailwind:
 
