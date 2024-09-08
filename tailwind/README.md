@@ -4,6 +4,7 @@
 
 - [Exercício tela de login com TailwindCSS](https://github.com/Dirack/Estudos/tree/master/tailwind/login_system#tela-de-login-com-tailwindcss)
 - [Exemplo de responsividade](https://github.com/Dirack/Estudos/tree/master/tailwind/responsividade#responsividade-com-tailwindcss)
+- [Display flex](https://github.com/Dirack/Estudos/tree/master/tailwind/flex#display-flex-no-tailwindcss)
 
 ## Quick Start
 
