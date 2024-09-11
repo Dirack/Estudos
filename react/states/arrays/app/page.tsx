@@ -17,11 +17,24 @@ const Page = ()=>{
   ])
   
   const handleList = ()=>{
+    if (listInput.trim()=== '') return
     setList([
       ...list,
       {label:listInput, checked: false}
     ])
     setListInput('')
+  }
+
+  const deletarItem = (index:number)=>{
+    setList(
+      list.filter((item,key) => key !== index)
+    )
+  }
+
+  const toggleItem = (index:number)=>{
+    let newList = [...list]
+    newList[index].checked = !newList[index].checked
+    setList(newList)
   }
 
   return (
@@ -39,9 +52,11 @@ const Page = ()=>{
       </div>
 
       <ul className="w-full max-w-lg list-disc pl-5">
-        {list.map((item)=>{
+        {list.map((item, index)=>{
             return (
-              <li>{item.label} - <button className="hover:underline">[ deletar ]</button></li>
+              <li key={index}>
+                <input onClick={() => toggleItem(index)} type="checkbox" checked={item.checked} className="w-6 h-6 mr-3"/>
+                {item.label} - <button onClick={() => deletarItem(index)} className="hover:underline">[ deletar ]</button></li>
             )
         })}
       </ul>
