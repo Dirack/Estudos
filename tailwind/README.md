@@ -172,7 +172,7 @@ Para criar 'estilos base' (estilo padrão para um componente), acrescente no arq
 
 Você também pode criar os seus próprios componentes personalizados. Acrescente os componentes no arquivo 'globals.css':
 
-```
+```css
 @layer components{
   .card {
     @apply m-2 p-3 bg-green-200;
