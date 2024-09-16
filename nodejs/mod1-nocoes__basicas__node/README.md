@@ -12,3 +12,4 @@
 - [Como importar arquivos de terceiros](https://github.com/Dirack/Estudos/tree/master/nodejs/mod1-nocoes__basicas__node/import_terceiros#como-importar-arquivos-de-terceiros)
 - [Export e import no nodejs](https://github.com/Dirack/Estudos/tree/master/nodejs/mod1-nocoes__basicas__node/import_export#export-e-import-no-nodejs)
 - [Estudo sobre import export no nodejs com ES6](https://github.com/Dirack/Estudos/tree/master/nodejs/mod1-nocoes__basicas__node/import_export_ES6#estudo-sobre-import-export-no-nodejs-com-es6)
+- [Roda page not found com nodejs e express](https://github.com/Dirack/Estudos/tree/master/nodejs/mod1-nocoes__basicas__node/404notfound#roda-page-not-found-com-nodejs-e-express)
