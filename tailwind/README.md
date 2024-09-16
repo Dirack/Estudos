@@ -8,6 +8,7 @@
 - [Display grid](https://github.com/Dirack/Estudos/tree/master/tailwind/grid#display-grid)
 - [Exercício tela de loading com tailwind css](https://github.com/Dirack/Estudos/tree/master/tailwind/loading#exerc%C3%ADcio-tela-de-loading-com-tailwind-css)
 - [Exercício tailwindcss cartão responsivo](https://github.com/Dirack/Estudos/tree/master/tailwind/hero_card#exerc%C3%ADcio-tailwindcss-cart%C3%A3o-responsivo)
+- [Exercício tabela responsiva](https://github.com/Dirack/Estudos/tree/master/tailwind/table#exerc%C3%ADcio-tabela-responsiva)
 
 ## Quick Start
 
