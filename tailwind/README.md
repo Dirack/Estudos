@@ -9,6 +9,7 @@
 - [Exercício tela de loading com tailwind css](https://github.com/Dirack/Estudos/tree/master/tailwind/loading#exerc%C3%ADcio-tela-de-loading-com-tailwind-css)
 - [Exercício tailwindcss cartão responsivo](https://github.com/Dirack/Estudos/tree/master/tailwind/hero_card#exerc%C3%ADcio-tailwindcss-cart%C3%A3o-responsivo)
 - [Exercício tabela responsiva](https://github.com/Dirack/Estudos/tree/master/tailwind/table#exerc%C3%ADcio-tabela-responsiva)
+- [Hover, estados e grupos](https://github.com/Dirack/Estudos/tree/master/tailwind/hover_estados#hover-estados-e-grupos)
 
 ## Quick Start
 
