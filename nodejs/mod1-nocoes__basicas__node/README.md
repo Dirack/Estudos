@@ -9,3 +9,5 @@
 - [Criar rotas no express](https://github.com/Dirack/Estudos/tree/master/nodejs/mod1-nocoes__basicas__node/rotas#criar-rotas-no-express)
 - [Criar rotas em pasta separada](https://github.com/Dirack/Estudos/tree/master/nodejs/mod1-nocoes__basicas__node/separarRotas#criar-rotas-em-pasta-separada)
 - [Criar pasta pública no servidor](https://github.com/Dirack/Estudos/tree/master/nodejs/mod1-nocoes__basicas__node/pasta_publica#criar-pasta-p%C3%BAblica-no-servidor)
+- [Como importar arquivos de terceiros](https://github.com/Dirack/Estudos/tree/master/nodejs/mod1-nocoes__basicas__node/import_terceiros#como-importar-arquivos-de-terceiros)
+- [Export e import no nodejs](https://github.com/Dirack/Estudos/tree/master/nodejs/mod1-nocoes__basicas__node/import_export#export-e-import-no-nodejs)
