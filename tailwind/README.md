@@ -152,3 +152,32 @@ Exemplo card de invite com tailwind:
   </div>
 </div>
 ```
+
+Ao utilizar o 'dark' podemos configurar classes para serem ativadas no dark mode do sistema:
+
+```html
+<div class="dark>:bg-blue-800 dark:text-white">Texto qualquer</div>
+```
+
+Para criar 'estilos base' (estilo padrão para um componente), acrescente no arquivo 'globals.css':
+
+```css
+@layer base{
+  h1{
+    @apply text-2xl;
+    @apply bg-yellow-500;
+  }
+}
+```
+
+Você também pode criar os seus próprios componentes personalizados. Acrescente os componentes no arquivo 'globals.css':
+
+```
+@layer components{
+  .card {
+    @apply m-2 p-3 bg-green-200;
+  }
+}
+```
+
+
