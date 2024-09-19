@@ -9,3 +9,4 @@
 - [Preenchimento de formulário com UseState](https://github.com/Dirack/Estudos/tree/master/react/states_eventos/exercicio_form#exemplo-preenchimento-de-formul%C3%A1rio-com-usestate)
 - [Arrays e states](https://github.com/Dirack/Estudos/tree/master/react/states/arrays#arrays-e-states)
 - [Exercício galeria de fotos](https://github.com/Dirack/Estudos/tree/master/react/states/galeria_fotos#exerc%C3%ADcio-galeria-de-fotos)
+- [Exercício locker no react com useState](https://github.com/Dirack/Estudos/tree/master/react/states/brincadeira_login#exerc%C3%ADcio-locker-no-react-com-usestate)
