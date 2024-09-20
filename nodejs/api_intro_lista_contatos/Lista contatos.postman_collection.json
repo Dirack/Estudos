@@ -1,0 +1,91 @@
+{
+	"info": {
+		"_postman_id": "62a6bb5a-caf6-4607-b809-d358c5d73470",
+		"name": "Lista contatos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37526168"
+	},
+	"item": [
+		{
+			"name": "Add new contato",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "fulano",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE}}/contatos",
+					"host": [
+						"{{BASE}}"
+					],
+					"path": [
+						"contatos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all contatos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE}}/contatos",
+					"host": [
+						"{{BASE}}"
+					],
+					"path": [
+						"contatos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete contato",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
