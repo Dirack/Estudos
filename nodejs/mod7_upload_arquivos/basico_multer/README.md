@@ -1,3 +1,3 @@
-# TODO API
+# Upload de arquivos no nodejs com multer
 
-Projeto TODO API do curso de nodejs da b7web
+Os uploads de arquivos são realizados nas rotas '/upload*' nas rotas da API e gerenciadas pelos controllers respectivos em API controllers.
