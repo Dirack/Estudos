@@ -1,5 +1,6 @@
 "use client"
 
+import Modal from "@/components/Modal"
 import PhotoItem from "@/components/PhotoItem"
 import { PhotoList } from "@/data/PhotoList"
 import { useState } from "react"
@@ -21,6 +22,10 @@ const Page = ()=>{
 
   }
 
+  const closeModal = ()=>{
+    setShowModal(false)
+  }
+
   return (
     <div>
       <h1 className="text-center text-3xl text-bold my-10">Fotos intergaláticas</h1>
@@ -35,6 +40,9 @@ const Page = ()=>{
           )
         })}
       </section>
+      {showModal &&
+        <Modal image={imageOfModal} closeModal={closeModal} />
+      }
     </div>
   )
 }
