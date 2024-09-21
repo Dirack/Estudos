@@ -11,3 +11,4 @@
 - [Exercício galeria de fotos](https://github.com/Dirack/Estudos/tree/master/react/states/galeria_fotos#exerc%C3%ADcio-galeria-de-fotos)
 - [Exercício locker no react com useState](https://github.com/Dirack/Estudos/tree/master/react/states/brincadeira_login#exerc%C3%ADcio-locker-no-react-com-usestate)
 - [Exercício eliminate com usestate e reactjs](https://github.com/Dirack/Estudos/tree/master/react/states/eliminate#exerc%C3%ADcio-eliminate-com-usestate-e-reactjs)
+- [Exercício criação de um quizz simples com nodejs e usestate](https://github.com/Dirack/Estudos/tree/master/react/states/quizz1#exerc%C3%ADcio-cria%C3%A7%C3%A3o-de-um-quizz-simples-com-nodejs-e-usestate)
