@@ -21,6 +21,7 @@ feito para facilitar a criação de componente react com código HTML ao invés 
 * [Eventos e handlers](https://github.com/Dirack/Estudos/tree/master/react/events#estudos-sobre-eventos-em-reactjs)
 * [UseState](https://github.com/Dirack/Estudos/tree/master/react/states#exemplos-de-usestate-em-reactjs)
 * [UseEffect](https://github.com/Dirack/Estudos/tree/master/react/effects#exemplo-de-useeffect-em-reactjs)
+* [Usando APIs no reactjs](https://github.com/Dirack/Estudos/tree/master/react/usando_apis#usando-apis-no-reactjs)
 * [Requisição GET com fetch then](https://github.com/Dirack/Estudos/tree/master/react/requisicoes/get_fetch_then#requisi%C3%A7%C3%A3o-get-com-fetch-then)
 * [Requisição GET com fetch await](https://github.com/Dirack/Estudos/tree/master/react/requisicoes/get_fetch_await#requisi%C3%A7%C3%A3o-get-com-fetch-await)
 * [Todo List Frontend: Consumo de API no ReactJS](https://github.com/Dirack/Estudos/tree/master/react/todo_list_frontend#todo-list-frontend-consumo-de-api-no-reactjs)
