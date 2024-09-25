@@ -6,13 +6,15 @@ const schema = z.object({
     age: z.number().min(18).max(100)
 })
 
-let data = {
+type User = z.infer<typeof schema>
+
+let data: User = {
     name: 'Fulano',
     email: 'fulano@gmail.com',
     age: 19
 }
 
-let data2 = {
+let data2: User = {
     ...data,
     age:3
 }
