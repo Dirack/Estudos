@@ -5,7 +5,8 @@ const schema = z.object({
     email: z.string().email(),
     age: z.number().min(18).max(100),
     opt: z.number().optional(),
-    lit: z.literal(90)
+    lit: z.literal(90),
+    irmao: z.enum(['Fulano','Ciclano','Beltrano'])
 })
 
 type User = z.infer<typeof schema>
@@ -14,7 +15,8 @@ let data: User = {
     name: 'Fulano',
     email: 'fulano@gmail.com',
     age: 19,
-    lit:90
+    lit:90,
+    irmao: 'Fulano'
 }
 
 let data2: User = {
