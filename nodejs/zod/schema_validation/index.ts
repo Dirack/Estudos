@@ -3,7 +3,8 @@ import z from 'zod'
 const schema = z.object({
     name: z.string().min(2),
     email: z.string().email(),
-    age: z.number().min(18).max(100)
+    age: z.number().min(18).max(100),
+    opt: z.number().optional()
 })
 
 type User = z.infer<typeof schema>
