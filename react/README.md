@@ -67,6 +67,19 @@ Para rodar o projeto utilize:
 npm run dev
 ```
 
+## Next.js: How to Disable/Enable React Strict Mode
+
+Basta ativar ou desativar a opção no arquivo de configuração 'next.config.mjs' como abaixo:
+
+```ts
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: false, // React Strict Mode is off
+}
+
+module.exports = nextConfig
+```
+
 ## Oque é SPA?
 
 Uma SPA é uma aplicação que carrega apenas um único documento web e, em seguida, atualiza o conteúdo desse documento
