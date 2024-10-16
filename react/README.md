@@ -82,6 +82,17 @@ const nextConfig = {
 module.exports = nextConfig
 ```
 
+Caso esteja utilizando ES escope, module não estará definido. Portanto, utilize a versão abaixo do arquivo de configuração 'next.config.mjs':
+
+```ts
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+    reactStrictMode: false, // React Strict Mode is off
+};
+
+export default nextConfig;
+```
+
 ## Oque é SPA?
 
 Uma SPA é uma aplicação que carrega apenas um único documento web e, em seguida, atualiza o conteúdo desse documento
