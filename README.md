@@ -2,7 +2,7 @@
 
 > Estudos sobre diferentes tópicos de linguagens de programação variadas.
 
-## Índice
+## Índice - Linguagens de programação
 
 * Assembly
 * [Bootstrap 4](https://github.com/Dirack/Estudos/tree/master/Bootstrap#estudos-sobre-bootstrap-4)
@@ -34,3 +34,7 @@
 * [Docker](https://github.com/Dirack/Estudos/tree/master/docker#estudos-sobre-docker)
 * [Cypress](https://github.com/Dirack/Estudos/tree/master/cypress#estudos-sobre-testes-end-to-end-com-cypress)
 * [TailwindCSS](https://github.com/Dirack/Estudos/tree/master/tailwind#estudos-sobre-tailwindcss)
+
+## Índice - Conceitos e ferramentas gerais
+
+- [Conceitos de programação](https://github.com/Dirack/Estudos/tree/master/conceitos#conceitos-de-programa%C3%A7%C3%A3o)
