@@ -69,6 +69,17 @@ Para rodar o projeto utilize:
 npm run dev
 ```
 
+## Oque é React Strict Mode?
+
+Quando os componentes são encapsulados StrictMode, o React executa certas funções duas vezes para ajudar os desenvolvedores a detectar erros em seu código.
+
+No React, o StrictMode tem um comportamento feito para garantir que seja compatível com o estado reutilizável.
+
+Quando o StrictMode está ativo (com a tag), o React chama efeitos de atualização dupla (montar -> desmontar -> montar) para componentes recém-montados.
+Isso é feito para garantir que o componente seja resiliente a ser "montado" e "desmontado" mais de uma vez.
+
+Assim como outros comportamentos de StrictMode, o React só faz isso para compilações em modo desenvolvimento.
+
 ## Next.js: How to Disable/Enable React Strict Mode
 
 Basta ativar ou desativar a opção no arquivo de configuração 'next.config.mjs' como abaixo:
