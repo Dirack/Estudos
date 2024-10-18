@@ -1,1 +1,1 @@
-# Exercício utilização de context e reducers no reactjs
+# Local storage com reducers, context API e useEffect
