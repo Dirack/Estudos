@@ -1,1 +1,1 @@
-# Exercício Posts de usuário com context API
+# Exercício utilização de context e reducers no reactjs
