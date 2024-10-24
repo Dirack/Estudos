@@ -1,1 +1,1 @@
-# Exercício dark theme com context API reactjs
+# Exercício dark theme com tailwindcss e context API do reactjs
