@@ -9,6 +9,7 @@ type User = {
 
 const Page = ()=>{
 
+  const [loading,setLoading] = useState(true)
   const [users,setUsers] = useState<User[]>([])
 
   useEffect(()=>{
@@ -16,12 +17,15 @@ const Page = ()=>{
     fetch("https://jsonplaceholder.typicode.com/users")
     .then(resp=>resp.json())
     .then(json=>setUsers(json))
+    .catch(()=>console.log("Deu algum erro..."))
+    .finally(()=>setLoading(false))
 
   },[])
 
   return (
     <div>
-      {users.length > 0 &&
+      {loading && "Carregando..."}
+      {!loading && users.length > 0 &&
             <ul>
               {users.map((item)=>{
                 return (
@@ -30,6 +34,7 @@ const Page = ()=>{
               })}
           </ul>
       }
+      {!loading && users.length == 0 && "Não há usuários para exibir."}
 
     </div>
   )
