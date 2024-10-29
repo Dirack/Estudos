@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <!-- Include the CesiumJS JavaScript and CSS files -->
+
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.91/Build/Cesium/Cesium.js"></script>
+
+  <link href="https://cesium.com/downloads/cesiumjs/releases/1.91/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div id="cesiumContainer"></div>
+
+  <script>
+    Cesium.Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIwYmRjYzU3Ny0wMGVkLTQ1MzUtYTM2NS1mNmY1ZDZlMWEyOWYiLCJpZCI6ODY0MTIsImlhdCI6MTY0NzgxMTE2Mn0.mRqOX55qk8WGHhNY76VkEkPem8KglusF4EnVKD380ZA";
+
+    const viewer = new Cesium.Viewer("cesiumContainer", {
+        sceneMode: Cesium.SceneMode.SCENE2D,
+        timeline: false,
+        animation: false,
+    });
+
+    const dataSource = Cesium.GeoJsonDataSource.load(
+        "./HST_498_convex_hull.geojson",
+    );
+    //viewer.dataSources.add(dataSource);
+
+    // const data = fetch('./Carbonated_Platform_extension_snapped_convex_hull.geojson')
+    // .then(response => response.json())
+    // .then(data => {
+    //     console.log('Loaded JSON data:', data);
+    //     // You can now work with the data
+    // })
+    // .catch(error => console.error('Error loading JSON:', error));
+
+// manually update
+viewer.entities.suspendEvents();
+dataSource.entities.values.forEach(function(entity) {
+    var existing = viewer.entities.getById(entity.id);
+    if (existing === undefined) {
+        viewer.entities.add(entity);
+    } else {
+        entity.propertyNames.forEach(function(name) {
+            existing[name] = entity[name];  
+        });
+    }
+}, this);
+viewer.entities.resumeEvents();
+
+    viewer.zoomTo(dataSource);
+  </script>
+
+</body>
+
+</html>
