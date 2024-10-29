@@ -8,3 +8,4 @@
 - [Lista de usuários com context API e reducers](https://github.com/Dirack/Estudos/tree/master/react/reducers/listusers#lista-de-usu%C3%A1rios-com-context-api-e-reducers)
 - [Local storage com reducers, context API e useEffect](https://github.com/Dirack/Estudos/tree/master/react/reducers/local_storage#local-storage-com-reducers-context-api-e-useeffect)
 - [Estudo sobre useeffect, reducers e context no reactjs](https://github.com/Dirack/Estudos/tree/master/react/reducers/numberslist#estudo-sobre-useeffect-reducers-e-context-no-reactjs)
+- [Exercício chat simples com context API e reducer](https://github.com/Dirack/Estudos/tree/master/react/reducers/chat_simples#exerc%C3%ADcio-chat-simples-com-context-api-e-reducer)
