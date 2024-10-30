@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <!-- Include the CesiumJS JavaScript and CSS files -->
+
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.91/Build/Cesium/Cesium.js"></script>
+
+  <link href="https://cesium.com/downloads/cesiumjs/releases/1.91/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div id="cesiumContainer"></div>
+
+  <script>
+
+// Grant CesiumJS access to your ion assets
+Cesium.Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIwYmRjYzU3Ny0wMGVkLTQ1MzUtYTM2NS1mNmY1ZDZlMWEyOWYiLCJpZCI6ODY0MTIsImlhdCI6MTY0NzgxMTE2Mn0.mRqOX55qk8WGHhNY76VkEkPem8KglusF4EnVKD380ZA";
+
+const viewer = new Cesium.Viewer("cesiumContainer");
+
+const imageryLayer = viewer.imageryLayers.addImageryProvider(
+  new Cesium.IonImageryProvider({ assetId: 935282 })
+);
+
+(async () => {
+  try {
+    await viewer.zoomTo(imageryLayer);
+  } catch (error) {
+    console.log(error);
+  }
+})();
+  </script>
+
+ </div>
+
+</body>
+
+</html>
+
