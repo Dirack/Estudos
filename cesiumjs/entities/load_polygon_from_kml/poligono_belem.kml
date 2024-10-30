@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>poligono_belem.kml</name>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark>
+		<name>Untitled Polygon</name>
+		<styleUrl>#m_ylw-pushpin</styleUrl>
+		<Polygon>
+			<tessellate>1</tessellate>
+			<outerBoundaryIs>
+				<LinearRing>
+					<coordinates>
+						-48.47675620828842,-1.39568833953397,0 -48.49388314335092,-1.401996629217084,0 -48.49410148658291,-1.41716525423074,0 -48.49242844532787,-1.429404922049379,0 -48.49451366129136,-1.439430490362757,0 -48.50369020050685,-1.451779206181562,0 -48.50658465862884,-1.456428187641703,0 -48.50765805999055,-1.463114850228738,0 -48.50591923126544,-1.469429802930766,0 -48.50231355797658,-1.472312930976472,0 -48.49887004677668,-1.474322733516416,0 -48.48963384518301,-1.477118290440014,0 -48.48251865277287,-1.477432296995157,0 -48.4770495699384,-1.476742474965776,0 -48.47023839341777,-1.475745400186265,0 -48.46027667021409,-1.478811325615925,0 -48.44430894963176,-1.460068939063002,0 -48.45340259799457,-1.427979733673813,0 -48.47675620828842,-1.39568833953397,0 
+					</coordinates>
+				</LinearRing>
+			</outerBoundaryIs>
+		</Polygon>
+	</Placemark>
+</Document>
+</kml>
