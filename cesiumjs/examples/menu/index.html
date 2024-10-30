@@ -1,0 +1,229 @@
+<!doctype html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+
+  <!-- Include the CesiumJS JavaScript and CSS files -->
+
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.91/Build/Cesium/Cesium.js"></script>
+
+  <link href="https://cesium.com/downloads/cesiumjs/releases/1.91/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+
+	<style>
+		#toolbar{
+			color: white;
+			position: absolute;
+			z-index: 1;
+			margin: 5px;
+			width: 36%;
+			height: 9.5em;
+			padding: 5px;
+			background: linear-gradient(to bottom,rgba(116,117,119,.8) 0,rgba(58,68,82,.8) 11%,rgba(46,50,56,.8) 46%,rgba(53,53,53,.8) 81%,rgba(53,53,53,.8) 100%);
+		}
+		.data-form{
+			display: grid;
+			grid-template-columns: auto auto auto;
+			width: 60%;
+			margin: 2px;
+		}
+		.toolbar-btn{
+			position: relative;
+			display: inline-block;
+			margin: 2px 3px;
+		}
+		.toolbar-btn:hover{
+			cursor:pointer;
+		}
+		.radio-element{
+			border: 1px solid gray;
+			padding: 5px;
+			border-radius: 5px;
+			margin: 2px;
+		}
+		.buttons{
+			margin-top: 6px;
+		}
+		.buttons input:hover{
+			cursor:pointer;
+		}
+		form {
+			display: grid;
+			grid-template-columns: auto;
+		}
+		.row{
+			padding: 3px;
+		}
+		.alpha{
+			display: grid;
+			grid-template-columns: auto auto auto;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div id="cesiumContainer" class="fullSize">
+    		<div id="toolbar">
+			<form>
+				<div class="data-form row">
+					<div>
+						<span>Data Inicial</span>
+					</div>
+					<div>
+						<span><input type="range" value="10"></span>
+					</div>
+					<div>
+						<span><input type="date"></span>
+					</div>
+					<div>
+						<span>Data Final</span>
+					</div>
+					<div>
+						<input type="range" value="10">
+					</div>
+					<div>
+						<input type="date">
+					</div>
+				</div>
+				<div class="radio-form row">
+					<span class="radio-element">
+						<input type="checkbox" id="eventos" value="eventos" checked>
+						<label for="eventos">Eventos</label>
+					</span>
+					<span class="radio-element">
+						<input type="checkbox" id="ina" value="ina" checked>
+						<label for="eventos">INA</label>
+					</span>
+					<span class="radio-element">
+						<input type="checkbox" id="velvar" value="velvar" checked>
+						<label for="velvar">Vel.Var%</label>
+					</span>
+					<span class="radio-element">
+						<input type="checkbox" id="sensores" value="sensores" checked>
+						<label for="eventos">Sensores</label>
+					</span>
+					<span class="radio-element">
+						<input type="checkbox" id="limpar" value="limpar" checked>
+						<label for="eventos">Limpar</label>
+					</span>
+					<span class="radio-element">
+						<input type="checkbox" id="enabled" value="enabled" checked>
+						<label for="eventos">Enabled</label>
+					</span>
+				</div>
+				<div class="buttons row">
+					<input type="button" id="model1" value="Model 1" title="Go to model 1">
+					<input type="button" id="model2" value="Model 2" title="Go to model 2">
+					<input type="button" id="sensor" value="Sensor" title="Show sensors">
+					<input type="button" id="sphere" value="Sphere" title="Show spheres">
+				</div>
+				<div class="alpha row">
+					<div>
+						<span>Model 1 alpha</span>
+					</div>
+					<div>
+						<span><input type="range" id="model1-alpha" value=100 defaultValue=100></span>
+					</div>
+					<div>
+						<span id="alpha-value">100</span>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+    <div id="loadingOverlay"><h1>Loading...</h1></div>
+
+<script>
+Cesium.Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIwYmRjYzU3Ny0wMGVkLTQ1MzUtYTM2NS1mNmY1ZDZlMWEyOWYiLCJpZCI6ODY0MTIsImlhdCI6MTY0NzgxMTE2Mn0.mRqOX55qk8WGHhNY76VkEkPem8KglusF4EnVKD380ZA";
+
+const viewer = new Cesium.Viewer("cesiumContainer",{
+				animation: false,
+				fullscreenElement: 'cesiumContainer'
+				});
+window.viewer = viewer;
+
+const model1 = viewer.imageryLayers.addImageryProvider(
+                                new Cesium.IonImageryProvider({ assetId: 984637 })
+                        );
+
+const model2 = viewer.imageryLayers.addImageryProvider(
+  new Cesium.IonImageryProvider({ assetId: 935282 })
+);
+
+const checkbox = document.getElementById('eventos');
+
+checkbox.addEventListener('change', (event) => {
+  if (event.currentTarget.checked) {
+    alert('checked');
+  } else {
+    alert('not checked');
+  }
+})
+
+document.getElementById("model1").addEventListener("click",
+	function(){
+		viewer.zoomTo(model1);
+	}
+);
+
+document.getElementById("model2").addEventListener("click",
+	function(){
+		viewer.zoomTo(model2);
+	}
+);
+
+document.getElementById("sensor").addEventListener("click",
+	async function(){
+		viewer.entities.removeAll();
+		const resource = await Cesium.IonResource.fromAssetId(1060605);
+		    const entity = viewer.entities.add({
+			name: 'XPTO-1',
+		      position: Cesium.Cartesian3.fromDegrees(-41.9465093383, -22.4876246443, 0),
+		      model: {
+			uri: resource,
+		      },
+		label: {
+                                                id: '01',
+                                                text: '\nSensor XPTO-1',
+                                                fillColor: Cesium.Color.BLACK,
+                                                font: "24px monospace",
+                                                verticalOrigin: Cesium.VerticalOrigin.TOP
+                                        }
+
+		});
+	}
+);
+
+document.getElementById("sphere").addEventListener("click",
+	function(){
+		viewer.entities.removeAll();
+
+		viewer.entities.add({
+		  name: "Red sphere with black outline",
+		  position: Cesium.Cartesian3.fromDegrees(-41.9465093383, -22.4876246443, 0),
+		  ellipsoid: {
+		    radii: new Cesium.Cartesian3(50, 50, 50),
+		    material: Cesium.Color.RED.withAlpha(0.5),
+		    outline: true,
+		    outlineColor: Cesium.Color.BLACK,
+		  },
+		});
+
+
+	}
+);
+
+
+let range = document.getElementById("model1-alpha");
+
+range.value = 100;
+range.addEventListener("input",function(e){
+	let alpha = parseInt(e.target.value);
+	model1.alpha = alpha/100;
+	document.getElementById("alpha-value").innerHTML = alpha;
+});
+
+</script>
+</body>
+</html>
