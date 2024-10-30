@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <!-- Include the CesiumJS JavaScript and CSS files -->
+
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.91/Build/Cesium/Cesium.js"></script>
+
+  <link href="https://cesium.com/downloads/cesiumjs/releases/1.91/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+
+<style>
+  html, body, #mainCesiumContainer {
+    width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden;
+    font-family: sans-serif;
+}
+#insetCesiumContainer {
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    width: 20%;
+    height: 20%;
+    border: 1px solid #000;
+    box-shadow: 0 0 4px #fff;
+    background: white;
+    color: black;
+}
+</style>
+</head>
+
+<body>
+
+  <div id="cesiumContainer"></div>
+<div id="insetCesiumContainer"></div>
+
+  <script>
+// Grant CesiumJS access to your ion assets
+Cesium.Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIwYmRjYzU3Ny0wMGVkLTQ1MzUtYTM2NS1mNmY1ZDZlMWEyOWYiLCJpZCI6ODY0MTIsImlhdCI6MTY0NzgxMTE2Mn0.mRqOX55qk8WGHhNY76VkEkPem8KglusF4EnVKD380ZA";
+
+const viewer = new Cesium.Viewer("cesiumContainer",
+                                 {animation : false,
+                                 timeline: false,
+                                 baseLayerPicker : false,
+                                 homeButton: false,
+                                 navigationHelpButton: false,
+                                 projectionPicker: false,
+                                 sceneModePicker: false,
+                                 geocoder: false});
+
+const imageryLayer = viewer.imageryLayers.addImageryProvider(
+  new Cesium.IonImageryProvider({ assetId: 984637 })
+);
+
+// Output the window position of longitude/latitude (0, 0) every time the mouse moves.
+const scene = viewer.scene;
+const ellipsoid = scene.globe.ellipsoid;
+const position = Cesium.Cartesian3.fromDegrees(0.0, 0.0);
+const handler = new Cesium.ScreenSpaceEventHandler(scene.canvas);
+
+viewer.entities.add({
+    id: 'mou',
+    label: {
+        // position : Cesium.Cartesian2.ZERO, 
+        show: true,
+           fillColor:  Cesium.Color.BLACK
+    }
+});
+
+viewer.scene.canvas.addEventListener('mousemove', function(e) {
+    var entity = viewer.entities.getById('mou');
+    var ellipsoid = viewer.scene.globe.ellipsoid;
+    // Mouse over the globe to see the cartographic position 
+    var cartesian = viewer.camera.pickEllipsoid(new Cesium.Cartesian3(e.clientX, e.clientY), ellipsoid);
+    if (cartesian) {
+        var cartographic = ellipsoid.cartesianToCartographic(cartesian);
+        var longitudeString = Cesium.Math.toDegrees(cartographic.longitude).toFixed(10);
+        var latitudeString = Cesium.Math.toDegrees(cartographic.latitude).toFixed(10);
+        entity.position = cartesian;
+        entity.label.show = true;
+        entity.label.font_style = 84;
+        //entity.position= Cesium.Cartesian2.ZERO; 
+        entity.label.text = '('+longitudeString+', '+latitudeString+')';
+        entity.label.backgroundColor = Cesium.Color.BLACK;
+        var result = latitudeString;
+        //document.getElementById("insetCesiumContainer").innerHTML = result;
+    } else {
+        entity.label.show = false;
+    }
+});
+
+// Lock camera to a point
+var center = Cesium.Cartesian3.fromDegrees(-41.944435,-22.489592, 0);
+var transform = Cesium.Transforms.eastNorthUpToFixedFrame(center);
+viewer.scene.camera.lookAtTransform(transform, new Cesium.HeadingPitchRange(0, -Math.PI/8, 90));
+viewer.scene.screenSpaceCameraController.enableZoom = false;
+
+(async () => {
+  try {
+    await viewer.zoomTo(imageryLayer);
+    viewer.scene.camera.flyTo({
+    destination: Cesium.Cartesian3.fromDegrees(-41.944335, -22.489592, 1450),
+    orientation: {  heading : 0, // your heading in radians
+                    pitch   : -3.1415/2.0,   // your pitch in radians
+                    roll    : 0     // your roll in radians
+                 }});
+  } catch (error) {
+    console.log(error);
+  }
+})();
+
+
+
+  </script>
+
+ </div>
+
+</body>
+
+</html>
+
