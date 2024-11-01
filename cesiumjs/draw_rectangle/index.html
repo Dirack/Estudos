@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <!-- Include the CesiumJS JavaScript and CSS files -->
+
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.91/Build/Cesium/Cesium.js"></script>
+
+  <link href="https://cesium.com/downloads/cesiumjs/releases/1.91/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div id="cesiumContainer"></div>
+
+<script>
+
+Cesium.Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIwYmRjYzU3Ny0wMGVkLTQ1MzUtYTM2NS1mNmY1ZDZlMWEyOWYiLCJpZCI6ODY0MTIsImlhdCI6MTY0NzgxMTE2Mn0.mRqOX55qk8WGHhNY76VkEkPem8KglusF4EnVKD380ZA";
+
+var viewer = new Cesium.Viewer('cesiumContainer', {
+    targetFrameRate: 60,
+    homeButton: false,
+    sceneModePicker: false,
+    navigationHelpButton: false,
+    baseLayerPicker: false,
+    clock: new Cesium.Clock({
+      startTime: Cesium.JulianDate.fromIso8601('1880-01-01'),
+      currentTime: Cesium.JulianDate.fromIso8601('1880-01-01'),
+      stopTime: Cesium.JulianDate.fromIso8601("2013-12-01"),
+      clockRange: Cesium.ClockRange.CLAMPED,
+      canAnimate: false,
+      shouldAnimate: false,
+      multiplier: 31622400 //Fast forward 1 year a second
+    }),
+    //Saves GPU memory
+    scene3DOnly: true,
+    automaticallyTrackDataSourceClocks: false
+  });
+  
+  viewer.scene.debugShowFramesPerSecond = true;
+  viewer.scene.screenSpaceCameraController.enableTranslate = false;
+  viewer.scene.screenSpaceCameraController.enableTilt = false;
+  viewer.scene.screenSpaceCameraController.enableLook = false;
+  viewer.scene.screenSpaceCameraController.enableCollisionDetection = false;
+  viewer.imageryLayers.get(0).brightness = 0.7;
+  
+  var selector;
+  var rectangleSelector = new Cesium.Rectangle();
+  var screenSpaceEventHandler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);
+  var cartesian = new Cesium.Cartesian3();
+  var tempCartographic = new Cesium.Cartographic();
+  var center = new Cesium.Cartographic();
+  var firstPoint = new Cesium.Cartographic();
+  var firstPointSet = false;
+  var mouseDown = false;
+  var camera = viewer.camera;
+  
+  
+  //Draw the selector while the user drags the mouse while holding shift
+  screenSpaceEventHandler.setInputAction(function drawSelector(movement) {
+    if (!mouseDown) {
+      return;
+    }
+  
+    cartesian = camera.pickEllipsoid(movement.endPosition, viewer.scene.globe.ellipsoid, cartesian);
+  
+    if (cartesian) {
+      //mouse cartographic
+      tempCartographic = Cesium.Cartographic.fromCartesian(cartesian, Cesium.Ellipsoid.WGS84, tempCartographic);
+  
+      if (!firstPointSet) {
+        Cesium.Cartographic.clone(tempCartographic, firstPoint);
+        firstPointSet = true;
+      }
+      else {
+        rectangleSelector.east = Math.max(tempCartographic.longitude, firstPoint.longitude);
+        rectangleSelector.west = Math.min(tempCartographic.longitude, firstPoint.longitude);
+        rectangleSelector.north = Math.max(tempCartographic.latitude, firstPoint.latitude);
+        rectangleSelector.south = Math.min(tempCartographic.latitude, firstPoint.latitude);
+        selector.show = true;
+      }
+    }
+  }, Cesium.ScreenSpaceEventType.MOUSE_MOVE, Cesium.KeyboardEventModifier.SHIFT);
+  
+  var getSelectorLocation = new Cesium.CallbackProperty(function getSelectorLocation(time, result) {
+      return Cesium.Rectangle.clone(rectangleSelector, result);
+    }, false);
+  
+    screenSpaceEventHandler.setInputAction(function startClickShift() {
+      mouseDown = true;
+      selector.rectangle.coordinates = getSelectorLocation;
+    }, Cesium.ScreenSpaceEventType.LEFT_DOWN, Cesium.KeyboardEventModifier.SHIFT);
+  
+    screenSpaceEventHandler.setInputAction(function endClickShift() {
+      mouseDown = false;
+      firstPointSet = false;
+      selector.rectangle.coordinates = rectangleSelector;
+    }, Cesium.ScreenSpaceEventType.LEFT_UP, Cesium.KeyboardEventModifier.SHIFT);
+  
+  
+  //Hide the selector by clicking anywhere
+  screenSpaceEventHandler.setInputAction(function hideSelector() {
+    selector.show = false;
+  }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
+  
+  
+  selector = viewer.entities.add({
+    selectable: false,
+    show: false,
+    rectangle: {
+      coordinates: getSelectorLocation,
+      material: Cesium.Color.BLACK.withAlpha(0.5)
+    }
+  });
+</script>
+
+</body>
+
+</html>
