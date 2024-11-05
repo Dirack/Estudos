@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <!-- Include the CesiumJS JavaScript and CSS files -->
+
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.91/Build/Cesium/Cesium.js"></script>
+
+  <link href="https://cesium.com/downloads/cesiumjs/releases/1.91/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div id="cesiumContainer"></div>
+
+  <span style="display: none;" id="input">
+    <input type="text" list="lista" />
+    <datalist className="rounded-md text-black" id="lista" defaultValue="">
+      <option value="RED">North Sea</option>
+    </datalist>
+  </span>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
