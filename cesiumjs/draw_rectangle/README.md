@@ -1,3 +1,3 @@
-# Desenhar um retângulo no CesiumJS
+# Selecionar um polígono com um retângulo
 
-IMPORTANTE: Utilize 'shift + left click' para selecionar o retângulo
+IMPORTANTE: Utilize 'shift + left click' para criar o retângulo de seleção
