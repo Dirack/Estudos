@@ -10,6 +10,7 @@
 - [Selecionar poligonos dentro de um retângulo](https://github.com/Dirack/Estudos/tree/master/cesiumjs/draw_rectangle_several#selecionar-poligonos-dentro-de-um-ret%C3%A2ngulo)
 - [Leitura de arquivo geojson com javascript e fetch API](https://github.com/Dirack/Estudos/tree/master/cesiumjs/read_geojson_js#leitura-de-arquivo-geojson-com-javascript-e-fetch-api)
 - [Leitura de arquivo geojson com javascript e axios](https://github.com/Dirack/Estudos/tree/master/cesiumjs/read_geojson_axios#leitura-de-arquivo-geojson-com-javascript-e-axios)
+- [Leitura de polígonos de arquivo geojson utilizando axios](https://github.com/Dirack/Estudos/tree/master/cesiumjs/read_polygons_array#leitura-de-pol%C3%ADgonos-de-arquivo-geojson-utilizando-axios)
   
 ## Rodar exemplos no nodejs
 
