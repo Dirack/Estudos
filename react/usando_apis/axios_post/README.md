@@ -1,1 +1,1 @@
-# Exemplo de uso simples de GET com fetch API e async await
+# Estudo requisição POST com axios e async await
