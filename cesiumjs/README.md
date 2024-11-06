@@ -11,6 +11,7 @@
 - [Leitura de arquivo geojson com javascript e fetch API](https://github.com/Dirack/Estudos/tree/master/cesiumjs/read_geojson_js#leitura-de-arquivo-geojson-com-javascript-e-fetch-api)
 - [Leitura de arquivo geojson com javascript e axios](https://github.com/Dirack/Estudos/tree/master/cesiumjs/read_geojson_axios#leitura-de-arquivo-geojson-com-javascript-e-axios)
 - [Leitura de polígonos de arquivo geojson utilizando axios](https://github.com/Dirack/Estudos/tree/master/cesiumjs/read_polygons_array#leitura-de-pol%C3%ADgonos-de-arquivo-geojson-utilizando-axios)
+- [Leitura de polígonos de arquivo geojson utilizando axios (Integração com aplicação NextJS)](https://github.com/Dirack/Estudos/tree/master/cesiumjs/cesium_plot_polygon#leitura-de-pol%C3%ADgonos-de-arquivo-geojson-utilizando-axios-integra%C3%A7%C3%A3o-com-aplica%C3%A7%C3%A3o-nextjs)
   
 ## Rodar exemplos no nodejs
 
