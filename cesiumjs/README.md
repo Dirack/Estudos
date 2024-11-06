@@ -8,6 +8,8 @@
 - [Exemplos de uso das funcionalidades do cesium](https://github.com/Dirack/Estudos/tree/master/cesiumjs/examples#exemplos-de-uso-das-funcionalidades-do-cesium)
 - [Selecionar um polígono com um retângulo](https://github.com/Dirack/Estudos/tree/master/cesiumjs/draw_rectangle#selecionar-um-pol%C3%ADgono-com-um-ret%C3%A2ngulo)
 - [Selecionar poligonos dentro de um retângulo](https://github.com/Dirack/Estudos/tree/master/cesiumjs/draw_rectangle_several#selecionar-poligonos-dentro-de-um-ret%C3%A2ngulo)
+- [Leitura de arquivo geojson com javascript e fetch API](https://github.com/Dirack/Estudos/tree/master/cesiumjs/read_geojson_js#leitura-de-arquivo-geojson-com-javascript-e-fetch-api)
+- [Leitura de arquivo geojson com javascript e axios](https://github.com/Dirack/Estudos/tree/master/cesiumjs/read_geojson_axios#leitura-de-arquivo-geojson-com-javascript-e-axios)
   
 ## Rodar exemplos no nodejs
 
