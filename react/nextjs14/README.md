@@ -8,3 +8,7 @@ rapidamente sites JAMstack estáticos e dinâmicos e é amplamente usada por mui
 O padrão dos componentes no Next é React Sever Component (RSC - Renderizado no servidor). Para transformar o componente em React Client Component
 (RCC - Renderizado no cliente) se utiliza
 "use client" no topo do arquivo fonte do componente.
+
+## Índice
+
+- [Criando rotas no nextjs](https://github.com/Dirack/Estudos/tree/master/react/nextjs14/criando_rotas#criando-rotas-no-nextjs)
