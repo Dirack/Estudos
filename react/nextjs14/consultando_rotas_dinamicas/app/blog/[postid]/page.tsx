@@ -1,3 +1,5 @@
+import { Metadata } from "next";
+
 type Props = {
     params: {
         postid : string;
@@ -10,6 +12,10 @@ type Post = {
     title: string;
     body: string;
 }
+
+export const metadata: Metadata = {
+    title: 'Blog'
+  }
 
 const Page = async ({params}: Props)=>{
     const postRequest = await fetch(`https://jsonplaceholder.typicode.com/posts/${params.postid}`)
