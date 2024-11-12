@@ -1,5 +1,1 @@
-# Exemplo de rotas dinâmicas em nextjs14
-
-```
-npx @next/codemod@canary next-async-request-api .
-```
+# Consultar dados de rotas dinâmicas em nextjs
