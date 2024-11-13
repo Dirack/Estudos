@@ -1,1 +1,1 @@
-# Consultar dados de rotas dinâmicas em nextjs
+# Modificar o head dinâmicamente em nextjs
