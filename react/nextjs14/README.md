@@ -14,3 +14,5 @@ O padrão dos componentes no Next é React Sever Component (RSC - Renderizado no
 - [Criando rotas no nextjs](https://github.com/Dirack/Estudos/tree/master/react/nextjs14/criando_rotas#criando-rotas-no-nextjs)
 - [Exemplo de rotas dinâmicas em nextjs](https://github.com/Dirack/Estudos/tree/master/react/nextjs14/rotas_dinamicas#exemplo-de-rotas-din%C3%A2micas-em-nextjs14)
 - [Consultar dados de rotas dinâmicas em nextjs](https://github.com/Dirack/Estudos/tree/master/react/nextjs14/consultando_rotas_dinamicas#consultar-dados-de-rotas-din%C3%A2micas-em-nextjs)
+- [Modificar o head dinâmicamente em nextjs](https://github.com/Dirack/Estudos/tree/master/react/nextjs14/generateMetadata#modificar-o-head-din%C3%A2micamente-em-nextjs)
+- [Rotas dinamicamente estáticas em nextjs](https://github.com/Dirack/Estudos/tree/master/react/nextjs14/dinamicamente_statics#rotas-dinamicamente-est%C3%A1ticas-em-nextjs)
