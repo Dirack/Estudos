@@ -1,1 +1,1 @@
-# Consultar dados de rotas dinâmicas em nextjs
+# Rotas dinamicamente estáticas em nextjs
