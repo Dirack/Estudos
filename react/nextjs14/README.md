@@ -9,6 +9,12 @@ O padrão dos componentes no Next é React Sever Component (RSC - Renderizado no
 (RCC - Renderizado no cliente) se utiliza
 "use client" no topo do arquivo fonte do componente.
 
+A diretiva use client do Next.js é uma convenção que declara que os componentes serão renderizados no cliente. Ela deve ser colocada no topo dos arquivos que contêm interações no cliente. 
+A diretiva use client é usada para estabelecer uma fronteira entre os módulos de Componentes do Cliente e do Servidor. Quando definida em um arquivo,
+todos os módulos importados nele, incluindo os componentes filho, são considerados parte do bundle do cliente. 
+É importante saber que nem todos os arquivos precisam ter essa diretiva declarada. Por exemplo, se apenas um componente
+da página precisa de interatividade, então só ele precisa receber a diretiva do use-client
+
 ## Índice
 
 - [Criando rotas no nextjs](https://github.com/Dirack/Estudos/tree/master/react/nextjs14/criando_rotas#criando-rotas-no-nextjs)
@@ -16,3 +22,4 @@ O padrão dos componentes no Next é React Sever Component (RSC - Renderizado no
 - [Consultar dados de rotas dinâmicas em nextjs](https://github.com/Dirack/Estudos/tree/master/react/nextjs14/consultando_rotas_dinamicas#consultar-dados-de-rotas-din%C3%A2micas-em-nextjs)
 - [Modificar o head dinâmicamente em nextjs](https://github.com/Dirack/Estudos/tree/master/react/nextjs14/generateMetadata#modificar-o-head-din%C3%A2micamente-em-nextjs)
 - [Rotas dinamicamente estáticas em nextjs](https://github.com/Dirack/Estudos/tree/master/react/nextjs14/dinamicamente_statics#rotas-dinamicamente-est%C3%A1ticas-em-nextjs)
+- [Mudar de rotas no nextjs](https://github.com/Dirack/Estudos/tree/master/react/nextjs14/mudar_rota#mudar-de-rotas-no-nextjs)
