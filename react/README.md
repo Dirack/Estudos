@@ -27,6 +27,7 @@ feito para facilitar a criação de componente react com código HTML ao invés 
 * [Requisição GET com fetch then](https://github.com/Dirack/Estudos/tree/master/react/requisicoes/get_fetch_then#requisi%C3%A7%C3%A3o-get-com-fetch-then)
 * [Requisição GET com fetch await](https://github.com/Dirack/Estudos/tree/master/react/requisicoes/get_fetch_await#requisi%C3%A7%C3%A3o-get-com-fetch-await)
 * [Todo List Frontend: Consumo de API no ReactJS](https://github.com/Dirack/Estudos/tree/master/react/todo_list_frontend#todo-list-frontend-consumo-de-api-no-reactjs)
+* [Treemap](https://github.com/Dirack/Estudos/tree/master/react/estudos_treemap#treemap)
 * [NextJS 14](https://github.com/Dirack/Estudos/tree/master/react/nextjs14#nextjs-14)
 
 ## Criando projeto ReactJS com Create React App (CRA)
