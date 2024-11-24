@@ -27,3 +27,4 @@ da página precisa de interatividade, então só ele precisa receber a diretiva 
 - [O componente image do next](https://github.com/Dirack/Estudos/tree/master/react/nextjs14/componente_image#o-componente-image-do-next)
 - [Exemplo de middleware no nextjs [Não está funcionando ainda!]](https://github.com/Dirack/Estudos/tree/master/react/nextjs14/middleware#exemplo-de-middleware-no-nextjs)
 - [Estudo sobre server actions no nextjs](https://github.com/Dirack/Estudos/tree/master/react/nextjs14/server_actions#estudo-sobre-server-actions-no-nextjs)
+- [Estudo sobre server actions de formulário](https://github.com/Dirack/Estudos/tree/master/react/nextjs14/server_actions_form#estudo-sobre-server-actions-de-formul%C3%A1rio)
