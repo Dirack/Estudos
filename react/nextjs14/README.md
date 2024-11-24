@@ -29,3 +29,4 @@ da página precisa de interatividade, então só ele precisa receber a diretiva 
 - [Estudo sobre server actions no nextjs](https://github.com/Dirack/Estudos/tree/master/react/nextjs14/server_actions#estudo-sobre-server-actions-no-nextjs)
 - [Estudo sobre server actions de formulário](https://github.com/Dirack/Estudos/tree/master/react/nextjs14/server_actions_form#estudo-sobre-server-actions-de-formul%C3%A1rio)
 - [Estudo sobre server actions de formulário (recebendo dados)](https://github.com/Dirack/Estudos/tree/master/react/nextjs14/server_actions_form_receber_dados#estudo-sobre-server-actions-de-formul%C3%A1rio-recebendo-dados)
+- [Criar apis no nextjs](https://github.com/Dirack/Estudos/tree/master/react/nextjs14/criar_api#criar-apis-no-nextjs)
