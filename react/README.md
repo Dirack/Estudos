@@ -32,6 +32,10 @@ feito para facilitar a criação de componente react com código HTML ao invés 
 * [NextJS 14](https://github.com/Dirack/Estudos/tree/master/react/nextjs14#nextjs-14)
 * [Redux](https://github.com/Dirack/Estudos/tree/master/react/redux#redux)
 
+## Miniprojetos
+
+- [Jogo da memória](https://github.com/Dirack/Estudos/tree/master/react/jogo_da_memoria#jogo-da-mem%C3%B3ria)
+
 ## Criando projeto ReactJS com Create React App (CRA)
 
 Use o seguinte comando:
