@@ -4,6 +4,8 @@ import * as C from './App.styles'
 import logoImage from './assets/devmemory_logo.png'
 import { useState } from 'react'
 import { InfoItem } from './components/InfoItem'
+import { Button } from './components/Button'
+import restartSVG from './svgs/restart.svg'
 
 const Page = ()=>{
 
@@ -26,7 +28,7 @@ const Page = ()=>{
           <InfoItem label="Movimentos" value={valor.toString()} />
         </C.InfoArea>
 
-        <button onClick={update}>Reiniciar</button>
+        <Button label='Reiniciar' icon={restartSVG.src} onClick={update} />
       </C.Info>
       <C.GridArea>
         ...
