@@ -7,6 +7,7 @@ import { InfoItem } from './components/InfoItem'
 import { Button } from './components/Button'
 import restartSVG from './svgs/restart.svg'
 import { GridItemType } from './types/GridItem'
+import { items } from './data/items'
 
 const Page = ()=>{
   const [playing, setPlaying] = useState<boolean>(false)
@@ -18,7 +19,22 @@ const Page = ()=>{
   useEffect(() => resetAndCreateGrid(),[])
 
   const resetAndCreateGrid = ()=>{
+    setTimeElapsed(0)
+    setMoveCount(0)
+    setShownCount(0)
 
+    let tmpGrid: GridItemType[] = []
+    for(let i = 0; i < items.length * 2; i++){
+      tmpGrid.push({
+        item: null,
+        shown: false,
+        permanentShown: false,
+      })
+    }
+
+    setGridItems(tmpGrid)
+
+    setPlaying(true)
   }
 
   return (
