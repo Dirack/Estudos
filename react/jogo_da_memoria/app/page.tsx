@@ -2,18 +2,23 @@
 import Image from 'next/image'
 import * as C from './App.styles'
 import logoImage from './assets/devmemory_logo.png'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { InfoItem } from './components/InfoItem'
 import { Button } from './components/Button'
 import restartSVG from './svgs/restart.svg'
+import { GridItemType } from './types/GridItem'
 
 const Page = ()=>{
+  const [playing, setPlaying] = useState<boolean>(false)
+  const [timeElapsed,setTimeElapsed] = useState<number>(0)
+  const [moveCount,setMoveCount] = useState<number>(0)
+  const [shownCount,setShownCount] = useState<number>(0)
+  const [gridItems,setGridItems] = useState<GridItemType[]>([])
 
-  const [valor,setValor] = useState(0)
+  useEffect(() => resetAndCreateGrid(),[])
 
-  const update = ()=>{
-    let v = valor+1
-    setValor(v)
+  const resetAndCreateGrid = ()=>{
+
   }
 
   return (
@@ -25,10 +30,10 @@ const Page = ()=>{
 
         <C.InfoArea>
           <InfoItem label="Tempo" value='00:00' />
-          <InfoItem label="Movimentos" value={valor.toString()} />
+          <InfoItem label="Movimentos" value="0" />
         </C.InfoArea>
 
-        <Button label='Reiniciar' icon={restartSVG.src} onClick={update} />
+        <Button label='Reiniciar' icon={restartSVG.src} onClick={resetAndCreateGrid} />
       </C.Info>
       <C.GridArea>
         ...
