@@ -49,8 +49,14 @@ INSTALLED_APPS = [
 ]
 ```
 
-Para rodar as migrations da aplicação:
+Para criar as migrations da aplicação:
 
 ```
 python manage.py makemigrations meu_app
+```
+
+Para rodar as migrations
+
+```
+python manage.py migrate # Iniciar as migrations do banco de dados
 ```
