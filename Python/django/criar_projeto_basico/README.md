@@ -26,3 +26,24 @@ python manage.py migrate # Iniciar as migrations do banco de dados
 python manage.py help # Obter ajuda
 python manage.py runserver # Iniciar o servidor
 ```
+
+Para criar um app no projeto django
+
+```
+python manage.py startapp meu_app
+```
+
+Depois você precisará registrar o seu app no arquivo 'settings.py' no seu projeto na lista 'INSTALLED_APPS'
+
+```py
+# Application definition
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+]
+```
