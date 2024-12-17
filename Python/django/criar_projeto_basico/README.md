@@ -1,4 +1,4 @@
-# Django
+# Criar projeto básico
 
 Para instalar o django utilizando o pip:
 
