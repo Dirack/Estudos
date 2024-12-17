@@ -45,5 +45,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'meu_app',
 ]
+```
+
+Para rodar as migrations da aplicação:
+
+```
+python manage.py makemigrations meu_app
 ```
