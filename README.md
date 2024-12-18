@@ -37,6 +37,7 @@
 ### Ferramentas gerais
 
 - [Docker](https://github.com/Dirack/Estudos/tree/master/docker#estudos-sobre-docker)
+- [Docker compose](https://github.com/Dirack/Estudos/tree/master/docker_compose#docker-compose)
 - [CesiumJS](https://github.com/Dirack/Estudos/tree/master/cesiumjs#cesiumjs)
 - [Cypress](https://github.com/Dirack/Estudos/tree/master/cypress#estudos-sobre-testes-end-to-end-com-cypress)
 - [GDB](https://github.com/Dirack/Estudos/tree/master/GDB#estudo-sobre-depura%C3%A7%C3%A3o-utilizando-o-gnu-debugger-gdb)
