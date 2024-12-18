@@ -12,6 +12,7 @@ you create and start all the services from your configuration file.
 ## Índice
 
 - [Olá mundo docker compose](https://github.com/Dirack/Estudos/tree/master/docker_compose/ola_mundo#ol%C3%A1-mundo-docker-compose) - Subir container nginx
+- [Quick start com aplicação flask simples](https://github.com/Dirack/Estudos/tree/master/docker_compose/aplicacao_flask_redis_simples#quick-start-com-aplica%C3%A7%C3%A3o-flask-simples)
 
 ## Key commands
 
