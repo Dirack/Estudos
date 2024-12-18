@@ -24,6 +24,7 @@
 * [PHP](https://github.com/Dirack/Estudos/tree/master/PHP#php)
 * [Python](https://github.com/Dirack/Estudos/tree/master/Python#estudos-sobre-python)
 * [ReactJS](https://github.com/Dirack/Estudos/tree/master/react#reactjs)
+* [NextJS](https://github.com/Dirack/Estudos/tree/master/next#nextjs)
 * [SCons](https://github.com/Dirack/Estudos/tree/master/SCons#estudos-sobre-scons)
 * [Shell Script](https://github.com/Dirack/Estudos/tree/master/Shell_script#estudos-sobre-shell-script)
 * [SQL](https://github.com/Dirack/Estudos/tree/master/SQL#estudos-sobre-sql)
