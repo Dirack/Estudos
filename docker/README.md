@@ -1,6 +1,6 @@
 # Estudos sobre docker
 
-[:arrow_up: Voltar a home]([https://github.com/Dirack/Estudos/tree/master#estudos](https://github.com/Dirack/Estudos/tree/master#ferramentas-gerais))
+[:arrow_up: Voltar a home](https://github.com/Dirack/Estudos/tree/master#ferramentas-gerais)
 
 ## Índice
 
