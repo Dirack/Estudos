@@ -2,7 +2,7 @@
 
 Para acessar a página admin do django você irá utilizar a URL da aplicação no endpoint '/admin'.
 
-Daí para criar o superuser você utiliza
+Daí para criar o superuser você utiliza (Se tiver no windows, rode o comando no PowerShell, pois pode não funcionar no gitbash)
 
 ```
 python manage.py createsuperuser
