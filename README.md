@@ -2,7 +2,9 @@
 
 > Estudos sobre diferentes tópicos de linguagens de programação variadas.
 
-## Índice - Linguagens de programação
+## Índice
+
+### Linguagens de programação
 
 * Assembly
 * [Bootstrap 4](https://github.com/Dirack/Estudos/tree/master/Bootstrap#estudos-sobre-bootstrap-4)
@@ -10,8 +12,6 @@
 * [C++](https://github.com/Dirack/Estudos/tree/master/c%2B%2B#estudos-sobre-c)
 * CSS
 * Fortran
-* [GDB](https://github.com/Dirack/Estudos/tree/master/GDB#estudo-sobre-depura%C3%A7%C3%A3o-utilizando-o-gnu-debugger-gdb)
-* [Git](https://github.com/Dirack/Estudos/tree/master/git#estudos-sobre-versionamento-de-c%C3%B3digo-com-o-git)
 * [HTML-CSS](https://github.com/Dirack/Estudos/tree/master/HTML_CSS#estudos-sobre-html-css)
 * [Java](https://github.com/Dirack/Estudos/tree/master/Java#java)
 * [JavaScript](https://github.com/Dirack/Estudos/tree/master/JavaScript#javascript)
@@ -32,11 +32,15 @@
 * [SASS](https://github.com/Dirack/Estudos/tree/master/Sass#o-que-%C3%A9-sass)
 * [Webpack](https://github.com/Dirack/Estudos/tree/master/webpack#estudo-sobre-webpack)
 * [VueJS](https://github.com/Dirack/Estudos/tree/master/vue#vuejs)
-* [Docker](https://github.com/Dirack/Estudos/tree/master/docker#estudos-sobre-docker)
-* [Cypress](https://github.com/Dirack/Estudos/tree/master/cypress#estudos-sobre-testes-end-to-end-com-cypress)
 * [TailwindCSS](https://github.com/Dirack/Estudos/tree/master/tailwind#estudos-sobre-tailwindcss)
 
-## Índice - Conceitos e ferramentas gerais
+### Ferramentas gerais
 
-- [Conceitos de programação](https://github.com/Dirack/Estudos/tree/master/conceitos#conceitos-de-programa%C3%A7%C3%A3o)
+- [Docker](https://github.com/Dirack/Estudos/tree/master/docker#estudos-sobre-docker)
 - [CesiumJS](https://github.com/Dirack/Estudos/tree/master/cesiumjs#cesiumjs)
+- [Cypress](https://github.com/Dirack/Estudos/tree/master/cypress#estudos-sobre-testes-end-to-end-com-cypress)
+- [GDB](https://github.com/Dirack/Estudos/tree/master/GDB#estudo-sobre-depura%C3%A7%C3%A3o-utilizando-o-gnu-debugger-gdb)
+- [Git](https://github.com/Dirack/Estudos/tree/master/git#estudos-sobre-versionamento-de-c%C3%B3digo-com-o-git)
+
+### Conceitos
+- [Conceitos de programação](https://github.com/Dirack/Estudos/tree/master/conceitos#conceitos-de-programa%C3%A7%C3%A3o)
