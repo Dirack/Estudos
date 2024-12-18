@@ -11,6 +11,12 @@ O React utiliza o conceito de [Single Page Application (SPA)](https://github.com
 Os arquivos escritos em JSX são transpilados pelo Babel para código JavaScript para o navegador. Isto é
 feito para facilitar a criação de componente react com código HTML ao invés de vários elementos react.
 
+O React, criado pelo Facebook, é utilizado para criar interfaces de usuário, suas principais funcionalidades
+são as ferramentas disponíveis para auxiliar na criação da UI e o uso de componentes, para que seja possível
+aumentar o máximo de reuso na aplicação. A principal vantagem é poder escrever “html e JavaScript no mesmo arquivo de código”
+por meio do jsx, uma extensão para a sintaxe da linguagem JavaScript familiar a muitos desenvolvedores por sua semelhança ao html.
+Somando o React a bibliotecas de estilização e de gerenciamento de requisições http, o React é um framework bem estabelecido e de muita utilidade. 
+
 ## Índice
 
 * [Componentes](https://github.com/Dirack/Estudos/tree/master/react/quadrado#exemplo-react-components)
