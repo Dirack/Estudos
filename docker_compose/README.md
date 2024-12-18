@@ -10,3 +10,29 @@ networks, and volumes in a single, comprehensible YAML configuration file. Then,
 you create and start all the services from your configuration file.
 
 ## Índice
+
+## Key commands
+
+To start all the services defined in your 'compose.yaml' file:
+
+```
+docker compose up
+```
+
+To stop and remove the running services:
+
+```
+docker compose down 
+```
+
+If you want to monitor the output of your running containers and debug issues, you can view the logs with:
+
+```
+docker compose logs
+```
+
+To lists all the services along with their current status:
+
+```
+docker compose ps
+```
