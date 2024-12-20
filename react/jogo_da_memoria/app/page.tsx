@@ -8,6 +8,7 @@ import { Button } from './components/Button'
 import restartSVG from './svgs/restart.svg'
 import { GridItemType } from './types/GridItem'
 import { items } from './data/items'
+import { GridItem } from './components/GridItem'
 
 const Page = ()=>{
   const [playing, setPlaying] = useState<boolean>(false)
@@ -27,8 +28,8 @@ const Page = ()=>{
     for(let i = 0; i < items.length * 2; i++){
       tmpGrid.push({
         item: null,
-        shown: false,
-        permanentShown: false,
+        shown: true,
+        permanentShown: true,
       })
     }
 
@@ -47,6 +48,10 @@ const Page = ()=>{
     setPlaying(true)
   }
 
+  const handleItemClick = (index: number)=>{
+
+  }
+
   return (
     <C.Container>
       <C.Info>
@@ -62,7 +67,17 @@ const Page = ()=>{
         <Button label='Reiniciar' icon={restartSVG.src} onClick={resetAndCreateGrid} />
       </C.Info>
       <C.GridArea>
-        ...
+        <C.Grid>
+          {gridItems.map((item,index)=>{
+              return (
+                <GridItem
+                  key={index}
+                  item={item}
+                  onClick={()=>handleItemClick(index)}
+                />
+              )
+          })}
+        </C.Grid>
       </C.GridArea>
     </C.Container>
   )
