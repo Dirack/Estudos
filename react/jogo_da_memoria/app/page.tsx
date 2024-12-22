@@ -9,6 +9,7 @@ import restartSVG from './svgs/restart.svg'
 import { GridItemType } from './types/GridItem'
 import { items } from './data/items'
 import { GridItem } from './components/GridItem'
+import { formatTimeElapsed } from './helpers/formatTimeElapsed'
 
 const Page = ()=>{
   const [playing, setPlaying] = useState<boolean>(false)
@@ -19,6 +20,14 @@ const Page = ()=>{
 
   useEffect(() => resetAndCreateGrid(),[])
 
+  useEffect(()=>{
+    const timer = setInterval(()=>{
+      if(playing) setTimeElapsed(timeElapsed+1)
+    },1000)
+    return ()=>clearInterval(timer)
+    
+  },[playing,timeElapsed])
+
   const resetAndCreateGrid = ()=>{
     setTimeElapsed(0)
     setMoveCount(0)
@@ -28,8 +37,8 @@ const Page = ()=>{
     for(let i = 0; i < items.length * 2; i++){
       tmpGrid.push({
         item: null,
-        shown: true,
-        permanentShown: true,
+        shown: false,
+        permanentShown: false,
       })
     }
 
@@ -49,7 +58,15 @@ const Page = ()=>{
   }
 
   const handleItemClick = (index: number)=>{
+    if(playing && index !== null && shownCount < 2){
 
+      let tmpGrid = [...gridItems]
+      if(tmpGrid[index].permanentShown == false && tmpGrid[index].shown == false){
+        tmpGrid[index].shown = true
+        setShownCount(shownCount+1)
+      }
+      setGridItems(tmpGrid)
+    }
   }
 
   return (
@@ -60,7 +77,7 @@ const Page = ()=>{
         </C.LogoLink>
 
         <C.InfoArea>
-          <InfoItem label="Tempo" value='00:00' />
+          <InfoItem label="Tempo" value={formatTimeElapsed(timeElapsed)} />
           <InfoItem label="Movimentos" value="0" />
         </C.InfoArea>
 
