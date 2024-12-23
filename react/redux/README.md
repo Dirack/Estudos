@@ -6,7 +6,7 @@
 
 ## Documentação
 
-[Ducumentação oficial](https://react-redux.js.org/introduction/getting-started)
+[Documentação oficial](https://react-redux.js.org/introduction/getting-started)
 
 [Repositório no github](https://github.com/vercel/next.js/tree/canary/examples/with-redux)
 
