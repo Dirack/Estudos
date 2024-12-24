@@ -1,1 +1,1 @@
-# Estudo django sobre extends templates html e links
+# Extend templates html e links
