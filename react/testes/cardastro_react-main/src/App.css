@@ -1,0 +1,31 @@
+* {
+  font-family: Rubik, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+}
+
+.button {
+  display: block;
+  border: 0;
+  background-color: #6A7D8B;
+  color: #FFF;
+  font-size: 16px;
+  padding: 10px 40px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+}
+.button.full {
+  width: 100%;
+}
+.button:hover {
+  opacity: .9;
+}
+.button:disabled {
+  opacity: .3;
+}
