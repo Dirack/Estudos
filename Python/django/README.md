@@ -6,3 +6,4 @@
 - [Criar e administrar usuários no django admin](https://github.com/Dirack/Estudos/tree/master/Python/django/superUser#criar-e-administrar-usu%C3%A1rios-no-django-admin)
 - [Vários models e chave estrangeira](https://github.com/Dirack/Estudos/tree/master/Python/django/estudo#v%C3%A1rios-models-e-chave-estrangeira)
 - [Rotas e views](https://github.com/Dirack/Estudos/tree/master/Python/django/rotas/meuprojeto#rotas-e-views)
+- [Estudo django sobre extends templates html e links](https://github.com/Dirack/Estudos/tree/master/Python/django/extends/meuprojeto#estudo-django-sobre-extends-templates-html-e-links)
