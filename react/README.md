@@ -37,6 +37,7 @@ Somando o React a bibliotecas de estilização e de gerenciamento de requisiçõ
 * [Radar graph](https://github.com/Dirack/Estudos/tree/master/react/radar_graph#radar-graph)
 * [NextJS 14](https://github.com/Dirack/Estudos/tree/master/react/nextjs14#nextjs-14)
 * [Redux](https://github.com/Dirack/Estudos/tree/master/react/redux#redux)
+* [Teste de aplicação ReactJS com jest](https://github.com/Dirack/Estudos/tree/master/react/testes#testes-de-aplica%C3%A7%C3%A3o-reactjs-com-jest)
 
 ## Miniprojetos
 
