@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Lista de alunos aqui</h1>
+
+<ul>
+{% for aluno in alunos %}
+<li>{{aluno}}</li>
+{% endfor %}
+</ul>
+
+{% endblock content %}
