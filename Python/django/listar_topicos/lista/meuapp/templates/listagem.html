@@ -1,0 +1,7 @@
+<h1>Listagem por tópico: {{topic}}</h1>
+
+<ul>
+    {% for entry in entries %}
+    <li>{{ entry.entry }}, sou um {{entry.topic}} de id {{entry.id}}</li>
+    {% endfor %}
+</ul>
