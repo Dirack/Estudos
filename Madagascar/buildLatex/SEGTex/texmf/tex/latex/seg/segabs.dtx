@@ -1,0 +1,422 @@
+% \iffalse meta-comment
+%
+%   Copyright (C) 2004 by Sergey Fomel 
+%  
+%    This work may be distributed and/or modified under the
+%    conditions of the LaTeX Project Public License, either version 1.3
+%    of this license or (at your option) any later version.
+%    The latest version of this license is in
+%      http://www.latex-project.org/lppl.txt
+%    and version 1.3 or later is part of all distributions of LaTeX
+%    version 2003/12/01 or later.
+%
+% \fi
+%
+% \iffalse
+%<class>\NeedsTeXFormat{LaTeX2e}
+%<class>\ProvidesClass{segabs}[2005/04/03 v1.0 SEG expanded abstract]
+%
+%<*driver>
+\ProvidesFile{segabs.dtx}[2005/04/03 v1.0 segabs class]
+\documentclass{ltxdoc}
+\GetFileInfo{segabs.dtx}
+\EnableCrossrefs
+\RecordChanges
+\CodelineIndex
+\begin{document}
+\DocInput{segabs.dtx}
+\end{document}
+%</driver>
+%\fi
+%
+% \CheckSum{0}
+%% \CharacterTable
+%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%%   Digits        \0\1\2\3\4\5\6\7\8\9
+%%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%%   Dollar        \$     Percent       \%     Ampersand     \&
+%%   Acute accent  \'     Left paren    \(     Right paren   \)
+%%   Asterisk      \*     Plus          \+     Comma         \,
+%%   Minus         \-     Point         \.     Solidus       \/
+%%   Colon         \:     Semicolon     \;     Less than     \<
+%%   Equals        \=     Greater than  \>     Question mark \?
+%%   Commercial at \@     Left bracket  \[     Backslash     \\
+%%   Right bracket \]     Circumflex    \^     Underscore    \_
+%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%%   Right brace   \}     Tilde         \~}
+%
+% \changes{v1.0}{2005/04/03}{Initial version}
+%
+% \DoNotIndex{\LoadClass,\DeclareOption,\ProcessOption}
+% \DoNotIndex{\@ifstar,\@mkboth,\@tempboxa,\\,\ ,\newcommand,
+% \providecommand,\renewcommand}
+%
+% \title{The \textsf{segabs} class for 
+% writing SEG expanded abstracts\thanks{This document corresponds to
+% \textsf{segabs.cls}~\fileversion, dated~\filedate.}}
+% \author{Sergey Fomel \\ \texttt{sergey.fomel@beg.utexas.edu}}
+% \maketitle
+% \begin{abstract}
+% This package provides a \LaTeX2e\ class for writing SEG expanded abstracts.
+% \end{abstract}
+%
+% \section{Introduction}
+% \LaTeX\ is a powerful document typesetting system. The new
+% \texttt{segabs.cls} package conforms to the \LaTeX2e\ standard.
+%
+% \section{Usage}
+%
+%\subsection{Options}
+%
+% Two options control the appearance...
+%
+%\subsection{Appearance}
+%
+% \DescribeEnv{abstract}
+% The |abstract| environment...
+%
+% The following macros are defined in the package:
+%
+% \subsection{Figures and tables}
+% \DescribeMacro{\inputdir}
+% |\inputdir|\marg{dirname}
+% specifies the top-level directory (current directory by default).
+%
+% \DescribeMacro{\figdir}
+% |\figdir| stores the name of the figure directory relative to the directory
+% specified by |\inputdir|. |\figdir| is ``|.|'' (the current directory) by
+% default. You can change it with |\renewcommand{\figdir}|\marg{dirname}.
+%
+% \DescribeMacro{\plot}
+% |\plot|\marg{filename}\marg{size}\marg{caption} inserts a figure from file
+% \meta{filename} (specified relative to figdir) with caption
+% \meta{caption}. The \meta{size} specification corresponds to the conventions
+% of the \textsf{graphicx} package. Examples:
+% \begin{itemize}
+% \item |width=\textwidth| (for scaling the figure and preserving the aspect
+% ratio)
+% \item |width=3in,height=0.5\textheight| (for scaling the figure
+% anisotropically) 
+% \end{itemize}
+% You can refer to the figure number with |\ref{fig:|\meta{filename}|}|.
+%
+% \DescribeMacro{\sideplot}
+% |\sideplot|\marg{filename}\marg{size}\marg{caption} ...
+%
+% \DescribeMacro{\tabl}
+% The |\tabl|\marg{label}\marg{caption}\marg{table} macro is used to 
+% manage tables. In the manuscript mode, the defined \meta{table} will appear at% the end of the 
+% paper, and its caption will be
+% added to the list of tables. You can refer to the table number with 
+% |\ref{tbl:|\meta{filename}|}|.
+%
+% \StopEventually{\PrintIndex\PrintChanges}
+%
+% \section{Implementation}
+% Load \textsf{ifthen} package for conditionals.
+%    \begin{macrocode}
+\RequirePackage{ifthen}
+%    \end{macrocode}
+% Option to set \emph{Times} font.
+%    \begin{macrocode}
+\newboolean{@times}
+\setboolean{@times}{true}
+\DeclareOption{times}{\setboolean{@times}{true}}
+\DeclareOption{notimes}{\setboolean{@times}{false}}
+%    \end{macrocode}
+% Our package is a derivative of the standard \texttt{article} class.
+%    \begin{macrocode}
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
+%    \end{macrocode}
+% We will use 11pt fonts by default.
+%    \begin{macrocode}
+\ExecuteOptions{times}
+\ProcessOptions*
+\LoadClass[11pt]{article}
+%    \end{macrocode}
+% \subsection{Fonts}
+% Load fonts for text and math.
+%    \begin{macrocode}
+\ifthenelse{\boolean{@times}}{\RequirePackage{mathptmx}}{}
+\DeclareSymbolFont{largesymbols}{OMX}{cmex}{m}{n}
+%    \end{macrocode}
+%
+% Load SEG style package
+%    \begin{macrocode}
+\RequirePackage{seg}
+%    \end{macrocode}
+%
+% \subsection{Figures and Tables}
+% \begin{macro}{\figdir}
+% |\figdir| is a variable. It will need to be redefined to specify the figure
+% directory. 
+%    \begin{macrocode}
+\providecommand{\figdir}{.}
+\providecommand{\setfigdir}[1]{\renewcommand{\figdir}{#1}}
+\providecommand{\fig@file}[1]{\@path/\figdir/#1}
+%    \end{macrocode}
+% \end{macro}
+% Count figures.
+%    \begin{macrocode}
+\newcounter{@plots}
+\setcounter{@plots}{0}
+%    \end{macrocode}
+% Define commands for figure inclusion.
+% \begin{macro}{\plot}
+%    \begin{macrocode}
+\DeclareRobustCommand{\fullplot}[4][htbp]{%
+  \begin{figure*}[#1]
+    \centering
+    \includegraphics[#3]{\fig@file{#2}}
+    \caption[]{#4}
+    \label{fig:\@path-#2}
+    \label{fig:#2}
+  \end{figure*}}
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\sideplot}
+%    \begin{macrocode}
+\DeclareRobustCommand{\sideplot}[4][htbp]{%
+  \begin{figure}[#1]
+    \centering
+    \includegraphics[#3]{\fig@file{#2}}
+    \caption[]{#4}
+    \label{fig:\@path-#2}
+    \label{fig:#2}
+  \end{figure}}
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\plot}
+%    \begin{macrocode}
+\def\plot{\@ifstar{\fullplot}{\sideplot}}
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\multiplot}
+%    \begin{macrocode}
+\RequirePackage{subfig}
+\def\next@item#1,#2?{#1}
+\def\rest@item#1,#2?{#2}
+\newcounter{sub@fig}
+%    \end{macrocode} 
+%    \begin{macrocode}
+\newcommand{\sidemultiplot}[5][htbp]{
+  \begin{figure}[#1]
+    \centering
+    \setcounter{sub@fig}{0}
+    \edef\list@i{#3}
+    \loop
+    \edef\item@i{\expandafter\next@item\list@i,\empty?}
+    \edef\list@i{\expandafter\rest@item\list@i,\empty?}
+    \ifx\item@i\empty 
+    \else
+    \stepcounter{sub@fig}
+    \subfloat[]{\includegraphics[#4]{\fig@file{\item@i}}%
+      \label{fig:\@path-\item@i}
+      \label{fig:\item@i}}
+    \ifthenelse{\value{sub@fig} = #2}{\\ \setcounter{sub@fig}{0}}{}   
+    \repeat
+    \caption{#5}
+    \label{fig:\@path-#3}
+    \label{fig:#3}
+  \end{figure}
+}
+\newcommand{\fullmultiplot}[5][htbp]{
+  \begin{figure*}[#1]
+    \centering
+    \setcounter{sub@fig}{0}
+    \edef\list@i{#3}
+    \loop
+    \edef\item@i{\expandafter\next@item\list@i,\empty?}
+    \edef\list@i{\expandafter\rest@item\list@i,\empty?}
+    \ifx\item@i\empty 
+    \else
+    \stepcounter{sub@fig}
+    \subfloat[]{\includegraphics[#4]{\fig@file{\item@i}}%
+      \label{fig:\@path-\item@i}
+      \label{fig:\item@i}}
+    \ifthenelse{\value{sub@fig} = #2}{\\ \setcounter{sub@fig}{0}}{}   
+    \repeat
+    \caption{#5}
+    \label{fig:\@path-#3}
+    \label{fig:#3}
+  \end{figure*}
+}
+\def\multiplot{\@ifstar{\fullmultiplot}{\sidemultiplot}}
+\renewcommand{\thesubfigure}{\alph{subfigure}}
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\tabl}
+% Define the |\tabl| macro for handling tables.
+%    \begin{macrocode}
+\providecommand{\seg@sidetabl}[4][htbp]{
+  \begin{table}[#1]
+    #4
+    \caption{#3}
+    \label{tbl:#2}
+  \end{table}
+}
+\providecommand{\seg@fulltabl}[4][htbp]{
+  \begin{table*}[#1]
+    #4
+    \caption{#3}
+    \label{tbl:#2}
+  \end{table*}
+}
+\def\tabl{\@ifstar{\seg@fulltabl}{\seg@sidetabl}}
+%    \end{macrocode}
+% \end{macro}
+% \subsection{References}
+% Load the \textsf{natbib} package for natural-science-style citations.
+%    \begin{macrocode}
+\RequirePackage{natbib}
+%    \end{macrocode}
+% The following is \textsf{natbib}'s default.
+%    \begin{macrocode}
+\bibpunct[,]{(}{)}{;}{a}{,}{,}
+%    \end{macrocode}
+% Redefine the reference section name.
+%    \begin{macrocode}
+\DeclareRobustCommand{\refname}{REFERENCES}
+\renewcommand\bibsection{\clearpage\section{\refname}}
+%    \end{macrocode}
+% For backward compatibility: shortcite refers to the year
+%    \begin{macrocode}
+\newcommand{\shortcite}[1]{\citeyearpar{#1}}
+%    \end{macrocode}
+%
+% \subsection{Page layout}
+% Specify page dimensions. \emph{This should be adjusted for A4 paper format!}
+%    \begin{macrocode}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9.0625in}
+\setlength{\parindent}{0em}
+\setlength{\headheight}{0.3125in}
+\setlength{\headsep}{0.125in}
+\setlength{\parskip}{1.5ex plus0.1ex minus0.1ex}
+\setlength{\topsep}{0em}%
+\setlength{\itemsep}{0em}
+\setlength{\topmargin}{-0.5in}
+\setlength{\columnsep}{0.3125in}
+%    \end{macrocode}
+% \subsection{Font size}
+% Messing with sizes to get the required 9pt Times-Roman
+%    \begin{macrocode}
+\let\normal@size\normalsize
+\let\seg@small\small
+\let\seg@size\footnotesize
+\renewcommand{\Large}{\protect\seg@size}
+\renewcommand{\normalsize}{\protect\seg@size}
+\renewcommand{\small}{\protect\tiny}
+\renewcommand{\footnotesize}{\protect\tiny}
+\seg@size
+%    \end{macrocode}
+% \subsection{Section commands}
+%    \begin{macrocode}
+\newcommand{\seg@section}{%
+\@startsection {section}{1}{\z@}%
+{-3.5ex \@plus -1ex \@minus -.2ex}%
+{1ex \@plus .2ex}%
+{\normalfont\Large\bfseries\MakeUppercase}}
+\newcommand{\seg@subsection}[2][]{%
+\begin{minipage}{\columnwidth}
+\textbf{#2} 
+\end{minipage}}
+\newcommand{\seg@subsubsection}[2][]{%
+\begin{minipage}{\columnwidth}
+\textit{#2} 
+\end{minipage}}
+\newcommand{\seg@subsubsubsection}[2][]{%
+\underline{#2}.--}
+\def\section{\@ifstar{\seg@section*}{\seg@section*}}%
+\def\subsection{\@ifstar{\seg@subsection}{\seg@subsection}}%
+\def\subsubsection{\@ifstar{\seg@subsubsection}{\seg@subsubsection}}
+\def\subsubsubsection{\@ifstar{\seg@subsubsubsection}{\seg@subsubsubsection}}
+%    \end{macrocode}
+% \subsection{Title and author}
+% \begin{macro}{\title}
+% |\title| is redefined for consistency. It changes the internal |\seg@title|.
+%    \begin{macrocode}
+\newcommand{\seg@title}{}
+\renewcommand{\title}[1]{\renewcommand{\seg@title}{#1}}
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\address}
+% The |\address| macro will save the address in the internal |\seg@address|.
+%    \begin{macrocode}
+\providecommand{\seg@address}{}
+\providecommand{\address}[1]{\renewcommand{\seg@address}{\emph{#1}}}
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\email}
+% The |\email| macro will save the e-mail address in the internal 
+% |\seg@email|.
+%    \begin{macrocode}
+\providecommand{\seg@email}{.}
+\providecommand{\email}[1]{\renewcommand{\seg@email}{#1}}
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\author}
+% Finally, everything goes to \author and is stored in |\seg@author|.
+%    \begin{macrocode}
+\providecommand{\seg@author}{}
+\renewcommand{\author}[1]{%
+\renewcommand{\seg@author}{%
+\twocolumn[\vspace{0.25in}\normal@size\textbf{\seg@title}%
+\newline\seg@small\textit{#1}\vspace{2ex}]}}
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\maketitle}
+% Redefined |\maketitle| is dumping the |\seg@author|.
+%    \begin{macrocode}
+\renewcommand{\maketitle}{\seg@author}
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{abstract}
+% The abstract environment produces a summary section.
+%    \begin{macrocode}
+\renewenvironment{abstract}{%
+\begin{minipage}[t]{\columnwidth}
+\textbf{SUMMARY\\}\\*}{%
+\end{minipage}\vspace{2ex}}
+%    \end{macrocode}
+% \end{macro}
+% \subsection{Page style}
+% Define a page style
+%    \begin{macrocode}
+\newcommand{\ps@seg}{%
+\renewcommand{\@oddhead}{\hfill\seg@small\textbf{\seg@rhead}\seg@size\hfill}
+\renewcommand{\@evenhead}{\@oddhead}
+\renewcommand{\@oddfoot}{}
+\renewcommand{\@evenfoot}{}}
+%
+\thispagestyle{empty}
+\pagestyle{seg}
+%    \end{macrocode}
+% \subsection{Appendix}
+% Clean this mess later.
+%    \begin{macrocode}
+\newcounter{@append}
+\providecommand{\append@name}{A}
+\providecommand{\appendname}[1]{\renewcommand{\append@name}{#1}}
+\renewcommand{\appendix}{%
+  \ifthenelse{\equal{\append@name}{A}}{%
+    \renewcommand{\append@name}{\Alph{@append}}}{}
+  \setcounter{equation}{0}%
+  \renewcommand{\theequation}{\mbox{\append@name-\arabic{equation}}}%
+    \setcounter{figure}{0}%
+    \renewcommand{\thefigure}{\append@name-\arabic{figure}}%
+  \stepcounter{@append}
+}
+\providecommand{\append}[1]{%
+\appendix\section{Appendix \append@name}\section{#1}}
+%    \end{macrocode}
+% Packages for including things verbatum.
+%    \begin{macrocode}
+\RequirePackage{verbatim}
+\RequirePackage{moreverb}
+%    \end{macrocode}
+% \Finale
+\endinput

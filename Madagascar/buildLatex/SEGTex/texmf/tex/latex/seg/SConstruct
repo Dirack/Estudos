@@ -1,0 +1,93 @@
+import os, sys, signal, re
+
+env=Environment()
+
+if sys.platform == 'darwin':
+    env['ENV']['PATH'] = ':'.join(['/opt/local/bin',env['ENV']['PATH']])
+
+latex = WhereIs('latex')
+pdflatex = WhereIs('pdflatex')
+makeindex = WhereIs('makeindex')
+bibtex = WhereIs('bibtex')
+epstopdf = WhereIs('epstopdf') or WhereIs('a2ping')
+
+env.Command(Split('seg.sty geophysics.cls georeport.cls segabs.cls eage.cls'),
+            Split('seg.ins seg.dtx geophysics.dtx georeport.dtx segabs.dtx eage.dtx'),
+            '%s $SOURCE' % latex)
+
+for cls in ('geophysics','georeport','segabs','eage'):
+    env.Command([cls+'.pdf',cls+'.aux',cls+'.gls',
+                 cls+'.glo',cls+'.ind',cls+'.idx'],
+                cls+'.dtx',
+                '%s $SOURCE && '
+                '%s -s gglo.ist -o ${TARGETS[2]} ${TARGETS[3]} && '
+                '%s -s gind.ist -o ${TARGETS[4]} ${TARGETS[5]} && '
+                '%s $SOURCE' % (pdflatex,makeindex,makeindex,pdflatex))
+    
+def interrupt(signum,frame):
+    global child
+    print("%s: aborting..." % sys.argv[0])
+    print("Press Enter a few times to empty LaTeX buffer!")
+    if child:
+        os.kill(child,signal.SIGINT)
+    sys.exit(1)
+
+signal.signal(signal.SIGINT,interrupt)
+
+def system(command,arg):
+    global child
+    child = os.fork()
+    if child:        
+        child,err = os.waitpid(child,0)
+        child = 0
+        return err
+    else:
+        os.execv(command,[command,arg])
+        os._exit(1)
+
+def latex2pdf(target=None,source=None,env=None):
+    "Convert LaTeX to DVI"
+    tex = str(source[0])
+    pdf = str(target[0])
+    stem = re.sub('\.[^\.]+$','',pdf) 
+    # First latex run
+    if system(pdflatex,tex):
+        return 1
+    system(bibtex,stem)
+    system(pdflatex,tex)
+    system(pdflatex,tex)
+    return 0
+
+def latex_emitter(target, source, env):
+    '''Produces a list of extra outputs from the LaTeX/BibTeX'''
+    base = re.sub('\.[^\.]+$','',str(source[0]))
+    extra = [base+x for x in ('.pdf','.aux','.log','.bbl','.blg')]
+    return (extra,source)
+
+Pdf = Builder(action = Action(latex2pdf),
+              emitter=latex_emitter,src_suffix='.ltx',suffix='.pdf')
+env.Append(BUILDERS={'Pdf':Pdf})
+
+env.Command('Fig/exgr.pdf','Fig/exgr.eps','%s $SOURCE' % epstopdf)
+
+env.Pdf('geophysics_manuscript.pdf',
+        ['geophysics_example.ltx','geophysics.cls',
+         'example.bib','Fig/exgr.pdf'])
+
+env.Command('geophysics_paper.ltx','geophysics_example.ltx',
+            'sed s/manuscript/paper/ < $SOURCE > $TARGET')
+
+for case in ('paper','twocolumn','endfloat','noblind'):    
+    env.Pdf('geophysics_%s.pdf' % case,
+            ['geophysics_%s.ltx' % case,'geophysics.cls',
+             'example.bib','Fig/exgr.pdf'])
+
+env.Pdf('geophysics_titlepage.pdf',['geophysics_titlepage.ltx','geophysics_example.pdf'])
+env.Pdf('geophysics_notitlepage.pdf',['geophysics_notitlepage.ltx','geophysics_example.pdf'])
+
+for case in ('segabs','eage'):
+    env.Pdf(case+'_example.pdf',
+            [case+'_example.ltx',case+'.cls',
+             'example.bib','Fig/exgr.pdf'])
+
+env.Pdf('segabs_final.pdf',['segabs_final.ltx','segabs_example.pdf'])

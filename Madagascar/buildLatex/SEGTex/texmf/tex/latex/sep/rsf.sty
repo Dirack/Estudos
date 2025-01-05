@@ -1,0 +1,14 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{rsf}[1997/01/01 v0.1 Macro redifinitions]
+
+\renewcommand{\OPS}{../../../filt/proc}
+
+\renewcommand{\opdex}[2]{\verbatiminput{\OPS/#1.c}}
+\renewcommand{\moddex}[2]{\opdex{#1}{#2}}
+
+\renewenvironment{exer}{\subsubsection*{{\rmfamily EXERCISES:}}
+\begin{list}{\arabic{exercount}}
+{\usecounter{exercount}\setcounter{exercount}{0}
+\setlength{\leftmargin}{20pt}
+\setlength{\labelsep}{10pt}}}{\end{list}}
+
