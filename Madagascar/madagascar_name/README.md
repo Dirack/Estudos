@@ -1,6 +1,6 @@
 # Explicação sobre o nome do pacote de processamento sísmico Madagascar
 
-Retirado do artigo [Porque Madagascar?](https://reproducibility.org/blog/2006/04/19/madagascar/) do blog do pacote Madagascar.
+Retirado do artigo [Porque Madagascar?](https://ahay.org/blog/2006/04/19/madagascar/) do blog do pacote Madagascar.
 
 ![madagascar](https://github.com/Dirack/Estudos/blob/master/Madagascar/madagascar_name/map.png)
 
