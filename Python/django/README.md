@@ -8,3 +8,4 @@
 - [Rotas e views](https://github.com/Dirack/Estudos/tree/master/Python/django/rotas/meuprojeto#rotas-e-views)
 - [Extend templates html e links](https://github.com/Dirack/Estudos/tree/master/Python/django/extends/meuprojeto#extend-templates-html-e-links)
 - [Rotas dinâmicas, laço for e listagem](https://github.com/Dirack/Estudos/tree/master/Python/django/listar_topicos/lista#rotas-din%C3%A2micas-la%C3%A7o-for-e-listagem)
+- [Estudo sobre models](https://github.com/Dirack/Estudos/tree/master/Python/django/estudo_models#estudo-sobre-models)
