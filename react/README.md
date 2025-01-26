@@ -2,6 +2,8 @@
 
 > Estudos sobre a biblioteca ReactJS
 
+[:arrow_up: Voltar a home](https://github.com/Dirack/Estudos/tree/master#estudos)
+
 ReactJS é uma biblioteca leve de JavaScript que utiliza o 
 [Virtual Document Object Model (DOM)](https://github.com/Dirack/Estudos/blob/master/react/README.md#o-que-%C3%A9-virtual-dom).
 Foi criada e é mantida pelo Facebook.
