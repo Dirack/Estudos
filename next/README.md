@@ -15,3 +15,36 @@ A renderização do lado do servidor (SSR) torna o Next.js adequado para aplicat
 direcionadas para SEO e com configurações simples.
 
 ## Índice
+
+## Client Side Rendering (CSR)
+
+o Client-Side Rendering (CSR) com React, o navegador baixa uma página HTML mínima e o JavaScript necessário para a página.
+O JavaScript é então usado para atualizar o DOM e renderizar a página. Quando o aplicativo é carregado pela primeira vez,
+o usuário pode notar um pequeno atraso antes de poder ver a página completa, isso ocorre porque a página não é totalmente
+renderizada até que todo o JavaScript seja baixado, analisado e executado.
+
+Depois que a página é carregada pela primeira vez, navegar para outras páginas no mesmo site geralmente é mais rápido,
+pois apenas os dados necessários precisam ser buscados,
+e o JavaScript pode renderizar novamente partes da página sem exigir uma atualização completa da página.
+
+No Next.js, há duas maneiras de implementar a renderização do lado do cliente:
+
+- Usando o hook do React useEffect()dentro de suas páginas em vez dos métodos de renderização do lado do servidor ( getStaticPropse getServerSideProps).
+- Usando uma biblioteca de busca de dados como SWR ou consulta TanStack para buscar dados sobre o cliente (recomendado).
+
+## Server Side Rendering (SSR)
+
+Renderização do lado do servidor (SSR) é uma técnica de desenvolvimento web em que o servidor
+web gera o conteúdo HTML completo de uma página web antes de enviá-lo ao navegador do usuário.
+
+Isso é diferente da renderização do lado do cliente (CSR), onde o navegador baixa uma estrutura
+HTML básica e então usa JavaScript para buscar e exibir o conteúdo.
+
+## Static Site Generation (SSG)
+
+A geração de site estático (SSG), é uma abordagem onde as páginas são geradas como arquivos estáticos durante o build da aplicação.
+Nesse modelo, as páginas já estão prontas para ser entregues ao navegador, antes mesmo de uma requisição ter sido feita.
+
+O SSG é uma alternativa proativa e interessante para aplicações cujo conteúdo não vai ser alterado com frequência,
+já que as páginas são geradas previamente e não dinamicamente.
+
