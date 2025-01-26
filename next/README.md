@@ -1,5 +1,7 @@
 # NextJS
 
+[:arrow_up: Voltar a home](https://github.com/Dirack/Estudos/tree/master#estudos)
+
 O Next.js é um framework React que permite construir sites e aplicativos web estáticos otimizados,
 altamente interativos e focados na experiência do usuário. Conhecido por proporcionar a melhor experiência
 para desenvolvedores na construção de aplicativos prontos para produção, com todas as funcionalidades necessárias.
