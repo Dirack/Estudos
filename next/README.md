@@ -16,6 +16,10 @@ direcionadas para SEO e com configurações simples.
 
 ## Índice
 
+- [Client Side Rendering (CSR)](https://github.com/Dirack/Estudos/blob/master/next/README.md#client-side-rendering-csr)
+- [Server Side Rendering (SSR)](https://github.com/Dirack/Estudos/blob/master/next/README.md#server-side-rendering-ssr)
+- [Static Site Generation (SSG)](https://github.com/Dirack/Estudos/blob/master/next/README.md#static-site-generation-ssg)
+
 ## Client Side Rendering (CSR)
 
 o Client-Side Rendering (CSR) com React, o navegador baixa uma página HTML mínima e o JavaScript necessário para a página.
