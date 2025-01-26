@@ -17,7 +17,7 @@
 * [JavaScript](https://github.com/Dirack/Estudos/tree/master/JavaScript#javascript)
 * JQuery
 * Latex
-* Madagascar
+* [Madagascar](https://github.com/Dirack/Estudos/tree/master/Madagascar#estudos-sobre-o-pacote-de-processamento-s%C3%ADsmico-madagascar)
 * Manage_External_Tools
 * Matematica
 * [NodeJS](https://github.com/Dirack/Estudos/tree/master/nodejs#estudos-sobre-nodejs)
