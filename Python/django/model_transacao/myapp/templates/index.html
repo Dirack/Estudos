@@ -1,0 +1,14 @@
+<h1>Estudo</h1>
+
+<p>Agora são {{now}}</p>
+
+<ul>
+    {% for transacao in transacoes %}
+
+    {% if transacao == "t1" %}
+    <li><b>{{transacao}}</b></li>
+    {% else %}
+    <li>{{transacao}}</li>
+    {% endif %}
+    {% endfor %}
+</ul>
