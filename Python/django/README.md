@@ -10,3 +10,4 @@
 - [Rotas dinâmicas, laço for e listagem](https://github.com/Dirack/Estudos/tree/master/Python/django/listar_topicos/lista#rotas-din%C3%A2micas-la%C3%A7o-for-e-listagem)
 - [Estudo sobre models](https://github.com/Dirack/Estudos/tree/master/Python/django/estudo_models#estudo-sobre-models)
 - [Exemplo model com foreign key, laço for e if](https://github.com/Dirack/Estudos/tree/master/Python/django/model_transacao#exemplo-model-com-foreign-key-la%C3%A7o-for-e-if)
+- [CRUD](https://github.com/Dirack/Estudos/tree/master/Python/django/crud#crud)
