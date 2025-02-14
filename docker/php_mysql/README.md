@@ -24,3 +24,11 @@ E para destruir os containers basta utilizar:
 ```
 docker compose down
 ```
+
+Após subir os containers, você poderá acessar a página em 'http://localhost:8000' e o phpmyadmin em 'http://localhost:8100'.
+
+Utilize os seguintes dados para fazer o login no phpmyadmin:
+
+- Server: db
+- Username: dirack
+- Password: 12345
