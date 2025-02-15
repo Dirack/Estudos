@@ -32,3 +32,12 @@ Utilize os seguintes dados para fazer o login no phpmyadmin:
 - Server: db
 - Username: dirack
 - Password: 12345
+
+## Entrar no container do docker
+
+Para acessar um dos containers gerados pelo docker compose,
+basta utilizar:
+
+```
+docker exec -ti <containerID> bash
+```

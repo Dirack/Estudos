@@ -28,3 +28,4 @@ Result('figure',
 	'''
 	grey title="Figura de teste"
 	''')
+End()
