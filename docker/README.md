@@ -15,6 +15,7 @@
 - [Data only](https://github.com/Dirack/Estudos/tree/master/docker/data_only#exemplo-utiliza%C3%A7%C3%A3o-de-volumes-data-only-docker) - Exemplo sobre persistência de dados e storage utilizando volumes e containers do docker
 - [Dockerfile Apache](https://github.com/Dirack/Estudos/tree/master/docker/dockerfile_apache#exemplo-de-constru%C3%A7%C3%A3o-de-imagem-do-apache-com-dockerfile) - Exemplo criando imagem do apache com Dockerfile
 - [Dockerfile C](https://github.com/Dirack/Estudos/tree/master/docker/dockerfile_script#exemplo-de-dockerfile-para-compilar-e-rodar-programa-em-c-no-linux-ubuntu) - Exemplo de dockerfile para compilar e rodar programa em linguagem c no linux ubuntu
+- [Container docker para rodar shell script](https://github.com/Dirack/Estudos/tree/master/docker/terminal#container-docker-para-rodar-shell-script) - Estudo sobre interatividade de terminal no docker
 
 ## O que é Docker?
 
