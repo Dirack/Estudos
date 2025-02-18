@@ -19,6 +19,7 @@
 - [Container docker de aplicação flask e bind de portas](https://github.com/Dirack/Estudos/tree/master/docker/ports#container-docker-de-aplica%C3%A7%C3%A3o-flask-e-bind-de-portas) - Estudo sobre containarização de aplicações python flask e bind de portas no docker
 - [Jenkins e Docker](https://github.com/Dirack/Estudos/tree/master/docker/jenkins#rodar-o-jenkins-em-um-container-docker) - Rodar o jenkins em um container docker
 - [Rodar aplicação flask no docker](https://github.com/Dirack/Estudos/tree/master/docker/flask#rodar-aplica%C3%A7%C3%A3o-flask-no-docker)
+- [Environment variables](https://github.com/Dirack/Estudos/tree/master/docker/env_var#exemplo-de-uso-de-vari%C3%A1veis-de-ambiente-no-docker) - Exemplo de uso de variáveis de ambiente no docker
 
 ## O que é Docker?
 
