@@ -1,0 +1,1 @@
+# Rodar aplicação flask no docker
