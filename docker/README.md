@@ -18,6 +18,7 @@
 - [Container docker para rodar shell script](https://github.com/Dirack/Estudos/tree/master/docker/terminal#container-docker-para-rodar-shell-script) - Estudo sobre interatividade de terminal no docker
 - [Container docker de aplicação flask e bind de portas](https://github.com/Dirack/Estudos/tree/master/docker/ports#container-docker-de-aplica%C3%A7%C3%A3o-flask-e-bind-de-portas) - Estudo sobre containarização de aplicações python flask e bind de portas no docker
 - [Jenkins e Docker](https://github.com/Dirack/Estudos/tree/master/docker/jenkins#rodar-o-jenkins-em-um-container-docker) - Rodar o jenkins em um container docker
+- [Rodar aplicação flask no docker](https://github.com/Dirack/Estudos/tree/master/docker/flask#rodar-aplica%C3%A7%C3%A3o-flask-no-docker)
 
 ## O que é Docker?
 
