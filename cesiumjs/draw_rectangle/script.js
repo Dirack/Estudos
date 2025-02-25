@@ -62,27 +62,25 @@ var viewer = new Cesium.Viewer('cesiumContainer', {
 
     let coordinatesArray = []
 
-    h.coordinates.forEach(c => {
-        coordinatesArray.push(c[0])
-        coordinatesArray.push(c[1])
-    })
+      h.coordinates.forEach(c => {
+          coordinatesArray.push(c[0])
+          coordinatesArray.push(c[1])
+      })
 
-    myhorizon = viewer.entities.add({
-        id: h.name,
-        name: h.name,
-        show: h.show,
-        description: h.description,
-        polygon: {
-          hierarchy: Cesium.Cartesian3.fromDegreesArray(coordinatesArray.map(e => e)),
-          height: 0,
-          material: Cesium.Color.RED.withAlpha(0.5),
-          outline: true,
-          outlineColor: Cesium.Color.BLACK,
-        },
-        id: 'RED'
-    })
-
-    
+      myhorizon = viewer.entities.add({
+          id: h.name,
+          name: h.name,
+          show: h.show,
+          description: h.description,
+          polygon: {
+            hierarchy: Cesium.Cartesian3.fromDegreesArray(coordinatesArray.map(e => e)),
+            height: 0,
+            material: Cesium.Color.RED.withAlpha(0.5),
+            outline: true,
+            outlineColor: Cesium.Color.BLACK,
+          },
+          id: 'RED'
+      })
     })
   
   
@@ -146,6 +144,8 @@ var viewer = new Cesium.Viewer('cesiumContainer', {
       packed.push(new Cesium.Cartesian2(Cesium.Math.toDegrees(rectangleSelector.north),Cesium.Math.toDegrees(rectangleSelector.east)))
       packed.push(new Cesium.Cartesian2(Cesium.Math.toDegrees(rectangleSelector.south),Cesium.Math.toDegrees(rectangleSelector.west)))
       packed.push(new Cesium.Cartesian2(Cesium.Math.toDegrees(rectangleSelector.south),Cesium.Math.toDegrees(rectangleSelector.east)))
+
+      console.log(rectangleSelector.west, rectangleSelector.south, rectangleSelector.east, rectangleSelector.north)
 
       console.log(polygono)
       console.log(Cesium.BoundingRectangle.fromPoints(packed))

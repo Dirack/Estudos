@@ -134,6 +134,7 @@ var horizons = [
           rectangleSelector.north = Math.max(tempCartographic.latitude, firstPoint.latitude);
           rectangleSelector.south = Math.min(tempCartographic.latitude, firstPoint.latitude);
           selector.show = true;
+          console.log(selector)
         }
       }
     }, Cesium.ScreenSpaceEventType.MOUSE_MOVE, Cesium.KeyboardEventModifier.SHIFT);
