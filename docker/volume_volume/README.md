@@ -31,3 +31,11 @@ Para remover o volume criado basta utilizar:
 ```
 docker volume rm estudo
 ```
+
+## Rodar no windows
+
+Rodar este exemplo no windows pode dar problema com o caractere barra, principalmente no gitbash. Pode rodar no docker desktop como a seguir:
+
+```
+docker run -ti -v .\myvol:/shellunity/persist estudo
+```
