@@ -59,6 +59,21 @@ não são vistos por nenhum outro contexto, incluindo o contexto do sistema.
 
 [Leia mais sobre namespaces...](https://medium.com/@lets00/namespace-14c4e64d0559)
 
+### Troubleshooting do docker no windows
+
+Existem alguns problemas que podem surgir ao rodar o docker no windows. Alguns exemplos podem não funcionar corretamente.
+
+Um dos problemas é a utilização de arquivos unix no windows. Isto pode gerar problema de leitura e você precisará fazer a conversão. O erro
+que aparece é como a seguir:
+
+```
+bash: ./test_file.sh: cannot execute: required file not found
+```
+
+Para corrigir o arquivo de texto para o formato do windows ou unix utilize o programa 'dos2unix'.
+
+[Leia mais...](https://commandmasters.com/commands/dos2unix-linux/)
+
 ### O que é cgroups?
 
 Control groups ou cgroups é uma implementação interessante do kernel Linux que permite particionar os recursos do sistema (CPU, memória, I/O) por grupo de processos.
