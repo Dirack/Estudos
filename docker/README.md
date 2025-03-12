@@ -5,6 +5,7 @@
 ## Índice
 
 - [Comandos básicos de docker](https://github.com/Dirack/Estudos/blob/master/docker/tutorial.md#tutorial-b%C3%A1sico-dos-comandos-do-docker) -  Tutorial básico dos comandos do docker
+- [Troubleshooting do docker no windows](https://github.com/Dirack/Estudos/tree/master/docker#troubleshooting-do-docker-no-windows) -  Resolução de problemas comuns ao utilizar o docker no windows
 - [Estudo: Criar container do nginx e fazer requisição para ele via curl](https://github.com/Dirack/Estudos/blob/master/docker/tutorial.md#estudo-criar-container-do-nginx-e-fazer-requisi%C3%A7%C3%A3o-para-ele-via-curl)
 - [Estudo: Ver o quanto de recursos o container está utilizando](https://github.com/Dirack/Estudos/blob/master/docker/tutorial.md#estudo-ver-o-quanto-de-recursos-o-container-est%C3%A1-utilizando)
 - [Estudo: Teste de stress no container](https://github.com/Dirack/Estudos/blob/master/docker/tutorial.md#estudo-teste-de-stress-no-container)
@@ -59,21 +60,6 @@ não são vistos por nenhum outro contexto, incluindo o contexto do sistema.
 
 [Leia mais sobre namespaces...](https://medium.com/@lets00/namespace-14c4e64d0559)
 
-### Troubleshooting do docker no windows
-
-Existem alguns problemas que podem surgir ao rodar o docker no windows. Alguns exemplos podem não funcionar corretamente.
-
-Um dos problemas é a utilização de arquivos unix no windows. Isto pode gerar problema de leitura e você precisará fazer a conversão. O erro
-que aparece é como a seguir:
-
-```
-bash: ./test_file.sh: cannot execute: required file not found
-```
-
-Para corrigir o arquivo de texto para o formato do windows ou unix utilize o programa 'dos2unix'.
-
-[Leia mais...](https://commandmasters.com/commands/dos2unix-linux/)
-
 ### O que é cgroups?
 
 Control groups ou cgroups é uma implementação interessante do kernel Linux que permite particionar os recursos do sistema (CPU, memória, I/O) por grupo de processos.
@@ -98,3 +84,25 @@ Isso é feito para garantir a integridade das camadas compartilhadas pelos conta
 (não é necessário replicar dados compartilhados).
 
 [Leia mais sobre copy on write](https://matheuslao.dev/posts/docker-images-ro-rw-layers-cow-dive/)
+
+### Troubleshooting do docker no windows
+
+Existem alguns problemas que podem surgir ao rodar o docker no windows. Alguns exemplos podem não funcionar corretamente.
+
+Um dos problemas é a utilização de arquivos unix no windows. Isto pode gerar problema de leitura e você precisará fazer a conversão. O erro
+que aparece é como a seguir:
+
+```
+bash: ./test_file.sh: cannot execute: required file not found
+```
+
+Para corrigir o arquivo de texto para o formato do windows ou unix utilize o programa 'dos2unix'.
+
+[Leia mais...](https://commandmasters.com/commands/dos2unix-linux/)
+
+Outro problema é rodar um container a partir do Git Bash, pois o git bash não é um TTY.
+Para tanto utilize o seguinte comando:
+
+```
+winpty docker run -ti estudo
+```
