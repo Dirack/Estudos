@@ -42,6 +42,7 @@
 - [Cypress](https://github.com/Dirack/Estudos/tree/master/cypress#estudos-sobre-testes-end-to-end-com-cypress)
 - [GDB](https://github.com/Dirack/Estudos/tree/master/GDB#estudo-sobre-depura%C3%A7%C3%A3o-utilizando-o-gnu-debugger-gdb)
 - [Git](https://github.com/Dirack/Estudos/tree/master/git#estudos-sobre-versionamento-de-c%C3%B3digo-com-o-git)
+- [Jenkins](https://github.com/Dirack/Estudos/tree/master/jenkins#jenkins)
 
 ### Conceitos
 - [Conceitos de programação](https://github.com/Dirack/Estudos/tree/master/conceitos#conceitos-de-programa%C3%A7%C3%A3o)
