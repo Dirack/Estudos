@@ -106,3 +106,9 @@ Para tanto utilize o seguinte comando:
 ```
 winpty docker run -ti estudo
 ```
+
+Para fazer o bind de volumes, você deve considerar as barras invertidas nos endereços do host, como no exemplo:
+
+```
+docker run -v C:\Users\RodolfoNEVES\Documents\Eliis_SECB\0_Inbox\estudo\myvol\:/myvol -ti estudo
+```
