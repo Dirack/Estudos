@@ -14,5 +14,5 @@ Para persistir os dados do jenkins, crie um volume your_volume e faça o bind
 para o diretório '/var/jenkins_home' no container como a seguir.
 
 ```
-docker run -p 8080:8080 -p 5000:5000 ./myvol:/var/jenkins_home jenkins/jenkins
+docker run -p 8080:8080 -p 5000:5000 -v ./myvol:/var/jenkins_home jenkins/jenkins
 ```
