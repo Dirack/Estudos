@@ -27,6 +27,8 @@ python manage.py help # Obter ajuda
 python manage.py runserver # Iniciar o servidor
 ```
 
+# Criar app básico
+
 Para criar um app no projeto django
 
 ```
