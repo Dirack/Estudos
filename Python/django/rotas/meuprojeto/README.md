@@ -1,5 +1,7 @@
 # Rotas e views
 
+[:arrow_up: Voltar a home](https://github.com/Dirack/Estudos/tree/master/Python/django#django)
+
 Crie uma pasta 'templates' dentro do app para adicionar as páginas HTML de template.
 
 Registre a sua view em 'views.py' como no exemplo:
