@@ -60,3 +60,9 @@ Para rodar as migrations
 ```
 python manage.py migrate # Iniciar as migrations do banco de dados
 ```
+
+Para rodar o servidor com django utilize:
+
+```
+python manage.py runserver
+```
