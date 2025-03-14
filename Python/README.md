@@ -12,3 +12,4 @@
 * [Flask](https://github.com/Dirack/Estudos/tree/master/Python/flask#estudos-sobre-flask)
 * [Django](https://github.com/Dirack/Estudos/tree/master/Python/django#django)
 * [Leitura de arquivos yaml](https://github.com/Dirack/Estudos/tree/master/Python/yaml#leitura-de-arquivos-yalm-com-python)
+* [lasio - Log ASCII Standard (LAS) files in Python](https://github.com/Dirack/Estudos/tree/master/Python/lasio#lasio---log-ascii-standard-las-files-in-python)
