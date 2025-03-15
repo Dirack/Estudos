@@ -1,0 +1,7 @@
+<h1>Estudo</h1>
+
+<ul>
+    {% for transacao in transacoes %}
+    <li>{{transacao.descricao}} - {{transacao.data}} - {{transacao.valor}} <a href="{% url 'update' transacao.id %}">[update]</a></li>
+    {% endfor %}
+</ul>
