@@ -24,3 +24,16 @@ Com o extends, extendemos o template base em 'index.html'.
 ```
 
 Assim, o título irá aparecer no template extendido com a seção de conteúdo será expandida no template base.
+
+Para criar links também é fácil com o django. Você irá usar o nome listado na variável 'name' do path
+da url que você definiu em 'urls.py' dentro do seu app.
+
+```py
+path('',views.index,name='index'),
+```
+
+Com este name, você pode utilizar a função 'url' no template como segue para cirar o link.
+
+```html
+<a href="{% url 'index' %}">Voltar</a>
+```
