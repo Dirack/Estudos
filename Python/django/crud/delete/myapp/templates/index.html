@@ -1,0 +1,12 @@
+<h1>Estudo</h1>
+
+<ul>
+    {% for transacao in transacoes %}
+    <li>{{transacao.descricao}} - {{transacao.data}} - {{transacao.valor}}
+        <a href="{% url 'update' transacao.id %}">[update]</a>
+        <a href="{% url 'delete' transacao.id %}">[remove]</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'nova' %}">Adicionar</a>
