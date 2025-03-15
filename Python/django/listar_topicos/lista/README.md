@@ -23,3 +23,13 @@ def getTopic(request, topic_id):
     context = {'topic':topic,'entries':entries}
     return render(request,"listagem.html",context)
 ```
+
+O consumo da lista é feito no template como segue:
+
+```html
+<ul>
+    {% for entry in entries %}
+    <li>{{ entry.entry }}, sou um {{entry.topic}} de id {{entry.id}}</li>
+    {% endfor %}
+</ul>
+```
