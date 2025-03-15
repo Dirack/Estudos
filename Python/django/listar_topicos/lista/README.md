@@ -2,6 +2,14 @@
 
 [:arrow_up: Voltar a home](https://github.com/Dirack/Estudos/tree/master/Python/django#django)
 
+Para criar rotas dinâmicas, basta adicionar o endpoint com o slug na lista de paths (rotas) do app (em 'urls.py' dentro do app).
+Esta rota pode receber um 'name' também como no exemplo.
+
+```py
+    path('topic/<topic_id>/',views.getTopic, name='gettopic')
+```
+
+
 Para criar listagens, você terá que passar os valores lidos do banco de dados para a página a partir de um contexto.
 Primeiro, faça o import dos models na 'views.py'. Cada model possui um 'objects', um manager que permite abstrair várias queries
 ao banco de dados. Assim, você pode fazer a querie e obter os dados para depois passar as informações ao contexto como a seguir:
