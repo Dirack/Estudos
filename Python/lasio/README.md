@@ -1,6 +1,6 @@
 # lasio - Log ASCII Standard (LAS) files in Python
 
-[:arrow_up: Voltar a home](https://github.com/Dirack/Estudos/tree/master/Python)
+[:arrow_up: Voltar a home](https://github.com/Dirack/Estudos/tree/master/Python](https://github.com/Dirack/Estudos/tree/master/Python#estudos-sobre-python)
 
 https://lasio.readthedocs.io/en/latest/basic-example.html
 
