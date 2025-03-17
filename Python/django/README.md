@@ -12,3 +12,4 @@
 - [Extend templates html e links](https://github.com/Dirack/Estudos/tree/master/Python/django/extends/meuprojeto#extend-templates-html-e-links)
 - [Exemplo model com foreign key, laço for e if](https://github.com/Dirack/Estudos/tree/master/Python/django/model_transacao#exemplo-model-com-foreign-key-la%C3%A7o-for-e-if)
 - [CRUD](https://github.com/Dirack/Estudos/tree/master/Python/django/crud#crud)
+- [Customizar a página de administrador](https://github.com/Dirack/Estudos/tree/master/Python/django/admin#p%C3%A1gina-de-administrador)
