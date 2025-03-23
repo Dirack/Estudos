@@ -13,4 +13,11 @@ int main(){
         myfile << "this is the second line\n";
         myfile.close();
     }
+
+    myfile.open("dummy.txt",ios::app);
+
+    if(myfile.is_open()){
+        myfile << "Linha append mode\n";
+        myfile.close();
+    }
 }
