@@ -1,6 +1,6 @@
 # Exemplo básico
 
-[:arrow_up: Voltar a home](https://github.com/Dirack/Estudos/tree/master/Python#estudos-sobre-python)
+[:arrow_up: Voltar a home](https://github.com/Dirack/Estudos/tree/master/Python/lasio#%C3%ADndice)
 
 You can install and use lasio in python3.
 There is an 'examples' module available on it. Use the commands bellow to test.
