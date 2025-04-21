@@ -14,4 +14,7 @@ class pilha {
         void inserir(int i);
         bool estaVazia();
         bool estaCheia();
+        TipoItem remover();
+        void imprimir();
+        int qualTamanho();
 };

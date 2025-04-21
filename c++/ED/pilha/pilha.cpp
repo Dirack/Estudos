@@ -11,7 +11,9 @@ using namespace std;
 
     pilha::~pilha()
     {
+        if(estrutura == nullptr) return;
         delete [] estrutura;
+        estrutura = nullptr;
     }
 
     void pilha::inserir(int i)
@@ -32,4 +34,30 @@ using namespace std;
     bool pilha::estaVazia()
     {
         return (tamanho == 0);
+    }
+
+    TipoItem pilha::remover()
+    {
+        if(estaVazia()){
+            cout << "A pilha está vazia" << endl;
+            return estrutura[tamanho];
+        }
+
+        tamanho--;
+        return estrutura[tamanho-1];
+
+    }
+
+    void pilha::imprimir()
+    {
+        cout << "pilha: [";
+        for(int i=0; i<tamanho; i++)
+            cout << estrutura[i] << " ";
+        
+        cout << "]" << endl;
+    }
+
+    int pilha::qualTamanho()
+    {
+        return tamanho;
     }

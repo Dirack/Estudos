@@ -10,11 +10,25 @@ int main(){
 
     pilha1 = pilha();
 
-    cout << "oi" << endl;
+    int opcao = 0;
 
-    pilha1.inserir(1);
+    do
+    {
+        pilha1.imprimir();
+        cout << "0 - Encerrar" << endl;
+        cout << "1 - Inserir na pilha" << endl;
+        cout << "2 - Remover da pilha" << endl;
+        cin >> opcao;
+        if(opcao == 1){
+            int valor;
+            cin >> valor;
+            pilha1.inserir(valor);
+        }else if (opcao == 2){
+            pilha1.remover();
+        }
 
-    pilha1.inserir(4);
+    } while (opcao != 0);
+    
 
     pilha1.~pilha();
 }
