@@ -5,11 +5,30 @@ using namespace std;
 
 int main(){
 
-    pilha p1;
+    pilha pilha1;
 
-    p1 = new pilha::pilha();
+    pilha1 = pilha();
 
-    p1.inserir(1); p1.inserir(2); p1.inserir(3);
+    int opcao = 0;
 
-    p1.~pilha();
+    do
+    {
+        pilha1.imprimir();
+        cout << "0 - Encerrar" << endl;
+        cout << "1 - Inserir na pilha" << endl;
+        cout << "2 - Remover da pilha" << endl;
+        cin >> opcao;
+        if(opcao == 1){
+            int valor;
+            cin >> valor;
+            pilha1.inserir(valor);
+        }else if (opcao == 2){
+            pilha1.remover();
+        }
+
+    } while (opcao != 0);
+    
+
+    pilha1.~pilha();
+
 }
