@@ -1,5 +1,13 @@
 # Exemplo utilização de volumes data only docker
 
+## Objetivo do exemplo
+
+    - Mostrar que vários containers podem compartilhar os mesmos dados usando um volume Docker.
+
+    - Isso evita o uso de containers "data-only", que eram usados antigamente apenas para armazenar volumes.
+
+    - Com o volume dbdados, se um dos containers for deletado, os dados continuam salvos no volume e podem ser reutilizados.
+
 A utilização de container data-only é uma forma antiga para a persistência de dados. A forma atual é utilizar volumes, como no exemplo a seguir.
 
 [Leia mais sobre data-only](https://medium.com/@rasheedamir/docker-good-bye-data-only-container-pattern-a28f90493a5a)
