@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: flask-api
+spec:
+  containers:
+  - name: flask-container
+    image: flask-api:latest
+    imagePullPolicy: Never
+    ports:
+    - containerPort: 5000
+    env:
+    - name: GREETING_MESSAGE
+      value: "olá direto do pod!"
+    - name: PORT
+      value: "5000"
