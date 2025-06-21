@@ -28,6 +28,34 @@ promessa
   });
 ```
 
+## Estrutura básica com temporizador
+
+```js
+const promessa = new Promise((resolve,reject)=>{
+    const sucesso = false;
+
+    const interval = setInterval(()=>{
+        clearInterval(interval)
+        if(sucesso){
+            resolve("Deu certo!")
+        }else{
+            reject("Algo deu errado :(")
+        }
+    },5000)
+
+})
+
+promessa.then((resultado)=>{
+    console.log(resultado)
+})
+.catch((erro)=>{
+    console.log(erro)
+})
+
+console.log("Chamei a promessa",promessa)
+```
+
+
 ## Exemplo: Simular falha
 
 ```js
