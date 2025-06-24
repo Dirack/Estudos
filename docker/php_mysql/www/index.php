@@ -5,6 +5,10 @@ try {
     $pdo = new PDO("mysql:dbname=meudb;host=db","dirack","12345");
 
     $sql = $pdo->query("SELECT * FROM usuarios");
+
+    if(!$sql){
+        throw new Exception("Algo deu errado! Adicionou a tabela usuarios ao database db?");
+    }
     
     if($sql->rowCount()>0){
         $usuarios = $sql->fetchAll();
