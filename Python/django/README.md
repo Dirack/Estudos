@@ -14,3 +14,4 @@
 - [CRUD](https://github.com/Dirack/Estudos/tree/master/Python/django/crud#crud)
 - [Customizar a página de administrador](https://github.com/Dirack/Estudos/tree/master/Python/django/admin#p%C3%A1gina-de-administrador)
 - [Rodar script usando o django](https://github.com/Dirack/Estudos/tree/master/Python/django/scripts#rodar-script-usando-o-django)
+- [Pyinstaller - Criar exe de projeto django](https://github.com/Dirack/Estudos/tree/master/Python/django/pyinstaller#pyinstaller---criar-exe-de-projeto-django)
