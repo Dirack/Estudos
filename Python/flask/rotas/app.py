@@ -24,3 +24,6 @@ def add_country():
         countries.append(country)
         return country, 201
     return {"error": "Request must be JSON"}, 415
+
+if __name__ == "__main__":
+    app.run(debug=True)
