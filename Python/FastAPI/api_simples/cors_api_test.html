@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button onclick="testar()">Testar API</button>
+
+<script>
+async function testar() {
+    try {
+        const response = await fetch(
+            "http://localhost:8000/",
+            {
+                method: "GET"
+            }
+        );
+
+        const data = await response.json();
+
+        console.log(data);
+    }
+    catch (err) {
+        console.error(err);
+    }
+}
+</script>
+
+</body>
+</html>
