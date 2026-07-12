@@ -1,0 +1,3 @@
+import calculo
+
+print(calculo)
