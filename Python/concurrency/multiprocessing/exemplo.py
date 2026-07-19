@@ -34,6 +34,6 @@ def run_processes(n):
 
 
 if __name__ == "__main__":
-    n = 5_000_000
+    n = 50_000_000
     print(f"threads:   {run_threads(n):.3f}s")
     print(f"processes: {run_processes(n):.3f}s")
