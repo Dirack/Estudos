@@ -1,0 +1,3 @@
+When Multiprocessing Is the Right Choice
+
+Reach for multiprocessing when profiling shows CPU time dominated by Python-level computation that does not release the GIL, or when you must isolate failure (one crashing worker does not tear down siblings). Skip it when tasks are tiny relative to process start cost, when you already saturate the box with one process, or when shared mutable Python objects would force complex synchronization: in those cases threading or asyncio may spend less time on orchestration. For running non-Python programs or shell pipelines, compare this module with subprocess.
