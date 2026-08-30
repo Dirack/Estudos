@@ -11,7 +11,8 @@ MainWindow::MainWindow(QWidget *parent) : QWidget(parent), count(0) {
     layout->addWidget(label);
     layout->addWidget(button);
 
-    connect(button, &QPushButton::clicked, this, &MainWindow::incrementCount);
+    connect(button, &QPushButton::clicked, this,
+        &MainWindow::incrementCount);
     setLayout(layout);
 
     //setFixedSize(400, 300);

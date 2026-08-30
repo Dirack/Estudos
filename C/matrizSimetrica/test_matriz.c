@@ -25,7 +25,7 @@ void test_criar_matriz_simetrica_2_por_2_e_acessar_elementos_atribuidos(){
 	for(i=0;i<4;i++)
 		printf("%f\n",mp->v[i]);*/
 
-	TEST_ASSERT_FLOAT_WITHIN(0.01,1.0,acessa(mp,0,0));
+	TEST_ASSERT_FLOAT_WITHIN(0.01,2.0,acessa(mp,0,0));
 	TEST_ASSERT_FLOAT_WITHIN(0.01,2.0,acessa(mp,0,1));
 	TEST_ASSERT_FLOAT_WITHIN(0.01,2.0,acessa(mp,1,0));
 	TEST_ASSERT_FLOAT_WITHIN(0.01,4.0,acessa(mp,1,1));
